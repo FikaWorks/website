@@ -1,4 +1,4 @@
-baseURL = "https://thecloudnatives.com"
+baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "The Cloud Natives"
