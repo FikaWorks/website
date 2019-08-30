@@ -3,7 +3,7 @@
 <section class="hero-area" style='background-image: url("{{ .Site.Params.banner.bgImage | absURL }}");'>
     <div class="block">
         <div class="video-button">
-           {{with .Site.Params.banner.icon}} <i class="{{ . }}"></i> {{ end }}
+          <a href="/" class="btn btn-transparent"><img src="{{"images/logo.svg" | absURL}}" alt="The Cloud Natives" /></a>
         </div>
        {{with .Site.Params.banner.heading}} <h1>{{ . }}</h1>{{ end }}
        {{with .Site.Params.banner.content}} <p>{{ . }}</p> {{ end }}
