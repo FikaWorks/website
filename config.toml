@@ -48,7 +48,7 @@ custom_css = ["css/custom.css"]
     content= "We're an independent collective of cloud native consultants based in the Netherlands"
     btn = true
     btnText="Blog"
-    btnURL="#services"
+    btnURL="/blog"
 
     # call to action
     [params.cta]
