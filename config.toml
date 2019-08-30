@@ -18,21 +18,6 @@ theme = "meghna-hugo"
     weight = 3
 
     [[menu.nav]]
-    name = "Portfolio"
-    URL = "portfolio"
-    weight = 4
-
-    [[menu.nav]]
-    name = "Team"
-    URL = "our-team"
-    weight = 5
-
-    [[menu.nav]]
-    name = "Pricing"
-    URL = "pricing"
-    weight = 6
-
-    [[menu.nav]]
     name = "Blog"
     URL = "blog"
     weight = 7
@@ -48,7 +33,7 @@ home= "Home"
 logo = "images/logo.png"
 gmapAPI = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
 # Meta data
-description = "Responsive Multipurpose Parallax HTML5 Template"
+description = "Independent collective of cloud native consultants based in the Netherlands"
 author = "Themefisher"
 # Google Analitycs
 googleAnalitycsID = "Your ID"
@@ -99,8 +84,8 @@ custom_css = ["css/custom.css"]
 
     # footer
     [params.footer]
-        copyright = "Themefisher Team"
-        copyrightURL = "http://www.themefisher.com"
+        # copyright = "Themefisher Team"
+        # copyrightURL = "http://www.themefisher.com"
 
         # social Icons
         [[params.footer.socialIcon]]
