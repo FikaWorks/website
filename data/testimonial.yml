@@ -1,4 +1,4 @@
-enable : true
+enable : false
 bgImage : images/backgrounds/bg-2.jpg
 testimonialItem :
   - name : Jonathon Andrew

@@ -57,25 +57,25 @@ custom_css = ["css/custom.css"]
     # Banner Section
     [params.banner]
     enable = true
-    bgImage = "images/slider/hero-area.jpg"
-    icon = "tf-ion-play"
-    heading = "Experience the new reality"
-    content= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, excepturi. At recusandae sit perferendis autem,iste tempora nostrum numquam sapiente!"
+    #bgImage = "images/slider/"
+    #icon = "tf-ion-play"
+    heading = ""
+    content= "We're an independent collective of cloud native consultants based in the Netherlands"
     btn = true
-    btnText="Explore Us"
+    btnText="Blog"
     btnURL="#services"
 
     # call to action
     [params.cta]
     enable = true
-    title = "Great Design & Incredible Features"
+    title = "Check out our work on github"
     content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
-    btnURL = "#"
-    btnText = "Start a project with us"
+    btnURL = "https://github.com/thecloudnatives"
+    btnText = "github"
 
     # counter
     [params.counter]
-    enable = true
+    enable = false
     bgImage = "images/backgrounds/bg-1.jpg"
         [[params.counter.counterItem]]
         title = "Happy Clients"
