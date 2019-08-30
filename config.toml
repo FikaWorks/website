@@ -54,7 +54,7 @@ custom_css = ["css/custom.css"]
     [params.cta]
     enable = true
     title = "Check out our work on github"
-    content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
+    content = ""
     btnURL = "https://github.com/thecloudnatives"
     btnText = "github"
 
@@ -84,8 +84,8 @@ custom_css = ["css/custom.css"]
 
     # footer
     [params.footer]
-        # copyright = "Themefisher Team"
-        # copyrightURL = "http://www.themefisher.com"
+        copyright = "The Cloud Natives"
+        copyrightURL = "http://thecloudnatives.com"
 
         # social Icons
         [[params.footer.socialIcon]]
