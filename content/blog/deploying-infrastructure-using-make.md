@@ -50,7 +50,7 @@ application are independant from each other which provide flexibility.
 
 Each application configuration is stored in its own directory.
 
-```
+```md
 ├── external-dns/
 │   ├── Makefile
 │   ├── README.md
@@ -120,7 +120,7 @@ EXTERNAL_DNS_CHART_VERSION = 2.6.4
 
 The following is an example of directory structure for a
 [Helm](https://helm.sh) chart deployment:
-```
+```md
 └── external-dns
     ├── Makefile
     ├── README.md
@@ -132,7 +132,7 @@ The following is an example of directory structure for a
 
 And below is a directory structure for deploying Kubernetes manifests, it can
 also be used to deploy overlays using Kustomize.
-```
+```md
 └── rbac
     ├── common
     │   └── cicd-user.yaml
