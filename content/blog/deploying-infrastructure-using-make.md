@@ -2,19 +2,21 @@
 title: "Deploying Kubernetes addons with Makefiles"
 date: 2019-11-08T14:39:16+06:00
 author: Etienne Tremel
-image: images/blog/deploying-infrastructure-using-make.jpg
+image: images/blog/deploying-kubernetes-addons-with-makefiles.jpg
 description: "Deploying Kubernetes addons using make and Makefile"
 tags: ["kubernetes", "deployment", "makefile", "cluster-addons"]
 ---
 
-This article is a demonstration on how applications, configurations and
-dependencies can be organized in a repository and deployed using [Make][make].
-In this case, all the applications that form an eco-system required to run an
-environment ([nginx ingress controller][nginx-ingress],
-[prometheus][prometheus], [rbac][rbac], [pod security policies][psp], etc.).
+This article demonstrate how applications together with their configuration can
+be organized in a repository and deployed using [Make][make]. In this case, all
+the applications that form the required eco-system to run an environment
+([nginx ingress controller][nginx-ingress], [prometheus][prometheus],
+[rbac][rbac], [pod security policies][psp], etc.). In Kubernetes such
+application are called addons and are usually managed by a cluster
+administrator.
 
-The source code is available on
-[Github][deploying-kubernetes-addons-with-makefiles].
+For the one that are impatient, the source code of such structure is available
+on [Github][deploy-kubernetes-addons-makefile-example].
 
 But first, what is [Make][make]?
 
@@ -26,7 +28,7 @@ need to be recompiled but it is not only tight to building applications. There
 is a bunch of other build utilies ([Ant][ant], [Rake][rake], [Bazel][bazel],
 etc.) but [Make][make] is the most widespread amongst them.
 
-## How can it be used for deploying infrastructure?
+## How can it be used to deploy Kubernetes addons?
 
 [Make][make] can be used as command line utility to execute task in a specific
 order therefore it can also be used to orchestrate the deployment of
@@ -178,12 +180,12 @@ Some might find it funky. It is definitely not perfect but gets things done in
 a really simple way. Perfect for prototyping!
 
 Hope that helps, make sure to check the full example on Github:
-[github.com/thecloudnatives/infrastructure-deployment-makefile-example][deploying-kubernetes-addons-with-makefiles]
+[https://github.com/thecloudnatives/deploy-kubernetes-addons-makefile-example][deploy-kubernetes-addons-makefile-example]
 
 [ant]: https://ant.apache.org
 [aws-cloudformation]: https://aws.amazon.com/cloudformation/
 [bazel]: https://bazel.build
-[deploying-kubernetes-addons-with-makefiles]: https://github.com/thecloudnatives/infrastructure-deployment-makefile-example
+[deploy-kubernetes-addons-makefile-example]: https://github.com/thecloudnatives/deploy-kubernetes-addons-makefile-example
 [helm-charts]: https://github.com/helm/charts
 [helm]: https://helm.sh
 [kubernetes]: https://kubernetes.io
