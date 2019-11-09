@@ -3,7 +3,8 @@ languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "The Cloud Natives"
 theme = "meghna-hugo"
-
+pygmentsCodeFences = true
+pygmentsStyle = "algol_nu"
 
 # Menu
 [menu]
