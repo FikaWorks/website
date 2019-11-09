@@ -1,6 +1,6 @@
 enable : true
 sharing : true
 staticmanComments:
-  enable: true
+  enable: false
   notifications: true
   api: https://api.staticman.net/v3/entry/github/thecloudnatives/website/master/comments
