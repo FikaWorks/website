@@ -6,6 +6,10 @@ h1 {
   color: white;
 }
 
+.post-single-content a {
+  color: #57cbcc;
+}
+
 .post-single-content h2,
 .post-single-content h3,
 .post-single-content h4,
