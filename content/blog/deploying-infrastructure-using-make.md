@@ -30,7 +30,7 @@ etc.) but [Make][make] is the most widespread amongst them.
 
 ## How can it be used to deploy Kubernetes addons?
 
-[Make][make] can be used as command line utility to execute task in a specific
+[Make][make] can be used as command line utility to execute tasks in a specific
 order therefore it can also be used to orchestrate the deployment of
 applications.
 
@@ -159,8 +159,8 @@ manifests. It can also be used to deploy overlays using [Kustomize][kustomize].
 
 ## How to deploy using this framework?
 
-From this, you can spinnup a full environment with one command (to be executed
-from the root directory):
+From this, you can provision a full environment with one command (to be
+executed from the root directory):
 ```bash
 $ ENVIRONMENT=development make deploy-all
 ```
