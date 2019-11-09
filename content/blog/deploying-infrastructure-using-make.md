@@ -1,52 +1,57 @@
 ---
-title: "Deploying infrastructure using Make and Makefiles"
+title: "Deploying Kubernetes addons with Makefiles"
 date: 2019-11-08T14:39:16+06:00
 author: Etienne Tremel
 image: images/blog/deploying-infrastructure-using-make.jpg
-description : "Deploying an infrastructure eco-system using Make and Makefile"
+description: "Deploying Kubernetes addons using make and Makefile"
+tags: ["kubernetes", "deployment", "makefile", "cluster-addons"]
 ---
 
 This article is a demonstration on how applications, configurations and
-dependencies can be organized in a repository and deployed using Make. In this
-case, all the applications that form an eco-system required to run an
-environment (nginx, prometheus, rbac, pod security policies, etc.).
+dependencies can be organized in a repository and deployed using [Make][make].
+In this case, all the applications that form an eco-system required to run an
+environment ([nginx ingress controller][nginx-ingress],
+[prometheus][prometheus], [rbac][rbac], [pod security policies][psp], etc.).
 
 The source code is available on
-[Github](https://github.com/thecloudnatives/infrastructure-deployment-makefile-example).
+[Github][deploying-kubernetes-addons-with-makefiles].
 
-But first, what is Make?
+But first, what is [Make][make]?
 
 ## What is Make?
 
-[Make](https://en.wikipedia.org/wiki/Make_(software) is an utility to maintain
-groups of programs. In a normal setup, Make is used to automatically determine
-which pieces of a large program need to be recompiled but it is not only tight
-to building applications. There is a bunch of other build utilies (Ant, Rake,
-Bazel, etc.) but Make is the most widespread amongst them.
+[Make][make] is an utility to maintain groups of programs. In a normal setup,
+[Make][make] is used to automatically determine which pieces of a large program
+need to be recompiled but it is not only tight to building applications. There
+is a bunch of other build utilies ([Ant][ant], [Rake][rake], [Bazel][bazel],
+etc.) but [Make][make] is the most widespread amongst them.
 
 ## How can it be used for deploying infrastructure?
 
-Make is not only tight to building applications. It can be abused as command
-line utility to execute task in a specific order therefore it can also be used
-to orchestrate the deployment of applications.
+[Make][make] can be used as command line utility to execute task in a specific
+order therefore it can also be used to orchestrate the deployment of
+applications.
 
-When working in a cloud-native environment installation/maintenance of
-application vary depending on the technology. Most of the time, the
-configuration already exist out there an (Helm charts, Kustomize packages, AWS
-Cloudformation, etc.), only a little piece of this application need to be
-changed to have it adjusted to work in your own environment.
+When working in a cloud-native environment, the installation and maintenance of
+an application varies depending on the technology. Most of the time, the
+configuration already exist out there ([Helm charts][helm-charts],
+[Kustomize][kustomize] packages, [Terraform][terraform], [AWS
+Cloudformation][aws-cloudformation], etc.) and only a small piece of this
+application needs to be changed to have it adjusted to work in your own
+environment.
 
 Additionally, application configuration can differ from one environment to
 another (security policies, role base access control, etc.) which can be
 difficult to manage and prone to error. Re-using configuration and only
-changing piece of it for the targetted environment is essential. Keep it DRY.
+changing a piece of it for the targetted environment is essential. Keep it DRY.
 
 ## How do we organize all of this?
 
-The method described below is fairly simple and let you decide what application
-and which version can be deployed to a given environment. Configuration can be
-shared accross environment. The steps to execute the deployment of an
-application are independant from each other which provide flexibility.
+The method described below is fairly simple and lets you decide what
+application and which version can be deployed to a given environment.
+Configuration can be shared accross environment. The steps to execute the
+deployment of an application are independant from each other which provide
+flexibility.
 
 Each application configuration is stored in its own directory.
 
@@ -79,7 +84,7 @@ base) and an environment configuration which override any settings from the
 common configuration.
 
 The following `Makefile` demonstrate how the configuration is being applied to
-a [Kubernetes](https://kubernetes.io) cluster using `kubectl`.
+a [Kubernetes][kubernetes] cluster using `kubectl`.
 
 ```make
 include ../env.$(ENVIRONMENT).mk
@@ -90,7 +95,7 @@ deploy:
   kubectl apply -f ./$(ENVIRONMENT).yaml
 ```
 
-Note the first include instruction which load configuration for the
+Note the first includes instruction which loads configuration for the
 environment.
 
 The environment configuration could look like this:
@@ -119,7 +124,7 @@ EXTERNAL_DNS_CHART_VERSION = 2.6.4
 ```
 
 The following is an example of directory structure for a
-[Helm](https://helm.sh) chart deployment:
+[Helm][helm] chart deployment:
 ```md
 └── external-dns
     ├── Makefile
@@ -130,8 +135,8 @@ The following is an example of directory structure for a
     └── values.production.yaml
 ```
 
-And below is a directory structure for deploying Kubernetes manifests, it can
-also be used to deploy overlays using Kustomize.
+And below is a directory structure for deploying [Kubernetes][kubernetes]
+manifests. It can also be used to deploy overlays using [Kustomize][kustomize].
 ```md
 └── rbac
     ├── common
@@ -165,12 +170,28 @@ $ ENVIRONMENT=development make deploy-nginx-ingress
 
 The next step would be to have these tasks executed as part of your CI/CD
 process. For example the development environment can be applied when changes
-are applied to the master branch of this configuration repository and the
+are made to the master branch of this configuration repository and the
 production deployment can be triggered when a tag is created via the release
 page in Github.
 
-Some might find it funcky. It is definitely not perfect but get the things done
-in a really simple way. Perfect for prototyping!
+Some might find it funky. It is definitely not perfect but gets things done in
+a really simple way. Perfect for prototyping!
 
-Hope that help, make sure to check the full example in Github:
-[https://github.com/thecloudnatives/infrastructure-deployment-makefile-example](https://github.com/thecloudnatives/infrastructure-deployment-makefile-example)
+Hope that helps, make sure to check the full example on Github:
+[github.com/thecloudnatives/infrastructure-deployment-makefile-example][deploying-kubernetes-addons-with-makefiles]
+
+[ant]: https://ant.apache.org
+[aws-cloudformation]: https://aws.amazon.com/cloudformation/
+[bazel]: https://bazel.build
+[deploying-kubernetes-addons-with-makefiles]: https://github.com/thecloudnatives/infrastructure-deployment-makefile-example
+[helm-charts]: https://github.com/helm/charts
+[helm]: https://helm.sh
+[kubernetes]: https://kubernetes.io
+[kustomize]: https://github.com/kubernetes-sigs/kustomize
+[make]: https://www.gnu.org/software/make/
+[nginx-ingress]: https://github.com/kubernetes/ingress-nginx
+[prometheus]: https://prometheus.io
+[psp]: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
+[rake]: https://github.com/ruby/rake
+[rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+[terraform]: https://terraform.io
