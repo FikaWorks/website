@@ -2,6 +2,10 @@
   color: #fff;
 }
 
+.post-single-content h1 {
+  color: white;
+}
+
 .post-single-content h2,
 .post-single-content h3,
 .post-single-content h4,
