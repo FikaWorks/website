@@ -9,18 +9,18 @@ pygmentsStyle = "algol_nu"
 # Menu
 [menu]
     [[menu.nav]]
-    name = "About Us"
-    URL = "about"
-    weight = 2
-
-    [[menu.nav]]
-    name = "Service"
+    name = "Services"
     URL = "services"
     weight = 3
 
     [[menu.nav]]
     name = "Blog"
     URL = "blog"
+    weight = 6
+
+    [[menu.nav]]
+    name = "Events"
+    URL = "events"
     weight = 7
 
     [[menu.nav]]
@@ -32,19 +32,15 @@ pygmentsStyle = "algol_nu"
 [params]
 home= "Home"
 logo = "images/logo.png"
-gmapAPI = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
 # Meta data
 description = "Independent collective of cloud native consultants based in the Netherlands"
-author = "Themefisher"
-# Google Analitycs
-googleAnalitycsID = "Your ID"
+author = "theCloudNatives"
+
 custom_css = ["css/custom.css"]
 
     # Banner Section
     [params.banner]
     enable = true
-    #bgImage = "images/slider/"
-    #icon = "tf-ion-play"
     heading = ""
     content= "We're an independent collective of cloud native consultants based in the Netherlands"
     btn = true
@@ -58,30 +54,6 @@ custom_css = ["css/custom.css"]
     content = ""
     btnURL = "https://github.com/thecloudnatives"
     btnText = "github"
-
-    # counter
-    [params.counter]
-    enable = false
-    bgImage = "images/backgrounds/bg-1.jpg"
-        [[params.counter.counterItem]]
-        title = "Happy Clients"
-        icon = "tf-ion-android-happy"
-        count = "320"
-
-        [[params.counter.counterItem]]
-        title = "Projects completed"
-        icon = "tf-ion-archive"
-        count = "565"
-
-        [[params.counter.counterItem]]
-        title = "Positive feedback"
-        icon = "tf-ion-thumbsup"
-        count = "95"
-
-        [[params.counter.counterItem]]
-        title = "Cups of Coffee"
-        icon = "tf-ion-coffee"
-        count = "2500"
 
     # footer
     [params.footer]

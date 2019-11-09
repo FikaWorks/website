@@ -1,29 +1,31 @@
 {{ if .Site.Data.service.enable}}
 {{"<!-- service -->" | safeHTML }}
-<section id="services" class="bg-one section">
+<section class="bg-one service section" id="services">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                {{"<!-- section title -->" | safeHTML }}
-                <div class="title text-center wow fadeIn" data-wow-duration="500ms">
-                    <h2>{{ with .Site.Data.service.heading }} {{ . }} {{ end }}<span class="color">{{ with .Site.Data.service.headingSpan }} {{ . }} {{ end }}</span></h2>
+                {{"<!-- section title -->" | safeHTML}}
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                    <h2>{{ .Site.Data.about.heading}} <span class="color">{{ .Site.Data.about.headingSpan}}</span> </h2>
                     <div class="border-meghna"></div>
                 </div>
             </div>
-            {{"<!-- /section title -->" | safeHTML }}
+            {{"<!-- /section title -->" | safeHTML}}
 
-            {{ range .Site.Data.service.serviceItem}}
-            {{"<!-- Single Service Item -->" | safeHTML }}
-            <article class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="500ms">
-                <div class="service-block text-center">
-                    <div class="service-icon text-center">
-                        <i class="{{ .icon }}"></i>
+            {{ range .Site.Data.about.aboutItem }}
+            {{"<!-- About item -->" | safeHTML}}
+            <div class="col-lg-4 text-center wow fadeInUp" data-wow-duration="500ms">
+                <div class="block">
+                    <div class="icon-box">
+                        {{with .icon}}<i class="{{ . }}"></i>{{ end }}
                     </div>
-                    <h3>{{ .title }}</h3>
-                    <p>{{ .content }}</p>
+                    {{"<!-- Express About Yourself -->" | safeHTML}}
+                    <div class="content text-center">
+                        {{ with .title }}<h3 class="ddd">{{ . }}</h3>{{ end }}
+                        {{ with .content}}  <p>{{ . }}</p>{{ end }}
+                    </div>
                 </div>
-            </article>
-            {{"<!-- End Single Service Item -->" | safeHTML }}
+            </div>
             {{ end }}
         </div>
     </div>

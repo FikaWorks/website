@@ -1,0 +1,37 @@
+{{"<!-- Events -->" | safeHTML }}
+<section id="events" class="parallax-section section section-bg overly">
+    <div class="container">
+        <div class="row">
+            {{"<!-- section title -->" | safeHTML }}
+            <div class="col-lg-12">
+                <div class="title text-center">
+                    <h2>{{ with .Site.Data.events.heading}} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.events.headingSpan }} {{ . }} {{ end }}</span></h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML }}
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{ if .Site.Data.events.eventItems }}
+                <ul>
+                    {{ range .Site.Data.events.eventItems }}
+                    <li>
+                        <p>{{ .itemName }}</p>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ else }}
+                <div>
+                  <p class="text-center">No events at the moment</p>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="all-events text-center col-lg-12">
+                <a class="btn btn-main" href="/events">{{ i18n "viewAllEvents" }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{"<!-- /events -->" | safeHTML }}

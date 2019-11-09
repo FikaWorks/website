@@ -32,5 +32,7 @@
   translation: Read more
 - id: viewAllPost
   translation: View All Post
+- id: viewAllEvents
+  translation: View All Events
 - id: share
   translation: Share

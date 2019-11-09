@@ -677,9 +677,9 @@ a:hover {
 }
 
 /*=================================================================
-  About us section
+  Service section
 ==================================================================*/
-.about .block {
+.service .block {
   background: #242930;
   padding: 30px;
   border-bottom: 2px solid transparent;
@@ -687,16 +687,16 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.about .block:hover {
+.service .block:hover {
   border-bottom: 2px solid #57cbcc;
 }
 
-.about .block:hover .icon-box {
+.service .block:hover .icon-box {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
 }
 
-.about .block .icon-box {
+.service .block .icon-box {
   position: relative;
   width: 160px;
   height: 92.38px;
@@ -714,8 +714,8 @@ a:hover {
   transition-property: transform, -webkit-transform;
 }
 
-.about .block .icon-box:after,
-.about .block .icon-box:before {
+.service .block .icon-box:after,
+.service .block .icon-box:before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -727,19 +727,19 @@ a:hover {
   transform: scaleY(0.5774) rotate(-45deg);
 }
 
-.about .block .icon-box:before {
+.service .block .icon-box:before {
   top: -56.5685px;
   border-top: 2px solid rgba(236, 239, 241, 0.07);
   border-right: 2px solid rgba(236, 239, 241, 0.07);
 }
 
-.about .block .icon-box:after {
+.service .block .icon-box:after {
   bottom: -56.5685px;
   border-bottom: 2px solid rgba(236, 239, 241, 0.07);
   border-left: 2px solid rgba(236, 239, 241, 0.07);
 }
 
-.about .block .icon-box h3 {
+.service .block .icon-box h3 {
   color: #afbac4;
 }
 

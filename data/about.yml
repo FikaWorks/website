@@ -1,7 +1,7 @@
-enable : true
+enable : false
 heading : Our
 headingSpan : Services
-aboutItem : 
+aboutItem :
 - icon : tf-tools
   title : Cloud Native consultancy
   content : We're consulting companies in transition to cloud and agile infrastructure.
