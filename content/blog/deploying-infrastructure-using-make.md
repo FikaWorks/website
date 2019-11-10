@@ -1,6 +1,6 @@
 ---
 title: "Deploying Kubernetes addons with Makefiles"
-date: 2019-11-08T14:39:16+06:00
+date: 2019-11-08T14:39:16+01:00
 author: Etienne Tremel
 image: images/blog/deploying-kubernetes-addons-with-makefiles.jpg
 description: "Deploying Kubernetes addons using make and Makefile"
@@ -24,7 +24,7 @@ But first, what is [Make][make]?
 
 [Make][make] is an utility to maintain groups of programs. In a normal setup,
 [Make][make] is used to automatically determine which pieces of a large program
-need to be recompiled but it is not only tight to building applications. There
+need to be recompiled but it is not only tied to building applications. There
 is a bunch of other build utilies ([Ant][ant], [Rake][rake], [Bazel][bazel],
 etc.) but [Make][make] is the most widespread amongst them.
 
