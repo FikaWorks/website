@@ -28,6 +28,8 @@
   translation: Notify me of new comments on this post
 - id: addComment
   translation: Add comment
+- id: viewEvent
+  translation: View event
 - id: readMore
   translation: Read more
 - id: viewAllPost

@@ -28,6 +28,8 @@ pygmentsStyle = "algol_nu"
     URL = "contact-us"
     weight = 8
 
+[taxonomies]
+
 # Site params
 [params]
 home= "Home"
