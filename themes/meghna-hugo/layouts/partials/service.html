@@ -14,7 +14,7 @@
 
             {{ range .Site.Data.about.aboutItem }}
             {{"<!-- About item -->" | safeHTML}}
-            <div class="col-lg-4 text-center wow fadeInUp" data-wow-duration="500ms">
+            <div class="col-lg-4 d-flex align-items-stretch text-center wow fadeInUp" data-wow-duration="500ms">
                 <div class="block">
                     <div class="icon-box">
                         {{with .icon}}<i class="{{ . }}"></i>{{ end }}
