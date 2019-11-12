@@ -30,6 +30,10 @@
   translation: Add comment
 - id: viewEvent
   translation: View event
+- id: noEvents
+  translation: No events at the moment
+- id: eventIntroduction
+  translation: Events where members of theCloudNatives participate (spearker, attendee, organizator, etc.).
 - id: readMore
   translation: Read more
 - id: viewAllPost
