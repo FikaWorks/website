@@ -181,13 +181,13 @@ a really simple way. Perfect for prototyping!
 
 Hope that helps, make sure to check the full example on Github:
 
-[https://github.com/thecloudnatives/deploy-kubernetes-addons-makefile-example][deploy-kubernetes-addons-makefile-example]
+[https://github.com/fikaworks/deploy-kubernetes-addons-makefile-example][deploy-kubernetes-addons-makefile-example]
 
 
 [ant]: https://ant.apache.org
 [aws-cloudformation]: https://aws.amazon.com/cloudformation/
 [bazel]: https://bazel.build
-[deploy-kubernetes-addons-makefile-example]: https://github.com/thecloudnatives/deploy-kubernetes-addons-makefile-example
+[deploy-kubernetes-addons-makefile-example]: https://github.com/fikaworks/deploy-kubernetes-addons-makefile-example
 [helm-charts]: https://github.com/helm/charts
 [helm]: https://helm.sh
 [kubernetes]: https://kubernetes.io

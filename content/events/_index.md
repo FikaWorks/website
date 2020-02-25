@@ -2,4 +2,4 @@
 title: "Events"
 ---
 
-Events where members of theCloudNatives participate (spearker, attendee, organizator, etc.).
+Events where members of FikaWorks participate (speaker, attendee, organizator, etc.).
