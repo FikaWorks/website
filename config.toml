@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "The Cloud Natives"
+title = "FikaWorks"
 theme = "meghna-hugo"
 pygmentsCodeFences = true
 pygmentsStyle = "algol_nu"
@@ -33,10 +33,10 @@ pygmentsStyle = "algol_nu"
 # Site params
 [params]
 home= "Home"
-logo = "images/logo.png"
+logo = "images/logo.svg"
 # Meta data
 description = "Independent collective of cloud native consultants based in the Netherlands"
-author = "theCloudNatives"
+author = "FikaWorks"
 
 custom_css = ["css/custom.css"]
 
@@ -54,13 +54,13 @@ custom_css = ["css/custom.css"]
     enable = true
     title = "Check out our work on github"
     content = ""
-    btnURL = "https://github.com/thecloudnatives"
+    btnURL = "https://github.com/fikaworks"
     btnText = "github"
 
     # footer
     [params.footer]
-        copyright = "The Cloud Natives"
-        copyrightURL = "http://thecloudnatives.com"
+        copyright = "FikaWorks"
+        copyrightURL = "http://fika.works"
 
         # social Icons
         # [[params.footer.socialIcon]]
