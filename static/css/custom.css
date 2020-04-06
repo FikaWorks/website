@@ -72,9 +72,12 @@ a:focus.logo, a:hover.logo {
 a:hover {
   margin: 0;
   color: black;
-  font-weight: bold;
 }
 
+.call-to-action .btn-main{
+       color: white;
+       font-weight:bold;
+}
 /*=================================================================
   Events sections
 ==================================================================*/
