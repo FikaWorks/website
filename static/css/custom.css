@@ -65,9 +65,11 @@ a:hover {
   background-color: #0D2A72
 }
 
+a:focus.logo, a:hover.logo {
+  margin-top: 10px;
+}
+
 a:hover {
-  padding: 12px 0;
-  width: 100%;
   margin: 0;
   color: black;
   font-weight: bold;
