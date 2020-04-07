@@ -14,13 +14,13 @@ pygmentsStyle = "algol_nu"
     weight = 3
 
     [[menu.nav]]
-    name = "Blog"
-    URL = "blog"
+    name = "Events"
+    URL = "events"
     weight = 6
 
     [[menu.nav]]
-    name = "Events"
-    URL = "events"
+    name = "Blog"
+    URL = "blog"
     weight = 7
 
     [[menu.nav]]
@@ -32,7 +32,7 @@ pygmentsStyle = "algol_nu"
 
 # Site params
 [params]
-home= "Home"
+# home= "Home"
 logo = "images/logo.svg"
 # Meta data
 description = "Independent collective of cloud native consultants based in the Netherlands"
