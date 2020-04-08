@@ -2,7 +2,7 @@
 title: "Cloud Partner Programs: A Numbers Game"
 date: 2020-04-07T18:18:17+02:00
 image: images/blog/cloud-partner-programs.jpg
-draft: true
+draft: false
 author: Jason Smith
 description: "All the top cloud providers currently have partner programs, but the tier systems 
 can be misleading and are not indicative of the quality of service you may receive from your vendors"
