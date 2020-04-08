@@ -15,12 +15,12 @@
 
 				{{"<!-- copyright -->" | safeHTML}}
 				<div class="copyright text-center">
-					<a href="{{ .Site.BaseURL | absURL }}">
-						<img src="{{ .Site.Params.logo | absURL }}" alt="The Cloud Natives" style="max-width: 128px;"/>
+					<a href="{{ .Site.BaseURL | relURL }}">
+						<img src="{{ .Site.Params.logo | relURL }}" alt="The Cloud Natives" style="max-width: 128px;"/>
 					</a>
 					<br>
 
-					<p><a href="{{ .Site.Params.footer.copyrightURL | absURL }}"> {{ with .Site.Params.footer.copyright }} {{ . }} {{ end }} </a>. Copyright &copy; <script>
+					<p><a href="{{ .Site.Params.footer.copyrightURL | relURL }}"> {{ with .Site.Params.footer.copyright }} {{ . }} {{ end }} </a>. Copyright &copy; <script>
 							document.write(new Date().getFullYear())
 						</script>. All Rights Reserved.</p>
 				</div>
@@ -33,26 +33,26 @@
 {{"<!-- Essential Scripts -->" | safeHTML}}
 
 		{{"<!-- Main jQuery -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/jquery/dist/jquery.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/jquery/dist/jquery.min.js" | relURL}}"></script>
 		{{"<!-- Bootstrap 4.3 + Popper -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/bootstrap/dist/js/bootstrap.bundle.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/bootstrap/dist/js/bootstrap.bundle.min.js" | relURL}}"></script>
 		{{"<!-- Slick Carousel -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/slick-carousel/slick/slick.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/slick-carousel/slick/slick.min.js" | relURL}}"></script>
 		{{"<!-- Portfolio Filtering -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/mixitup/mixitup.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/mixitup/mixitup.min.js" | relURL}}"></script>
 		{{"<!-- Magnific popup -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" | relURL}}"></script>
 		{{"<!-- Google Map API -->" | safeHTML}}
-		<script type="text/javascript"  src="{{ .Site.Params.gmapAPI | absURL }}"></script>
+		<script type="text/javascript"  src="{{ .Site.Params.gmapAPI | relURL }}"></script>
 		{{"<!-- Number Counter Script -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/count-to/jquery.countTo.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/count-to/jquery.countTo.js" | relURL}}"></script>
 		{{"<!-- wow.min Script -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/wow/dist/wow.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/wow/dist/wow.min.js" | relURL}}"></script>
 		{{"<!-- Scroll behavior polyfill -->" | safeHTML}}
 		{{ $scroll := resources.Get "js/scroll-behavior-polyfill.js" | minify}}
 		<script src="{{ $scroll.Permalink }}"></script>
 		{{"<!-- Sweet Alert -->" | safeHTML}}
-		<script type="text/javascript" src="{{ "/plugins/sweet-alert/sweetalert.min.js" | absURL}}"></script>
+		<script type="text/javascript" src="{{ "/plugins/sweet-alert/sweetalert.min.js" | relURL}}"></script>
 		{{"<!-- Custom js -->" | safeHTML}}
 		{{ $script := resources.Get "js/script.js" | minify}}
 		<script src="{{ $script.Permalink }}"></script>

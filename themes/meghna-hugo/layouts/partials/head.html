@@ -10,19 +10,19 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{" | "}}{{ .Site.Params.Description }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else}}{{ .Title }}{{" | "}}{{ .Site.Title }}{{ end }}</title>
 
     {{"<!-- Favicon -->" |safeHTML}}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | absURL }}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}"/>
 
     {{"<!-- CSS -->"|safeHTML}}
     {{"<!-- Fontawesome Icon font -->"|safeHTML}}
-    <link rel="stylesheet" href="{{"/plugins/themefisher-font/style.css" | absURL}}">
+    <link rel="stylesheet" href="{{"/plugins/themefisher-font/style.css" | relURL}}">
     {{"<!-- bootstrap.min css -->"|safeHTML}}
-    <link rel="stylesheet" href="{{"/plugins/bootstrap/dist/css/bootstrap.min.css" | absURL}}">
+    <link rel="stylesheet" href="{{"/plugins/bootstrap/dist/css/bootstrap.min.css" | relURL}}">
     {{"<!-- Animate.css -->"|safeHTML}}
-    <link rel="stylesheet" href="{{"/plugins/animate-css/animate.css" | absURL}}">
+    <link rel="stylesheet" href="{{"/plugins/animate-css/animate.css" | relURL}}">
     {{"<!-- Main Stylesheet -->"|safeHTML}}
     {{ $styles := resources.Get "/css/style.css" | minify}}
-    <link rel="stylesheet" href="{{ $styles.Permalink | absURL }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="{{ "/css/custom.css" | absURL }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "/css/custom.css" | relURL }}" />
 
 </head>
