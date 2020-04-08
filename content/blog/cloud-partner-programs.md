@@ -19,6 +19,7 @@ consideration when choosing your System Integrator (referred to as SI).
 ## The Current System
 
 There are several issues around the current partner systems.
+
 - Numbers are not a clear representation
 - Certification are not indicative of skill
 - Quantity of Opportunities does not indicate quality
