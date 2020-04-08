@@ -27,14 +27,14 @@
             {{ range .Site.Data.portfolio.portfolioItem }}
             <div class="mix col-lg-4 {{ .types }}">
                 <div class="portfolio-block">
-                    <img class="img-fluid" src="{{ .image | absURL}}" alt="work-image">
+                    <img class="img-fluid" src="{{ .image | relURL}}" alt="work-image">
                     <div class="caption">
 
-                        <a class="search-icon image-popup" data-effect="mfp-with-zoom" href="{{ .image | absURL}}"
+                        <a class="search-icon image-popup" data-effect="mfp-with-zoom" href="{{ .image | relURL}}"
                             data-lightbox="image-1">
                             <i class="{{ .icon }}"></i>
                         </a>
-                        <h4><a href="{{ .URL | absURL }}">{{ .title }}</a></h4>
+                        <h4><a href="{{ .URL | relURL }}">{{ .title }}</a></h4>
                         <p>{{ .description }}</p>
                     </div>
                 </div>

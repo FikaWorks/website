@@ -12,19 +12,18 @@
           </div>
         </div>
         <div class="row">
-
             {{ range .Data.Pages }}
             {{"<!-- single blog post -->" | safeHTML}}
             <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp" data-wow-duration="500ms">
                 <div class="post-block">
                     <div class="media-wrapper">
-                        {{ with .Params.image }}<img src="{{ . | absURL }}" alt="post-image" class="img-fluid">{{ end }}
+                        {{ with .Params.image }}<img src="{{ . | relURL }}" alt="post-image" class="img-fluid">{{ end }}
                     </div>
 
                     <div class="content">
-                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                        <h3><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></h3>
                         <p>{{ .Summary }}</p>
-                        <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+                        <a class="btn btn-transparent" href="{{ .Permalink | relURL }}">{{ i18n "readMore" }}</a>
                     </div>
                 </div>
             </article>
