@@ -3,8 +3,8 @@
         <div class="container">
 
                 {{"<!-- logo -->" | safeHTML}}
-                <a class="navbar-brand logo" href="{{ .Site.BaseURL | absURL }}">
-                        <img src="{{ .Site.Params.logo | absURL }}" alt="Logo" style="max-width: 128px;" />
+                <a class="navbar-brand logo" href="{{ .Site.BaseURL | relURL }}">
+                        <img src="{{ .Site.Params.logo | relURL }}" alt="Logo" style="max-width: 128px;" />
                         <span class="pl-2 font-weight-bold">{{ .Site.Title }}</span>
                 </a>
                 {{"<!-- /logo -->" | safeHTML}}

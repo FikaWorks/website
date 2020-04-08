@@ -10,7 +10,7 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{" | "}}{{ .Site.Params.Description }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else}}{{ .Title }}{{" | "}}{{ .Site.Title }}{{ end }}</title>
 
     {{"<!-- Favicon -->" |safeHTML}}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "/images/favicon.ico" | relURL }}"/>
 
     {{"<!-- CSS -->"|safeHTML}}
     {{"<!-- Fontawesome Icon font -->"|safeHTML}}
