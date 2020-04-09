@@ -1,13 +1,5 @@
-.post-single-content {
-  color: #fff;
-}
-
-h1 {
-  color: white;
-}
-
-.post-single-content a {
-  color: #FFC600;
+.navbar-brand.logo img {
+  max-width: 120px;
 }
 
 .post-single-content h2,
@@ -16,11 +8,6 @@ h1 {
 .post-single-content h5,
 .post-single-content h6 {
   margin-top: 2rem;
-}
-
-.post-single-content pre {
-  margin: 10px;
-  padding: 10px;
 }
 
 .call-to-action {
