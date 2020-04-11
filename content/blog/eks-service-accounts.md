@@ -4,12 +4,10 @@ date: 2020-04-11T07:39:44+02:00
 draft: false
 author: Jason Smith
 thumbnail: images/blog/eks-service-accounts-iam.jpg
-description: "Explaining AWS EKS's Service Account tool."
+description: "EKS Service Accounts and IAM Explained"
 tags: ["kubernetes", "AWS", "EKS", "ServiceAccounts"]
 ---
 
-
-# EKS Service Accounts and IAM Explained: The Good and The Bad
 
 AWS recently released The ability to add IAM permissions to pods.  For some, myself included, 
 this was a confusing implementation.
