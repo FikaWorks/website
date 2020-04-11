@@ -1,9 +1,7 @@
 ---
 title: "EKS Service Accounts"
 date: 2020-04-11T07:39:44+02:00
-draft: true
-
-
+draft: false
 author: Jason Smith
 thumbnail: images/blog/eks-service-accounts-iam.jpg
 description: "Explaining AWS EKS's Service Account tool."
