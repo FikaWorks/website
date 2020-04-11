@@ -12,7 +12,7 @@ pygmentsStyle = "algol_nu"
     name = "Services"
     URL = "services"
     weight = 3
-
+    
     [[menu.nav]]
     name = "Events"
     URL = "events"
