@@ -2,7 +2,7 @@
 title: "Deploying Kubernetes addons with Makefiles"
 date: 2019-11-08T14:39:16+01:00
 author: Etienne Tremel
-image: images/blog/deploying-kubernetes-addons-with-makefiles.jpg
+thumbnail: images/blog/deploying-kubernetes-addons-with-makefiles.jpg
 description: "Deploying Kubernetes addons using make and Makefile"
 tags: ["kubernetes", "deployment", "makefile", "cluster-addons"]
 ---

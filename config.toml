@@ -13,7 +13,7 @@ relativeURLS = true
     name = "Services"
     URL = "services"
     weight = 3
-
+    
     [[menu.nav]]
     name = "Events"
     URL = "events"
