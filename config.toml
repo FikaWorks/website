@@ -5,7 +5,7 @@ title = "FikaWorks"
 theme = "meghna-hugo"
 pygmentsCodeFences = true
 pygmentsStyle = "algol_nu"
-
+pygmentsUseClasses=true
 # Menu
 [menu]
     [[menu.nav]]
@@ -38,7 +38,7 @@ logo = "images/logo.svg"
 description = "Independent collective of cloud native consultants based in the Netherlands"
 author = "FikaWorks"
 
-custom_css = ["css/custom.css"]
+custom_css = ["css/custom.css", "css/syntax.css"]
 
     # Banner Section
     [params.banner]
