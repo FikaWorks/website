@@ -1,7 +1,7 @@
 ---
 title: "Cloud Partner Programs: A Numbers Game"
-date: 2020-04-07T18:18:17+02:00
-image: images/blog/cloud-partner-programs.jpg
+date: 2020-04-14T10:20:17+02:00
+thumbnail: "images/blog/cloud-partner-programs.jpg"
 draft: false
 author: Jason Smith
 description: "All the top cloud providers currently have partner programs, but the tier systems 
@@ -21,7 +21,7 @@ consideration when choosing your System Integrator (referred to as SI).
 There are several issues around the current partner systems.
 
 - Numbers are not a clear representation
-- Certification are not indicative of skill
+- Certifications are not indicative of skill
 - Quantity of Opportunities does not indicate quality
 
 ### It Is All About Ratios
