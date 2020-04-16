@@ -1,6 +1,6 @@
 ---
 title: "EKS Service Accounts Explained"
-date: 2020-04-14T17:39:44+02:00
+date: 2020-04-16T10:04:44+02:00
 draft: false
 author: Jason Smith
 thumbnail: images/blog/eks-service-accounts-iam.jpg
