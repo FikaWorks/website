@@ -46,7 +46,7 @@ but there is a follow up [PR](https://github.com/kubernetes/kubernetes/pull/8072
 rolled into Kubernetes 1.18!  That is great, but that means at this point AWS has rolled their own 
 OIDC provider for Service Accounts.  The actual code being added to Kubernetes seems to be solely 
 from Google engineers, which is disappointing.  AWS was involved in the discussion for the first 
-declined PR but it does not appear that they contributed anything to the code base.
+declined PR but it does not appear that they contributed anything to the code base, I may just be misinformed about that.
 
 ### The AWS SDK
 The final tooling needed for this to work was to update the SDKs.
@@ -224,7 +224,7 @@ Service Accounts are identities not permissions.  This is why you bind service a
 you can bind multiple roles to the same service account.  This is also how AWS IAM permissions work. 
 There is a clear separation between authentication and authorization.
 
-__They Misrepresent Permissions__
+__They Confuse Permissions__
 
 They imply that this creates some sort of one to one relationship between Service Accounts and
 IAM Roles.
@@ -269,3 +269,12 @@ EKS IAM permissions is a good approach, but has a few problems with it's impleme
 They are using a future feature of Kubernetes but they don't seem to have contributed those 
 efforts back to the community (at least from my research), and they confuse AuthN and AuthZ 
 with their documentation and tooling.
+
+## Disclaimer
+I had submitted a [pull request](https://github.com/aws/amazon-eks-pod-identity-webhook/pull/22)
+to the webhook that would change the role ARN placement from the ServiceAccount to
+environment variable of the container but ultimately it was rejected for lack of backwards
+compatibility.  More discussion can be found on this
+[issue](https://github.com/aws/amazon-eks-pod-identity-webhook/issues/20)
+and this
+[issue](https://github.com/aws/amazon-eks-pod-identity-webhook/issues/32).
