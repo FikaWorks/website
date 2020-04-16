@@ -50,7 +50,7 @@ declined PR but it does not appear that they contributed anything to the code ba
 
 ### The AWS SDK
 The final tooling needed for this to work was to update the SDKs.
-Normally the SDKs look in your .aws folder or in your AWS_* environment variables
+Normally the SDKs look in your ~/.aws folder or in your AWS_* environment variables
 to authenticate against the AWS API. 
 With these new projected service account tokens the SDK would look for two new environment 
 variables AWS_ROLE_ARN and AWS_WEB_IDENTITY_TOKEN_FILE.  These environment variables told the SDK 
