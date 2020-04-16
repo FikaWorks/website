@@ -230,6 +230,7 @@ They imply that this creates some sort of one to one relationship between Servic
 IAM Roles.
 In their [documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) 
 they state:
+
 > Credential isolation — A container can only retrieve credentials for the IAM role that is associated with the service account to which it belongs. 
 
 You could read that as whatever role you annotated to the service account is the only one the pod 
