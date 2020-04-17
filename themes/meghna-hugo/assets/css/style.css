@@ -1372,6 +1372,12 @@ a:hover {
   text-transform: capitalize;
 }
 
+.post-block .media-wrapper {
+  height: 180px;
+  background-size: cover;
+  background-position: center center;
+}
+
 .note .media-wrapper {
   border-bottom: 1px solid #4e595f;
 }

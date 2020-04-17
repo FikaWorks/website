@@ -5,6 +5,8 @@ title = "FikaWorks"
 theme = "meghna-hugo"
 pygmentsCodeFences = true
 pygmentsStyle = "algol_nu"
+pygmentsUseClasses=true
+
 
 # Menu
 [menu]
