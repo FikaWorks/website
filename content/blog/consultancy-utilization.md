@@ -1,7 +1,7 @@
 ---
 title: "Consultancy Utilization"
 date: 2020-04-21T07:30:59+02:00
-draft: true
+draft: false
 author: Jason Smith
 thumbnail: images/blog/consultancy-utilizations.jpg
 description: "How your system integrator's utilization numbers impacts your delivery."
