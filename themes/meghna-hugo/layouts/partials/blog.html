@@ -15,11 +15,11 @@
 
             {{ range first 3 (where .Site.RegularPages "Type" "in" "blog") }}
             {{"<!-- single blog post -->" | safeHTML}}
-            <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                <div class="post-block">
-                    <div class="media-wrapper">
-                        {{ with .Params.thumbnail }}<img src="{{ . | relURL }}" alt="post-image" class="img-fluid">{{ end }}
-                    </div>
+            <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp d-flex align-items-stretch" data-wow-duration="500ms">
+                <div class="post-block d-flex flex-column justify-content-between">
+                    {{ with .Params.thumbnail }}
+                    <div class="media-wrapper" style="background-image: url({{ . | relURL }})"></div>
+                    {{end }}
 
                     <div class="content">
                         <h3><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></h3>

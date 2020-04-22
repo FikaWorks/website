@@ -52,43 +52,40 @@ a:hover {
   background-color: #0D2A72
 }
 
-a:focus.logo, a:hover.logo {
-  margin-top: 10px;
-}
-
 a:hover {
-  margin: 0;
   color: black;
 }
 
 .call-to-action .btn-main{
-       color: white;
-       font-weight:bold;
+  color: white;
+  font-weight: bold;
 }
 /*=================================================================
   Events sections
 ==================================================================*/
 .list-group-item h5 {
-       color: black;
+  color: black;
 }
 
 .list-group-item time {
-       color: black;
+  color: black;
 }
 
 .all-events .btn-main{
-       background-color: #FFC600;
-       color: black;
-       font-weight:bold;
+  background-color: #FFC600;
+  color: black;
+  font-weight:bold;
 }
 
 /*=================================================================
   Posts sections
 ==================================================================*/
 .all-post .btn-main {
-       background-color: #9E007E;
-       color: white;
-       font-weight:bold;
-
+  background-color: #9E007E;
+  color: white;
+  font-weight:bold;
 }
 
+blockquote {
+  padding-left: 15px;
+}

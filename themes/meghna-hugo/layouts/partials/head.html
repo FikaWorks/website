@@ -47,11 +47,11 @@
     <meta name="twitter:card" content="summary"></meta>
     <meta property="og:description" content="{{ .Params.description }}">
 	<meta property="og:title" content="{{ .Params.title }} ">
-	<meta property="og:image" content="{{ .Params.thumbnail }}">
+	<meta property="og:image" content="{{ .Params.thumbnail | absURL }}">
 	<meta property="og:image:alt" content="{{ .Params.title }}">
 	<meta name="twitter:description" content="{{ .Params.description }}">
 	<meta name="twitter:title" content="{{ .Params.title }}">
-	<meta name="twitter:image" content="{{ .Params.thumbnail }}">
+	<meta name="twitter:image" content="{{ .Params.thumbnail | absURL }}">
 	<meta name="twitter:image:alt" content="{{ .Params.title }}">
 
     {{ $blog_styles := resources.Get "/css/blog.css" | minify}}
