@@ -36,7 +36,7 @@ Therefore we decided to create a new type of consulting company, following the m
 - create a strong brand
 - keep the people together
 - allow members to shape the future of the coop
-- become an example of how a company can operate in the interest of it’s member
+- become an example of how a company can operate in the interest of its members
 
 	 
 
