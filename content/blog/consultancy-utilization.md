@@ -50,7 +50,8 @@ Another very important reason you would maintain this reserve is anticipation of
 ![waiting for contract](/images/blog/utilization/10engineers-80-contract.png)
 
 Every consultancy tries to maintain a steady sales pipeline and they don't want to be
-left understaffed if a great opportunity comes knocking. If you are looking to grow
+left understaffed if a great opportunity comes knocking. When you do secure that contract and
+(if you are looking to grow)
 you will then add more engineers (if you can find them) so you are no longer operating at 
 100%.
 
@@ -91,9 +92,31 @@ So what is normally done, is what I like to call "engineer packing".
 
 This is where you take a few experts in their respective field and have them consult with
 the customer directly, sometimes moving them from project to project, while implementation
-is actually performed by people that are learning on the job.
+is actually performed by people that are learning that particular system on the job.
 
 ![engineer](/images/blog/utilization/engineer-packing.png)
 
-[WIP]
+You are now paying for talented engineers, but they just are not talented 
+in what you need.
+
+These issues exponentially grow as you deal with large international SIs which try to
+maximize profit by near shoring or off shoring the work being done. This can bring in a 
+large number of issues around hand off confusion, communication problems,
+hours dedicated, etc.
+
+This is further compounded by regional account relationships, profit allocations and their own 
+internal politics.  Which is all beyond the scope of this article.
+
+Of course there is finally the issue of the massive overhead these large SIs generate.  Every
+Non engineer in a large firm is someone you are paying for but is not generating value for
+your company.  That is not an indictment, that is how business is done, but it is something
+that should be considered before you sign a contract.
+
+## Conclusion
+
+Just like my previous article on [Cloud Partner Programs](/blog/cloud-partner-programs/) you have
+to find a way to vet the teams you are offered either through internal hiring, or by contracting
+someone to act as a liaison on your behalf.
+
+No one wants to [be the next Hertz](https://www.theregister.co.uk/2019/04/23/hertz_accenture_lawsuit/).
 
