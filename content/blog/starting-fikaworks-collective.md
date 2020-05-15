@@ -9,7 +9,7 @@ active in the cloud native area"
 tags: [ "collective", "fikaworks", "company", "coop", "entrepreneurship"]
 ---
 
-As of 13th of May 2020, we are officially registered as a coop with the Dutch chamber of commerce under the FikaWorks[^1] name. FikaWorks is a collective (a coop) of independent IT consultants from the Netherlands, active in the cloud native area. While everybody moved from employment into freelancing for his own reasons (freedom of choosing projects, financials, more free days, flexible schedule, tired of reporting to managers, etc.) there are common things that tie us together:
+As of 13th of May 2020, we are officially registered as a coop with the Dutch chamber of commerce under the FikaWorks[^1] name. FikaWorks is a collective (a coop) of independent IT consultants from the Netherlands, active in the cloud native area. While everybody moved from employment into freelancing for his own reasons (freedom of choosing projects, financials, more free days, flexible schedule, tired of reporting to managers etc.) there are common things that tie us together:
 
 - craftsmanship
 - community
@@ -45,4 +45,4 @@ _Notes:_
 
 [^2]:	Our logo was done by [ Asia Jackowska ](https://www.linkedin.com/in/asia-jackowska-39b827117/)
 
-[^3]:	Don’t use this as legal advice, please consult a specialist in case you want to follow the same path for starting a new coop.
+[^3]:	Don’t use this as legal advice, please consult a specialist in case you want to start a coop.
