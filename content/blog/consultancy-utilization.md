@@ -32,7 +32,7 @@ are sucking up revenue, because they have to be paid.
 ![20% loss](/images/blog/utilization/10engineers-80-cashflow.png)
 
 But it is all quite necessary. There are a lot of activities you need to engage in,
-to maintain a consultancy, to insure your engineers don't leave, to solidify your position
+to maintain a consultancy, to ensure your engineers don't leave, to solidify your position
 in the market, and to maintain your level of skill.
 
 So those 20% are doing things like:
