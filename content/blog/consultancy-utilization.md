@@ -1,6 +1,6 @@
 ---
 title: "Consultancy Utilization"
-date: 2020-04-21T07:30:59+02:00
+date: 2020-05-24T07:30:59+02:00
 draft: false
 author: Jason Smith
 thumbnail: images/blog/consultancy-utilizations.jpg
@@ -80,8 +80,7 @@ So lets says they are able to pull in a diverse set of contracts.
 
 ![100 engineers at 70%](/images/blog/utilization/100engineers-70.png)
 
-In the above graphic you can see 70% utilization.  That is not a bad number, considering
-this is just some random graphic I threw together.  Now lets consider your pipeline only sees
+In the above graphic you can see 70% utilization.  That is not a bad number, but it is also not great. Now lets consider your pipeline only sees
 demand for SAP and AWS.  With another contract unfulfilled because you don't have any AWS people
 left.
 
@@ -99,7 +98,9 @@ is actually performed by people that are learning that particular system on the 
 You are now paying for talented engineers, but they just are not talented 
 in what you need.
 
-These issues exponentially grow as you deal with large international SIs which try to
+# Overhead
+
+These issues exponentially grow as you deal with large international consultants which try to
 maximize profit by near shoring or off shoring the work being done. This can bring in a 
 large number of issues around hand off confusion, communication problems,
 hours dedicated, etc.
@@ -107,16 +108,24 @@ hours dedicated, etc.
 This is further compounded by regional account relationships, profit allocations and their own 
 internal politics.  Which is all beyond the scope of this article.
 
-Of course there is finally the issue of the massive overhead these large SIs generate.  Every
-Non engineer in a large firm is someone you are paying for but is not generating value for
-your company.  That is not an indictment, that is how business is done, but it is something
-that should be considered before you sign a contract.
+Of course there is finally the issue of the massive overhead these large consultants generate.  Every
+non-engineer in your tech consultancy is someone you are paying for but is not generating value for
+your company.  These sources of overhead eventually leads to diluting the talent
+pool further, because as a whole they should be figured into utilization.
 
-## Conclusion
+# Conclusion
 
 Just like my previous article on [Cloud Partner Programs](/blog/cloud-partner-programs/) you have
-to find a way to vet the teams you are offered either through internal hiring, or by contracting
-someone to act as a liaison on your behalf.
+to find a way to vet the teams you are offered either through hiring or contracting
+someone capable of vetting these teams.
 
-No one wants to [be the next Hertz](https://www.theregister.co.uk/2019/04/23/hertz_accenture_lawsuit/).
+Also take the time to evaluate the consultancy itself.  Check if their staff is 60% C level,
+operations, marketing, or anyone else that cannot deliver for you. These extra staff will
+either drive up costs or drive down quality, most likely both.
 
+# FikaWorks
+
+At FikaWorks we work as direct hires with your company, with little to no overhead.  We have no
+drive to grow because it is not incentivized. We do want to be gainfully employed, but we recognize
+brand trust is our best way to meet that goal.  This is why every time we consider a new member
+we recognize they must serve our brand, meaning we grow with great caution.
