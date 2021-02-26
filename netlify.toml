@@ -1,3 +1,3 @@
 [build]
 
-command = "npm ci --also=dev && hugo"
+command = "npm ci --also=dev && hugo version && hugo"
