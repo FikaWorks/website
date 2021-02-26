@@ -1,4 +1,4 @@
-baseURL = "https://fika.works/"
+baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "FikaWorks"
