@@ -3,19 +3,15 @@
 
 name = "FikaWarks"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = ""
 description = ""
-homepage = "http://example.com/"
+homepage = "https://www.fika.works"
 tags = []
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "FikaWorks"
+  homepage = "https://www.fika.works"
+[params]
+  hero_banner = ""

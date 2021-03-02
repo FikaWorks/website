@@ -1,3 +1,14 @@
-<header class="w-full bg-red-300">
-    <h1 class="text-center">Welcome to FikaWorks Header</h1>
+<header>
+    <nav class="flex items-center justify-between p-6 container mx-auto">
+        <div  class="h-10 w-10">
+            <a href="{{ .Site.BaseURL | relURL }}">
+                <img src="{{ .Site.Params.logo | relURL }}" alt="FikaWorks" />
+            </a>
+        </div>
+        <div class="text-lg text-gray-600 hidden lg:flex">
+            {{ range $.Site.Menus.nav }}
+                 <a href="{{ .URL | relURL }}" class="block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10">{{ .Name }}</a>
+            {{ end }}
+        </div>
+    </nav>
 </header>

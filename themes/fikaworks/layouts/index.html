@@ -1,6 +1,9 @@
 {{ define "main" }}
   {{ .Content }}
 
-  {{ partial "banner.html" }}
-  {{ partial "services.html" }}
+  {{ partial "hero.html" . }}
+  {{ partial "services.html" . }}
+  {{ partial "blog.html" . }}
+  {{ partial "checkout-work.html" . }}
+  {{ partial "contact.html" . }}
 {{ end }}

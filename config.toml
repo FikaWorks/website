@@ -12,12 +12,12 @@ pygmentsUseClasses=true
 [menu]
     [[menu.nav]]
     name = "Services"
-    URL = "services"
+    URL = "/#services"
     weight = 3
-    
+
     [[menu.nav]]
     name = "Events"
-    URL = "events"
+    URL = "/#events"
     weight = 6
 
     [[menu.nav]]
@@ -34,22 +34,12 @@ pygmentsUseClasses=true
 
 # Site params
 [params]
-# home= "Home"
-logo = "images/logo.svg"
-# Meta data
-description = "Independent collective of cloud native consultants based in the Netherlands"
-author = "FikaWorks"
+  logo = "images/logo.svg"
+  description = "Independent collective of cloud native consultants based in the Netherlands"
+  author = "FikaWorks"
+  hero_banner = "images/bump.jpg"
 
-custom_css = ["css/custom.css"]
-
-    # Banner Section
-    [params.banner]
-    enable = true
-    heading = ""
-    content= "We're an independent collective of cloud native consultants based in the Netherlands"
-    btn = true
-    btnText="Blog"
-    btnURL="/blog"
+  custom_css = ["css/custom.css"]
 
     # call to action
     [params.cta]
@@ -63,32 +53,3 @@ custom_css = ["css/custom.css"]
     [params.footer]
         copyright = "FikaWorks"
         copyrightURL = "http://fika.works"
-
-        # social Icons
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-facebook"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-twitter"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-google-outline"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-youtube"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-linkedin"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-dribbble-outline"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-pinterest-outline"
-        # url = "#"
