@@ -4,9 +4,11 @@
         <div class="flex justify-around">
             {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" "blog" )}}
                 <div class="flex flex-col w-1/3 box-border m-6 shadow overflow-hidden sm:rounded-md justify-between">
-                    {{ with .Params.thumbnail }}
+                    {{ if .Params.thumbnail }}
                     <div class="w-full h-2/3 overflow-hidden">
-                        <img src="{{ . | relURL }}" class="object-fill" />
+                        {{ $src := .Page.Resources.GetMatch .Params.thumbnail }}
+                        {{ $small := $src.Resize "320x q85 Box" }}
+                        <img class="object-fill" alt="{{ .Title }}" src="{{ $small.RelPermalink }}" >
                     </div>
                     {{end }}
                     <h4 class="px-4 py-4 font-medium">{{ .Title }}</h4>
