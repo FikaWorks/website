@@ -27,7 +27,7 @@ pygmentsUseClasses=true
 
     [[menu.nav]]
     name = "Contact"
-    URL = "contact-us"
+    URL = "/#contact"
     weight = 8
 
 [taxonomies]

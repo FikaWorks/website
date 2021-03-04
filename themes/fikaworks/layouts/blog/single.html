@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="section">
+<section class="pt-24">
     <article>
         <div class="max-w-4xl mx-auto mt-20 text-center">
             <h1 class="mt-2 text-6xl font-extrabold tracking-tight text-gray-900">{{ .Title }}</h1>
@@ -16,7 +16,7 @@
         {{ end }}
 
         <div class="max-w-2xl mx-auto">
-            <div class="text-base antialiased leading-relaxed">
+            <div class="text-base antialiased leading-relaxed prose lg:prose-xl">
                 {{ .Content }}
             </div>
             {{ if .Site.Data.blog.sharing}}
