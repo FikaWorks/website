@@ -1,6 +1,6 @@
-<section id="posts" class="py-20 bg-purple bg-gradient-to-r from-purple-500 via-purple-300 to-purple">
+<section id="posts" class="lg:py-20 py-10 bg-purple bg-gradient-to-r from-purple-500 via-purple-300 to-purple">
     <div class="max-w-6xl mx-auto lg:p-0 p-6">
-        <h2 class="mt-2 text-6xl font-extrabold tracking-tight text-white">Latest posts</h2>
+        <h2 class="mt-2 text-xl lg:text-6xl font-extrabold tracking-tight text-white">Latest posts</h2>
         <div class="flex flex-col lg:flex-row justify-between">
             {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" "blog" )}}
                 <div class="flex flex-col lg:m-6 my-6 w-full bg-white">

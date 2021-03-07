@@ -28,7 +28,7 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
   purge: {
-    enabled: true,
+    enabled: process.env.HUGO_ENV === 'production',
     content: [
       './**/*.html'
     ]
