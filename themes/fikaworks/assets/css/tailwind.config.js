@@ -27,10 +27,10 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
-  // purge: {
-  //   enabled: true,
-  //   content: [
-  //     './**/*.html'
-  //   ]
-  // }
+  purge: {
+    enabled: true,
+    content: [
+      './**/*.html'
+    ]
+  }
 }
