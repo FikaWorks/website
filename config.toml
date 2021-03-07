@@ -16,11 +16,6 @@ pygmentsUseClasses=true
     weight = 3
 
     [[menu.nav]]
-    name = "Events"
-    URL = "/#events"
-    weight = 6
-
-    [[menu.nav]]
     name = "Blog"
     URL = "blog"
     weight = 7
