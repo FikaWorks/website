@@ -32,7 +32,7 @@ pygmentsUseClasses=true
   logo = "images/logo.svg"
   description = "Independent collective of cloud native consultants based in the Netherlands"
   author = "FikaWorks"
-  hero_banner = "images/bump.jpg"
+  hero_banner = "images/logo-fikaworks-black-transparent.png"
 
   custom_css = ["css/custom.css"]
 
@@ -46,5 +46,5 @@ pygmentsUseClasses=true
 
     # footer
     [params.footer]
-        copyright = "FikaWorks"
-        copyrightURL = "http://fika.works"
+      copyright = "FikaWorks"
+      copyrightURL = "http://fika.works"
