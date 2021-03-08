@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <section class="pt-24">
-    <article class="lg:p-0 p-5">
-        <div class="max-w-4xl mx-auto mt-20 text-center">
+    <article>
+        <div class="lg:p-0 p-5 max-w-4xl border-box mx-auto mt-20 text-center">
             <h1 class="mt-2 text-6xl font-extrabold tracking-tight text-gray-900">{{ .Title }}</h1>
             <p class="max-w-2xl mt-4 text-xl text-gray-500 lg:mx-auto">{{ dateFormat "January 2, 2006" .Date }} — by {{ .Params.author }}</p>
         </div>
@@ -15,7 +15,7 @@
         </div>
         {{ end }}
 
-        <div class="max-w-2xl mx-auto">
+        <div class="lg:p-0 p-5 border-box max-w-2xl mx-auto">
             <div class="text-base antialiased leading-relaxed prose lg:prose-xl">
                 {{ .Content }}
             </div>
