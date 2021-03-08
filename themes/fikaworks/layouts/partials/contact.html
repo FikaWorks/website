@@ -1,30 +1,41 @@
-<section id="contact" class="lg:py-20 py-10">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="lg:text-6xl text-xl lg:-mr-10 font-extrabold tracking-tight lg:text-right text-center text-purple">Get in touch</h2>
-        <p class="lg:text-right text-center">Find out how FikaWorks can benefit you!</p>
-        <div class="lg:flex mt-10 lg:mt-5">
-            <div class="w-full lg:w-1/2 lg:p-6 text-center lg:text-left lg:-mt-10">
-                <h2 class="lg:text-4xl text-md font-extrabold tracking-tight lg:text-purple">Contact Details</h2>
+<section id="contact" class="lg:py-20 py-10 bg-gradient-to-r from-aqua via-aqua-300 to-aqua-500 text-white">
+    <div class="max-w-6xl mx-auto xl:p-0 p-6">
+        <h2 class="lg:text-6xl text-4xl xl:-mr-10 mr-0 font-extrabold tracking-tight lg:text-right text-left">Get in touch</h2>
+        <p class="lg:text-right text-left">Find out how FikaWorks can benefit you!</p>
+        <div class="flex flex-col lg:flex-row justify-between mt-10 lg:mt-5">
+            <div class="w-full xl:w-1/3 lg:w-1/2 border-box lg:pr-10 pr-0 text-center lg:text-left">
+                <h2 class="lg:text-4xl text-md font-extrabold tracking-tight">Contact Details</h2>
+                <p>Collective FikaWorks</p>
                 <p>Amsterdam, The Netherlands</p>
                 <hr class="my-5" />
                 <p>Email: info@fika.works</p>
                 <p>Social media: <a href="https://twitter.com/FikaWorks" target="blank">@FikaWorks</a> | <a href="https://www.linkedin.com/company/fikaworks" target="blank">LinkedIn</a> | <a href="https://github.com/FikaWorks/" target="blank">Github</a></p>
             </div>
-            <div class="w-full lg:w-1/2">
-                <form action="#" class="bg-gray-100 rounded-md p-8">
+            <div class="w-full xl:w-1/3 lg:w-1/2 mt-10 lg:mt-0">
+                <form name="contact" id="contact-form" method="post" data-netlify="true" role="form">
                     <div class="mb-6">
-                        <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Your name" required>
+                        <input type="text" id="name" class="mt-1 block w-full border-none px-5 py-3 rounded-md text-gray-700 focus:ring-0 focus:shadow-lg" placeholder="Your name" required>
                     </div>
                     <div class="mb-6">
-                        <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Your email" required>
+                        <input type="email" id="email" class="mt-1 block w-full border-none px-5 py-3 rounded-md text-gray-700 focus:ring-0 focus:shadow-lg" placeholder="Your email" required>
                     </div>
                     <div class="mb-6">
-                        <input type="text" id="subject" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Subject" required>
+                        <input type="text" id="subject" class="mt-1 block w-full border-none px-5 py-3 rounded-md text-gray-700 focus:ring-0 focus:shadow-lg" placeholder="Subject" required>
                     </div>
                     <div class="mb-8">
-                        <textarea rows="6" placeholder="Message" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="message" id="message"></textarea>
+                        <textarea rows="6" placeholder="Message" class="mt-1 block w-full border-none px-5 py-3 rounded-md text-gray-700 focus:ring-0 focus:shadow-lg" name="message" id="message"></textarea>
                     </div>
-                    <button type="submit" class="mt-1 block p-4 w-full bg-purple text-white rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Request Demo</button>
+                    <button type="submit" id="contact-submit" class="inline-flex items-center justify-center px-5 py-3 border border-transparent shadow-lg ring-1 ring-white hover:bg-aqua hover:shadow-2xl text-base font-medium rounded-md text-aqua-500 hover:text-white bg-white">Submit</button>
+
+                    <div class="mt-8">
+                        <div id="mail-success" class="hidden bg-yellow-300 border-yellow-500 border-2 text-white rounded-md px-5 py-3">
+                            Thank you. The Mailman is on His Way :)
+                        </div>
+
+                        <div id="mail-fail" class="hidden bg-red-300 border-red-400 border-2 text-white rounded-md px-5 py-3">
+                            Sorry, don't know what happened. Try later :(
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
