@@ -3,10 +3,21 @@ languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "FikaWorks"
 theme = "fikaworks"
-pygmentsCodeFences = true
-pygmentsStyle = "algol_nu"
-pygmentsUseClasses=true
+pygmentsUseClasses = false
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 2
 
 # Menu
 [menu]
