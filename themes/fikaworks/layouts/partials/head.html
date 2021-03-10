@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
     {{ end }}
 
+    {{ $scripts := resources.Get "js/main.js" | js.Build | minify }}
+    <script src="{{ $scripts.Permalink }}"></script>
+
     {{- if and (eq .Type "blog") .IsPage }}
     <meta name="twitter:card" content="summary" />
     <meta property="og:description" content="{{ .Params.description }}" />
