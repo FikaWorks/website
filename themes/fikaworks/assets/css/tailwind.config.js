@@ -19,10 +19,21 @@ module.exports = {
           700: '#cc830e',
           DEFAULT: '#ffc600'
         },
+      },
+      animation: {
+        fadeIn: "fadeIn 1s ease-in forwards"
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        }
       }
     }
   },
-  variants: {},
+  variants: {
+    animation: ["motion-safe"]
+  },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
