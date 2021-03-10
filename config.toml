@@ -1,24 +1,30 @@
-baseURL = "https://fika.works/"
+baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "FikaWorks"
-theme = "meghna-hugo"
-pygmentsCodeFences = true
-pygmentsStyle = "algol_nu"
-pygmentsUseClasses=true
+theme = "fikaworks"
+pygmentsUseClasses = false
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 2
 
 # Menu
 [menu]
     [[menu.nav]]
     name = "Services"
-    URL = "services"
+    URL = "/#services"
     weight = 3
-    
-    [[menu.nav]]
-    name = "Events"
-    URL = "events"
-    weight = 6
 
     [[menu.nav]]
     name = "Blog"
@@ -27,29 +33,19 @@ pygmentsUseClasses=true
 
     [[menu.nav]]
     name = "Contact"
-    URL = "contact-us"
+    URL = "/#contact"
     weight = 8
 
 [taxonomies]
 
 # Site params
 [params]
-# home= "Home"
-logo = "images/logo.svg"
-# Meta data
-description = "Independent collective of cloud native consultants based in the Netherlands"
-author = "FikaWorks"
+  logo = "images/logo.svg"
+  description = "Independent collective of cloud native consultants based in the Netherlands"
+  author = "FikaWorks"
+  hero_banner = "images/logo-fikaworks-black-transparent.png"
 
-custom_css = ["css/custom.css"]
-
-    # Banner Section
-    [params.banner]
-    enable = true
-    heading = ""
-    content= "We're an independent collective of cloud native consultants based in the Netherlands"
-    btn = true
-    btnText="Blog"
-    btnURL="/blog"
+  custom_css = ["css/custom.css"]
 
     # call to action
     [params.cta]
@@ -61,34 +57,5 @@ custom_css = ["css/custom.css"]
 
     # footer
     [params.footer]
-        copyright = "FikaWorks"
-        copyrightURL = "http://fika.works"
-
-        # social Icons
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-facebook"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-twitter"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-google-outline"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-youtube"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-linkedin"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-dribbble-outline"
-        # url = "#"
-
-        # [[params.footer.socialIcon]]
-        # icon = "tf-ion-social-pinterest-outline"
-        # url = "#"
+      copyright = "FikaWorks"
+      copyrightURL = "http://fika.works"

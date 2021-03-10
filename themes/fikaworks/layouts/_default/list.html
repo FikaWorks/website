@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<section class="py-24 lg:px-0 px-6">
+    <div class="max-w-4xl mx-auto mt-20 text-center">
+        <h1 class="mt-2 text-6xl font-extrabold tracking-tight text-gray-900">{{ .Title }}</h1>
+        <p class="mt-6">{{ .Content }}</p>
+    </div>
+    <div class="max-w-6xl mx-auto my-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
+            {{ range .Data.Pages }}
+                <div class="flex flex-col w-full lg:m-6 my-6 bg-white">
+                    {{ if .Params.thumbnail }}
+                    <a href="{{ .Permalink | relURL }}" title="{{ .Title }}" class="w-full lg:h-36 h-48 overflow-hidden">
+                        {{ $src := .Page.Resources.GetMatch .Params.thumbnail }}
+                        {{ $small := $src.Resize "320x q85 Box" }}
+                        <img class="object-cover object-center h-full w-full" alt="{{ .Title }}" src="{{ $small.RelPermalink }}" >
+                    </a>
+                    {{end }}
+                    <div class="p-4 flex-grow">
+                        <a href="{{ .Permalink | relURL }}" title="{{ .Title }}">
+                            <h5 class="font-medium">{{ .Title }}</h5>
+                            <p class="text-sm">— by {{ .Params.author }}</p>
+                        </a>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}
