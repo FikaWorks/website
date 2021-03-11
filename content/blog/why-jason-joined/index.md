@@ -2,7 +2,7 @@
 title: "Why I joined FikaWorks"
 date: 2021-03-10T14:00:00+01:00
 author: Jason Smith
-thumbnail: images/blog/why-jason-joined.jpg
+thumbnail: images/why-jason-joined.jpg
 description: "Why Jason joined FikaWorks"
 tags: ["cooperative", "cloud native", "contractor"]
 ---
@@ -33,11 +33,11 @@ I don't like being driven by growth just to grow, so my salary can grow in pathe
 have empty leadership positions or small bits of equity dangled in front of my face, 
 while I finance someone else's "vision".
 
-I hate my labor paying for some C-levels vanity project.
+I don't like my labor paying for some C-levels vanity project.
 
-I hate "corporate career coaching" and I think it is degrading.
+I don't like "corporate career coaching" and I think it is degrading.
 
-I hate forced socialization Friday beer and wine.
+I don't like forced socialization Friday beer and wine.
 
 ## What I enjoy
 
@@ -82,11 +82,11 @@ decides we should broadcast our brand we all contribute financial and labor effo
 I love being democratic. I enjoy that no one person can by force of will make FikaWorks
 into something it is not.
 
-### Is is Open Sourcey
+### It is "Open Sourcey"
 
-Interestingly if an engineer came to us and decided we were not a cultural fit or if their
-domain of skill was not a great fit. We are actually willing and able to take our model
-and show them how we built it. We encourage others to take this and build their own 
+Interestingly, if an engineer came to us and decided we were not a cultural fit or if their
+domain of skill was not a great fit, we are open to sharing our model,
+and showing them how we built it. We encourage others to take this and build their own 
 FikaWorks, anyone can fork FikaWorks, and we will share our lessons learned.
 
 It may be counterintuitive to some, but as a founder, I enjoy that eventually FikaWorks is not just
