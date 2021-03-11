@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicons/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="&nbsp;"/>
+    <meta name="application-name" content="{{ .Site.Title }}"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="/images/favicons/mstile-70x70.png" />
@@ -40,14 +40,19 @@
     <script src="{{ $scripts.Permalink }}"></script>
 
     {{- if and (eq .Type "blog") .IsPage }}
-    <meta name="twitter:card" content="summary" />
-    <meta property="og:description" content="{{ .Params.description }}" />
-    <meta property="og:title" content="{{ .Params.title }}" />
-    <meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
-    <meta property="og:image:alt" content="{{ .Params.title }}" />
-    <meta name="twitter:description" content="{{ .Params.description }}" />
-    <meta name="twitter:title" content="{{ .Params.title }}" />
-    <meta name="twitter:image" content="{{ .Params.thumbnail | absURL }}" />
-    <meta name="twitter:image:alt" content="{{ .Params.title }}" />
+    {{ $thumbnail := .Page.Resources.GetMatch .Params.thumbnail }}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Params.title }}">
+    <meta property="og:description" content="{{ .Params.description }}">
+    <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:title" content="{{ .Params.title }}">
+    <meta property="twitter:description" content="{{ .Params.description }}">
+    <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}">
     {{- end }}
 </head>
