@@ -1,0 +1,8 @@
+<section id="hero" class="relative bg-white min-w-screen min-h-screen flex items-center justify-center bg-gray">
+    <div class="mx-auto py-12 px-8 sm:px-6 lg:py-16 lg:px-8 text-center">
+        {{ $img := resources.Get $.Site.Params.hero_banner }}
+        {{ $small := $img.Resize "544x png" }}
+        <img class="max-w-1/2 container mx-auto" src="{{ $small.RelPermalink }}" />
+    </div>
+    <div class="absolute bottom-5 container mx-auto text-center">&#9660;</div>
+</section>

@@ -1,0 +1,30 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "landing page | blog | runs on [Netlify](https://Netlify.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FikaWorks/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FikaWorks/website/issues"
+  },
+  "homepage": "https://github.com/FikaWorks/website#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.4",
+    "intersection-observer": "^0.12.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "tailwindcss": "^2.0.3"
+  }
+}
