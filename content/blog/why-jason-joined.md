@@ -23,8 +23,8 @@ I don't like being assigned to clients I cannot help because:
 - A deal has been negotiated where we are woefully understaffed
 - A deal has been negotiated where we are woefully underskilled
 - being rotated off a client where I am doing good work,
-because we are needed to fill a gap somewhere else, or because they pay more
-- The lead came through a cloud provider (so that is really the customer)
+because we are needed to fill a gap somewhere else, or because the other client pays more
+- The lead came through a vendor (so that is really the customer)
 
 I don't like to look at the bill our company charges the client and being acutely
 aware that I won't see half of it, when I am the one bringing the value.
