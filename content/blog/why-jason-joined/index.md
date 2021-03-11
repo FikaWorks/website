@@ -17,7 +17,7 @@ So this is why I joined FikaWorks
 I will unfortunately start with some negative experiences I have had.
 
 I don't like being assigned to clients I cannot help because:
-- our company needs to meet its [utilization numbers](consultancy-utilization)
+- our company needs to meet its [utilization numbers](../consultancy-utilization)
 - some sales agent sold our abilities as something they are not 
 - some sales agent sold a pattern that is a poor fit for the customer
 - A deal has been negotiated where we are woefully understaffed
