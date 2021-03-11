@@ -3,7 +3,7 @@ title: "Why I joined FikaWorks"
 date: 2021-03-10T14:00:00+01:00
 author: Jason Smith
 thumbnail: images/why-jason-joined.jpg
-description: "Why Jason joined FikaWorks"
+description: "A brief exploration of why I joined this effort we call FikaWorks"
 tags: ["cooperative", "cloud native", "contractor"]
 ---
 
