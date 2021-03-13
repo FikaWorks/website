@@ -1,4 +1,4 @@
-<section id="hero" class="relative bg-white min-w-screen min-h-screen flex items-center justify-center bg-gray">
+<section id="hero" class="relative bg-white min-w-screen min-h-screen flex items-center justify-center bg-gray overflow-hidden">
     <div class="relative z-10 mx-auto py-12 px-8 sm:px-6 lg:py-16 lg:px-8 text-center">
         {{ $logo_img := resources.Get $.Site.Params.hero_logo }}
         {{ $logo := $logo_img.Resize "544x png" }}
