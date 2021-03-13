@@ -44,7 +44,8 @@ canonifyURLs = true
   logo = "images/logo.svg"
   description = "Independent collective of cloud native consultants based in the Netherlands"
   author = "FikaWorks"
-  hero_banner = "images/logo-fikaworks-black-transparent.png"
+  hero_logo = "images/logo-fikaworks-black-transparent.png"
+  hero_banner = "images/bump-cropped.jpg"
 
   custom_css = ["css/custom.css"]
 
