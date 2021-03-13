@@ -9,7 +9,7 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-command = "HUGO_BASEURL=$DEPLOY_PRIME_URL npm ci --also=dev && hugo version && hugo"
+command = "npm ci --also=dev && hugo version && hugo -b $DEPLOY_URL"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.81.0"
