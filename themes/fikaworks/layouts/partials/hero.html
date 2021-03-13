@@ -8,9 +8,9 @@
     <div class="absolute inset-0">
         {{ if $.Site.Params.hero_banner }}
             {{ $img := resources.Get $.Site.Params.hero_banner }}
-            {{ $img := $img | images.Filter (images.GaussianBlur 40) (images.Pixelate 8) }}
+            {{ $img := $img | images.Filter (images.GaussianBlur 10) (images.Pixelate 8) }}
             {{ $small := $img.Resize "1200x q85 Box" }}
-            <img class="min-w-full min-h-full object-cover opacity-75" alt="FikaWorks, we are the next wave of Cloud Native Consultants" src="{{ $small.RelPermalink }}" >
+            <img class="min-w-full min-h-full object-cover opacity-60" alt="FikaWorks, we are the next wave of Cloud Native Consultants" src="{{ $small.RelPermalink }}" >
         {{ end }}
     </div>
 </section>
