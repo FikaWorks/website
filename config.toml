@@ -42,7 +42,7 @@ canonifyURLs = true
 # Site params
 [params]
   logo = "images/logo.svg"
-  description = "Independent collective of cloud native consultants based in the Netherlands"
+  description = "We are a collective of independent cloud native consultants based across Europe. We guide our clients on their journey into cloud computing."
   author = "FikaWorks"
   hero_logo = "images/logo-fikaworks-black-transparent.png"
   hero_banner = "images/bump-cropped.jpg"
