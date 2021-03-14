@@ -46,7 +46,7 @@ canonifyURLs = true
   author = "FikaWorks"
   hero_logo = "images/logo-fikaworks-black-transparent.png"
   hero_banner = "images/bump-cropped.jpg"
-
+  blogdescription = "Welcome to our blog where we share our thoughts on technology, the cloud and building a cooperative"
   custom_css = ["css/custom.css"]
 
     # call to action
