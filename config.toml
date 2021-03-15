@@ -37,6 +37,12 @@ canonifyURLs = true
     URL = "/#contact"
     weight = 8
 
+    [[menu.nav]]
+    name = "Members"
+    URL = "members"
+    weight = 9
+
+
 [taxonomies]
 
 # Site params
