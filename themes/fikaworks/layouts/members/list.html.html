@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="py-24 lg:px-0 px-6">
+    <div class="max-w-4xl mx-auto mt-20 text-center">
+        <h1 class="mt-2 text-6xl font-extrabold tracking-tight text-gray-900">{{ .Title }}</h1>
+        <p class="mt-6">{{ .Content }}</p>
+    </div>
+    <div class="max-w-6xl mx-auto my-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
+            {{ range .Data.Pages }}
+
+		<div class="bg-gray-100 p-8">
+                        {{ $src := .Page.Resources.GetMatch .Params.thumbnail }}
+                        {{ $small := $src.Resize "320x q85 Box" }}
+
+			<!--<a href="{{ .Permalink | relURL }}" title="{{ .Title }}">-->
+	  			<img class="w-100 h-100 rounded-full mx-auto" 
+					alt="{{ .Title }}" src="{{ $small.RelPermalink }}" >
+	  			<div class="pt-6 text-center space-y-4">
+					<p class="text-lg font-semibold">
+						{{ .Params.name }}
+					</p>
+					<p class="text-lg">
+						({{ .Params.member_status }})
+					</p>
+					<div class="text-cyan-600 font-semibold">
+						Specialties:
+					</div>
+					<div class="text-cyan-600">
+						{{ .Params.specialties }}
+					</div>
+		  		</div>
+			<!--</a>-->
+		</div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ end }}
