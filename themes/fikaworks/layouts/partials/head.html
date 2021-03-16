@@ -35,9 +35,9 @@
     <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.RelPermalink }}" />
   {{ else }}
     {{ $scripts := $scripts | minify | fingerprint }}
-    <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.Permalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
+    <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
     {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" />
+    <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
   {{ end }}
 
   {{- if and (eq .Type "blog") .IsPage }}
