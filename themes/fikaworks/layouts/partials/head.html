@@ -1,6 +1,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="{{ if (eq .RelPermalink `/blog/`) }}{{ .Site.Params.blogdescription }}{{ else if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
+    <meta name="description" content="{{ if (eq .RelPermalink `/blog/`) }}{{ .Site.Params.blogdescription }}{{ else if (eq .RelPermalink `/members/`) }}{{ .Site.Params.membersdescription }}{{ else if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
     <meta name="author" content="{{ with .Params.author }}{{ . }}{{else}}{{ with .Site.Params.author}}{{ . }}{{ end }}{{end}}">
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else}}{{ .Title }}{{" | "}}{{ .Site.Title }}{{ end }}</title>
