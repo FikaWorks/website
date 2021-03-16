@@ -40,6 +40,13 @@ module.exports = {
   ],
   purge: {
     enabled: process.env.HUGO_ENV === 'production',
+    options: {
+      // whitelist animation related classes that are injected by javascript
+      safelist: [
+        'opacity-0',
+        /^motion-safe/
+      ]
+    },
     content: [
       './**/*.html'
     ]

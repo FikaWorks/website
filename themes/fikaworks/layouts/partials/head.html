@@ -1,11 +1,11 @@
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="{{ if (eq .RelPermalink `/blog/`) }}{{ .Site.Params.blogdescription }}{{ else if (eq .RelPermalink `/members/`) }}{{ .Site.Params.membersdescription }}{{ else if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
-    <meta name="author" content="{{ with .Params.author }}{{ . }}{{else}}{{ with .Site.Params.author}}{{ . }}{{ end }}{{end}}">
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ if (eq .RelPermalink `/blog/`) }}{{ .Site.Params.blogdescription }}{{ else if (eq .RelPermalink `/members/`) }}{{ .Site.Params.membersdescription }}{{ else if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}" />
+    <meta name="author" content="{{ with .Params.author }}{{ . }}{{else}}{{ with .Site.Params.author}}{{ . }}{{ end }}{{end}}" />
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else}}{{ .Title }}{{" | "}}{{ .Site.Title }}{{ end }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png" />
@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/images/favicons/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="{{ .Site.Title }}"/>
+    <meta name="application-name" content="{{ .Site.Title }}" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="/images/favicons/mstile-70x70.png" />
@@ -28,33 +28,32 @@
     <meta name="msapplication-wide310x150logo" content="/images/favicons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/images/favicons/mstile-310x310.png" />
 
-    {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-    {{ if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-    {{ else }}
+  {{ $scripts := resources.Get "js/main.js" | js.Build }}
+  {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{ if .Site.IsServer }}
+    <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.RelPermalink }}"></script>
+    <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.RelPermalink }}" />
+  {{ else }}
+    {{ $scripts := $scripts | minify | fingerprint }}
+    <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
     {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" 
-    	integrity="{{ $styles.Data.Integrity }}" 
-	crossorigin="anonymous">
-    {{ end }}
+    <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+  {{ end }}
 
-    {{ $scripts := resources.Get "js/main.js" | js.Build | minify }}
-    <script src="{{ $scripts.Permalink }}"></script>
-
-    {{- if and (eq .Type "blog") .IsPage }}
+  {{- if and (eq .Type "blog") .IsPage }}
     {{ $thumbnail := .Page.Resources.GetMatch .Params.thumbnail }}
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:title" content="{{ .Params.title }}">
-    <meta property="og:description" content="{{ .Params.description }}">
-    <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:title" content="{{ .Params.title }}" />
+    <meta property="og:description" content="{{ .Params.description }}" />
+    <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ .Permalink }}">
-    <meta property="twitter:title" content="{{ .Params.title }}">
-    <meta property="twitter:description" content="{{ .Params.description }}">
-    <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}">
-    {{- end }}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ .Permalink }}" />
+    <meta property="twitter:title" content="{{ .Params.title }}" />
+    <meta property="twitter:description" content="{{ .Params.description }}" />
+    <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}" />
+  {{- end }}
 </head>
