@@ -4,8 +4,15 @@
         <h1 class="mt-2 text-6xl font-extrabold tracking-tight text-gray-900">{{ .Title }}</h1>
         <p class="mt-6">{{ .Content }}</p>
     </div>
+    <div class="max-w-4xl mx-auto mt-20 text-center">
+		<div id="members-key" class="font-semibold">
+			<span class="founder"> founder </span> | 
+			<span class="full"> full member </span> | 
+			<span class="incubating"> incubating </span>
+		</div>
+    </div>
     <div class="max-w-6xl mx-auto my-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-5 sm:grid-cols-3 gap-4">
             {{ range .Data.Pages }}
 
 		<div class="bg-gray-100 p-8">
@@ -13,21 +20,61 @@
                         {{ $small := $src.Resize "320x q85 Box" }}
 
 			<!--<a href="{{ .Permalink | relURL }}" title="{{ .Title }}">-->
-	  			<img class="w-100 h-100 rounded-full mx-auto" 
+			<img class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member" 
 					alt="{{ .Title }}" src="{{ $small.RelPermalink }}" >
 	  			<div class="pt-6 text-center space-y-4">
 					<p class="text-lg font-semibold">
 						{{ .Params.name }}
 					</p>
-					<p class="text-lg">
-						({{ .Params.member_status }})
-					</p>
+    					<div class="flex justify-between items-stretch">
+						{{ if (isset .Params "twitter") }}
+						<a class="" href="{{ .Params.twitter }}" 
+							target="_blank" rel="noopener" aria-label="">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+							<path fill="#444444" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,0z M22.4,12.7c0,0.1,0,0.3,0,0.4
+								c0,4.3-3.3,9.3-9.3,9.3c-1.9,0-3.6-0.5-5-1.5c0.3,0,0.5,0,0.8,0c1.5,0,3-0.5,4.1-1.4c-1.4,0-2.6-1-3.1-2.3c0.2,0,0.4,0.1,0.6,0.1
+								c0.3,0,0.6,0,0.9-0.1c-1.5-0.3-2.6-1.6-2.6-3.2c0,0,0,0,0,0c0.4,0.2,0.9,0.4,1.5,0.4c-0.9-0.6-1.5-1.6-1.5-2.7
+								c0-0.6,0.2-1.2,0.4-1.7c1.6,2,4,3.3,6.8,3.4c-0.1-0.2-0.1-0.5-0.1-0.7c0-1.8,1.5-3.3,3.3-3.3c0.9,0,1.8,0.4,2.4,1
+								c0.7-0.1,1.5-0.4,2.1-0.8c-0.2,0.8-0.8,1.4-1.4,1.8c0.7-0.1,1.3-0.3,1.9-0.5C23.6,11.7,23,12.3,22.4,12.7z"/>
+							</svg>
+						</a>
+						{{ end }}
+
+						{{ if (isset .Params "linkedin") }}
+						<a class="" href="{{ .Params.linkedin }}" 
+						target="_blank" rel="noopener" aria-label="">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+						<path fill="#444444" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,0z M11.6,24H8.3V13.3h3.3V24z
+							 M9.9,11.9C8.9,11.9,8,11,8,9.9C8,8.9,8.9,8,9.9,8c1.1,0,1.9,0.9,1.9,1.9C11.8,11,11,11.9,9.9,11.9z M24,24h-3.3v-5.2
+							c0-1.2,0-2.8-1.7-2.8c-1.7,0-2,1.3-2,2.7V24h-3.3V13.3h3.2v1.5h0c0.4-0.8,1.5-1.7,3.1-1.7c3.4,0,4,2.2,4,5.1V24z"/>
+						</svg>
+
+						</a>
+						{{ end }}
+						{{ if (isset .Params "github") }}
+						<a class="" href="{{ .Params.github }}" 
+						target="_blank" rel="noopener" aria-label="">
+
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+						<path fill="#444444" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,0z M18.3,22.4
+							c0,0-1.1,0.1-2.3,0.1s-2.3-0.1-2.3-0.1C10.9,22.1,8,21,8,16.2c0-1.4,0.5-2.5,1.3-3.4c-0.1-0.3-0.6-1.6,0.1-3.3c0,0,1.1-0.3,3.4,1.3
+							c1-0.3,2.1-0.4,3.1-0.4c1.1,0,2.1,0.1,3.1,0.4c2.4-1.6,3.4-1.3,3.4-1.3c0.7,1.7,0.3,3,0.1,3.3c0.8,0.9,1.3,2,1.3,3.4
+							C24,21,21.1,22.1,18.3,22.4z"/>
+						</svg>
+						</a>
+						{{ end }}
+
+		  			</div>
 					<div class="text-cyan-600 font-semibold">
 						Specialties:
 					</div>
 					<div class="text-cyan-600">
 						{{ .Params.specialties }}
 					</div>
+
 		  		</div>
 			<!--</a>-->
 		</div>
