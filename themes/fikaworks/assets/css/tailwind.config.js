@@ -41,7 +41,7 @@ module.exports = {
   purge: {
     enabled: process.env.HUGO_ENV === 'production',
     options: {
-      whitelist: ['opacity-0']
+      safelist: ['opacity-0']
     },
     content: [
       './**/*.html'
