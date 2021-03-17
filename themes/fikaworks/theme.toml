@@ -8,10 +8,22 @@ description = ""
 homepage = "https://www.fika.works"
 tags = []
 features = []
-min_version = "0.41.0"
+min_version = "0.81.0"
 
 [author]
   name = "FikaWorks"
   homepage = "https://www.fika.works"
+
 [params]
+  logo = ""
+  description = ""
+  author = ""
+  hero_logo = ""
   hero_banner = ""
+  blogdescription = ""
+  membersdescription = ""
+
+  # footer
+  [params.footer]
+    copyright = ""
+    copyrightURL = ""
