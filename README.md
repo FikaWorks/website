@@ -10,6 +10,11 @@
 - [Hugo](https://gohugo.io)
 - [Nodejs](https://nodejs.org)
 
+For development the FikaWorks theme use [tailwindcss](https://tailwindcss.com),
+make sure to read the documentation.
+
+You can use icons from [Heroicons](https://heroicons.com/).
+
 ## Getting started
 
 ```bash

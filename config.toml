@@ -54,17 +54,8 @@ canonifyURLs = true
   hero_banner = "images/bump-cropped.jpg"
   blogdescription = "Welcome to our blog where we share our thoughts on technology, the cloud and building a cooperative"
   membersdescription = "Meet the growing FikaWorks family"
-  custom_css = ["css/custom.css"]
 
-    # call to action
-    [params.cta]
-    enable = true
-    title = "Check out our work on github"
-    content = ""
-    btnURL = "https://github.com/fikaworks"
-    btnText = "github"
-
-    # footer
-    [params.footer]
-      copyright = "FikaWorks"
-      copyrightURL = "http://fika.works"
+  # footer
+  [params.footer]
+    copyright = "FikaWorks"
+    copyrightURL = "http://fika.works"
