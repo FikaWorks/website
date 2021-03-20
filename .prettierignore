@@ -1,0 +1,3 @@
+# issue with go template tags in html tags
+# https://github.com/NiklasPor/prettier-plugin-go-template/issues/24
+themes/fikaworks/layouts/shortcodes/img.html
