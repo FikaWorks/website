@@ -4,4 +4,3 @@ date: {{ .Date }}
 thumbnail: ""
 draft: true
 ---
-

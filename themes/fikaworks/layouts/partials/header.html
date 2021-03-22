@@ -1,14 +1,14 @@
 <header class="w-full text-gray-700 bg-white fixed top-0 z-40">
-    <nav class="flex items-center justify-between lg:p-6 p-4 container mx-auto">
-        <div class="h-10 w-10">
-            <a href="{{ .Site.BaseURL | relURL }}">
-                <img src="{{ .Site.Params.logo | relURL }}" alt="FikaWorks" />
-            </a>
-        </div>
-        <div class="text-lg text-gray-600 flex justify-end">
-            {{ range $.Site.Menus.nav }}
-                 <a href="{{ .URL | relURL }}" class="text-teal-600 lg:ml-10 ml-5">{{ .Name }}</a>
-            {{ end }}
-        </div>
-    </nav>
+  <nav class="flex items-center justify-between lg:p-6 p-4 container mx-auto">
+    <div class="h-10 w-10">
+      <a href="{{ .Site.BaseURL | relURL }}">
+        <img src="{{ .Site.Params.logo | relURL }}" alt="FikaWorks" />
+      </a>
+    </div>
+    <div class="text-lg text-gray-600 flex justify-end">
+      {{ range $.Site.Menus.nav }}
+        <a href="{{ .URL | relURL }}" class="text-teal-600 lg:ml-10 ml-5">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </nav>
 </header>

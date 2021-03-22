@@ -4,4 +4,3 @@ event_date:
 external_link:
 summary:
 ---
-

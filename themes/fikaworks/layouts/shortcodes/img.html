@@ -2,10 +2,11 @@
 {{ $src := resources.GetMatch (.Get "src") }}
 
 {{ if in (.Get "src") "http" }}
-<img src="{{$src}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+<img src="{{$src}}" {{ with .Get "alt" }}alt="{{.}}"{{ end }} />
 {{ else }}
+
 {{ if in (.Get "src") ".gif" }}
-<img src="{{$src.RelPermalink}}" {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+<img src="{{$src.RelPermalink}}" {{ with .Get "alt" }} alt="{{.}}" {{ end }} />
 {{ else }}
 {{/* set image sizes, these are hardcoded for now */}}
 
@@ -46,6 +47,8 @@
   {{ else }}
     src="{{ $src.RelPermalink }}"
   {{ end }}
-  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+  {{ with .Get "alt" }}
+    alt="{{.}}"
+  {{ end }} />
 {{ end }}
 {{ end }}

@@ -1,16 +1,23 @@
-<section id="hero" class="relative bg-white min-w-screen min-h-screen flex items-center justify-center bg-gray overflow-hidden">
-    <div class="relative z-10 mx-auto py-12 px-8 sm:px-6 lg:py-16 lg:px-8 text-center">
-        {{ $logo_img := resources.Get $.Site.Params.hero_logo }}
-        {{ $logo := $logo_img.Resize "544x png" }}
-        <img class="max-w-1/2 container mx-auto" src="{{ $logo.RelPermalink }}" />
-    </div>
-    <div class="absolute bottom-5 container mx-auto text-center z-10">&#9660;</div>
-    <div class="absolute inset-0">
-        {{ if $.Site.Params.hero_banner }}
-            {{ $img := resources.Get $.Site.Params.hero_banner }}
-            {{ $img := $img | images.Filter (images.GaussianBlur 10) (images.Pixelate 8) }}
-            {{ $small := $img.Resize "1200x q85 Box" }}
-            <img class="min-w-full min-h-full object-cover opacity-60" alt="FikaWorks, we are the next wave of Cloud Native Consultants" src="{{ $small.RelPermalink }}" >
-        {{ end }}
-    </div>
+<section
+  id="hero"
+  class="relative bg-white min-w-screen min-h-screen flex items-center justify-center bg-gray overflow-hidden"
+>
+  <div class="relative z-10 mx-auto py-12 px-8 sm:px-6 lg:py-16 lg:px-8 text-center">
+    {{ $logo_img := resources.Get $.Site.Params.hero_logo }}
+    {{ $logo := $logo_img.Resize "544x png" }}
+    <img class="max-w-1/2 container mx-auto" src="{{ $logo.RelPermalink }}" />
+  </div>
+  <div class="absolute bottom-5 container mx-auto text-center z-10">&#9660;</div>
+  <div class="absolute inset-0">
+    {{ if $.Site.Params.hero_banner }}
+      {{ $img := resources.Get $.Site.Params.hero_banner }}
+      {{ $img := $img | images.Filter (images.GaussianBlur 10) (images.Pixelate 8) }}
+      {{ $small := $img.Resize "1200x q85 Box" }}
+      <img
+        class="min-w-full min-h-full object-cover opacity-60"
+        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
+        src="{{ $small.RelPermalink }}"
+      />
+    {{ end }}
+  </div>
 </section>
