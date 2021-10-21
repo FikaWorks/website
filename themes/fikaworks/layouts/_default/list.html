@@ -20,7 +20,7 @@
                   <img
                     class="object-cover object-center h-full w-full"
                     alt="{{ .Title }}"
-                    src="{{ $small.RelPermalink }}"
+                    src="{{ $small.Permalink | absUrl }}"
                   />
                 {{- end }}
               </a>
