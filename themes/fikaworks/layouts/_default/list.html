@@ -16,7 +16,7 @@
               >
                 {{- $src := .Page.Resources.GetMatch (printf "%s" .Params.thumbnail) }}
                 {{- if $src }}
-                  {{- $small := $src.Resize "320x" }}
+                  {{- $small := $src.Fit "320x320" }}
                   <img
                     class="object-cover object-center h-full w-full"
                     alt="{{ .Title }}"

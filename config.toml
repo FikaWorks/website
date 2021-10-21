@@ -59,6 +59,3 @@ canonifyURLs = true
   [params.footer]
     copyright = "FikaWorks"
     copyrightURL = "http://fika.works"
-
-[imaging]
-resampleFilter = "lanczos"
