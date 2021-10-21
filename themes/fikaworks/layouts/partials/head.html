@@ -87,19 +87,23 @@
   {{ end }}
 
   {{- if and (eq .Type "blog") .IsPage }}
-    {{ $thumbnail := .Page.Resources.GetMatch .Params.thumbnail }}
+    {{ $thumbnail := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:title" content="{{ .Params.title }}" />
     <meta property="og:description" content="{{ .Params.description }}" />
-    <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- if $thumbnail }}
+      <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- end }}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ .Permalink }}" />
     <meta property="twitter:title" content="{{ .Params.title }}" />
     <meta property="twitter:description" content="{{ .Params.description }}" />
-    <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- if $thumbnail }}
+      <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- end }}
   {{- end }}
 </head>

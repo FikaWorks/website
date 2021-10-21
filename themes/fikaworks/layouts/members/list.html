@@ -14,13 +14,17 @@
       <div class="grid grid-cols-2 md:grid-cols-5 sm:grid-cols-3 gap-4">
         {{ range .Data.Pages }}
           <div class="bg-gray-100 p-8">
-            {{ $src := .Page.Resources.GetMatch .Params.thumbnail }}
-            {{ $small := $src.Resize "320x q85 Box" }}
-            <img
-              class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member"
-              alt="{{ .Title }}"
-              src="{{ $small.RelPermalink }}"
-            />
+            {{- if .Params.thumbnail }}
+              {{- $src := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
+              {{- if $src }}
+                {{- $small := $src.Resize "320x q85 Box" }}
+                <img
+                  class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member"
+                  alt="{{ .Title }}"
+                  src="{{ $small.RelPermalink }}"
+                />
+              {{- end }}
+            {{- end }}
 
             <div class="pt-6 text-center space-y-4">
               <p class="text-lg font-semibold">

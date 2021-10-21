@@ -14,13 +14,15 @@
                 title="{{ .Title }}"
                 class="w-full lg:h-36 h-48 overflow-hidden"
               >
-                {{ $src := .Page.Resources.GetMatch .Params.thumbnail }}
-                {{ $small := $src.Resize "320x q85 Box" }}
-                <img
-                  class="object-cover object-center h-full w-full"
-                  alt="{{ .Title }}"
-                  src="{{ $small.RelPermalink }}"
-                />
+                {{- $src := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
+                {{- if $src }}
+                  {{- $small := $src.Resize "320x q85 Box" }}
+                  <img
+                    class="object-cover object-center h-full w-full"
+                    alt="{{ .Title }}"
+                    src="{{ $small.RelPermalink }}"
+                  />
+                {{- end }}
               </a>
             {{ end }}
             <div class="p-4 flex-grow">
