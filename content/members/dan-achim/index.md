@@ -6,5 +6,4 @@ member_status: "member"
 linkedin: "https://www.linkedin.com/in/danachim/"
 twitter: "https://twitter.com/dan_akim"
 github: "https://github.com/danakim"
-
 ---

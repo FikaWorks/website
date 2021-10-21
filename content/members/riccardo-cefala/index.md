@@ -6,5 +6,4 @@ member_status: "member"
 linkedin: "https://www.linkedin.com/in/riccardomc/"
 twitter: "https://twitter.com/riccardomc"
 github: "https://github.com/riccardomc"
-
 ---

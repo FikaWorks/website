@@ -6,5 +6,4 @@ member_status: "member"
 linkedin: "https://linkedin.com/in/szwed"
 twitter: "https://twitter.com/szwedyx"
 github: "https://github.com/szwed"
-
 ---

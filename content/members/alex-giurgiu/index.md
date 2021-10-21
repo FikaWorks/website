@@ -6,5 +6,4 @@ member_status: "member"
 linkedin: "http://linkedin.com/in/alexgiurgiu/"
 twitter: "http://twitter.com/nustiudinastea"
 github: "http://github.com/nustiueudinastea"
-
 ---
