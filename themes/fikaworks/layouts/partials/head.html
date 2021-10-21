@@ -68,15 +68,15 @@
   <meta name="msapplication-wide310x150logo" content="/images/favicons/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="/images/favicons/mstile-310x310.png" />
 
-  {{ $scripts := resources.Get "js/main.js" | js.Build }}
-  {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-  {{ if .Site.IsServer }}
+  {{- $scripts := resources.Get "js/main.js" | js.Build }}
+  {{- $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{- if .Site.IsServer }}
     <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.RelPermalink }}"></script>
     <link rel="stylesheet" crossorigin="anonymous" media="all" href="{{ $styles.RelPermalink }}" />
-    {{ else }}
-    {{ $scripts := $scripts | minify | fingerprint }}
+    {{- else }}
+    {{- $scripts := $scripts | minify | fingerprint }}
     <script crossorigin="anonymous" type="application/javascript" src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
-    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+    {{- $styles := $styles | minify | fingerprint | resources.PostProcess }}
     <link
       rel="stylesheet"
       crossorigin="anonymous"
@@ -87,19 +87,23 @@
   {{ end }}
 
   {{- if and (eq .Type "blog") .IsPage }}
-    {{ $thumbnail := .Page.Resources.GetMatch .Params.thumbnail }}
+    {{- $thumbnail := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:title" content="{{ .Params.title }}" />
     <meta property="og:description" content="{{ .Params.description }}" />
+    {{- if $thumbnail }}
     <meta property="og:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- end }}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ .Permalink }}" />
     <meta property="twitter:title" content="{{ .Params.title }}" />
     <meta property="twitter:description" content="{{ .Params.description }}" />
+    {{- if $thumbnail }}
     <meta property="twitter:image" content="{{ $thumbnail.Permalink | absURL }}" />
+    {{- end }}
   {{- end }}
 </head>

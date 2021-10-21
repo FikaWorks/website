@@ -4,7 +4,6 @@ DefaultContentLanguage = "en"
 title = "FikaWorks"
 theme = "fikaworks"
 pygmentsUseClasses = false
-canonifyURLs = true
 
 [markup]
   [markup.highlight]
