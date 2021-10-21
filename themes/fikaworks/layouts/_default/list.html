@@ -14,9 +14,9 @@
                 title="{{ .Title }}"
                 class="w-full lg:h-36 h-48 overflow-hidden"
               >
-                {{- $src := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
+                {{- $src := .Page.Resources.GetMatch (printf "%s" .Params.thumbnail) }}
                 {{- if $src }}
-                  {{- $small := $src.Resize "320x q85 Box" }}
+                  {{- $small := $src.Resize "320x" }}
                   <img
                     class="object-cover object-center h-full w-full"
                     alt="{{ .Title }}"

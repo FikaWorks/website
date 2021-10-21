@@ -15,9 +15,9 @@
         {{ range .Data.Pages }}
           <div class="bg-gray-100 p-8">
             {{- if .Params.thumbnail }}
-              {{- $src := .Page.Resources.GetMatch (printf "%s" (.Params.thumbnail)) }}
+              {{- $src := .Page.Resources.GetMatch (printf "%s" .Params.thumbnail) }}
               {{- if $src }}
-                {{- $small := $src.Resize "320x q85 Box" }}
+                {{- $small := $src.Resize "320x" }}
                 <img
                   class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member"
                   alt="{{ .Title }}"

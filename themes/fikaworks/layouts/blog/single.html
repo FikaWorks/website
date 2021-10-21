@@ -10,9 +10,9 @@
 
       {{ if .Params.thumbnail }}
         <div class="max-w-6xl mx-auto my-20 text-center">
-          {{- $src := .Page.Resources.GetMatch .Params.thumbnail }}
+          {{- $src := .Page.Resources.GetMatch (printf "%s" .Params.thumbnail) }}
           {{- if $src }}
-            {{- $small := $src.Resize "1200x q85 Box" }}
+            {{- $small := $src.Resize "1200x" }}
             <img class="w-full" alt="{{ .Title }}" src="{{ $small.RelPermalink }}" />
           {{- end }}
         </div>
