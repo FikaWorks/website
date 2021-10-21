@@ -21,7 +21,7 @@
                 <img
                   class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member"
                   alt="{{ .Title }}"
-                  src="{{ $small.Permalink | absURL }}"
+                  src="{{ $small.RelPermalink }}"
                 />
               {{- end }}
             {{- end }}
