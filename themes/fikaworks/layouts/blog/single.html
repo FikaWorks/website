@@ -13,7 +13,7 @@
           {{- $src := .Page.Resources.GetMatch (printf "%s" .Params.thumbnail) }}
           {{- if $src }}
             {{- $small := $src.Resize "1200x" }}
-            <img class="w-full" alt="{{ .Title }}" src="{{ $small.Permalink | absUrl }}" />
+            <img class="w-full" alt="{{ .Title }}" src="{{ $small.Permalink | absURL }}" />
           {{- end }}
         </div>
       {{ end }}
