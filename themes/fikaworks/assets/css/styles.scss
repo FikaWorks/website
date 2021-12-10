@@ -10,28 +10,20 @@ article .highlight {
   font-size: 0.75rem;
 }
 
-img.member {
+img.membership {
   margin: 5px;
   border-width: 5px;
 }
 
-img.member.founder {
-  border-color: #49b0b0;
-}
-
-img.member.full {
+img.membership.member {
   border-color: #fcd34d;
 }
 
-img.member.incubating {
+img.membership.incubating {
   border-color: #a01077;
 }
 
-#members-key .founder {
-  color: #49b0b0;
-}
-
-#members-key .full {
+#members-key .member {
   color: #fcd34d;
 }
 

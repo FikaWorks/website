@@ -6,7 +6,7 @@
     </div>
     <div class="max-w-4xl mx-auto mt-20 text-center">
       <div id="members-key" class="font-semibold">
-        <span class="founder"> founder </span> | <span class="full"> full member </span> |
+        <span class="member"> member </span> |
         <span class="incubating"> incubating </span>
       </div>
     </div>
@@ -19,7 +19,7 @@
               {{- if $src }}
                 {{- $small := $src.Fit "320x320" }}
                 <img
-                  class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} member"
+                  class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} membership"
                   alt="{{ .Title }}"
                   src="{{ $small.RelPermalink }}"
                 />
