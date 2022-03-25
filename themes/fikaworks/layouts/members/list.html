@@ -19,7 +19,7 @@
               {{- if $src }}
                 {{- $small := $src.Fit "320x320" }}
                 <img
-                  class="w-100 h-100 rounded-full mx-auto {{ .Params.member_status }} membership"
+                  class="w-40 h-40 rounded-full mx-auto object-cover {{ .Params.member_status }} membership"
                   alt="{{ .Title }}"
                   src="{{ $small.RelPermalink }}"
                 />
