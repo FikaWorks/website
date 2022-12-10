@@ -3,8 +3,8 @@
 command = "npm ci --also=dev && hugo version && hugo"
 
 [context.production.environment]
-HUGO_VERSION = "0.104.1"
-NODE_VERSION = "14"
+HUGO_VERSION = "0.107.0"
+NODE_VERSION = "16"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
@@ -12,13 +12,13 @@ HUGO_ENABLEGITINFO = "true"
 command = "npm ci --also=dev && hugo version && hugo -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.104.1"
-NODE_VERSION = "14"
+HUGO_VERSION = "0.107.0"
+NODE_VERSION = "16"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.104.1"
-NODE_VERSION = "14"
+HUGO_VERSION = "0.107.0"
+NODE_VERSION = "16"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
