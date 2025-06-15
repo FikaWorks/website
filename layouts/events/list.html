@@ -1,6 +1,8 @@
 {{ define "main" }}
   <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-fika-light-purple">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       <div class="col-span-full lg:col-start-2 lg:col-end-8">
         <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
       </div>
@@ -14,7 +16,9 @@
     </div>
   </div>
   <div class="bg-white py-6 lg:py-14">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
       <div class="col-span-full">
         <div class="flex flex-wrap items-center gap-6 lg:flex-nowrap">
           {{- $counts := dict -}}
@@ -51,7 +55,9 @@
           {{- $totalEvents := len .Pages -}}
 
 
-          <span class="text-base font-medium text-gray-800">Filter by event type</span>
+          <span class="text-base font-medium text-gray-800"
+            >Filter by event type</span
+          >
           <div class="z-40 w-full md:w-[236px]">
             <div class="relative mt-1">
               <button
@@ -60,13 +66,15 @@
                 type="button"
               >
                 <div class="flex items-center gap-3">
-                  <span class="block truncate capitalize filter-label">All Events</span
+                  <span class="block truncate capitalize filter-label"
+                    >All Events</span
                   ><span
                     class="rounded-full w-5 h-5 flex justify-center items-center bg-black text-white filter-count"
                     >{{ $totalEvents }}</span
                   >
                 </div>
-                <span class="pointer-events-none absolute inset-y-0 right-[22px] flex items-center"
+                <span
+                  class="pointer-events-none absolute inset-y-0 right-[22px] flex items-center"
                   ><svg
                     width="16"
                     height="16"
@@ -96,11 +104,24 @@
                 >
                   <span class="block truncate font-medium capitalize"
                     >All Events ({{ $totalEvents }})</span
-                  ><span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                  ><span
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
                     ><div class="h-5 w-5">
-                      <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        width="24"
+                        height="24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <g clip-path="url(#single_select_selected_svg__a)">
-                          <rect x="4" y="4" width="16" height="16" rx="8" fill="#000"></rect>
+                          <rect
+                            x="4"
+                            y="4"
+                            width="16"
+                            height="16"
+                            rx="8"
+                            fill="#000"
+                          ></rect>
                           <rect
                             x="4"
                             y="4"
@@ -122,7 +143,12 @@
                         ></rect>
                         <defs>
                           <clipPath id="single_select_selected_svg__a">
-                            <rect width="24" height="24" rx="12" fill="#fff"></rect>
+                            <rect
+                              width="24"
+                              height="24"
+                              rx="12"
+                              fill="#fff"
+                            ></rect>
                           </clipPath>
                         </defs>
                       </svg></div
@@ -142,10 +168,23 @@
                   >
                     <span class="block truncate font-medium"
                       >{{ $type | strings.FirstUpper }} ({{ $count }})</span
-                    ><span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                    ><span
+                      class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
                       ><div class="h-5 w-5">
-                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="1" y="1" width="22" height="22" rx="11" fill="#fff"></rect>
+                        <svg
+                          width="24"
+                          height="24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="1"
+                            y="1"
+                            width="22"
+                            height="22"
+                            rx="11"
+                            fill="#fff"
+                          ></rect>
                           <rect
                             x="1"
                             y="1"
@@ -167,7 +206,9 @@
 
       {{ range .Pages }}
         {{ $filter_classes := delimit (apply .Params.event_types "printf" "filtered-item-%s" ".") " " | lower }}
-        <div class="col-span-full lg:col-span-4 filtered-item {{ $filter_classes }}">
+        <div
+          class="col-span-full lg:col-span-4 filtered-item {{ $filter_classes }}"
+        >
           <div class="relative h-full">
             <div class="relative h-full w-full bg-fika-dust p-8 grid">
               <div class="flex items-center gap-2 self-start">
@@ -201,14 +242,20 @@
                     d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
                     fill="currentColor"
                   ></path></svg
-                ><span class="text-base font-medium lg:text-xl">{{ .Params.location }}</span>
+                ><span class="text-base font-medium lg:text-xl"
+                  >{{ .Params.location }}</span
+                >
               </div>
-              <span class="block text-3xl font-medium lg:text-5xl">{{ .Title }}</span>
+              <span class="block text-3xl font-medium lg:text-5xl"
+                >{{ .Title }}</span
+              >
               <a
                 href="{{ .RelPermalink }}"
                 class="group mt-7 flex cursor-pointer items-center justify-between self-end"
               >
-                <span href="{{ .RelPermalink }}" class="group-hover:text-fika-hover-purple"
+                <span
+                  href="{{ .RelPermalink }}"
+                  class="group-hover:text-fika-hover-purple"
                   >View event</span
                 >
                 <div

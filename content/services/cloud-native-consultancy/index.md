@@ -20,7 +20,8 @@ architecture doesn't mean only Kubernetes.
 - Individual engineers or teams that can deliver end-to-end a project
 - Blending with internal team and proper trainings and hand-over of projects
 - Scaling with the project: up and down as required with expert engineers
-{.list-background .inline-block .list-disc .font-light .text-lg .lg:text-xl .mt-6 .lg:mt-8}
+  {.list-background .inline-block .list-disc .font-light .text-lg .lg:text-xl
+  .mt-6 .lg:mt-8}
 
 ### How does it work?
 

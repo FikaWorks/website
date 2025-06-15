@@ -1,6 +1,8 @@
 {{ define "main" }}
   <div class="pt-28 pb-0 lg:pb-6">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       <div class="col-span-full lg:col-span-5 lg:col-start-2">
         <div
           data-blok-c='{"name":"contact_header","space":"191941","uid":"4ef242ea-cde5-443a-895f-7571383bea3b","id":"251617527"}'
@@ -12,7 +14,9 @@
               {{ .Content }}
             </p>
           </div>
-          <div class="mt-8 flex w-full flex-wrap items-center gap-5 md:mt-6 md:flex-nowrap">
+          <div
+            class="mt-8 flex w-full flex-wrap items-center gap-5 md:mt-6 md:flex-nowrap"
+          >
             <a
               href="https://www.google.com/maps/dir/?api=1&amp;destination=Hendrik+Figeeweg+3F,+2031+BJ+Haarlem"
               target="_blank"
@@ -34,7 +38,9 @@
                         d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
                         fill="currentColor"
                       ></path></svg
-                    ><span class="text-sm font-medium">Route in Google Maps</span>
+                    ><span class="text-sm font-medium"
+                      >Route in Google Maps</span
+                    >
                   </div>
                 </div>
               </div></a
@@ -42,10 +48,15 @@
           </div>
           <div class="mt-7 text-sm font-light lg:mt-16 lg:text-base">
             <p class="pb-5 font-light lg:pb-6">
-              FikaWorks BV<br />Hendrik Figeeweg 3 F, 2031BJ Haarlem, The Netherlands
+              FikaWorks BV<br />Hendrik Figeeweg 3 F, 2031BJ Haarlem, The
+              Netherlands
             </p>
           </div>
-          <div><span class="block text-sm font-light lg:text-base">info@fika.works</span></div>
+          <div>
+            <span class="block text-sm font-light lg:text-base"
+              >info@fika.works</span
+            >
+          </div>
         </div>
       </div>
       <div class="col-span-full mb-1 lg:col-start-7 lg:col-end-11 lg:mb-0">
@@ -53,7 +64,9 @@
           <div class="w-full">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">Full name*</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >Full name*</label
+                >
               </div>
               <input
                 id="name"
@@ -70,7 +83,9 @@
           <div class="mt-6 w-full lg:mt-0">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">email*</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >email*</label
+                >
               </div>
               <input
                 id="email"
@@ -87,7 +102,9 @@
           <div class="mt-6 w-full lg:mt-0">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">Phone number*</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >Phone number*</label
+                >
               </div>
               <input
                 id="phone"
@@ -104,7 +121,9 @@
           <div class="mt-6 w-full lg:mt-0">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">Company name (Optional)</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >Company name (Optional)</label
+                >
               </div>
               <input
                 id="company"
@@ -120,7 +139,9 @@
           <div class="mt-6 w-full lg:mt-0">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">Subject</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >Subject</label
+                >
               </div>
               <input
                 id="subject"
@@ -136,7 +157,9 @@
           <div class="mt-6 w-full lg:mt-0">
             <div class="w-full">
               <div class="flex justify-between">
-                <label for="email" class="mb-4 text-lg font-medium">Personal inquiry</label>
+                <label for="email" class="mb-4 text-lg font-medium"
+                  >Personal inquiry</label
+                >
               </div>
               <textarea
                 id="message"
@@ -153,8 +176,11 @@
                 class="h-6 w-6 rounded border-2 border-gray-400 bg-white text-black hover:border-black hover:bg-gray-300 hover:text-gray-700 checked:bg-black focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-none disabled:cursor-not-allowed disabled:border-gray-200 disabled:text-gray-200"
                 type="checkbox"
                 id="privacy-policy"
-              /><label for="privacy-policy" class="ml-4 text-sm font-normal text-gray-600"
-                >I heareby accept fika.works General terms and Privacy policy.</label
+              /><label
+                for="privacy-policy"
+                class="ml-4 text-sm font-normal text-gray-600"
+                >I heareby accept fika.works General terms and Privacy
+                policy.</label
               >
             </div>
           </div>

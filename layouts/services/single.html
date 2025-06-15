@@ -1,6 +1,8 @@
 {{ define "main" }}
   <div class="pt-28 lg:pt-36 mb-12 lg:mb-24 bg-fika-{{ .Params.color }}">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       <div class="relative col-span-full lg:col-start-2 lg:col-end-7 lg:pt-3">
         <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
         <div class="mt-6 mb-14 lg:mt-11 lg:mb-28">
@@ -36,7 +38,9 @@
           ></a>
         </div>
       </div>
-      <div class="relative col-span-full hidden pt-3 lg:col-start-7 lg:col-end-12 lg:block">
+      <div
+        class="relative col-span-full hidden pt-3 lg:col-start-7 lg:col-end-12 lg:block"
+      >
         <div class="absolute inset-x-0 top-0" style="height: 512px;">
           {{ $img := .Resources.Get .Params.image }}
           {{ if $img }}
@@ -68,21 +72,31 @@
   </div>
   <div class="bg-white py-6 lg:py-14">
     <div id="introduction" class="invisible relative -top-20 block"></div>
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
-      <div class="col-span-full lg:col-start-2 lg:col-end-10 font-light text-lg lg:text-2xl">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
+      <div
+        class="col-span-full lg:col-start-2 lg:col-end-10 font-light text-lg lg:text-2xl"
+      >
         {{ partial "helpers/enhanced-content-services.html" .Content }}
       </div>
     </div>
   </div>
   <div class="bg-white py-6 lg:py-14">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       <div class="col-span-full lg:col-start-2 lg:col-end-12">
-        <div class="mb-6 text-base font-medium lg:mb-9 lg:text-4xl">Meet our experts</div>
+        <div class="mb-6 text-base font-medium lg:mb-9 lg:text-4xl">
+          Meet our experts
+        </div>
       </div>
     </div>
     <div class="bg-white">
       <div class="relative">
-        <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+        <div
+          class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+        >
           <div class="col-span-full lg:col-start-2 lg:col-end-12">
             <div class="grid grid-cols-3 gap-x-10 gap-y-14">
               {{ partial "meet-experts.html" .Params.expertise }}

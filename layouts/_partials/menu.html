@@ -12,7 +12,12 @@
 
 {{- with index site.Menus $menuID }}
   <nav class="flex flex-wrap">
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="-mr-2 h-[90px]" viewBox="0 0 111 90">
+    <svg
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="-mr-2 h-[90px]"
+      viewBox="0 0 111 90"
+    >
       <path
         d="M110.304 90H89.325a12.199 12.199 0 0 1-9.21-4.199L9.21 4.2A12.2 12.2 0 0 0 0 0h110.304v90Z"
         fill="#fff"
@@ -40,7 +45,11 @@
       {{- if $hasChildren }}
         <div class="relative cursor-pointer">
           <div class="children-menu">
-            <button class="{{ $classes }} focus:outline-none" type="button" aria-expanded="false">
+            <button
+              class="{{ $classes }} focus:outline-none"
+              type="button"
+              aria-expanded="false"
+            >
               <div>
                 <span>{{ .Name }}</span>
               </div>

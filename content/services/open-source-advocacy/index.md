@@ -16,5 +16,5 @@ fika.works engineers will help you create relevant content for your technology.
 
 - Product evaluation
 - Written content (blogposts, documentation, presentations, demo's)
-- Customer workshops and showcases
-{.list-background .inline-block .list-disc .font-light .text-lg .lg:text-xl .mt-6 .lg:mt-8}
+- Customer workshops and showcases {.list-background .inline-block .list-disc
+  .font-light .text-lg .lg:text-xl .mt-6 .lg:mt-8}

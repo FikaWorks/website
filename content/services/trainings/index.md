@@ -10,12 +10,13 @@ expertise = "trainings"
 
 ## Get up to speed with our workshops
 
-All our trainers are also hands-on practioners, so you'll learn from people that have real experience in the field.
+All our trainers are also hands-on practioners, so you'll learn from people that
+have real experience in the field.
 
 ## What we cover
 
 - Kubernetes (basics and advanced topcis)
 - Containers (Docker, CI/CD)
 - GitOps
-- Custom/Bespoke
-{.list-background .inline-block .list-disc .font-light .text-lg .lg:text-xl .mt-6 .lg:mt-8}
+- Custom/Bespoke {.list-background .inline-block .list-disc .font-light .text-lg
+  .lg:text-xl .mt-6 .lg:mt-8}

@@ -15,7 +15,8 @@ Come chat, connect, and discover what we're all about.
 
 **Agenda**
 
-**09:00** Coffee and networking (meet the coop members)
-**10:00** FikaWorks presentation & Q&A (We aim to live-stream the presentation).
-**11:00** Open Agenda (suggestions welcomed)
-**12:00** Lunch
+- **09:00** Coffee and networking (meet the coop members)
+- **10:00** FikaWorks presentation & Q&A (We aim to live-stream the
+  presentation).
+- **11:00** Open Agenda (suggestions welcomed)
+- **12:00** Lunch

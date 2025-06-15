@@ -28,10 +28,14 @@
       {{ end }}
     </div>
   </div>
-  <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+  <div
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+  >
     <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-2 lg:pt-[120px]">
       <div class="top-10 flex flex-row gap-5 lg:sticky lg:flex-col lg:gap-0">
-        <p class="text-sm font-medium text-gray-800 md:text-base md:font-light lg:mb-5">
+        <p
+          class="text-sm font-medium text-gray-800 md:text-base md:font-light lg:mb-5"
+        >
           Published on <br />
           {{ $dateHuman := .Date | time.Format ":date_long" }}
           {{ $dateHuman }}
@@ -48,7 +52,11 @@
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
                 style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
               >
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -64,7 +72,11 @@
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
                 style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
               >
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -80,7 +92,11 @@
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
                 style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
               >
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -96,7 +112,11 @@
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
                 style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
               >
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -118,8 +138,17 @@
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
                 style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
               >
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                  <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
+                  <rect
+                    width="32"
+                    height="32"
+                    rx="16"
+                    fill="currentColor"
+                  ></rect>
                   <path
                     d="M17.422 14.578a3.111 3.111 0 0 0-4.4 0l-3.11 3.111a3.111 3.111 0 0 0 4.399 4.4l.857-.857m-.59-3.81a3.111 3.111 0 0 0 4.4 0l3.11-3.111a3.111 3.111 0 0 0-4.399-4.4l-.855.856"
                     stroke="#fff"
@@ -134,15 +163,21 @@
         </div>
       </div>
     </div>
-    <div class="col-span-full lg:col-span-7 lg:col-start-5 lg:col-end-11 lg:pt-16">
+    <div
+      class="col-span-full lg:col-span-7 lg:col-start-5 lg:col-end-11 lg:pt-16"
+    >
       <div class="flex flex-wrap gap-3">
         {{- range .Params.tags }}
           <div class="inline-block rounded bg-fika-dust py-[6px] px-3">
-            <span class="flex items-center text-xs font-normal capitalize">• {{ . }} </span>
+            <span class="flex items-center text-xs font-normal capitalize"
+              >• {{ . }}
+            </span>
           </div>
         {{- end }}
       </div>
-      <h1 class="mb-5 mt-4 text-2xl font-medium leading-tight lg:mb-12 lg:text-5xl">
+      <h1
+        class="mb-5 mt-4 text-2xl font-medium leading-tight lg:mb-12 lg:text-5xl"
+      >
         {{ .Title }}
       </h1>
       <div class="text-lg font-light">
@@ -150,7 +185,9 @@
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 lg:hidden">
+  <div
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 lg:hidden"
+  >
     <div class="col-span-full my-10 flex flex-col">
       <p class="mb-6">Share this post</p>
       <div class="flex gap-10">
@@ -160,7 +197,11 @@
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
             style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
           >
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -176,7 +217,11 @@
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
             style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
           >
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -192,7 +237,11 @@
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
             style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
           >
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -208,7 +257,11 @@
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
             style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
           >
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -230,7 +283,11 @@
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
             style="background-color: transparent; border: medium; padding: 0px; font: inherit; color: inherit; cursor: pointer;"
           >
-            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
               <rect width="32" height="32" rx="16" fill="currentColor"></rect>
               <path
                 d="M17.422 14.578a3.111 3.111 0 0 0-4.4 0l-3.11 3.111a3.111 3.111 0 0 0 4.399 4.4l.857-.857m-.59-3.81a3.111 3.111 0 0 0 4.4 0l3.11-3.111a3.111 3.111 0 0 0-4.399-4.4l-.855.856"

@@ -1,6 +1,8 @@
 {{ define "main" }}
   <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       <div class="col-span-full lg:col-start-2 lg:col-end-8">
         <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
       </div>
@@ -14,16 +16,24 @@
     </div>
   </div>
   <div class="bg-white pb-6 lg:pb-14">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
       {{ range .Pages }}
         <div class="col-span-full lg:col-span-4">
           <div>
             <a href="{{ .RelPermalink }}"
               ><div class="relative mt-6 lg:mt-0">
                 <div class="relative h-full w-full">
-                  <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
+                  <div
+                    class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]"
+                  >
                     <div class="absolute top-0 right-0 z-30 w-[75%]">
-                      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
+                      <svg
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 315 42"
+                      >
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -61,8 +71,10 @@
                     >
                       <div class="mt-3">
                         {{ range .Params.tags }}
-                          <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
-                            ><span class="flex items-center text-xs font-normal capitalize"
+                          <span
+                            class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                            ><span
+                              class="flex items-center text-xs font-normal capitalize"
                               >• {{ . }}</span
                             ></span
                           >
@@ -74,14 +86,18 @@
                 <div class="mt-7">
                   <div class="flex gap-5 font-medium">
                     <span class="text-gray-800">{{ .Params.author }}</span
-                    ><span class="text-gray-600"> {{ .ReadingTime }} minutes reading</span>
+                    ><span class="text-gray-600">
+                      {{ .ReadingTime }} minutes reading</span
+                    >
                   </div>
                   <span
                     class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
                     >{{ .Title }}</span
                   >
                   <div class="mt-3 lg:hidden">
-                    <p class="text-lg font-medium underline underline-offset-2">Read more</p>
+                    <p class="text-lg font-medium underline underline-offset-2">
+                      Read more
+                    </p>
                   </div>
                 </div>
               </div></a
