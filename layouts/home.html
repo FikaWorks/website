@@ -402,203 +402,102 @@
       </div>
     </div>
     <div class="bg-white">
-      <div class="relative md:block">
-        <div class="absolute -top-16 right-10 z-50 flex gap-5">
-          <button
-            class="image-swiper-button-prev cursor-pointer rounded-full border-2 border-black bg-white p-3.5 text-black hover:bg-black hover:text-white active:border-fika-purple active:bg-fika-purple active:text-white swiper-button-disabled swiper-button-lock"
-            disabled=""
-          >
-            <svg
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              class="w-4 h-4 flex-shrink-0 flex-grow-0"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.707 16.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 1.414L5.414 9H17a1 1 0 1 1 0 2H5.414l4.293 4.293a1 1 0 0 1 0 1.414Z"
-                fill="currentColor"
-              ></path>
-            </svg></button
-          ><button
-            class="image-swiper-button-next cursor-pointer rounded-full border-2 border-black bg-white p-3.5 text-black hover:bg-black hover:text-white active:border-fika-purple active:bg-fika-purple active:text-white swiper-button-disabled swiper-button-lock"
-            disabled=""
-          >
-            <svg
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4 flex-shrink-0 flex-grow-0"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div
-          class="swiper swiper-container-slider-imageCard swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden"
-        >
-          <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
-            <div
-              class="swiper-slide swiper-slide-active mr-5 lg:mr-10"
-              style="margin-left: 162.667px"
-            >
-              <div>
-                <a href="/blog/lessons-learned-from-going-live-with-kubernetes">
-                  <div class="relative mt-6 lg:mt-0">
-                    <div class="relative h-full w-full">
-                      <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
-                        <div class="absolute top-0 right-0 z-30 w-[75%]">
-                          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
-                              fill="#fff"
-                            ></path>
-                          </svg>
-                        </div>
-                        <div
-                          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-                          style="height: 100%"
-                        >
-                          {{ $img := resources.Get "/images/lessons-learned-from-going-live-on-kubernetes.png" }}
-                          {{ $tiny := $img.Resize "1080x webp" }}
-                          {{ $small := $img.Resize "1200x webp" }}
-                          {{ $medium := $img.Resize "1600x webp" }}
-                          {{ $large := $img.Resize "2700x webp" }}
-                          <img
-                            alt="Lessons learned from going live on Kubernetes"
-                            src="{{ $medium.RelPermalink }}"
-                            srcset="
-                              {{ $tiny.RelPermalink }}  640w,
-                              {{ $small.RelPermalink }} 1080w,
-                              {{ $medium.RelPermalink }} 1200w,
-                              {{ $large.RelPermalink }} 1600w
-                            "
-                            sizes="100vw"
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
-                        >
-                          <div class="mt-3">
-                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
-                              ><span class="flex items-center text-xs font-normal capitalize"
-                                >• Technology</span
-                              ></span
+      <div class="relative">
+        <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+          <div class="col-span-full lg:col-start-2 lg:col-end-12">
+            <div class="grid grid-cols-3 gap-x-10 gap-y-14">
+              {{ range first 3 (where site.RegularPages "Type" "blog") }}
+                <div class="col-span-full sm:col-span-1">
+                  <div class="relative">
+                    <a href="{{ .RelPermalink }}"
+                      ><div class="relative mt-6 lg:mt-0">
+                        <div class="relative h-full w-full">
+                          <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
+                            <div class="absolute top-0 right-0 z-30 w-[75%]">
+                              <svg
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 315 42"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
+                                  fill="#fff"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div
+                              class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+                              style="height: 100%;"
                             >
-                          </div>
-                          <div class="mt-3">
-                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
-                              ><span class="flex items-center text-xs font-normal capitalize"
-                                >• Kubernetes</span
-                              ></span
+                              {{ $img := .Resources.Get .Params.image }}
+                              {{ if $img }}
+                                {{ $tiny := $img.Resize "1080x webp" }}
+                                {{ $small := $img.Resize "1200x webp" }}
+                                {{ $medium := $img.Resize "1600x webp" }}
+                                {{ $large := $img.Resize "2700x webp" }}
+                                <img
+                                  alt="{{ .Title }}"
+                                  src="{{ $medium.RelPermalink }}"
+                                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                                  srcset="
+                                    {{ $tiny.RelPermalink }}  640w,
+                                    {{ $small.RelPermalink }} 1080w,
+                                    {{ $medium.RelPermalink }} 1200w,
+                                    {{ $large.RelPermalink }} 1600w
+                                  "
+                                  sizes="100vw"
+                                />
+                              {{ end }}
+                            </div>
+                            <div
+                              class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
                             >
+                              <div class="mt-3">
+                                {{ range .Params.tags }}
+                                  <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                                    ><span class="flex items-center text-xs font-normal capitalize"
+                                      >• {{ . }}</span
+                                    ></span
+                                  >
+                                {{ end }}
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="mt-7">
-                      <div class="flex gap-5 font-medium">
-                        <span class="text-gray-800">Catalin Jora</span
-                        ><span class="text-gray-600">5 minutes reading</span>
-                      </div>
-                      <span
-                        class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
-                        >Lessons learned from going live on Kubernetes</span
-                      >
-                      <div class="mt-3 lg:hidden">
-                        <p class="text-lg font-medium underline underline-offset-2">Read more</p>
-                      </div>
-                    </div>
+                        <div class="mt-7">
+                          <div class="flex gap-5 font-medium">
+                            <span class="text-gray-800">{{ .Params.author }}</span
+                            ><span class="text-gray-600"> {{ .ReadingTime }} minutes reading</span>
+                          </div>
+                          <span
+                            class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
+                            >{{ .Title }}</span
+                          >
+                          <div class="mt-3 lg:hidden">
+                            <p class="text-lg font-medium underline underline-offset-2">
+                              Read more
+                            </p>
+                          </div>
+                        </div>
+                      </div></a
+                    >
                   </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-slide swiper-slide-next mr-5 lg:mr-10">
-              <div>
-                <a href="/blog/what-fikaworks-offers-clients">
-                  <div class="relative mt-6 lg:mt-0">
-                    <div class="relative h-full w-full">
-                      <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
-                        <div class="absolute top-0 right-0 z-30 w-[75%]">
-                          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
-                              fill="#fff"
-                            ></path>
-                          </svg>
-                        </div>
-                        <div
-                          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-                          style="height: 100%"
-                        >
-                          {{ $img := resources.Get "/images/what-fikaworks-as-to-offer.png" }}
-                          {{ $tiny := $img.Resize "1080x webp" }}
-                          {{ $small := $img.Resize "1200x webp" }}
-                          {{ $medium := $img.Resize "1600x webp" }}
-                          {{ $large := $img.Resize "2700x webp" }}
-                          <img
-                            alt="What FikaWorks as to offer"
-                            src="{{ $medium.RelPermalink }}"
-                            srcset="
-                              {{ $tiny.RelPermalink }}  640w,
-                              {{ $small.RelPermalink }} 1080w,
-                              {{ $medium.RelPermalink }} 1200w,
-                              {{ $large.RelPermalink }} 1600w
-                            "
-                            sizes="100vw"
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
-                        >
-                          <div class="mt-3">
-                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
-                              ><span class="flex items-center text-xs font-normal capitalize"
-                                >• Technology</span
-                              ></span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-7">
-                      <div class="flex gap-5 font-medium">
-                        <span class="text-gray-800">Jason Smith</span
-                        ><span class="text-gray-600">3 minutes reading</span>
-                      </div>
-                      <span
-                        class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
-                        >What FikaWorks Has to Offer Our Clients</span
-                      >
-                      <div class="mt-3 lg:hidden">
-                        <p class="text-lg font-medium underline underline-offset-2">Read more</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              {{ end }}
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full mt-12 lg:col-start-2 lg:col-end-10">
-        <a
-          href="blog/"
-          class="group font-medium hover:text-fika-hover-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg"
-          ><span>See all articles</span></a
-        >
+        <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+          <div class="col-span-full mt-12 lg:col-start-2 lg:col-end-10">
+            <a
+              href="blog/"
+              class="group font-medium hover:text-fika-hover-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg"
+              ><span>See all articles</span></a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
