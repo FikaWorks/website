@@ -1,9 +1,6 @@
 ---
-name: "Valentin Stoican"
-thumbnail: "images/profile.jpg"
-specialties: "Kubernetes, CI/CD, DevOps, Azure, AWS, HFT, ML, Scrum"
-member_status: "member"
-linkedin: "https://www.linkedin.com/in/valentinstoican/"
-twitter: "https://twitter.com/vstoi_can"
-github: "https://github.com/vstoican"
+title: "Valentin Stoican"
+role: "Cloud Engineer"
+image: "valentin-stoican.png"
+expertises: ["Kubernetes", "IaC", "AWS"]
 ---

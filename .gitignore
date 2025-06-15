@@ -1,4 +1,5 @@
-.DS_Store
-resources/_gen/
-node_modules/
 public/
+resources/
+themes/
+node_modules/
+.DS_Store

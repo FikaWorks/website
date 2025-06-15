@@ -1,13 +1,11 @@
 ---
 title: "What FikaWorks Has to Offer Our Clients"
 date: 2021-03-20T10:20:17+02:00
-thumbnail: "images/fikaworks_to_clients.png"
+image: "fikaworks_to_clients.png"
 draft: false
 author: Jason Smith
-description: "What does FikaWorks offer clients that previous working models do not"
 tags: [ "collective", "fikaworks", "company", "coop", "clients", "cloud native"]
 ---
-
 
 To understand why clients would choose FikaWorks, clients should understand how FikaWorks 
 is organized.

@@ -1,6 +1,0 @@
-enable : true
-sharing : true
-staticmanComments:
-  enable: false
-  notifications: true
-  api: https://api.staticman.net/v3/entry/github/fikaworks/website/master/comments

@@ -1,0 +1,96 @@
+{{ define "main" }}
+  <div class="pt-28 lg:pt-36 mb-12 lg:mb-24 bg-fika-{{ .Params.color }}">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+      <div class="relative col-span-full lg:col-start-2 lg:col-end-7 lg:pt-3">
+        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
+        <div class="mt-6 mb-14 lg:mt-11 lg:mb-28">
+          <div class="text-lg font-light lg:text-2xl">
+            <p class="pb-5 font-light lg:pb-6">
+              {{ .Params.heading }}
+            </p>
+          </div>
+        </div>
+        <div class="absolute left-0 -bottom-8 lg:-bottom-8">
+          <a href="#introduction"
+            ><div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                Discover this service<svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    d="M12.667 9.333 8 14m0 0L3.333 9.333M8 14V2"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div></div
+          ></a>
+        </div>
+      </div>
+      <div class="relative col-span-full hidden pt-3 lg:col-start-7 lg:col-end-12 lg:block">
+        <div class="absolute inset-x-0 top-0" style="height: 512px;">
+          {{ $img := .Resources.Get .Params.image }}
+          {{ if $img }}
+            <div
+              class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+              style="height: 100%;"
+            >
+              {{ $tiny := $img.Resize "1080x webp" }}
+              {{ $small := $img.Resize "1200x webp" }}
+              {{ $medium := $img.Resize "1600x webp" }}
+              {{ $large := $img.Resize "2700x webp" }}
+              <img
+                alt="{{ .Title }}"
+                src="{{ $medium.RelPermalink }}"
+                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                srcset="
+                  {{ $tiny.RelPermalink }}  640w,
+                  {{ $small.RelPermalink }} 1080w,
+                  {{ $medium.RelPermalink }} 1200w,
+                  {{ $large.RelPermalink }} 1600w
+                "
+                sizes="100vw"
+              />
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-6 lg:py-14">
+    <div id="introduction" class="invisible relative -top-20 block"></div>
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+      <div class="col-span-full lg:col-start-2 lg:col-end-10 font-light text-lg lg:text-2xl">
+        {{ partial "helpers/enhanced-content-services.html" .Content }}
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-6 lg:py-14">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+        <div class="mb-6 text-base font-medium lg:mb-9 lg:text-4xl">Meet our experts</div>
+      </div>
+    </div>
+    <div class="bg-white">
+      <div class="relative">
+        <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+          <div class="col-span-full lg:col-start-2 lg:col-end-12">
+            <div class="grid grid-cols-3 gap-x-10 gap-y-14">
+              {{ partial "meet-experts.html" .Params.expertise }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "cta.html" . }}
+{{ end }}

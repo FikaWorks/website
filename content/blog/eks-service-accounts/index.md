@@ -3,8 +3,7 @@ title: "EKS Service Accounts Explained"
 date: 2020-04-16T10:04:44+02:00
 draft: false
 author: Jason Smith
-thumbnail: images/eks-service-accounts-iam.jpg
-description: "EKS Service Accounts and IAM Explained"
+image: eks-service-accounts-iam.jpg
 tags: ["Kubernetes", "AWS", "EKS", "ServiceAccounts"]
 ---
 
@@ -13,20 +12,20 @@ For some, myself included, this was a confusing implementation.
 This article will helpfully clear up some of the confusion
 on what AWS is actually doing, and what I believe they did right and what they did wrong.
 
-# How it works
+## How it works
 To start we need to forget everything AWS told you about how it works, especially around
 annotations and such.  We will just discuss the fundamentals of what was built and try to
 stay away from any special sauce that isn't crucial to the functionality.
 We will start at square one.
 
-## The Tooling
+### The Tooling
 This is the main tooling that is required for these IAM permissions to work.
 
 - [Projected Service Account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection)
 - [OIDC Discovery Endpoint](https://openid.net/specs/openid-connect-discovery-1_0.html)
 - [An Updated AWS SDK/CLI](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts-minimum-sdk.html)
 
-### The Projected Service Account Token
+#### The Projected Service Account Token
 Projected Service Account Tokens are provided so external audiences can validate their own federated
 permissions against Kubernetes provided tokens for Service Accounts.  Currently the only way this
 can be done is with a call to a
@@ -34,7 +33,7 @@ can be done is with a call to a
 The entire purpose is to allow pods to have identities that can be validated by Kubernetes
 provided credentials.
 
-### The OIDC Endpoint
+#### The OIDC Endpoint
 The TokenReview does not work with OIDC so I was on the hunt for OIDC for Service Accounts.
 This took me a while to figure out.  AWS has implemented an OIDC provider for the Service Accounts
 but I was yet to find a reference to OIDC endpoints and Kubernetes.  Googling Kubernetes and OIDC just
@@ -47,7 +46,7 @@ OIDC provider for Service Accounts.  The actual code being added to Kubernetes s
 from Google engineers, which is disappointing.  AWS was involved in the discussion for the first
 declined PR but it does not appear that they contributed anything to the code base, I may just be misinformed about that.
 
-### The AWS SDK
+#### The AWS SDK
 The final tooling needed for this to work was to update the SDKs.
 Normally the SDKs look in your ~/.aws folder or in your AWS_* environment variables
 to authenticate against the AWS API.
@@ -57,16 +56,16 @@ to use the provided token file to authenticate and assume the role using "Assume
 Which is pretty clearly explained in the
 [documentation](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts-technical-overview.html).
 
-## The Functionality
+### The Functionality
 With all the tools available we can look at the functionality.  Please continue to ignore
 the Service Account annotation.
 
-### Add the OIDC identity provider
+#### Add the OIDC identity provider
 The docs cover this well and there are plenty of explanations on how to add OIDC identity providers
 to IAM, with or without Kubernetes.  I won't spend a lot of time on this, but you need to [add the
 provider to  IAM](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).
 
-### Create an IAM Role
+#### Create an IAM Role
 I am going to give an example of an IAM Role as it would look in Cloudformation
 ```yaml
 S3ReadBuckets:
@@ -119,7 +118,7 @@ system:serviceaccount:my-namepace:my-serviceaccount
 ```
 can assume this role.
 
-### Create a pod with a role.
+#### Create a pod with a role.
 Now we will create a pod with the Projected Service Account and let the AWS SDK know how to consume
 it.
 
@@ -170,13 +169,13 @@ spec:
 
 With all the above in place (edited for your system) you should have access to list your AWS buckets.
 
-# The Good and The Bad
+## The Good and The Bad
 
-## Good
+### Good
 AWS went with OIDC for service account identity.  This was a great approach and seems to be  a future
 feature of Kubernetes, so that is fantastic.
 
-## Bad
+### Bad
 Well there were several places I feel AWS could have done better.
 
 
@@ -266,13 +265,13 @@ It would have been nice to see higher engagement with the Kubernetes community t
 It seems in a rush to provide user features they shot for short term gains, without providing back
 to the system that made this all possible.
 
-# In Conclusion
+## In Conclusion
 EKS IAM permissions is a good approach, but has a few problems with it's implementation.
 They are using a future feature of Kubernetes but they don't seem to have contributed those
 efforts back to the community (at least from my research), and they confuse AuthN and AuthZ
 with their documentation and tooling.
 
-## Disclaimer
+### Disclaimer
 I had submitted a [pull request](https://github.com/aws/amazon-eks-pod-identity-webhook/pull/22)
 to the webhook that would change the role ARN placement from the ServiceAccount to
 environment variable of the container but ultimately it was rejected for lack of backwards

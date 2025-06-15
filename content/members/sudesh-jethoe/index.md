@@ -1,9 +1,6 @@
 ---
-name: "Sudesh Jethoe"
-thumbnail: "images/profile.jpg"
-specialties: "Leadership, Architecture, Cloud, Big Data"
-member_status: "member"
-linkedin: "http://linkedin.com/in/sudeshjethoe/"
-twitter: "http://twitter.com/sudeshjethoe"
-github: "http://github.com/sudeshjethoe"
+title: "Sudesh Jethoe"
+role: "Cloud Native Consultant"
+image: "sudesh-jethoe.png"
+expertises: ["Architecture", "Kubernetes"]
 ---

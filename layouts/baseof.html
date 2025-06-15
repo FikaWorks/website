@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div>
+    <header class="absolute inset-x-0 top-0 z-40 h-[90px] w-full bg-transparent">
+      {{ partial "header.html" . }}
+    </header>
+  </div>
+  <div class="z-50">
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+  <footer class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 my-14 lg:my-20">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

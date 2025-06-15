@@ -1,0 +1,104 @@
+baseURL = 'https://fika.works/'
+languageCode = 'en-US'
+title = 'FikaWorks'
+
+disableKinds = ["taxonomy", "term"]
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[markup.goldmark.parser.attribute]
+block = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = true
+style = "catppuccin-mocha"
+tabWidth = 2
+
+[imaging]
+quality = 90
+
+[menus]
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Why'
+pageRef = '/why'
+weight = 20
+
+[[menus.main]]
+name = 'Services'
+pageRef = '/services'
+weight = 30
+
+[[menus.main]]
+parent = "Services"
+name = "Cloud native consultancy"
+pageRef = "/services/cloud-native-consultancy"
+
+[[menus.main]]
+parent = "Services"
+name = "Trainings"
+pageRef = "/services/trainings"
+
+[[menus.main]]
+parent = "Services"
+name = "Open source advocacy"
+pageRef = "/services/open-source-advocacy"
+
+[[menus.main]]
+name = 'Events'
+pageRef = '/events'
+weight = 40
+
+[[menus.main]]
+name = 'Blog'
+pageRef = '/blog'
+weight = 50
+
+[[menus.main]]
+name = 'Contact'
+pageRef = '/contact'
+weight = 60
+
+[[menus.main]]
+name = 'Members'
+pageRef = '/members'
+weight = 70
+
+[module]
+[module.hugoVersion]
+extended = false
+min = '0.146.0'
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+[[module.mounts]]
+disableWatch = true
+source = 'hugo_stats.json'
+target = 'assets/notwatching/hugo_stats.json'
+
+[build]
+[build.buildStats]
+enable = true
+[[build.cachebusters]]
+source = 'assets/notwatching/hugo_stats\.json'
+target = 'css'
+[[build.cachebusters]]
+source = '(postcss|tailwind)\.config\.js'
+target = 'css'

@@ -1,11 +1,9 @@
 ---
 title: "Starting FikaWorks Collective"
 date: 2020-05-14T10:20:17+02:00
-thumbnail: "images/fikaworks_collective_logo.png"
+image: "fikaworks_collective_logo.png"
 draft: false
 author: Catalin Jora
-description: "We incorporated FikaWorks, a collective of IT independent consultants
-active in the cloud native area"
 tags: [ "collective", "fikaworks", "company", "coop", "entrepreneurship"]
 ---
 
@@ -38,11 +36,7 @@ Therefore we decided to create a new type of consulting company, following the m
 - allow members to shape the future of the coop
 - become an example of how a company can operate in the interest of its members
 
-
-
 _Notes:_
-[^1]:	FikaWorks name came from a branding workshop we did with the awesome [Emelie Rydh](https://www.linkedin.com/in/emelie-rydh-6742b097/ "visual designer")
-
-[^2]:	Our logo was done by [ Asia Jackowska ](https://www.linkedin.com/in/asia-jackowska-39b827117/)
-
-[^3]:	Don’t use this as legal advice, please consult a specialist in case you want to start a coop.
+[^1]: FikaWorks name came from a branding workshop we did with the awesome [Emelie Rydh](https://www.linkedin.com/in/emelie-rydh-6742b097/ "visual designer")
+[^2]: Our logo was done by [ Asia Jackowska ](https://www.linkedin.com/in/asia-jackowska-39b827117/)
+[^3]: Don’t use this as legal advice, please consult a specialist in case you want to start a coop.

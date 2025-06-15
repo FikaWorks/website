@@ -1,0 +1,86 @@
+{{- /*
+  Renders a menu for the given menu ID.
+
+  @context {page} page The current page.
+  @context {string} menuID The menu ID.
+
+  @example: {{ partial "menu.html" (dict "menuID" "main" "page" .)
+}}
+*/}}
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <nav class="flex flex-wrap">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="-mr-2 h-[90px]" viewBox="0 0 111 90">
+      <path
+        d="M110.304 90H89.325a12.199 12.199 0 0 1-9.21-4.199L9.21 4.2A12.2 12.2 0 0 0 0 0h110.304v90Z"
+        fill="#fff"
+      ></path>
+    </svg>
+    <div class="flex items-center gap-12 bg-white pr-10">
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+    </div>
+  </nav>
+{{- end }}
+
+{{- define "_partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $hasChildren := .HasChildren }}
+    {{- $isActive := $page.IsMenuCurrent .Menu . }}
+    {{- $isAncestor := $page.HasMenuCurrent .Menu . }}
+    {{- $classes := "flex items-center gap-2 text-sm font-medium text-gray-800" }}
+    {{- if $isActive }}
+      {{- $classes = printf "%s %s" $classes "active" }}
+    {{- else if $isAncestor }}
+      {{- $classes = printf "%s %s" $classes "ancestor" }}
+    {{- end }}
+    <div>
+      {{- if $hasChildren }}
+        <div class="relative cursor-pointer">
+          <div class="children-menu">
+            <button class="{{ $classes }} focus:outline-none" type="button" aria-expanded="false">
+              <div>
+                <span>{{ .Name }}</span>
+              </div>
+              <div>
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.5 4.69 8 9.19l4.5-4.5 1.06 1.06L8 11.31 2.44 5.75 3.5 4.69Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            {{- with .Children }}
+              <div class="shadow-popover-panel rounded-md bg-white">
+                <div class="p6">
+                  <ul>
+                    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+                  </ul>
+                </div>
+              </div>
+            {{- end }}
+          </div>
+        </div>
+      {{- else }}
+        <div class="cursor-pointer">
+          <a href="{{ .URL }}">
+            <div class="{{ $classes }}">
+              <span>{{ .Name }}</span>
+            </div>
+          </a>
+        </div>
+      {{- end }}
+    </div>
+  {{- end }}
+{{- end }}

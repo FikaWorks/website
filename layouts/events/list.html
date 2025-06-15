@@ -1,0 +1,238 @@
+{{ define "main" }}
+  <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-fika-light-purple">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 ">
+      <div class="col-span-full lg:col-start-2 lg:col-end-8">
+        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
+      </div>
+      <div class="col-span-full lg:col-start-8 lg:col-end-13">
+        <div class="text-lg font-light lg:text-2xl">
+          <p class="pb-5 font-light lg:pb-6">
+            {{ .Params.heading }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-6 lg:py-14">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <div class="flex flex-wrap items-center gap-6 lg:flex-nowrap">
+          {{- $counts := dict -}}
+          {{- $uniqueEventTypesMap := dict -}}
+          {{- range .Pages }}
+            {{- if .Params.event_types }}
+              {{- $rawEventTypes := .Params.event_types }}
+
+              {{- if reflect.IsSlice $rawEventTypes }}
+                {{- range $item := $rawEventTypes }}
+                  {{- $eventTypesStr := $item | string }}
+                  {{- if $eventTypesStr }}
+                    {{- $n := index $counts $eventTypesStr | default 0 }}
+                    {{- $counts = merge $counts (dict $eventTypesStr (add $n 1)) }}
+                    {{- $uniqueEventTypesMap = merge $uniqueEventTypesMap (dict $eventTypesStr true) }}
+                  {{- end }}
+                {{- end }}
+              {{- else }}
+                {{- $eventTypesStr := $rawEventTypes | string }}
+                {{- if $eventTypesStr }}
+                  {{- $n := index $counts $eventTypesStr | default 0 }}
+                  {{- $counts = merge $counts (dict $eventTypesStr (add $n 1)) }}
+                  {{- $uniqueEventTypesMap = merge $uniqueEventTypesMap (dict $eventTypesStr true) }}
+                {{- end }}
+              {{- end }}
+            {{- end }}
+          {{- end }}
+
+          {{- $keys := slice -}}
+          {{- range $key, $value := $uniqueEventTypesMap }}
+            {{- $keys = $keys | append ($key | string) -}}
+          {{- end }}
+
+          {{- $totalEvents := len .Pages -}}
+
+
+          <span class="text-base font-medium text-gray-800">Filter by event type</span>
+          <div class="z-40 w-full md:w-[236px]">
+            <div class="relative mt-1">
+              <button
+                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-white border-gray-800 text-black"
+                id="filter-btn"
+                type="button"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="block truncate capitalize filter-label">All Events</span
+                  ><span
+                    class="rounded-full w-5 h-5 flex justify-center items-center bg-black text-white filter-count"
+                    >{{ $totalEvents }}</span
+                  >
+                </div>
+                <span class="pointer-events-none absolute inset-y-0 right-[22px] flex items-center"
+                  ><svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.5 4.69 8 9.19l4.5-4.5 1.06 1.06L8 11.31 2.44 5.75 3.5 4.69Z"
+                      fill="currentColor"
+                    ></path></svg
+                ></span>
+              </button>
+              <ul
+                class="absolute mt-2 max-h-60 w-full overflow-auto rounded-md bg-gray-100 py-3 px-2 text-base focus:outline-none sm:text-sm filter-list hidden"
+                tabindex="0"
+              >
+                <li
+                  class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 hover:bg-white hover:text-black"
+                  role="option"
+                  tabindex="-1"
+                  data-value=""
+                  data-label="All Events"
+                  data-count="{{ $totalEvents }}"
+                >
+                  <span class="block truncate font-medium capitalize"
+                    >All Events ({{ $totalEvents }})</span
+                  ><span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                    ><div class="h-5 w-5">
+                      <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#single_select_selected_svg__a)">
+                          <rect x="4" y="4" width="16" height="16" rx="8" fill="#000"></rect>
+                          <rect
+                            x="4"
+                            y="4"
+                            width="16"
+                            height="16"
+                            rx="8"
+                            stroke="#fff"
+                            stroke-width="2"
+                          ></rect>
+                        </g>
+                        <rect
+                          x="1"
+                          y="1"
+                          width="22"
+                          height="22"
+                          rx="11"
+                          stroke="#000"
+                          stroke-width="2"
+                        ></rect>
+                        <defs>
+                          <clipPath id="single_select_selected_svg__a">
+                            <rect width="24" height="24" rx="12" fill="#fff"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg></div
+                  ></span>
+                </li>
+
+                {{- range sort $keys }}
+                  {{- $type  := . }}
+                  {{- $count := index $counts $type }}
+                  <li
+                    class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 hover:bg-white hover:text-black"
+                    role="option"
+                    tabindex="-1"
+                    data-value="{{ $type | urlize }}"
+                    data-label="{{ $type | strings.FirstUpper }}"
+                    data-count="{{ $count }}"
+                  >
+                    <span class="block truncate font-medium"
+                      >{{ $type | strings.FirstUpper }} ({{ $count }})</span
+                    ><span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                      ><div class="h-5 w-5">
+                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1" y="1" width="22" height="22" rx="11" fill="#fff"></rect>
+                          <rect
+                            x="1"
+                            y="1"
+                            width="22"
+                            height="22"
+                            rx="11"
+                            stroke="#BDBDBD"
+                            stroke-width="2"
+                          ></rect>
+                        </svg></div
+                    ></span>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ range .Pages }}
+        {{ $filter_classes := delimit (apply .Params.event_types "printf" "filtered-item-%s" ".") " " | lower }}
+        <div class="col-span-full lg:col-span-4 filtered-item {{ $filter_classes }}">
+          <div class="relative h-full">
+            <div class="relative h-full w-full bg-fika-dust p-8 grid">
+              <div class="flex items-center gap-2 self-start">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1Zm0 5a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H6Z"
+                    fill="#111827"
+                  ></path></svg
+                ><span class="text-base font-medium lg:text-xl">
+                  {{ $dateHuman := $.Date | time.Format ":date_long" }}
+                  {{ $dateHuman }}
+                </span>
+              </div>
+              <div class="mt-2 mb-12 flex items-center gap-2 self-start">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
+                    fill="currentColor"
+                  ></path></svg
+                ><span class="text-base font-medium lg:text-xl">{{ .Params.location }}</span>
+              </div>
+              <span class="block text-3xl font-medium lg:text-5xl">{{ .Title }}</span>
+              <a
+                href="{{ .RelPermalink }}"
+                class="group mt-7 flex cursor-pointer items-center justify-between self-end"
+              >
+                <span href="{{ .RelPermalink }}" class="group-hover:text-fika-hover-purple"
+                  >View event</span
+                >
+                <div
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white group-hover:bg-fika-hover-purple"
+                >
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

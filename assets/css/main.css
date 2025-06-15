@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+@source "hugo_stats.json";
+
+@theme {
+  --color-fika-ash: #d1c6b3;
+  --color-fika-dust: #efeae1;
+  --color-fika-offWhite: #fbf8f3;
+  --color-fika-light-purple: #d0cbf2;
+  --color-fika-purple: #8c7de5;
+  --color-fika-hover-purple: #a397ea;
+  --color-fika-orange: #ff8c3c;
+  --color-fika-soft-pink: #ec96b5;
+  --color-fika-soft-blue: #9aafe3;
+  --color-fika-sky-blue: #97ced6;
+  --color-fika-soft-green: #93d7a6;
+  --color-fika-soft-yellow: #efe585;
+  --color-fika-soft-blue-hover: #f0f3fb;
+  --color-fika-soft-green-hover: #eff9f2;
+  --color-fika-soft-yellow-hover: #fdfbed;
+
+  --breakpoint-3xl: 2000px;
+  --breakpoint-4xl: 3000px;
+
+  --default-font-family: 'Patron', var(--font-sans);
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Patron';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/fonts/Patron-Light.otf');
+}
+
+@font-face {
+  font-family: 'Patron';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/Patron-Medium.otf');
+}
+
+.shadow-popover-panel {
+  box-shadow: 0px 1px 14px 4px rgba(0, 0, 0, 0.1);
+}
+
+@screen md {
+  .swiper-container-slider-service .swiper-slide {
+    width: 450px;
+  }
+}
+
+@screen lg {
+  .swiper-container-slider-service .swiper-slide {
+    width: 543px;
+  }
+}
+
+/* ImageCardTeaser Swiper */
+.swiper-container-slider-imageCard .swiper-slide {
+  width: 280px;
+}
+
+@screen md {
+  .swiper-container-slider-imageCard .swiper-slide {
+    width: 340px;
+  }
+}
+
+@screen lg {
+  .swiper-container-slider-imageCard .swiper-slide {
+    width: 360px;
+  }
+}
+
+.list-orange-dots li::marker {
+  color: #ff8c3c;
+}
+
+.list-background {
+  margin-top: 0.25rem;
+  margin-left: 1.25rem;
+}
+
+.list-background li {
+  box-shadow: -1.25rem 0 #fbf8f3;
+  margin-bottom: 12px;
+  background-color: #fbf8f3;
+  padding: 16px 24px 16px 12px;
+}
+
+.list-background li::marker {
+  content: '•';
+  font-weight: 400;
+}
+
+[type='email']:focus,
+textarea:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+}
+
+.height-scroll {
+  /* calculating the height of the list options content */
+  height: calc(100vh - 188px);
+}
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+nav .shadow-popover-panel {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 230px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+nav ul a {
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.children-menu:hover .shadow-popover-panel {
+  display: block;
+}
+
+.highlight pre {
+  padding: 16px;
+  font-size: 0.65em;
+}

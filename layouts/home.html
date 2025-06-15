@@ -1,0 +1,605 @@
+{{ define "main" }}
+  <div class="relative mb-14">
+    <div class="md:block relative">
+      {{ $img := resources.Get "/images/fikaworks-website-background-desktop.png" }}
+      {{ $tiny := $img.Resize "1080x webp" }}
+      {{ $small := $img.Resize "1200x webp" }}
+      {{ $medium := $img.Resize "1600x webp" }}
+      {{ $large := $img.Resize "2700x webp" }}
+      <img
+        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
+        src="{{ $medium.RelPermalink }}"
+        srcset="
+          {{ $tiny.RelPermalink }}  640w,
+          {{ $small.RelPermalink }} 1080w,
+          {{ $medium.RelPermalink }} 1200w,
+          {{ $large.RelPermalink }} 1600w
+        "
+        sizes="100vw"
+      />
+      <div
+        class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
+      >
+        <h1
+          class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl"
+        >
+          Consulting is more than giving advice
+        </h1>
+        <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
+          <a href="/services">
+            <div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                Discover our services<svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </div> </a
+          ><a href="/members">
+            <div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:border-fika-hover-purple focus:border-fika-purple bg-transparent active:border-fika-purple cursor-pointer border-2 border-black text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                Get to know our members<svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-6 lg:py-14">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-5xl">Co. for community</div>
+        <div class="mt-6 lg:mt-8">
+          <div class="font-light text-lg lg:text-2xl">
+            <p class="pb-5 font-light lg:pb-6">
+              <a href="http://Fika.works">Fika.works</a> is a community first, company second. We
+              believe that a cooperative structure helps our members be the best version of
+              themselves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full lg:col-start-2 lg:col-end-10 mt-2 lg:mt-4">
+        <a
+          href="members"
+          class="group font-medium hover:text-fika-hover-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg"
+          ><span>Meet our members</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    data-blok-c='{"name":"text_container","space":"191941","uid":"872844b0-c0de-4320-aaf1-0db33240800f","id":"247620060"}'
+    data-blok-uid="247620060-872844b0-c0de-4320-aaf1-0db33240800f"
+    class="bg-white py-6 lg:py-14"
+  >
+    <div class="invisible relative -top-20 block"></div>
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-5xl">Co. for consultancy</div>
+        <div class="mt-6 lg:mt-8">
+          <div class="font-light text-lg lg:text-2xl">
+            <p class="pb-5 font-light lg:pb-6">
+              <a href="http://Fika.works">Fika.works</a> specializes in cloud native consultancy.
+              All our members have extensive experience in their fields.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="-mt-2">
+      <div
+        data-blok-c='{"name":"service_teaser","space":"191941","uid":"1a4c6cd1-1083-4fa6-a747-8e76a5ef5a79","id":"247620060"}'
+        data-blok-uid="247620060-1a4c6cd1-1083-4fa6-a747-8e76a5ef5a79"
+        class="bg-white lg:py-14 py-6"
+      >
+        <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+          <div class="col-span-full lg:col-start-2 lg:col-end-12">
+            <div class="grid grid-cols-2 gap-x-10 gap-y-14">
+              <div class="col-span-full lg:col-span-1">
+                <div class="h-full">
+                  <div
+                    class="h-4 lg:h-[18px] w-full border-b-[16px] border-r-[16px] lg:border-b-[18px] lg:border-r-[18px] border-r-transparent border-b-fika-soft-green"
+                  ></div>
+                  <div
+                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[68px] h-[68px] lg:w-20 lg:h-20 flex-shrink-0 flex-grow-0"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.536 6.93C5.279 4.99 7.16 3.125 10 3.125c3.06 0 5.627 2.191 6.181 5.679.796.119 1.636.42 2.328.95.868.663 1.491 1.678 1.491 3.059 0 1.354-.512 2.4-1.383 3.094-.85.677-1.98.968-3.148.968H5.313c-2.866 0-5.313-2.021-5.313-5 0-1.51.58-2.713 1.512-3.563.823-.75 1.893-1.204 3.024-1.382ZM10 4.375c-2.362 0-3.895 1.642-4.402 3.307a.625.625 0 0 1-.536.44c-1.067.107-2.025.491-2.707 1.113-.67.61-1.105 1.478-1.105 2.64 0 2.178 1.771 3.75 4.063 3.75h10.156c.98 0 1.804-.245 2.37-.696.544-.434.911-1.105.911-2.117 0-.956-.412-1.616-1-2.065-.607-.465-1.416-.71-2.158-.748a.625.625 0 0 1-.589-.562C14.684 6.224 12.496 4.375 10 4.375Z"
+                        fill="#B1FFC7"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.785 7.647a.625.625 0 0 1 .076.88l-4.211 5a.625.625 0 0 1-.942.017l-1.805-2a.625.625 0 1 1 .928-.838l1.325 1.468 3.749-4.452a.625.625 0 0 1 .88-.075Z"
+                        fill="#B1FFC7"
+                      ></path>
+                    </svg>
+                    <div class="my-6 lg:mt-11 lg:mb-9">
+                      <span class="text-xl font-medium lg:text-3xl">Cloud native consultancy</span>
+                      <p class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg">
+                        individual engineers or teams that can deliver end-to-end projects.
+                      </p>
+                    </div>
+                    <a href="/services/cloud-native-consultancy">
+                      <div
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+                      >
+                        <div class="font-medium text-center flex items-center text-xl gap-3 gap-4">
+                          <svg
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
+                          >
+                            <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                            <path
+                              d="m12.5 9 8 7.5-8 7.5"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path></svg
+                          >Read more
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-full lg:col-span-1">
+                <div class="h-full">
+                  <div
+                    class="h-4 lg:h-[18px] w-full border-b-[16px] border-r-[16px] lg:border-b-[18px] lg:border-r-[18px] border-r-transparent border-b-fika-soft-yellow"
+                  ></div>
+                  <div
+                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[68px] h-[68px] lg:w-20 lg:h-20 flex-shrink-0 flex-grow-0"
+                    >
+                      <path
+                        d="M6.25 18.75H5v-1.875H2.5v1.875H1.25v-1.875a1.252 1.252 0 0 1 1.25-1.25H5a1.252 1.252 0 0 1 1.25 1.25v1.875ZM18.75 18.75H17.5v-1.875H15v1.875h-1.25v-1.875a1.252 1.252 0 0 1 1.25-1.25h2.5a1.252 1.252 0 0 1 1.25 1.25v1.875ZM12.5 18.75h-1.25v-1.875h-2.5v1.875H7.5v-1.875a1.252 1.252 0 0 1 1.25-1.25h2.5a1.252 1.252 0 0 1 1.25 1.25v1.875ZM10 15a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM3.75 15a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM16.25 15a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM13.125 12.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM6.875 12.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5ZM16.25 8.75H3.75A1.251 1.251 0 0 1 2.5 7.5v-5a1.251 1.251 0 0 1 1.25-1.25h12.5A1.252 1.252 0 0 1 17.5 2.5v5a1.252 1.252 0 0 1-1.25 1.25ZM3.75 2.5v5h12.5v-5H3.75Z"
+                        fill="#FFFACC"
+                      ></path>
+                    </svg>
+                    <div class="my-6 lg:mt-11 lg:mb-9">
+                      <span class="text-xl font-medium lg:text-3xl">Trainings</span>
+                      <p class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg">
+                        All our trainers are also experienced consultants and practitioners.
+                      </p>
+                    </div>
+                    <a href="/services/trainings">
+                      <div
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+                      >
+                        <div class="font-medium text-center flex items-center text-xl gap-3 gap-4">
+                          <svg
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
+                          >
+                            <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                            <path
+                              d="m12.5 9 8 7.5-8 7.5"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path></svg
+                          >Read more
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-full lg:col-span-1">
+                <div class="h-full">
+                  <div
+                    class="h-4 lg:h-[18px] w-full border-b-[16px] border-r-[16px] lg:border-b-[18px] lg:border-r-[18px] border-r-transparent border-b-fika-soft-blue"
+                  ></div>
+                  <div
+                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-blue"
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[68px] h-[68px] lg:w-20 lg:h-20 flex-shrink-0 flex-grow-0"
+                    >
+                      <path
+                        d="m15 6.25-.884.884 2.241 2.241h-8.92A3.134 3.134 0 0 0 5 6.938V1.25H3.75v5.688a3.125 3.125 0 0 0 0 6.124v5.688H5v-5.688a3.134 3.134 0 0 0 2.437-2.437h8.92l-2.241 2.241.884.884L18.75 10 15 6.25ZM4.375 11.875a1.875 1.875 0 1 1 0-3.75 1.875 1.875 0 0 1 0 3.75Z"
+                        fill="#D9E3FF"
+                      ></path>
+                    </svg>
+                    <div class="my-6 lg:mt-11 lg:mb-9">
+                      <span class="text-xl font-medium lg:text-3xl">Open source advocacy</span>
+                      <p class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg">
+                        We make your technology easy to use and understand.
+                      </p>
+                    </div>
+                    <a href="/services/open-source-advocacy">
+                      <div
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+                      >
+                        <div class="font-medium text-center flex items-center text-xl gap-3 gap-4">
+                          <svg
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
+                          >
+                            <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                            <path
+                              d="m12.5 9 8 7.5-8 7.5"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path></svg
+                          >Read more
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full lg:col-start-2 lg:col-end-10 lg:-mt-2 mt-0">
+        <a
+          href="services/"
+          class="group font-medium hover:text-fika-hover-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg"
+          ><span>See all services</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-12 bg-white lg:my-28"
+  >
+    <div class="z-10 col-span-full pt-4 lg:col-span-5 lg:col-start-2 lg:pt-20">
+      <div class="text-3xl font-medium lg:text-5xl">View our work</div>
+      <div class="mt-8">
+        <div class="text-lg font-light leading-8 lg:text-3xl lg:leading-[48px]">
+          <p class="pb-5 font-light lg:pb-6">
+            We believe in open collaboration with our customers and with the broader community.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite"
+    ></div>
+    <div
+      class="z-10 col-span-full -mt-2 flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:mt-0 lg:pt-20"
+    >
+      <div>
+        <div class="w-full bg-fika-dust p-8">
+          <div class="mb-1 lg:mb-2">
+            <span class="text-3xl font-medium">100% open source</span>
+            <div class="pt-4 text-lg font-light text-gray-800">
+              <p class="pb-5 font-light lg:pb-6">
+                We promote open source technologies and we like to contribute back.
+              </p>
+            </div>
+          </div>
+          <a href="/https:/github.com/FikaWorks">
+            <div
+              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+            >
+              <div class="font-medium text-center flex items-center text-xl gap-3 gap-4">
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
+                >
+                  <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                  <path
+                    d="m12.5 9 8 7.5-8 7.5"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path></svg
+                >Check our projects on Github
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="w-full bg-fika-dust p-8">
+          <div class="mb-1 lg:mb-2">
+            <span class="text-3xl font-medium">engage with our engineers</span>
+            <div class="pt-4 text-lg font-light text-gray-800">
+              <p class="pb-5 font-light lg:pb-6">
+                We are active in the community: meetups, podcasts, conferences.
+              </p>
+            </div>
+          </div>
+          <a href="/events">
+            <div
+              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+            >
+              <div class="font-medium text-center flex items-center text-xl gap-3 gap-4">
+                <svg
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
+                >
+                  <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                  <path
+                    d="m12.5 9 8 7.5-8 7.5"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path></svg
+                >Check our events
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-6 lg:py-14">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full mb-6 lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-4xl">Sharing is power</div>
+      </div>
+    </div>
+    <div class="bg-white">
+      <div class="relative md:block">
+        <div class="absolute -top-16 right-10 z-50 flex gap-5">
+          <button
+            class="image-swiper-button-prev cursor-pointer rounded-full border-2 border-black bg-white p-3.5 text-black hover:bg-black hover:text-white active:border-fika-purple active:bg-fika-purple active:text-white swiper-button-disabled swiper-button-lock"
+            disabled=""
+          >
+            <svg
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              class="w-4 h-4 flex-shrink-0 flex-grow-0"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9.707 16.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 1.414L5.414 9H17a1 1 0 1 1 0 2H5.414l4.293 4.293a1 1 0 0 1 0 1.414Z"
+                fill="currentColor"
+              ></path>
+            </svg></button
+          ><button
+            class="image-swiper-button-next cursor-pointer rounded-full border-2 border-black bg-white p-3.5 text-black hover:bg-black hover:text-white active:border-fika-purple active:bg-fika-purple active:text-white swiper-button-disabled swiper-button-lock"
+            disabled=""
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 flex-shrink-0 flex-grow-0"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="swiper swiper-container-slider-imageCard swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden"
+        >
+          <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+            <div
+              class="swiper-slide swiper-slide-active mr-5 lg:mr-10"
+              style="margin-left: 162.667px"
+            >
+              <div>
+                <a href="/blog/lessons-learned-from-going-live-with-kubernetes">
+                  <div class="relative mt-6 lg:mt-0">
+                    <div class="relative h-full w-full">
+                      <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
+                        <div class="absolute top-0 right-0 z-30 w-[75%]">
+                          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
+                              fill="#fff"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div
+                          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+                          style="height: 100%"
+                        >
+                          {{ $img := resources.Get "/images/lessons-learned-from-going-live-on-kubernetes.png" }}
+                          {{ $tiny := $img.Resize "1080x webp" }}
+                          {{ $small := $img.Resize "1200x webp" }}
+                          {{ $medium := $img.Resize "1600x webp" }}
+                          {{ $large := $img.Resize "2700x webp" }}
+                          <img
+                            alt="Lessons learned from going live on Kubernetes"
+                            src="{{ $medium.RelPermalink }}"
+                            srcset="
+                              {{ $tiny.RelPermalink }}  640w,
+                              {{ $small.RelPermalink }} 1080w,
+                              {{ $medium.RelPermalink }} 1200w,
+                              {{ $large.RelPermalink }} 1600w
+                            "
+                            sizes="100vw"
+                          />
+                        </div>
+                        <div
+                          class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
+                        >
+                          <div class="mt-3">
+                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                              ><span class="flex items-center text-xs font-normal capitalize"
+                                >• Technology</span
+                              ></span
+                            >
+                          </div>
+                          <div class="mt-3">
+                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                              ><span class="flex items-center text-xs font-normal capitalize"
+                                >• Kubernetes</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-7">
+                      <div class="flex gap-5 font-medium">
+                        <span class="text-gray-800">Catalin Jora</span
+                        ><span class="text-gray-600">5 minutes reading</span>
+                      </div>
+                      <span
+                        class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
+                        >Lessons learned from going live on Kubernetes</span
+                      >
+                      <div class="mt-3 lg:hidden">
+                        <p class="text-lg font-medium underline underline-offset-2">Read more</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-next mr-5 lg:mr-10">
+              <div>
+                <a href="/blog/what-fikaworks-offers-clients">
+                  <div class="relative mt-6 lg:mt-0">
+                    <div class="relative h-full w-full">
+                      <div class="h-64 w-full overflow-hidden rounded-xl md:h-[314px]">
+                        <div class="absolute top-0 right-0 z-30 w-[75%]">
+                          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 42">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
+                              fill="#fff"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div
+                          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+                          style="height: 100%"
+                        >
+                          {{ $img := resources.Get "/images/what-fikaworks-as-to-offer.png" }}
+                          {{ $tiny := $img.Resize "1080x webp" }}
+                          {{ $small := $img.Resize "1200x webp" }}
+                          {{ $medium := $img.Resize "1600x webp" }}
+                          {{ $large := $img.Resize "2700x webp" }}
+                          <img
+                            alt="What FikaWorks as to offer"
+                            src="{{ $medium.RelPermalink }}"
+                            srcset="
+                              {{ $tiny.RelPermalink }}  640w,
+                              {{ $small.RelPermalink }} 1080w,
+                              {{ $medium.RelPermalink }} 1200w,
+                              {{ $large.RelPermalink }} 1600w
+                            "
+                            sizes="100vw"
+                          />
+                        </div>
+                        <div
+                          class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
+                        >
+                          <div class="mt-3">
+                            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                              ><span class="flex items-center text-xs font-normal capitalize"
+                                >• Technology</span
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-7">
+                      <div class="flex gap-5 font-medium">
+                        <span class="text-gray-800">Jason Smith</span
+                        ><span class="text-gray-600">3 minutes reading</span>
+                      </div>
+                      <span
+                        class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
+                        >What FikaWorks Has to Offer Our Clients</span
+                      >
+                      <div class="mt-3 lg:hidden">
+                        <p class="text-lg font-medium underline underline-offset-2">Read more</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+      <div class="col-span-full mt-12 lg:col-start-2 lg:col-end-10">
+        <a
+          href="blog/"
+          class="group font-medium hover:text-fika-hover-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg"
+          ><span>See all articles</span></a
+        >
+      </div>
+    </div>
+  </div>
+{{ end }}

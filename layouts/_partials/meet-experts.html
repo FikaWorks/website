@@ -1,0 +1,61 @@
+{{- $input := . | lower }}
+{{- $filtered := slice }}
+
+{{- range where site.RegularPages "Type" "members" }}
+  {{- $expertises := .Params.expertises }}
+  {{- if $expertises }}
+    {{- $normalized := apply $expertises "lower" "." }}
+    {{- if in $normalized $input }}
+      {{- $filtered = $filtered | append . }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- range first 3 (shuffle $filtered) }}
+  <div class="col-span-full sm:col-span-1">
+    <div class="relative">
+      <div class="relative h-full w-full bg-fika-dust">
+        <div
+          class="absolute top-0 right-0 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-white"
+        ></div>
+        <div class="h-[240px] w-full lg:h-[270px] 3xl:h-[480px]">
+          <div
+            class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle"
+            style="height: 100%;"
+          >
+            {{ $img := .Resources.Get .Params.image }}
+            {{ if $img }}
+              {{ $tiny := $img.Resize "1080x webp" }}
+              {{ $small := $img.Resize "1200x webp" }}
+              {{ $medium := $img.Resize "1600x webp" }}
+              {{ $large := $img.Resize "2700x webp" }}
+              <img
+                alt="{{ .Title }}"
+                src="{{ $medium.RelPermalink }}"
+                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                srcset="
+                  {{ $tiny.RelPermalink }}  640w,
+                  {{ $small.RelPermalink }} 1080w,
+                  {{ $medium.RelPermalink }} 1200w,
+                  {{ $large.RelPermalink }} 1600w
+                "
+                sizes="100vw"
+              />
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <span class="text-2xl font-medium">{{ .Title }}</span>
+        <p class="mt-1 text-sm font-light">{{ .Params.role }}</p>
+        <div class="mt-4 flex gap-3">
+          {{ range .Params.expertises }}
+            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+              ><span class="flex items-center text-xs font-normal capitalize">• {{ . }}</span></span
+            >
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{- end }}

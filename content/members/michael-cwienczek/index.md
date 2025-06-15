@@ -1,8 +1,6 @@
 ---
-name: "Michael Cwienczek"
-thumbnail: "profile.jpg"
-specialties: "Kubernetes, Azure, Go, C#, Automation"
-member_status: "incubating"
-linkedin: "https://www.linkedin.com/in/cwienczek/"
-github: "https://github.com/mcwienczek"
+title: "Michael Cwienczek"
+role: "Cloud Native Consultant"
+image: "michael-cwienczek.png"
+expertises: ["Kubernetes", "Azure", "Golang", "AWS"]
 ---
