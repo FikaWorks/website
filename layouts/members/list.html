@@ -20,7 +20,7 @@
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        {{ .Content }}
+        {{- partial "helpers/enhanced-content.html" .Content }}
       </div>
     </div>
   </div>

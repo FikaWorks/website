@@ -17,9 +17,7 @@ cascade:
       publishResources: false
 ---
 
-## Co. for collective ownership
-
-{.text-3xl .font-medium .lg:text-5xl .mb-6 .lg:mb-8}
+### Co. for collective ownership
 
 - **Democratic governance**: No top down leadership; 1 member = 1 vote
 - **Cooperative owned by members**: We keep things flat - no employees or
