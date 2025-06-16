@@ -1,4 +1,23 @@
-window.addEventListener('load', function () {
+const initMainMenu = function () {
+  const menu = document.querySelector('.menu');
+  const btn = menu.querySelector('button');
+  const label = menu.querySelector('.menu-label');
+
+  const menuToggle = function () {
+    if (menu.querySelector('nav').classList.toggle('max-lg:hidden')) {
+      kabel.innerHTML = 'Menu';
+    } else {
+      label.innerHTML = 'Close';
+    }
+
+    menu.querySelector('.menu-icon-close').classList.toggle('hidden');
+    menu.querySelector('.menu-icon-open').classList.toggle('hidden');
+  };
+
+  btn.addEventListener('click', menuToggle);
+};
+
+const initFilters = function () {
   const filter = document.querySelector('ul.filter-list');
   const filterBtn = document.getElementById('filter-btn');
 
@@ -58,4 +77,9 @@ window.addEventListener('load', function () {
       });
     });
   }
+};
+
+window.addEventListener('load', function () {
+  initFilters();
+  initMainMenu();
 });

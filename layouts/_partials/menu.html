@@ -11,11 +11,13 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav class="flex flex-wrap">
+  <nav
+    class="max-lg:absolute max-lg:w-full max-lg:top-0 max-lg:hidden lg:flex lg:flex-wrap"
+  >
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="-mr-2 h-[90px]"
+      class="-mr-2 h-[90px] max-lg:hidden"
       viewBox="0 0 111 90"
     >
       <path
@@ -23,7 +25,9 @@
         fill="#fff"
       ></path>
     </svg>
-    <div class="flex items-center gap-12 bg-white pr-10">
+    <div
+      class="lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:p-10 max-lg:pt-20"
+    >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
     </div>
   </nav>
@@ -44,13 +48,9 @@
     {{- end }}
     <div>
       {{- if $hasChildren }}
-        <div class="relative cursor-pointer">
+        <div class="relative cursor-pointer group">
           <div class="children-menu">
-            <button
-              class="{{ $classes }} focus:outline-none"
-              type="button"
-              aria-expanded="false"
-            >
+            <a class="{{ $classes }} focus:outline-none p-2">
               <div>
                 <span>{{ .Name }}</span>
               </div>
@@ -60,7 +60,7 @@
                   height="16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 flex-shrink-0 flex-grow-0"
+                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-lg:hidden"
                 >
                   <path
                     fill-rule="evenodd"
@@ -70,10 +70,17 @@
                   ></path>
                 </svg>
               </div>
-            </button>
+            </a>
+            {{- if eq $level 0 }}
+              <div
+                class="lg:hidden group-hover:flex lg:flex w-full justify-center lg:mt-2"
+              ></div>
+            {{- end }}
             {{- with .Children }}
-              <div class="shadow-popover-panel rounded-md bg-white">
-                <div class="p6">
+              <div
+                class="popover-panel lg:shadow-xl lg:absolute lg:w-[270px] rounded-md bg-white lg:hidden"
+              >
+                <div class="lg:p-6 max-lg:pl-2">
                   <ul>
                     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" (add $level 1)) }}
                   </ul>
@@ -84,14 +91,24 @@
         </div>
       {{- else }}
         <div class="cursor-pointer group">
-          <a href="{{ .URL }}">
+          <a
+            href="{{ .URL }}"
+            {{- if eq $level 0 }}
+              class="max-lg:block underline-none hover:max-lg:underline
+              max-lg:p-2"
+            {{- else }}
+              class="block underline-none hover:max-lg:underline p-2"
+            {{- end }}
+          >
             <div class="{{ $classes }}">
               <span>{{ .Name }}</span>
             </div>
           </a>
           {{- if eq $level 0 }}
-            <div class="hidden group-hover:flex w-full justify-center mt-2">
-              <div class="h-[1px] w-3 bg-fika-light-purple"></div>
+            <div
+              class="lg:hidden group-hover:flex lg:flex w-full justify-center lg:mt-2"
+            >
+              <div class="h-[1px] w-3 bg-fika-light-purple max-lg:hidden"></div>
             </div>
           {{- end }}
         </div>
