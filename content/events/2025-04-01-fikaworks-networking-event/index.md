@@ -1,8 +1,9 @@
 +++
 title = "FikaWorks networking event"
-date = "2025-04-01T08:00:00+00:00"
-location = "London, UK (Good Hotel close the KubeCon location)"
+date = "2018-01-01T00:00:00+02:00"
 image = "fikaworks-days.jpg"
+event_date = "2025-04-01T08:00:00+00:00"
+event_location = "Good Hotel, London, UK"
 event_types = ["workshop"]
 +++
 
@@ -12,6 +13,8 @@ Whether you're curious about becoming a member or just want to learn more about
 our cooperative, you're warmly invited.
 
 Come chat, connect, and discover what we're all about.
+
+---
 
 **Agenda**
 

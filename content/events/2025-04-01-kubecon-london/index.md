@@ -1,8 +1,9 @@
 +++
 title = "Kubecon Europe 2025"
-date = "2025-04-03T08:00:00+00:00"
-location = "London, UK"
+date = "2018-01-01T00:00:00+02:00"
 image = "kubecon-2025-london.png"
+event_date = "2025-04-03T08:00:00+00:00"
+event_location = "London, UK"
 event_types = ["conference"]
 +++
 

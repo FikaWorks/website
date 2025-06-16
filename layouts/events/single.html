@@ -1,45 +1,76 @@
 {{ define "main" }}
   <div class="hidden h-full w-full md:block">
-    <div
-      class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-    >
-      {{ $img := .Resources.Get $.Params.image }}
-      {{ if $img }}
-        <div
-          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-          style="height: 100%;"
-        >
-          {{ $tiny := $img.Resize "1080x webp" }}
-          {{ $small := $img.Resize "1200x webp" }}
-          {{ $medium := $img.Resize "1600x webp" }}
-          {{ $large := $img.Resize "2700x webp" }}
-          <img
-            alt="{{ .Title }}"
-            src="{{ $medium.RelPermalink }}"
-            srcset="
-              {{ $tiny.RelPermalink }}  640w,
-              {{ $small.RelPermalink }} 1080w,
-              {{ $medium.RelPermalink }} 1200w,
-              {{ $large.RelPermalink }} 1600w
-            "
-            sizes="100vw"
-          />
-        </div>
-      {{ end }}
-    </div>
+    {{ $img := .Resources.Get $.Params.image }}
+    {{ if $img }}
+      <div
+        class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+        style="height: 580px;"
+      >
+        {{ $tiny := $img.Resize "1080x webp" }}
+        {{ $small := $img.Resize "1200x webp" }}
+        {{ $medium := $img.Resize "1600x webp" }}
+        {{ $large := $img.Resize "2700x webp" }}
+        <img
+          alt="{{ .Title }}"
+          src="{{ $medium.RelPermalink }}"
+          style="position: absolute; margin: auto; display: block; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+          srcset="
+            {{ $tiny.RelPermalink }}  640w,
+            {{ $small.RelPermalink }} 1080w,
+            {{ $medium.RelPermalink }} 1200w,
+            {{ $large.RelPermalink }} 1600w
+          "
+          sizes="100vw"
+        />
+      </div>
+    {{ end }}
   </div>
   <div
     class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
   >
     <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-2 lg:pt-[120px]">
       <div class="top-10 flex flex-row gap-5 lg:sticky lg:flex-col lg:gap-0">
-        <p
-          class="text-sm font-medium text-gray-800 md:text-base md:font-light lg:mb-5"
-        >
-          Published on <br />
-          {{ $dateHuman := .Date | time.Format ":date_long" }}
-          {{ $dateHuman }}
-        </p>
+        <div class="flex items-center gap-2 lg:mb-5">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1Zm0 5a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H6Z"
+              fill="#111827"
+            ></path>
+          </svg>
+          <p
+            class="text-sm font-medium text-gray-800 md:text-base md:font-light"
+          >
+            {{ $dateHuman := .Params.event_date | time.Format ":date_long" }}
+            {{ $dateHuman }}
+          </p>
+        </div>
+        <div class="flex items-center gap-2 lg:mb-5">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <p
+            class="text-sm font-medium text-gray-800 md:text-base md:font-light"
+          >
+            {{ .Params.event_location }}
+          </p>
+        </div>
         <div class="hidden flex-col md:mt-7 lg:flex">
           <p class="mb-5">Share this post</p>
           <div class="flex gap-4">
@@ -179,7 +210,7 @@
         {{ .Title }}
       </h1>
       <div class="text-lg font-light">
-        {{ .Content | replaceRE "<p>" "<p class=\"pb-5 font-light lg:pb-6\">" | safeHTML }}
+        {{ partial "helpers/enhanced-content.html" .Content }}
       </div>
     </div>
   </div>

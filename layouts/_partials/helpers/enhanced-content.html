@@ -7,4 +7,5 @@
 {{- $content = replaceRE "<ul" "<ul class=\"ml-5 list-orange-dots inline-block list-disc\"" $content -}}
 {{- $content = replaceRE "<li" "<li class=\"pb-5 font-light lg:pb-6\"" $content -}}
 {{- $content = replaceRE "<a" "<a class=\"underline\"" $content -}}
+{{- $content = replaceRE "<hr" "<hr class=\"mx-auto my-10 w-[80%] h-[1px] border-none bg-fika-dust\"" $content -}}
 {{- $content | safeHTML -}}

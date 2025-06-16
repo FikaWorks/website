@@ -204,7 +204,7 @@
         </div>
       </div>
 
-      {{ range .Pages }}
+      {{ range sort .Pages ".Params.event_date" "desc" }}
         {{ $filter_classes := delimit (apply .Params.event_types "printf" "filtered-item-%s" ".") " " | lower }}
         <div
           class="col-span-full lg:col-span-4 filtered-item {{ $filter_classes }}"
@@ -225,7 +225,7 @@
                     fill="#111827"
                   ></path></svg
                 ><span class="text-base font-medium lg:text-xl">
-                  {{ $dateHuman := $.Date | time.Format ":date_long" }}
+                  {{ $dateHuman := .Params.event_date | time.Format ":date_long" }}
                   {{ $dateHuman }}
                 </span>
               </div>
@@ -243,7 +243,7 @@
                     fill="currentColor"
                   ></path></svg
                 ><span class="text-base font-medium lg:text-xl"
-                  >{{ .Params.location }}</span
+                  >{{ .Params.event_location }}</span
                 >
               </div>
               <span class="block text-3xl font-medium lg:text-5xl"
