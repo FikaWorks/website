@@ -1,11 +1,16 @@
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
 <title>
-  {{ if .IsHome }}
-    {{ site.Title }}
-  {{ else }}
-    {{ printf "%s | %s" .Title site.Title }}
-  {{ end }}
+  {{- if .IsHome }}
+    {{- site.Title }}
+  {{- else }}
+    {{- printf "%s | %s" .Title site.Title }}
+  {{- end -}}
 </title>
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+{{- partialCached "head/css.html" . }}
+{{- partialCached "head/js.html" . }}
+{{- partial "head/seo.html" . }}
+{{- partial "head/opengraph.html" . }}

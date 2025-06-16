@@ -1,7 +1,7 @@
 +++
 title = "Kubecon Europe 2023"
 date = "2018-01-01T00:00:00+02:00"
-image = "kubecon-europe.jpg"
+image = "kubecon-europe.png"
 event_date = "2023-04-17T09:00:00+02:00"
 event_location = "RAI Amsterdam, NL"
 event_types = ["conference"]

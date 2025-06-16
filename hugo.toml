@@ -3,6 +3,11 @@ languageCode = 'en-US'
 title = 'FikaWorks'
 
 disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[params]
+description = "FikaWorks is a community-driven engineering collective helping businesses adopt cloud-native technologies and accelerate digital transformation."
+twitter_handler = "@fikaworks"
 
 [taxonomies]
 category = "categories"
@@ -10,6 +15,12 @@ tag = "tags"
 
 [markup.goldmark.parser.attribute]
 block = true
+
+[outputs]
+page = ["HTML"]
+home = ["HTML"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML"]
 
 [markup.goldmark.renderer]
 unsafe = true

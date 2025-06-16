@@ -1,10 +1,21 @@
-+++
-title = "Co. for community"
-date = 2023-01-01T08:00:00-07:00
-draft = false
-heading = "We are a cooperative of engineers, firstly a community and secondly a company. We believe that a community structure helps our members be the best version of themselves."
-image = ""
-+++
+---
+title: 'Co. for community'
+date: '2023-01-01T08:00:00-07:00'
+draft: false
+heading:
+  'We are a cooperative of engineers, firstly a community and secondly a
+  company. We believe that a community structure helps our members be the best
+  version of themselves.'
+image: ''
+build:
+  render: always
+  list: always
+cascade:
+  - build:
+      render: never
+      list: local
+      publishResources: false
+---
 
 ## Co. for collective ownership
 

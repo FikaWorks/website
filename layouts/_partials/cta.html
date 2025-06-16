@@ -6,11 +6,11 @@
       class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
       style="height: 100%;"
     >
-      {{ $img := resources.Get "/images/cta-background.png" }}
-      {{ $tiny := $img.Resize "1080x webp" }}
-      {{ $small := $img.Resize "1200x webp" }}
-      {{ $medium := $img.Resize "1600x webp" }}
-      {{ $large := $img.Resize "2700x webp" }}
+      {{- $img := resources.Get "/images/cta-background.png" }}
+      {{- $tiny := $img.Resize "1080x webp" }}
+      {{- $small := $img.Resize "1200x webp" }}
+      {{- $medium := $img.Resize "1600x webp" }}
+      {{- $large := $img.Resize "2700x webp" }}
       <img
         src="{{ $medium.RelPermalink }}"
         srcset="

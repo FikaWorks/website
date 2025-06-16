@@ -1,18 +1,18 @@
-{{ define "main" }}
+{{- define "main" }}
   <div class="h-full w-full md:block">
     <div
       class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
     >
-      {{ $img := .Resources.Get $.Params.image }}
-      {{ if $img }}
+      {{- $img := .Resources.Get $.Params.image }}
+      {{- if $img }}
         <div
           class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
           style="height: 100%;"
         >
-          {{ $tiny := $img.Resize "1080x webp" }}
-          {{ $small := $img.Resize "1200x webp" }}
-          {{ $medium := $img.Resize "1600x webp" }}
-          {{ $large := $img.Resize "2700x webp" }}
+          {{- $tiny := $img.Resize "1080x webp" }}
+          {{- $small := $img.Resize "1200x webp" }}
+          {{- $medium := $img.Resize "1600x webp" }}
+          {{- $large := $img.Resize "2700x webp" }}
           <img
             alt="{{ .Title }}"
             src="{{ $medium.RelPermalink }}"
@@ -25,7 +25,7 @@
             sizes="100vw"
           />
         </div>
-      {{ end }}
+      {{- end }}
     </div>
   </div>
   <div
@@ -37,8 +37,8 @@
           class="text-sm font-medium text-gray-800 md:text-base md:font-light lg:mb-5"
         >
           Published on <br />
-          {{ $dateHuman := .Date | time.Format ":date_long" }}
-          {{ $dateHuman }}
+          {{- $dateHuman := .Date | time.Format ":date_long" }}
+          {{- $dateHuman }}
         </p>
         <p class="text-sm text-gray-800 md:text-base lg:mb-5">
           Written by <br />{{ .Params.author }}
@@ -303,4 +303,4 @@
       </div>
     </div>
   </div>
-{{ end }}
+{{- end }}

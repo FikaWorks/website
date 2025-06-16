@@ -1,0 +1,115 @@
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta
+  property="og:description"
+  content="{{ with .Description }}
+    {{- . }}
+  {{- else }}
+    {{- if .IsPage }}
+      {{- .Summary }}
+    {{- else }}
+      {{- with .Site.Params.description }}{{ . }}{{ end }}
+    {{- end }}
+  {{- end -}}
+  "
+/>
+<meta
+  property="og:type"
+  content="{{- if .IsPage -}}
+    article
+  {{- else -}}
+    website
+  {{- end -}}
+  "
+/>
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:locale" content="{{ .Lang }}" />
+{{- if .IsPage }}
+  {{- $iso8601 := "2006-01-02T15:04:05-07:00" }}
+  <meta property="article:section" content="{{ .Section }}" />
+  {{- with .PublishDate }}
+    <meta
+      property="article:published_time"
+      {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{- end -}}
+
+  {{- with .Lastmod }}
+    <meta
+      property="article:modified_time"
+      {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
+    />
+  {{- end }}
+{{- end }}
+
+{{- if and .IsPage (.Params.image) -}}
+  {{- /* 1. load background */}}
+  {{- $bg := .Page.Resources.GetMatch .Params.image }}
+  {{- if not $bg }}
+    {{- $bg = resources.Get (path.Join "blog" (path.Base .Params.image)) }}
+  {{- end }}
+  {{- if not $bg }}
+    {{- errorf "OG-image: missing %q" .Params.image }}
+  {{- end -}}
+
+  {{- /* 2. resize optimal og size */}}
+  {{- $bg = $bg.Fill (printf "%dx%d" 1200 630) -}}
+
+  {{- /* 3. load font */}}
+  {{- $font := resources.Get "fonts/Patron-Regular.otf" }}
+  {{- if not $font }}
+    {{- errorf "OG-image: missing font Patron-Regular.otf in assets/fonts/" }}
+  {{- end -}}
+
+  {{- /* 4. overlay logo */}}
+  {{- $logo := resources.Get "images/fikaworks-logo-square-white-bg.png" }}
+  {{- if not $logo }}
+    {{- errorf "OG-image: missing logo assets/images/fikaworks-logo-square-white-bg.png" }}
+  {{- end }}
+  {{- $posX := sub $bg.Width (add $logo.Width 40) -}}
+
+  {{- /* 5. gradient mask */}}
+  {{- $mask := resources.Get "images/og-mask.png" }}
+  {{- if not $mask }}
+    {{- errorf "OG-image: missing mask assets/images/og-mask.png" }}
+  {{- end -}}
+
+  {{- /* 6. combine layers */}}
+  {{- $mask = $mask.Fill (printf "%dx%d" $bg.Width $bg.Height) }}
+  {{- $img := $bg.Filter (images.Overlay $mask 0 0 ) }}
+  {{- $img = $img.Filter (images.Overlay $logo 40 38 ) }}
+
+  {{- /* 7. draw centered bottom text */}}
+  {{- $opts := dict
+    "font"       $font
+    "size"       100
+    "color"      "#000000"
+    "alignx"     "center"
+    "aligny"     "bottom"
+    "x"          (div $bg.Width 2)
+    "y"          (sub $bg.Height 100)
+  }}
+  {{- $img = $img | images.Filter (images.Text .Title $opts) -}}
+
+  {{- /* 8. export */}}
+  {{- $og := $img | resources.Copy (path.Join .RelPermalink "og.png") }}
+  <meta property="og:image" content="{{ $og.Permalink }}" />
+  <meta property="og:image:width" content="{{ $og.Width }}" />
+  <meta property="og:image:height" content="{{ $og.Height }}" />
+  <meta name="twitter:image" content="{{ $og.Permalink }}" />
+{{- end }}
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:site" content="{{ .Site.Params.twitter_handler }}" />
+<meta
+  name="twitter:description"
+  content="{{ with .Description }}
+    {{- . }}
+  {{- else }}
+    {{- if .IsPage }}
+      {{- .Summary }}
+    {{- else }}
+      {{- with .Site.Params.description }}{{ . }}{{ end }}
+    {{- end }}
+  {{- end -}}
+  "
+/>

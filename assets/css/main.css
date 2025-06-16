@@ -1,6 +1,30 @@
 @import 'tailwindcss';
 @source "hugo_stats.json";
 
+@font-face {
+  font-family: 'Patron';
+  src: url('#{resources.Get "fonts/Patron-Regular.otf" | fingerprint | relURL}')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Patron';
+  font-weight: 300;
+  font-style: normal;
+  src: url('#{resources.Get "fonts/Patron-Light.otf" | fingerprint | relURL}')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Patron';
+  font-weight: 500;
+  font-style: normal;
+  src: url('#{resources.Get "fonts/Medium.otf" | fingerprint | relURL}')
+    format('truetype');
+}
+
 @theme {
   --color-fika-ash: #d1c6b3;
   --color-fika-dust: #efeae1;
@@ -31,20 +55,6 @@
 body {
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
-}
-
-@font-face {
-  font-family: 'Patron';
-  font-weight: 300;
-  font-style: normal;
-  src: url('/fonts/Patron-Light.otf');
-}
-
-@font-face {
-  font-family: 'Patron';
-  font-weight: 500;
-  font-style: normal;
-  src: url('/fonts/Patron-Medium.otf');
 }
 
 .list-orange-dots li::marker {
