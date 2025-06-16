@@ -4,63 +4,63 @@
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-span-5 lg:col-start-2">
+        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
+        <div class="mt-6 text-lg font-light lg:text-2xl">
+          <p class="pb-5 font-light lg:pb-6">
+            {{ .Content }}
+          </p>
+        </div>
         <div
-          data-blok-c='{"name":"contact_header","space":"191941","uid":"4ef242ea-cde5-443a-895f-7571383bea3b","id":"251617527"}'
-          data-blok-uid="251617527-4ef242ea-cde5-443a-895f-7571383bea3b"
+          class="mt-8 flex w-full flex-wrap items-center gap-5 md:mt-6 md:flex-nowrap"
         >
-          <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
-          <div class="mt-6 text-lg font-light lg:text-2xl">
-            <p class="pb-5 font-light lg:pb-6">
-              {{ .Content }}
-            </p>
-          </div>
-          <div
-            class="mt-8 flex w-full flex-wrap items-center gap-5 md:mt-6 md:flex-nowrap"
-          >
-            <a
-              href="https://www.google.com/maps/dir/?api=1&amp;destination=Hendrik+Figeeweg+3F,+2031+BJ+Haarlem"
-              target="_blank"
-              class="w-full md:w-auto"
-              ><div
-                class="group inline-block lg:w-max w-full cursor-pointer bg-fika-offWhite text-black hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-lg"
-              >
-                <div class="font-medium text-center py-[14px] px-5 text-sm">
-                  <div class="flex items-center justify-center gap-3">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-4 h-4 lg:w-6 lg:h-6 flex-shrink-0 flex-grow-0"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
-                        fill="currentColor"
-                      ></path></svg
-                    ><span class="text-sm font-medium"
-                      >Route in Google Maps</span
-                    >
-                  </div>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=Hendrik+Figeeweg+3F,+2031+BJ+Haarlem"
+            target="_blank"
+            class="w-full md:w-auto"
+            ><div
+              class="group inline-block lg:w-max w-full cursor-pointer bg-fika-offWhite text-black hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-lg"
+            >
+              <div class="font-medium text-center py-[14px] px-5 text-sm">
+                <div class="flex items-center justify-center gap-3">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 lg:w-6 lg:h-6 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.94 4.86a8.4 8.4 0 0 1 0 11.88L12 22.68l-5.94-5.94A8.4 8.4 0 0 1 17.94 4.86ZM12 13.2a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z"
+                      fill="currentColor"
+                    ></path></svg
+                  ><span class="text-sm font-medium">Route in Google Maps</span>
                 </div>
-              </div></a
-            >
-          </div>
-          <div class="mt-7 text-sm font-light lg:mt-16 lg:text-base">
-            <p class="pb-5 font-light lg:pb-6">
-              FikaWorks BV<br />Hendrik Figeeweg 3 F, 2031BJ Haarlem, The
-              Netherlands
-            </p>
-          </div>
-          <div>
-            <span class="block text-sm font-light lg:text-base"
-              >info@fika.works</span
-            >
-          </div>
+              </div>
+            </div></a
+          >
+        </div>
+        <div class="mt-7 text-sm font-light lg:mt-16 lg:text-base">
+          <p class="pb-5 font-light lg:pb-6">
+            FikaWorks BV<br />Hendrik Figeeweg 3 F, 2031BJ Haarlem, The
+            Netherlands
+          </p>
+        </div>
+        <div>
+          <span class="block text-sm font-light lg:text-base"
+            >info@fika.works</span
+          >
         </div>
       </div>
       <div class="col-span-full mb-1 lg:col-start-7 lg:col-end-11 lg:mb-0">
-        <form novalidate="" class="flex flex-col pt-2 lg:gap-6 lg:pt-0">
+        <form
+          name="contact"
+          id="contact-form"
+          method="post"
+          data-netlify="true"
+          role="form"
+          class="flex flex-col pt-2 lg:gap-6 lg:pt-0"
+        >
           <div class="w-full">
             <div class="w-full">
               <div class="flex justify-between">
@@ -196,37 +196,19 @@
               </div>
             </button>
           </div>
-          <div>
-            <div>
-              <div>
-                <div
-                  class="grecaptcha-badge"
-                  data-style="bottomright"
-                  style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"
-                >
-                  <div class="grecaptcha-logo">
-                    <iframe
-                      title="reCAPTCHA"
-                      width="256"
-                      height="60"
-                      role="presentation"
-                      name="a-x285supocwta"
-                      frameborder="0"
-                      scrolling="no"
-                      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                      src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lf2-y4kAAAAACaQr35gpNqubuxHM_KMtl2zpuZj&amp;co=aHR0cHM6Ly9maWthLndvcmtzOjQ0Mw..&amp;hl=en&amp;type=image&amp;v=GUGrl5YkSwpBsxsF3eY665Ye&amp;theme=light&amp;size=invisible&amp;badge=bottomright&amp;cb=d59eiiwliin"
-                    ></iframe>
-                  </div>
-                  <div class="grecaptcha-error"></div>
-                  <textarea
-                    id="g-recaptcha-response"
-                    name="g-recaptcha-response"
-                    class="g-recaptcha-response"
-                    style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"
-                  ></textarea>
-                </div>
-                <iframe style="display: none;"></iframe>
-              </div>
+          <div class="mt-12">
+            <div
+              class="form-success hidden bg-green-300 border-green-500 border-2 rounded-md px-5 py-3"
+            >
+              Thank you for contacting us. We'll get back to you as soon as
+              possible.
+            </div>
+
+            <div
+              class="form-failed hidden bg-red-300 border-red-400 border-2 rounded-md px-5 py-3"
+            >
+              We apologize, but an error occurred while submitting your form.
+              Please try again later.
             </div>
           </div>
         </form>

@@ -79,7 +79,36 @@ const initFilters = function () {
   }
 };
 
+const initForms = function () {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    form.querySelector('.form-success').classList.add('hidden');
+    form.querySelector('.form-failed').classList.add('hidden');
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() =>
+        form.querySelector('.form-success').classList.remove('hidden')
+      )
+      .catch(() =>
+        form.querySelector('.form-failed').classList.remove('hidden')
+      );
+  };
+
+  document
+    .querySelectorAll('form')
+    .forEach((f) => f.addEventListener('submit', handleSubmit));
+};
+
 window.addEventListener('load', function () {
-  initFilters();
   initMainMenu();
+  initFilters();
+  initForms();
 });

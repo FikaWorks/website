@@ -77,29 +77,51 @@
   class="order-1 col-span-full mb-2 flex flex-col gap-6 lg:order-3 lg:col-span-4 lg:col-start-9 lg:mb-0 xl:col-start-10"
 >
   <span class="text-xl font-medium">Join our newsletter</span>
-  <div class="flex flex-col items-start gap-7 lg:flex-row lg:gap-2">
-    <div class="w-full lg:min-w-[195px]">
-      <div class="w-full">
-        <div class="flex justify-between"></div>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          placeholder="your email address"
-          class="block w-full rounded-lg border-none bg-gray-100 px-6 py-3 text-lg font-light outline-0 ring-black focus:ring-2"
-          value=""
-        />
+  <form
+    name="newsletter"
+    id="newsletter-form"
+    method="post"
+    data-netlify="true"
+    role="form"
+  >
+    <div class="flex flex-col items-start gap-7 lg:flex-row lg:gap-2">
+      <div class="w-full lg:min-w-[195px]">
+        <div class="w-full">
+          <div class="flex justify-between"></div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="your email address"
+            class="block w-full rounded-lg border-none bg-gray-100 px-6 py-3 text-lg font-light outline-0 ring-black focus:ring-2"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-lg"
+      >
+        <div class="font-medium text-center py-[14px] px-5 text-sm">
+          Subscribe
+        </div>
+      </button>
+    </div>
+    <div class="w-full py-3">
+      <div
+        class="form-success hidden bg-green-300 border-green-500 border-2 rounded-md px-5 py-3"
+      >
+        Thank you for subscribing!
+      </div>
+
+      <div
+        class="form-failed hidden bg-red-300 border-red-400 border-2 rounded-md px-5 py-3"
+      >
+        We apologize, but an error occurred while submitting your email address.
+        Please try again later.
       </div>
     </div>
-    <button
-      class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-lg"
-    >
-      <div class="font-medium text-center py-[14px] px-5 text-sm">
-        Subscribe
-      </div>
-    </button>
-  </div>
+  </form>
   <span class="text-xs font-light text-gray-600"
     >Will send you monthly updates resourceful events, exchange knowledges, and
     news.</span
