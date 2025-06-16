@@ -323,6 +323,7 @@
       "list-disc",
       "list-orange-dots",
       "max-h-60",
+      "max-h-[580px]",
       "max-h-[90%]",
       "max-w-[660px]",
       "max-w-sm",

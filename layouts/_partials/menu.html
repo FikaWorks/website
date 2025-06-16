@@ -4,7 +4,7 @@
   @context {page} page The current page.
   @context {string} menuID The menu ID.
 
-  @example: {{ partial "menu.html" (dict "menuID" "main" "page" .)
+  @example: {{ partial "menu.html" (dict "menuID" "main" "page" . )
 }}
 */}}
 {{- $page := .page }}
@@ -24,13 +24,14 @@
       ></path>
     </svg>
     <div class="flex items-center gap-12 bg-white pr-10">
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
     </div>
   </nav>
 {{- end }}
 
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
+  {{- $level := .level }}
   {{- range .menuEntries }}
     {{- $hasChildren := .HasChildren }}
     {{- $isActive := $page.IsMenuCurrent .Menu . }}
@@ -74,7 +75,7 @@
               <div class="shadow-popover-panel rounded-md bg-white">
                 <div class="p6">
                   <ul>
-                    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+                    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" (add $level 1)) }}
                   </ul>
                 </div>
               </div>
@@ -82,12 +83,17 @@
           </div>
         </div>
       {{- else }}
-        <div class="cursor-pointer">
+        <div class="cursor-pointer group">
           <a href="{{ .URL }}">
             <div class="{{ $classes }}">
               <span>{{ .Name }}</span>
             </div>
           </a>
+          {{- if eq $level 0 }}
+            <div class="hidden group-hover:flex w-full justify-center mt-2">
+              <div class="h-[1px] w-3 bg-fika-light-purple"></div>
+            </div>
+          {{- end }}
         </div>
       {{- end }}
     </div>
