@@ -3,8 +3,7 @@
 
 @font-face {
   font-family: 'Patron';
-  src: url('#{resources.Get "fonts/Patron-Regular.otf" | fingerprint | relURL}')
-    format('truetype');
+  src: url('{{ .FontRegularURL }}') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,16 +12,14 @@
   font-family: 'Patron';
   font-weight: 300;
   font-style: normal;
-  src: url('#{resources.Get "fonts/Patron-Light.otf" | fingerprint | relURL}')
-    format('truetype');
+  src: url('{{ .FontLightURL }}') format('opentype');
 }
 
 @font-face {
   font-family: 'Patron';
   font-weight: 500;
   font-style: normal;
-  src: url('#{resources.Get "fonts/Medium.otf" | fingerprint | relURL}')
-    format('truetype');
+  src: url('{{ .FontMediumURL }}') format('opentype');
 }
 
 @theme {
