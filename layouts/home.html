@@ -1,11 +1,11 @@
-{{ define "main" }}
+{{- define "main" }}
   <div class="relative mb-14">
-    <div class="md:block relative">
-      {{ $img := resources.Get "/images/fikaworks-website-background-desktop.png" }}
-      {{ $tiny := $img.Resize "1080x webp" }}
-      {{ $small := $img.Resize "1200x webp" }}
-      {{ $medium := $img.Resize "1600x webp" }}
-      {{ $large := $img.Resize "2700x webp" }}
+    <div class="hidden md:block relative">
+      {{- $img := resources.Get "/images/website-background-desktop.png" }}
+      {{- $tiny := $img.Resize "1080x webp" }}
+      {{- $small := $img.Resize "1200x webp" }}
+      {{- $medium := $img.Resize "1600x webp" }}
+      {{- $large := $img.Resize "2700x webp" }}
       <img
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
         src="{{ $medium.RelPermalink }}"
@@ -17,61 +17,79 @@
         "
         sizes="100vw"
       />
-      <div
-        class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
+    </div>
+    <div class="md:hidden">
+      {{- $img := resources.Get "/images/website-background-mobile.png" }}
+      {{- $tiny := $img.Resize "1080x webp" }}
+      {{- $small := $img.Resize "1200x webp" }}
+      {{- $medium := $img.Resize "1600x webp" }}
+      {{- $large := $img.Resize "2700x webp" }}
+      <img
+        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
+        src="{{ $medium.RelPermalink }}"
+        srcset="
+          {{ $tiny.RelPermalink }}  640w,
+          {{ $small.RelPermalink }} 1080w,
+          {{ $medium.RelPermalink }} 1200w,
+          {{ $large.RelPermalink }} 1600w
+        "
+        sizes="100vw"
+      />
+    </div>
+    <div
+      class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
+    >
+      <h1
+        class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl"
       >
-        <h1
-          class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl"
-        >
-          Consulting is more than giving advice
-        </h1>
-        <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
-          <a href="/services">
+        Consulting is more than giving advice
+      </h1>
+      <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
+        <a href="/services">
+          <div
+            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]"
+          >
             <div
-              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]"
+              class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
             >
-              <div
-                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              Discover our services<svg
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
               >
-                Discover our services<svg
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
-            </div> </a
-          ><a href="/members">
-            <div
-              class="group inline-block lg:w-max w-full cursor-pointer hover:border-fika-hover-purple focus:border-fika-purple bg-transparent active:border-fika-purple cursor-pointer border-2 border-black text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
-            >
-              <div
-                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
-              >
-                Get to know our members<svg
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
             </div>
-          </a>
-        </div>
+          </div> </a
+        ><a href="/members">
+          <div
+            class="group inline-block lg:w-max w-full cursor-pointer hover:border-fika-hover-purple focus:border-fika-purple bg-transparent active:border-fika-purple cursor-pointer border-2 border-black text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px]"
+          >
+            <div
+              class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+            >
+              Get to know our members<svg
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -104,11 +122,7 @@
       </div>
     </div>
   </div>
-  <div
-    data-blok-c='{"name":"text_container","space":"191941","uid":"872844b0-c0de-4320-aaf1-0db33240800f","id":"247620060"}'
-    data-blok-uid="247620060-872844b0-c0de-4320-aaf1-0db33240800f"
-    class="bg-white py-6 lg:py-14"
-  >
+  <div class="bg-white py-6 lg:py-14">
     <div class="invisible relative -top-20 block"></div>
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
@@ -127,11 +141,7 @@
       </div>
     </div>
     <div class="-mt-2">
-      <div
-        data-blok-c='{"name":"service_teaser","space":"191941","uid":"1a4c6cd1-1083-4fa6-a747-8e76a5ef5a79","id":"247620060"}'
-        data-blok-uid="247620060-1a4c6cd1-1083-4fa6-a747-8e76a5ef5a79"
-        class="bg-white lg:py-14 py-6"
-      >
+      <div class="bg-white lg:py-14 py-6">
         <div
           class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
         >
@@ -472,7 +482,7 @@
         >
           <div class="col-span-full lg:col-start-2 lg:col-end-12">
             <div class="grid grid-cols-3 gap-x-10 gap-y-14">
-              {{ range first 3 (where site.RegularPages "Type" "blog") }}
+              {{- range first 3 (where site.RegularPages "Type" "blog") }}
                 <div class="col-span-full sm:col-span-1">
                   <div class="relative">
                     <a href="{{ .RelPermalink }}"
@@ -499,12 +509,12 @@
                               class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
                               style="height: 100%;"
                             >
-                              {{ $img := .Resources.Get .Params.image }}
-                              {{ if $img }}
-                                {{ $tiny := $img.Resize "1080x webp" }}
-                                {{ $small := $img.Resize "1200x webp" }}
-                                {{ $medium := $img.Resize "1600x webp" }}
-                                {{ $large := $img.Resize "2700x webp" }}
+                              {{- $img := .Resources.Get .Params.image }}
+                              {{- if $img }}
+                                {{- $tiny := $img.Resize "1080x webp" }}
+                                {{- $small := $img.Resize "1200x webp" }}
+                                {{- $medium := $img.Resize "1600x webp" }}
+                                {{- $large := $img.Resize "2700x webp" }}
                                 <img
                                   alt="{{ .Title }}"
                                   src="{{ $medium.RelPermalink }}"
@@ -517,13 +527,13 @@
                                   "
                                   sizes="100vw"
                                 />
-                              {{ end }}
+                              {{- end }}
                             </div>
                             <div
                               class="absolute bottom-4 left-4 flex flex-wrap-reverse gap-x-3 lg:bottom-5 lg:left-5"
                             >
                               <div class="mt-3">
-                                {{ range .Params.tags }}
+                                {{- range .Params.tags }}
                                   <span
                                     class="inline-block rounded bg-fika-dust py-[6px] px-3"
                                     ><span
@@ -531,7 +541,7 @@
                                       >• {{ . }}</span
                                     ></span
                                   >
-                                {{ end }}
+                                {{- end }}
                               </div>
                             </div>
                           </div>
@@ -560,7 +570,7 @@
                     >
                   </div>
                 </div>
-              {{ end }}
+              {{- end }}
             </div>
           </div>
         </div>

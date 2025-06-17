@@ -1,7 +1,7 @@
 {{- $input := . | lower }}
 {{- $filtered := slice }}
-
-{{- range where site.RegularPages "Type" "members" }}
+{{- $members := site.GetPage "section" "members" }}
+{{- range $members.Pages }}
   {{- $expertises := .Params.expertises }}
   {{- if $expertises }}
     {{- $normalized := apply $expertises "lower" "." }}
@@ -9,7 +9,7 @@
       {{- $filtered = $filtered | append . }}
     {{- end }}
   {{- end }}
-{{- end }}
+{{- end -}}
 
 {{- range first 3 (shuffle $filtered) }}
   <div class="col-span-full sm:col-span-1">

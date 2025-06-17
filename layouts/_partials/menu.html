@@ -14,6 +14,9 @@
   <nav
     class="max-lg:absolute max-lg:w-full max-lg:top-0 max-lg:hidden lg:flex lg:flex-wrap"
   >
+    <div class="lg:hidden transform opacity-100 z-10">
+      <div class="fixed inset-0 bg-black opacity-30"></div>
+    </div>
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +29,7 @@
       ></path>
     </svg>
     <div
-      class="lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:p-10 max-lg:pt-20"
+      class="relative lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:px-3 max-lg:py-20 z-30"
     >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
     </div>
@@ -40,7 +43,7 @@
     {{- $hasChildren := .HasChildren }}
     {{- $isActive := $page.IsMenuCurrent .Menu . }}
     {{- $isAncestor := $page.HasMenuCurrent .Menu . }}
-    {{- $classes := "flex items-center gap-2 text-sm font-medium text-gray-800" }}
+    {{- $classes := "" }}
     {{- if $isActive }}
       {{- $classes = printf "%s %s" $classes "active" }}
     {{- else if $isAncestor }}
@@ -50,9 +53,12 @@
       {{- if $hasChildren }}
         <div class="relative cursor-pointer group">
           <div class="children-menu">
-            <a href="{{ .URL }}" class="{{ $classes }} focus:outline-none p-2">
+            <a
+              href="{{ .URL }}"
+              class="flex items-center gap-2 text-gray-800 focus:outline-none p-2 {{ $classes }}"
+            >
               <div>
-                <span>{{ .Name }}</span>
+                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
               </div>
               <div>
                 <svg
@@ -78,7 +84,7 @@
             {{- end }}
             {{- with .Children }}
               <div
-                class="popover-panel lg:shadow-lg lg:absolute lg:w-[270px] rounded-md bg-white lg:hidden"
+                class="popover-panel lg:shadow-lg lg:absolute lg:w-[354px] rounded-md bg-white lg:hidden"
               >
                 <div class="lg:p-6 max-lg:pl-2">
                   <ul>
@@ -94,14 +100,18 @@
           <a
             href="{{ .URL }}"
             {{- if eq $level 0 }}
-              class="max-lg:block underline-none hover:max-lg:underline
-              max-lg:p-2"
+              class="max-lg:block hover:max-lg:underline max-lg:p-2
+              {{ $classes }}"
             {{- else }}
-              class="block underline-none hover:underline p-2"
+              class="block hover:bg-fika-offWhite uppercase px-4 py-3 lg:p-4
+              rounded-md bg-white {{ $classes }}"
             {{- end }}
           >
-            <div class="{{ $classes }}">
-              <span>{{ .Name }}</span>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                {{ .Pre }}
+                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
+              </div>
             </div>
           </a>
           {{- if eq $level 0 }}
