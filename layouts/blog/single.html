@@ -1,32 +1,29 @@
 {{- define "main" }}
   <div class="h-full w-full md:block">
-    <div
-      class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-    >
-      {{- $img := .Resources.Get $.Params.image }}
-      {{- if $img }}
-        <div
-          class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-          style="height: 100%;"
-        >
-          {{- $tiny := $img.Resize "1080x webp" }}
-          {{- $small := $img.Resize "1200x webp" }}
-          {{- $medium := $img.Resize "1600x webp" }}
-          {{- $large := $img.Resize "2700x webp" }}
-          <img
-            alt="{{ .Title }}"
-            src="{{ $medium.RelPermalink }}"
-            srcset="
-              {{ $tiny.RelPermalink }}  640w,
-              {{ $small.RelPermalink }} 1080w,
-              {{ $medium.RelPermalink }} 1200w,
-              {{ $large.RelPermalink }} 1600w
-            "
-            sizes="100vw"
-          />
-        </div>
-      {{- end }}
-    </div>
+    {{- $img := .Resources.Get $.Params.image }}
+    {{- if $img }}
+      <div
+        class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+        style="height: 580px;"
+      >
+        {{- $tiny := $img.Resize "1080x webp" }}
+        {{- $small := $img.Resize "1200x webp" }}
+        {{- $medium := $img.Resize "1600x webp" }}
+        {{- $large := $img.Resize "2700x webp" }}
+        <img
+          alt="{{ .Title }}"
+          src="{{ $medium.RelPermalink }}"
+          style="position: absolute; margin: auto; display: block; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+          srcset="
+            {{ $tiny.RelPermalink }}  640w,
+            {{ $small.RelPermalink }} 1080w,
+            {{ $medium.RelPermalink }} 1200w,
+            {{ $large.RelPermalink }} 1600w
+          "
+          sizes="100vw"
+        />
+      </div>
+    {{- end }}
   </div>
   <div
     class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"

@@ -1,15 +1,15 @@
-{{ define "main" }}
+{{- define "main" }}
   <div class="h-full w-full md:block">
-    {{ $img := .Resources.Get $.Params.image }}
-    {{ if $img }}
+    {{- $img := .Resources.Get $.Params.image }}
+    {{- if $img }}
       <div
         class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
         style="height: 580px;"
       >
-        {{ $tiny := $img.Resize "1080x webp" }}
-        {{ $small := $img.Resize "1200x webp" }}
-        {{ $medium := $img.Resize "1600x webp" }}
-        {{ $large := $img.Resize "2700x webp" }}
+        {{- $tiny := $img.Resize "1080x webp" }}
+        {{- $small := $img.Resize "1200x webp" }}
+        {{- $medium := $img.Resize "1600x webp" }}
+        {{- $large := $img.Resize "2700x webp" }}
         <img
           alt="{{ .Title }}"
           src="{{ $medium.RelPermalink }}"
@@ -23,7 +23,7 @@
           sizes="100vw"
         />
       </div>
-    {{ end }}
+    {{- end }}
   </div>
   <div
     class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
@@ -47,8 +47,8 @@
           <p
             class="text-sm font-medium text-gray-800 md:text-base md:font-light"
           >
-            {{ $dateHuman := .Params.event_date | time.Format ":date_long" }}
-            {{ $dateHuman }}
+            {{- $dateHuman := .Params.event_date | time.Format ":date_long" }}
+            {{- $dateHuman }}
           </p>
         </div>
         <div class="flex items-center gap-2 lg:mb-5">
@@ -195,14 +195,14 @@
       class="col-span-full lg:col-span-7 lg:col-start-5 lg:col-end-11 lg:pt-16"
     >
       <div class="flex flex-wrap gap-3">
-        {{ range .Params.event_types }}
+        {{- range .Params.event_types }}
           <div class="inline-block rounded bg-fika-dust py-[6px] px-3">
             <span class="flex items-center text-xs font-normal capitalize"
               >•
               {{ . }}
             </span>
           </div>
-        {{ end }}
+        {{- end }}
       </div>
       <h1
         class="mb-5 mt-4 text-2xl font-medium leading-tight lg:mb-12 lg:text-5xl"
@@ -331,4 +331,4 @@
       </div>
     </div>
   </div>
-{{ end }}
+{{- end }}
