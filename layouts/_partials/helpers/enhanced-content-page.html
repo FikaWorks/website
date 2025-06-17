@@ -1,0 +1,8 @@
+{{- $content := . -}}
+{{- $content = replaceRE "<p>" "<p class=\"pb-5 font-light lg:pb-6\">" $content -}}
+{{- $content = replaceRE "<h2" "<h2 class=\"mb-8 mt-12 text-3xl font-medium lg:text-5xl\"" $content -}}
+{{- $content = replaceRE "<h3" "<h3 class=\"mb-6 mt-8 text-2xl font-medium lg:text-4xl\"" $content -}}
+{{- $content = replaceRE "<h4" "<h4 class=\"mb-4 mt-6 text-xl font-medium lg:text-3xl\"" $content -}}
+{{- $content = replaceRE "<a" "<a class=\"underline\"" $content -}}
+{{- $content = replaceRE "<ul>" "<ul class=\"list-background inline-block list-disc font-light text-lg lg:text-xl my-6 lg:my-8\">" $content -}}
+{{- $content | safeHTML -}}

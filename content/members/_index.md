@@ -15,7 +15,7 @@ title = 'Co. for community'
     publishResources = true
 +++
 
-### Co. for collective ownership
+## Co. for collective ownership
 
 - **Democratic governance**: No top down leadership; 1 member = 1 vote
 - **Cooperative owned by members**: We keep things flat - no employees or
