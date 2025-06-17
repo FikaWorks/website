@@ -1,8 +1,8 @@
 {{- $content := . -}}
 {{- $content = replaceRE "<p>" "<p class=\"pb-5 font-light lg:pb-6\">" $content -}}
-{{- $content = replaceRE "<h2" "<h2 class=\"mb-4 text-3xl font-medium lg:text-5xl\"" $content -}}
-{{- $content = replaceRE "<h3" "<h3 class=\"mb-6 text-base font-medium lg:mb-8 lg:text-4xl\"" $content -}}
-{{- $content = replaceRE "<h4" "<h4 class=\"mb-4 text-lg font-medium lg:text-2xl\"" $content -}}
+{{- $content = replaceRE "<h2" "<h2 class=\"mb-6 mt-6 text-3xl font-medium lg:text-4xl\"" $content -}}
+{{- $content = replaceRE "<h3" "<h3 class=\"mb-4 mt-4 text-2xl font-medium lg:text-3xl\"" $content -}}
+{{- $content = replaceRE "<h4" "<h4 class=\"mb-2 mt-2 text-xl font-medium lg:text-2xl\"" $content -}}
 {{- $content = replaceRE "<ol" "<ol class=\"ml-5 list-orange-dots inline-block list-disc\"" $content -}}
 {{- $content = replaceRE "<ul" "<ul class=\"ml-5 list-orange-dots inline-block list-disc\"" $content -}}
 {{- $content = replaceRE "<li" "<li class=\"pb-5 font-light lg:pb-6\"" $content -}}

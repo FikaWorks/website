@@ -15,7 +15,7 @@ interesting and useful. These talks are not ranked in any particular
 order—instead, we grouped them by theme. From platform engineering to AI, this
 list shows some of the talks we think are most worth your time.
 
-### **Platform engineering:**
+## **Platform engineering:**
 
 Is 2025 the year when Jeff Bezos’ API mandate finally becomes a reality? Judging
 by the number of talks focused on multi-cluster setups and Kubernetes API
@@ -88,7 +88,7 @@ software can be made Kubernetes-native.
 - **Trino and Data Governance on Kubernetes** - Sung Yun & Aki Sukegawa,
   Bloomberg - <https://www.youtube.com/watch?v=vCfehltPKxk>
 
-### **AI:**
+## **AI:**
 
 We start the AI section with a talk from Justin Santa Barbara and Walter Fender
 of Google, who showed how large language models can go beyond code suggestions
@@ -138,7 +138,7 @@ high-impact use cases beyond traditional IT.
   Wildfire Prevention** - Andrea Giardini, Crossover Engineering BV -
   <https://www.youtube.com/watch?v=1rtyQaTfbdM>
 
-### KubeCon EU 2025 made it clear:
+## KubeCon EU 2025 made it clear:
 
 Kubernetes is no longer just the foundation of cloud infrastructure — it’s
 becoming the platform where organizations build everything from internal tooling
