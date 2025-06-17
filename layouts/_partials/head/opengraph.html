@@ -40,7 +40,7 @@
       {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}
     />
   {{- end }}
-{{- end }}
+{{- end -}}
 
 {{- if and .IsPage (.Params.image) -}}
   {{- /* 1. load background */}}
@@ -56,7 +56,7 @@
   {{- $bg = $bg.Fill (printf "%dx%d" 1200 630) -}}
 
   {{- /* 3. load font */}}
-  {{- $font := resources.Get "fonts/Patron-Regular.otf" }}
+  {{- $font := resources.Get "fonts/Patron-Light.otf" }}
   {{- if not $font }}
     {{- errorf "OG-image: missing font Patron-Regular.otf in assets/fonts/" }}
   {{- end -}}
@@ -79,17 +79,29 @@
   {{- $img := $bg.Filter (images.Overlay $mask 0 0 ) }}
   {{- $img = $img.Filter (images.Overlay $logo 40 38 ) }}
 
-  {{- /* 7. draw centered bottom text */}}
+  {{- /* 7. draw centered bottom text with shadow */}}
   {{- $opts := dict
     "font"       $font
-    "size"       100
+    "size"       25
+    "color"      "#ffffff"
+    "alignx"     "center"
+    "aligny"     "bottom"
+    "x"          (add (div $bg.Width 2) 3)
+    "y"          (add (sub $bg.Height 100) 3)
+  }}
+  {{- $title := printf "%s — by %s" .Title .Params.author }}
+  {{- $img = $img | images.Filter (images.Text $title $opts) -}}
+
+  {{- $opts := dict
+    "font"       $font
+    "size"       25
     "color"      "#000000"
     "alignx"     "center"
     "aligny"     "bottom"
     "x"          (div $bg.Width 2)
     "y"          (sub $bg.Height 100)
   }}
-  {{- $img = $img | images.Filter (images.Text .Title $opts) -}}
+  {{- $img = $img | images.Filter (images.Text $title $opts) -}}
 
   {{- /* 8. export */}}
   {{- $og := $img | resources.Copy (path.Join .RelPermalink "og.png") }}

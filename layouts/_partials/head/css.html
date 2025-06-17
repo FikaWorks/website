@@ -1,10 +1,8 @@
 {{- with templates.Defer }}
-  {{/* fingerprint your fonts here, inside the Defer */}}
+  {{- /* Fonts */}}
   {{- $fontLight := resources.Get "fonts/Patron-Light.otf" | fingerprint "sha384" }}
   {{- $fontMedium := resources.Get "fonts/Patron-Medium.otf" | fingerprint "sha384" }}
   {{- $fontRegular := resources.Get "fonts/Patron-Regular.otf" | fingerprint "sha384" }}
-
-  {{/* preload links (will output at defer time) */}}
   <link
     rel="preload"
     href="{{ $fontLight.RelPermalink }}"
@@ -30,7 +28,7 @@
     crossorigin
   />
 
-  {{/* build your CSS with those same URLs */}}
+  {{- /* Stylesheets */}}
   {{- $css := resources.Get "css/main.css"
     | resources.ExecuteAsTemplate "css/main.css" (dict
     "FontLightURL"  $fontLight.RelPermalink
@@ -52,5 +50,4 @@
       />
     {{- end }}
   {{- end }}
-
 {{- end }}
