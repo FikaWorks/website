@@ -1,21 +1,19 @@
----
-title: 'Co. for community'
-date: '2023-01-01T08:00:00-07:00'
-draft: false
-heading:
-  'We are a cooperative of engineers, firstly a community and secondly a
-  company. We believe that a community structure helps our members be the best
-  version of themselves.'
-image: ''
-build:
-  render: always
-  list: always
-cascade:
-  - build:
-      render: never
-      list: local
-      publishResources: false
----
++++
+date = '2023-01-01T08:00:00-07:00'
+draft = false
+heading = 'We are a cooperative of engineers, firstly a community and secondly a company. We believe that a community structure helps our members be the best version of themselves.'
+image = ''
+title = 'Co. for community'
+
+[build]
+    render = 'always'
+    list = 'always'
+[[cascade]]
+  [cascade.build]
+    render = "never"
+    list = "always"
+    publishResources = true
++++
 
 ### Co. for collective ownership
 
@@ -32,5 +30,4 @@ cascade:
   are not financially motivated to take on projects purely for profit or to over
   staff engagements. Instead, we focus on delivering the best outcomes by
   allocating resources based on the actual needs of the project, ensuring that
-  our efforts align with our long-term values. {.list-background .inline-block
-  .list-disc .font-light .text-lg .lg:text-xl .mt-6 .lg:mt-8}
+  our efforts align with our long-term values.

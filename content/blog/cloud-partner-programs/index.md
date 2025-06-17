@@ -1,11 +1,11 @@
----
-title: 'Cloud Partner Programs: A Numbers Game'
-date: 2020-04-14T10:20:17+02:00
-image: 'cloud-partner-programs.jpg'
-draft: false
-author: Jason Smith
-tags: ['cloud', 'azure', 'aws', 'gcp', 'SIs']
----
++++
+author = 'Jason Smith'
+date = '2020-04-14T10:20:17+02:00'
+draft = false
+image = 'cloud-partner-programs.jpg'
+tags = ['cloud', 'azure', 'aws', 'gcp', 'SIs']
+title = 'Cloud Partner Programs: A Numbers Game'
++++
 
 All the top cloud providers currently have partner programs, but the tier
 systems can be misleading and are not indicative of the quality of service you

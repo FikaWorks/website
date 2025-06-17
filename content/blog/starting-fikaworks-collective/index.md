@@ -1,14 +1,14 @@
----
-title: 'Starting FikaWorks Collective'
-date: 2020-05-14T10:20:17+02:00
-image: 'fikaworks_collective_logo.png'
-draft: false
-author: Catalin Jora
-tags: ['collective', 'fikaworks', 'company', 'coop', 'entrepreneurship']
----
++++
+author = 'Catalin Jora'
+date = '2020-05-14T10:20:17+02:00'
+draft = false
+image = 'fikaworks_collective_logo.png'
+tags = ['collective', 'fikaworks', 'company', 'coop', 'entrepreneurship']
+title = 'Starting FikaWorks Collective'
++++
 
 As of 13th of May 2020, we are officially registered as a coop with the Dutch
-chamber of commerce under the FikaWorks[^1] name. FikaWorks is a collective (a
+chamber of commerce under the FikaWorks\[^1] name. FikaWorks is a collective (a
 coop) of independent IT consultants from the Netherlands, active in the cloud
 native area. While everybody moved from employment into freelancing for his own
 reasons (freedom of choosing projects, financials, more free days, flexible
@@ -29,7 +29,7 @@ competencies and opinions that enjoys working together. We don’t have manageme
 layers in the collective and every member has equal votes for all decisions.
 Members can choose their own projects and can decide on their individual terms
 (duration, working hours, rate). We share the common costs and we keep our own
-generated profit. From a legal point of view [^3], the members are part of the
+generated profit. From a legal point of view \[^3], the members are part of the
 coop (Coöperatie U.A.) while invoicing is done via a company with limited
 liability (B.V.) which operates in the name of the collective.
 
@@ -56,10 +56,12 @@ liability (B.V.) which operates in the name of the collective.
 - allow members to shape the future of the coop
 - become an example of how a company can operate in the interest of its members
 
-_Notes:_ [^1]: FikaWorks name came from a branding workshop we did with the
+_Notes:_ \[^1]: FikaWorks name came from a branding workshop we did with the
 awesome
 [Emelie Rydh](https://www.linkedin.com/in/emelie-rydh-6742b097/ 'visual designer')
-[^2]: Our logo was done by
-[ Asia Jackowska ](https://www.linkedin.com/in/asia-jackowska-39b827117/) [^3]:
-Don’t use this as legal advice, please consult a specialist in case you want to
-start a coop.
+
+[^2]:
+    Our logo was done by
+    [ Asia Jackowska ](https://www.linkedin.com/in/asia-jackowska-39b827117/)
+    \[^3]: Don’t use this as legal advice, please consult a specialist in case
+    you want to start a coop.

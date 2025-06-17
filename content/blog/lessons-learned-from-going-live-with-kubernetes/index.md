@@ -1,11 +1,11 @@
----
-title: 'Lessons learned from going live on Kubernetes'
-date: 2021-02-24T18:20:17+02:00
-image: 'lessons_learned_from_going_live_on_kubernetes.png'
-draft: false
-author: Catalin Jora
-tags: ['kubernetes', 'cloud native', 'docker', 'planning', 'consulting']
----
++++
+author = 'Catalin Jora'
+date = '2021-02-24T18:20:17+02:00'
+draft = false
+image = 'lessons_learned_from_going_live_on_kubernetes.png'
+tags = ['kubernetes', 'cloud native', 'docker', 'planning', 'consulting']
+title = 'Lessons learned from going live on Kubernetes'
++++
 
 As I've just finalized the deployment of a few production grade applications to
 [Kubernetes](https://kubernetes.io) for my current project, I want to take the

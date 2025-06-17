@@ -1,10 +1,10 @@
 +++
-title = "DevOps Days Amsterdam 2025"
-date = "2018-01-01T00:00:00+02:00"
-image = "devops-days-amsterdam.png"
-event_date = "2025-06-19T09:00:00+02:00"
-event_location = "Pakhuis de Zwijger, Amsterdam, NL"
-event_types = ["conference"]
+date = '2018-01-01T00:00:00+02:00'
+event_date = '2025-06-19T09:00:00+02:00'
+event_location = 'Pakhuis de Zwijger, Amsterdam, NL'
+event_types = ['conference']
+image = 'devops-days-amsterdam.png'
+title = 'DevOps Days Amsterdam 2025'
 +++
 
 **DevOpsDays Amsterdam 2025** brings together developers, ops engineers,
@@ -19,4 +19,4 @@ The event runs June 18–20 at Pakhuis de Zwijger. Expect great talks, open
 spaces, and a strong community vibe.
 
 More information and tickets:
-https://devopsdays.org/events/2025-amsterdam/welcome/
+<https://devopsdays.org/events/2025-amsterdam/welcome/>

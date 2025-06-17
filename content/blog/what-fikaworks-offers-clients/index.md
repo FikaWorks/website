@@ -1,11 +1,11 @@
----
-title: 'What FikaWorks Has to Offer Our Clients'
-date: 2021-03-20T10:20:17+02:00
-image: 'fikaworks_to_clients.png'
-draft: false
-author: Jason Smith
-tags: ['collective', 'fikaworks', 'company', 'coop', 'clients', 'cloud native']
----
++++
+author = 'Jason Smith'
+date = '2021-03-20T10:20:17+02:00'
+draft = false
+image = 'fikaworks_to_clients.png'
+tags = ['collective', 'fikaworks', 'company', 'coop', 'clients', 'cloud native']
+title = 'What FikaWorks Has to Offer Our Clients'
++++
 
 To understand why clients would choose FikaWorks, clients should understand how
 FikaWorks is organized.

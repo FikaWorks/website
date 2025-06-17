@@ -1,11 +1,11 @@
----
-title: 'Consultancy Utilization'
-date: 2020-05-24T07:30:59+02:00
-draft: false
-author: Jason Smith
-image: consultancy-utilizations.jpg
-tags: ['system integrators', 'cloud']
----
++++
+author = 'Jason Smith'
+date = '2020-05-24T07:30:59+02:00'
+draft = false
+image = 'consultancy-utilizations.jpg'
+tags = ['system integrators', 'cloud']
+title = 'Consultancy Utilization'
++++
 
 Every consultancy is concerned about utilization numbers. In this post I want to
 explore what utilization is and how it impacts the delivery of the services you

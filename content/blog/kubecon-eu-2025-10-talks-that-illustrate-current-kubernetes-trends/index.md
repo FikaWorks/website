@@ -1,11 +1,11 @@
----
-title: 'KubeCon EU 2025: 10 Talks That Illustrate Current Kubernetes Trends'
-date: 2025-04-23T10:00:00+02:00
-draft: false
-author: Adam Otto
-image: kubecon-eu-2025-london.jpg
-tags: ['Kubernetes', 'Technology']
----
++++
+author = 'Adam Otto'
+date = '2025-04-23T10:00:00+02:00'
+draft = false
+image = 'kubecon-eu-2025-london.jpg'
+tags = ['Kubernetes', 'Technology']
+title = 'KubeCon EU 2025: 10 Talks That Illustrate Current Kubernetes Trends'
++++
 
 KubeCon EU 2025 is over, and the CNCF has made all the talks available on
 YouTube. This is a good chance to go back and see what was shared, especially
@@ -28,7 +28,7 @@ One great talk that explores this is:
 
 - **Extending Kubernetes Resource Model (KRM) Beyond Kubernetes Workloads** -
   Mangirdas Judeikis, Cast AI & Nabarun Pal, Independent -
-  [https://www.youtube.com/watch?v=y0JgZ-hQ-Bo](https://www.youtube.com/watch?v=y0JgZ-hQ-Bo)
+  <https://www.youtube.com/watch?v=y0JgZ-hQ-Bo>
 
 One of the key advantages of using a Kubernetes-style API is the ability to
 build operators, helping organizations move closer to infrastructure
@@ -42,7 +42,7 @@ pattern since the early days of Kubernetes.
 
 - **Don't Write Controllers Like Charlie Don't Does: Avoiding Common Kubernetes
   Controller Mistakes** - Nick Young, Isovalent at Cisco -
-  [https://www.youtube.com/watch?v=tnSraS9JqZ8](https://www.youtube.com/watch?v=tnSraS9JqZ8)
+  <https://www.youtube.com/watch?v=tnSraS9JqZ8>
 
 One of the long-time goals for many platform teams is having the ability to
 manage everything from a single, centralized place. In the following talk,
@@ -52,8 +52,7 @@ gains traction in the community, it could be a real game changer for platform
 engineering, making it much easier to build organization-wide control planes.
 
 - **Dynamic Multi-Cluster Controllers With Controller-runtime** - Marvin Beckers
-  & Stefan Schimanski -
-  [https://www.youtube.com/watch?v=Tz8IcMSY7jw](https://www.youtube.com/watch?v=Tz8IcMSY7jw)
+  & Stefan Schimanski - <https://www.youtube.com/watch?v=Tz8IcMSY7jw>
 
 If you're wondering whether organization-wide operators can actually handle that
 scale, Tim Ebert’s talk is a must-watch. He dives into how to implement resource
@@ -61,8 +60,7 @@ sharding for Kubernetes operators, which allows them to scale horizontally and
 manage large amounts of resources more effectively.
 
 - **Beyond the Limits: Scaling Kubernetes Controllers Horizontally** - Tim
-  Ebert, STACKIT  -
-  [https://www.youtube.com/watch?v=OTzd9eTtLRA](https://www.youtube.com/watch?v=OTzd9eTtLRA)
+  Ebert, STACKIT  - <https://www.youtube.com/watch?v=OTzd9eTtLRA>
 
 If both of these ideas continue to mature and move beyond the proof-of-concept
 stage, they could significantly expand what’s possible with Kubernetes and how
@@ -75,7 +73,7 @@ more details on what’s coming and how it can improve your workflows, we
 recommend watching the presentation by Matt Farina and Andrew Block.
 
 - **Helm 4 You** - Matt Farina, SUSE & Andrew Block, Red Hat -
-  [https://www.youtube.com/watch?v=rdTPbm9f_fc](https://www.youtube.com/watch?v=rdTPbm9f_fc)
+  <https://www.youtube.com/watch?v=rdTPbm9f_fc>
 
 The final talk we’d like to highlight in the platform engineering section comes
 from engineers at Bloomberg, who shared their experience running Trino—a
@@ -88,8 +86,7 @@ like this are a good reminder that with the right approach, even complex
 software can be made Kubernetes-native.
 
 - **Trino and Data Governance on Kubernetes** - Sung Yun & Aki Sukegawa,
-  Bloomberg -
-  [https://www.youtube.com/watch?v=vCfehltPKxk](https://www.youtube.com/watch?v=vCfehltPKxk)
+  Bloomberg - <https://www.youtube.com/watch?v=vCfehltPKxk>
 
 ### **AI:**
 
@@ -104,7 +101,7 @@ infrastructure automation code.
 
 - **AI Beyond Autocomplete: Using LLMs To Create 1000 Kubernetes Controller**s
   - Justin Santa Barbara & Walter Fender, Google -
-    [https://www.youtube.com/watch?v=\_oIoaW5i-xE](https://www.youtube.com/watch?v=_oIoaW5i-xE)
+    <https://www.youtube.com/watch?v=_oIoaW5i-xE>
 
 AI depends heavily on high-performance computing, but connecting HPC systems
 with Kubernetes isn’t easy. In this talk, Dennis Marttinen from Aalto University
@@ -115,7 +112,7 @@ bridging the two is key for future AI workloads.
 
 - **Thousands of Virtual Kubelets: 1-to-1 Mapping a Supercomputer To Kubernetes
   With Supernetes** - Dennis Marttinen, Aalto University -
-  [https://www.youtube.com/watch?v=QbR908kgk1Y](https://www.youtube.com/watch?v=QbR908kgk1Y)
+  <https://www.youtube.com/watch?v=QbR908kgk1Y>
 
 GPUs are powerful—but expensive—so making the most of them is critical for
 running AI workloads at scale. In this talk, Yuan Chen (NVIDIA) and Chen Wang
@@ -128,7 +125,7 @@ environments.
 
 - **A Practical Guide To Benchmarking AI and GPU Workloads in Kubernetes** -
   Yuan Chen, NVIDIA & Chen Wang, IBM Research -
-  [https://www.youtube.com/watch?v=OnqzoBf7dUE](https://www.youtube.com/watch?v=OnqzoBf7dUE)
+  <https://www.youtube.com/watch?v=OnqzoBf7dUE>
 
 Last but not least, don’t miss the talk from FikaWorks collective member Andrea
 Giardini, who shared how Kubernetes is used to power AI systems for wildfire
@@ -139,7 +136,7 @@ high-impact use cases beyond traditional IT.
 
 - **Kubernetes and AI To Protect Our Forests: A Cloud Native Infrastructure for
   Wildfire Prevention** - Andrea Giardini, Crossover Engineering BV -
-  [https://www.youtube.com/watch?v=1rtyQaTfbdM](https://www.youtube.com/watch?v=1rtyQaTfbdM)
+  <https://www.youtube.com/watch?v=1rtyQaTfbdM>
 
 ### KubeCon EU 2025 made it clear:
 

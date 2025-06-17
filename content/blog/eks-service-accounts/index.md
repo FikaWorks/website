@@ -1,11 +1,11 @@
----
-title: 'EKS Service Accounts Explained'
-date: 2020-04-16T10:04:44+02:00
-draft: false
-author: Jason Smith
-image: eks-service-accounts-iam.jpg
-tags: ['Kubernetes', 'AWS', 'EKS', 'ServiceAccounts']
----
++++
+author = 'Jason Smith'
+date = '2020-04-16T10:04:44+02:00'
+draft = false
+image = 'eks-service-accounts-iam.jpg'
+tags = ['Kubernetes', 'AWS', 'EKS', 'ServiceAccounts']
+title = 'EKS Service Accounts Explained'
++++
 
 A few months ago AWS released The ability to add IAM permissions to pods. For
 some, myself included, this was a confusing implementation. This article will
@@ -57,7 +57,7 @@ that.
 #### The AWS SDK
 
 The final tooling needed for this to work was to update the SDKs. Normally the
-SDKs look in your ~/.aws folder or in your AWS\_\* environment variables to
+SDKs look in your \~/.aws folder or in your AWS\_\* environment variables to
 authenticate against the AWS API. With these new projected service account
 tokens the SDK would look for two new environment variables AWS_ROLE_ARN and
 AWS_WEB_IDENTITY_TOKEN_FILE. These environment variables told the SDK to use the

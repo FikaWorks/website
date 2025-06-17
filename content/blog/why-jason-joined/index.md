@@ -1,10 +1,10 @@
----
-title: 'Why I joined FikaWorks'
-date: 2021-03-10T14:00:00+01:00
-author: Jason Smith
-image: why-jason-joined.jpg
-tags: ['cooperative', 'cloud native', 'contractor']
----
++++
+author = 'Jason Smith'
+date = '2021-03-10T14:00:00+01:00'
+image = 'why-jason-joined.jpg'
+tags = ['cooperative', 'cloud native', 'contractor']
+title = 'Why I joined FikaWorks'
++++
 
 We get asked a lot why we formed FikaWorks and what we have to offer a Cloud
 Native Engineer. Since FikaWorks is founded by engineers my answer is the same
