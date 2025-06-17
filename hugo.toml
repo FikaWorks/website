@@ -42,20 +42,16 @@ tabWidth = 2
 quality = 90
 
 [menus]
-[[menus.main]]
-name = 'Home'
-pageRef = '/'
-weight = 10
 
 [[menus.main]]
 name = 'Why'
 pageRef = '/why'
-weight = 20
+weight = 10
 
 [[menus.main]]
 name = 'Services'
 pageRef = '/services'
-weight = 30
+weight = 20
 
 [[menus.main]]
 parent = "Services"
@@ -78,27 +74,27 @@ pre = '<div class="rounded-md p-[6px] lg:p-3 bg-fika-soft-blue"><svg viewBox="0 
 [[menus.main]]
 name = 'Events'
 pageRef = '/events'
-weight = 40
+weight = 30
 
 [[menus.main]]
 name = 'Blog'
 pageRef = '/blog'
-weight = 50
+weight = 40
 
 [[menus.main]]
 name = 'Contact'
 pageRef = '/contact'
-weight = 60
+weight = 50
 
 [[menus.main]]
 name = 'Members'
 pageRef = '/members'
-weight = 70
+weight = 60
 
 [module]
 [module.hugoVersion]
 extended = false
-min = '0.146.0'
+min = '0.147.0'
 [[module.mounts]]
 source = 'assets'
 target = 'assets'
