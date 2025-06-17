@@ -24,18 +24,16 @@
           >
             {{- $img := .Resources.Get .Params.image }}
             {{- if $img }}
-              {{- $tiny := $img.Resize "1080x webp" }}
-              {{- $small := $img.Resize "1200x webp" }}
-              {{- $medium := $img.Resize "1600x webp" }}
-              {{- $large := $img.Resize "2700x webp" }}
+              {{- $small := $img.Resize "128x webp" }}
+              {{- $medium := $img.Resize "256x webp" }}
+              {{- $large := $img.Resize "512x webp" }}
               <img
                 alt="{{ .Title }}"
                 src="{{ $medium.RelPermalink }}"
                 srcset="
-                  {{ $tiny.RelPermalink }}  640w,
-                  {{ $small.RelPermalink }} 1080w,
-                  {{ $medium.RelPermalink }} 1200w,
-                  {{ $large.RelPermalink }} 1600w
+                  {{ $small.RelPermalink }}  640w,
+                  {{ $medium.RelPermalink }}  980w,
+                  {{ $large.RelPermalink }} 1200w
                 "
                 style="width: 100%; height: 100%;"
                 sizes="100vw"
