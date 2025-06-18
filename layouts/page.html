@@ -3,18 +3,18 @@
   {{- if $img }}
     <div class="relative mb-14">
       <div class="hidden md:block">
-        {{- $tiny := $img.Resize "1080x webp" }}
-        {{- $small := $img.Resize "1200x webp" }}
+        {{- $tiny := $img.Resize "640x webp" }}
+        {{- $small := $img.Resize "1024x webp" }}
         {{- $medium := $img.Resize "1600x webp" }}
-        {{- $large := $img.Resize "2700x webp" }}
+        {{- $large := $img.Resize "2000x webp" }}
         <img
           alt="{{ .Title }}"
           src="{{ $medium.RelPermalink }}"
           srcset="
-            {{ $tiny.RelPermalink }}  640w,
-            {{ $small.RelPermalink }} 1080w,
-            {{ $medium.RelPermalink }} 1200w,
-            {{ $large.RelPermalink }} 1600w
+            {{- $tiny.RelPermalink }}  640w,
+            {{- $small.RelPermalink }} 1024w,
+            {{- $medium.RelPermalink }} 1600w,
+            {{- $large.RelPermalink }} 2000w
           "
           sizes="100vw"
         />

@@ -48,19 +48,17 @@
                     >
                       {{- $img := .Resources.Get .Params.image }}
                       {{- if $img }}
-                        {{- $tiny := $img.Resize "1080x webp" }}
-                        {{- $small := $img.Resize "1200x webp" }}
-                        {{- $medium := $img.Resize "1600x webp" }}
-                        {{- $large := $img.Resize "2700x webp" }}
+                        {{- $small := $img.Resize "256x webp" }}
+                        {{- $medium := $img.Resize "512x webp" }}
+                        {{- $large := $img.Resize "1024x webp" }}
                         <img
                           alt="{{ .Title }}"
                           src="{{ $medium.RelPermalink }}"
                           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
                           srcset="
-                            {{ $tiny.RelPermalink }}  640w,
-                            {{ $small.RelPermalink }} 1080w,
-                            {{ $medium.RelPermalink }} 1200w,
-                            {{ $large.RelPermalink }} 1600w
+                            {{- $small.RelPermalink }}  256w,
+                            {{- $medium.RelPermalink }}  512w,
+                            {{- $large.RelPermalink }} 1024w
                           "
                           sizes="100vw"
                         />
@@ -72,7 +70,7 @@
                       <div class="mt-3">
                         {{- range .Params.tags }}
                           <span
-                            class="inline-block rounded bg-fika-dust py-[6px] px-3"
+                            class="inline-block rounded bg-fika-dust py-[6px] px-3 mt-1"
                             ><span
                               class="flex items-center text-xs font-normal capitalize"
                               >• {{ . }}</span
