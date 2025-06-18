@@ -14,7 +14,7 @@
   <nav
     class="max-lg:absolute max-lg:w-full max-lg:top-0 max-lg:hidden lg:flex lg:flex-wrap"
   >
-    <div class="lg:hidden transform opacity-100 z-10">
+    <div class="lg:hidden transform opacity-100">
       <div class="fixed inset-0 bg-black opacity-30"></div>
     </div>
     <svg
@@ -29,7 +29,7 @@
       ></path>
     </svg>
     <div
-      class="relative lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:px-3 max-lg:pt-30 max-lg:pb-10 z-30"
+      class="relative lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:px-3 max-lg:pt-30 max-lg:pb-10"
     >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
     </div>
@@ -55,7 +55,7 @@
           <div class="children-menu">
             <a
               href="{{ .URL }}"
-              class="flex items-center gap-2 text-gray-800 group-hover:text-black focus:outline-none {{ $classes }}"
+              class="flex items-center max-lg:p-2 gap-2 text-gray-800 group-hover:text-black focus:outline-none {{ $classes }}"
             >
               <div>
                 <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
