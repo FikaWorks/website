@@ -1,36 +1,31 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "landing page | blog | runs on [Netlify](https://Netlify.com)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
+    "prepare": "husky",
     "pretty-quick": "pretty-quick"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FikaWorks/website.git"
   },
-  "keywords": [],
   "author": "FikaWorks",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FikaWorks/website/issues"
-  },
-  "homepage": "https://github.com/FikaWorks/website#readme",
+  "description": "",
   "devDependencies": {
-    "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.0",
-    "autoprefixer": "^10.4.12",
-    "husky": "^5.1.3",
-    "intersection-observer": "^0.12.0",
-    "postcss": "^8.4.17",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.0",
-    "prettier": "^2.2.1",
-    "prettier-plugin-go-template": "0.0.10",
-    "pretty-quick": "^3.1.0",
-    "tailwindcss": "^2.0.3"
+    "@headlessui/tailwindcss": "^0.2.2",
+    "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.10",
+    "autoprefixer": "^10.4.21",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.5",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-go-template": "^0.0.15",
+    "pretty-quick": "^4.2.2",
+    "tailwindcss": "^4.1.10"
   }
 }

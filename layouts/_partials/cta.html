@@ -1,0 +1,62 @@
+<div class="relative w-full pb-6 pt-9 lg:py-14">
+  <div
+    class="h-[240px] md:block lg:h-[428px] 2xl:h-[540px] 3xl:h-[780px] 4xl:h-[856px]"
+  >
+    <div
+      class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+      style="height: 100%;"
+    >
+      {{- $img := resources.Get "/images/cta-background.png" }}
+      {{- $tiny := $img.Resize "1080x webp" }}
+      {{- $small := $img.Resize "1200x webp" }}
+      {{- $medium := $img.Resize "1600x webp" }}
+      {{- $large := $img.Resize "2700x webp" }}
+      <img
+        src="{{ $medium.RelPermalink }}"
+        srcset="
+          {{ $tiny.RelPermalink }}  640w,
+          {{ $small.RelPermalink }} 1080w,
+          {{ $medium.RelPermalink }} 1200w,
+          {{ $large.RelPermalink }} 1600w
+        "
+        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+        sizes="100vw"
+      />
+    </div>
+  </div>
+  <div
+    class="absolute left-1/2 bottom-14 z-10 flex w-full max-w-[660px] -translate-x-1/2 flex-wrap items-center justify-center lg:top-1/2 lg:w-auto lg:-translate-y-1/2"
+  >
+    <h3 class="text-3xl font-medium lg:text-5xl">Get in touch</h3>
+    <div class="pt-3 text-center text-base font-light lg:pt-6 lg:text-3xl">
+      <p class="pb-5 font-light lg:pb-6">
+        Our hand-picked experts are keen on hearing your story and solve
+        together.
+      </p>
+    </div>
+    <div class="pt-4 lg:pt-6">
+      <a href="/contact"
+        ><div
+          class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]"
+        >
+          <div
+            class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+          >
+            Contact us<svg
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div></div
+      ></a>
+    </div>
+  </div>
+</div>

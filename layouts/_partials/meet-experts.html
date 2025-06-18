@@ -1,0 +1,61 @@
+{{- $input := . | lower }}
+{{- $filtered := slice }}
+{{- $members := site.GetPage "section" "members" }}
+{{- range $members.Pages }}
+  {{- $expertises := .Params.expertises }}
+  {{- if $expertises }}
+    {{- $normalized := apply $expertises "lower" "." }}
+    {{- if in $normalized $input }}
+      {{- $filtered = $filtered | append . }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+
+{{- range first 3 (shuffle $filtered) }}
+  <div class="col-span-full sm:col-span-1">
+    <div class="relative">
+      <div class="relative h-full w-full bg-fika-dust">
+        <div
+          class="absolute top-0 right-0 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-white"
+        ></div>
+        <div class="w-full">
+          <div
+            class="relative transform transition duration-300 ease-linear align-middle"
+          >
+            {{- $img := .Resources.Get .Params.image }}
+            {{- if $img }}
+              {{- $small := $img.Resize "128x webp" }}
+              {{- $medium := $img.Resize "256x webp" }}
+              {{- $large := $img.Resize "512x webp" }}
+              <img
+                alt="{{ .Title }}"
+                src="{{ $medium.RelPermalink }}"
+                srcset="
+                  {{ $small.RelPermalink }}  640w,
+                  {{ $medium.RelPermalink }}  980w,
+                  {{ $large.RelPermalink }} 1200w
+                "
+                style="width: 100%; height: 100%;"
+                sizes="100vw"
+              />
+            {{- end }}
+          </div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <span class="text-2xl font-medium">{{ .Title }}</span>
+        <p class="mt-1 text-sm font-light">{{ .Params.role }}</p>
+        <div class="mt-4 flex gap-3 w-full flex-wrap">
+          {{- range .Params.expertises }}
+            <span class="inline-block rounded bg-fika-dust py-[6px] px-3"
+              ><span
+                class="flex items-center text-[0.65rem] font-normal capitalize text-nowrap"
+                >• {{ . }}</span
+              ></span
+            >
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{- end }}

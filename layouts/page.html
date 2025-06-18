@@ -1,0 +1,40 @@
+{{- define "main" }}
+  {{- $img := .Resources.GetMatch $.Params.image }}
+  {{- if $img }}
+    <div class="relative mb-14">
+      <div class="hidden md:block">
+        {{- $tiny := $img.Resize "1080x webp" }}
+        {{- $small := $img.Resize "1200x webp" }}
+        {{- $medium := $img.Resize "1600x webp" }}
+        {{- $large := $img.Resize "2700x webp" }}
+        <img
+          alt="{{ .Title }}"
+          src="{{ $medium.RelPermalink }}"
+          srcset="
+            {{ $tiny.RelPermalink }}  640w,
+            {{ $small.RelPermalink }} 1080w,
+            {{ $medium.RelPermalink }} 1200w,
+            {{ $large.RelPermalink }} 1600w
+          "
+          sizes="100vw"
+        />
+      </div>
+    </div>
+  {{- end }}
+  <div class="bg-white py-6 lg:py-14">
+    <div id="" class="invisible relative -top-20 block"></div>
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-5xl">{{ .Title }}</div>
+        <div class="mt-6 lg:mt-8">
+          <div class="font-light text-lg lg:text-2xl">
+            {{- partial "helpers/enhanced-content-page.html" .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{- partial "cta.html" . }}
+{{- end }}

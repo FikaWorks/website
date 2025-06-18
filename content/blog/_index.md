@@ -1,5 +1,8 @@
----
-title: "Blog"
----
++++
+date = '2023-01-01T08:30:00-07:00'
+draft = false
+title = 'Sharing is power'
++++
 
-Here we write about typical news, software technology, development trends and events.
+This is how fika.works regard our specialists. Because we believe how we label
+each other is a start of forming a culture.

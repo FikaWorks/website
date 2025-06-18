@@ -1,0 +1,137 @@
+{{- /*
+  Renders a menu for the given menu ID.
+
+  @context {page} page The current page.
+  @context {string} menuID The menu ID.
+
+  @example: {{ partial "menu.html" (dict "menuID" "main" "page" . )
+}}
+*/}}
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <nav
+    class="max-lg:absolute max-lg:w-full max-lg:top-0 max-lg:hidden lg:flex lg:flex-wrap"
+  >
+    <div class="lg:hidden transform opacity-100 z-10">
+      <div class="fixed inset-0 bg-black opacity-30"></div>
+    </div>
+    <svg
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="-mr-2 h-[90px] max-lg:hidden"
+      viewBox="0 0 111 90"
+    >
+      <path
+        d="M110.304 90H89.325a12.199 12.199 0 0 1-9.21-4.199L9.21 4.2A12.2 12.2 0 0 0 0 0h110.304v90Z"
+        fill="#fff"
+      ></path>
+    </svg>
+    <div
+      class="relative lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:px-3 max-lg:pt-30 max-lg:pb-10 z-30"
+    >
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
+    </div>
+  </nav>
+{{- end }}
+
+{{- define "_partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{- $level := .level }}
+  {{- range .menuEntries }}
+    {{- $hasChildren := .HasChildren }}
+    {{- $isActive := $page.IsMenuCurrent .Menu . }}
+    {{- $isAncestor := $page.HasMenuCurrent .Menu . }}
+    {{- $classes := "" }}
+    {{- if $isActive }}
+      {{- $classes = printf "%s %s" $classes "active" }}
+    {{- else if $isAncestor }}
+      {{- $classes = printf "%s %s" $classes "ancestor" }}
+    {{- end }}
+    <div>
+      {{- if $hasChildren }}
+        <div class="relative cursor-pointer group">
+          <div class="children-menu">
+            <a
+              href="{{ .URL }}"
+              class="flex items-center gap-2 text-gray-800 group-hover:text-black focus:outline-none {{ $classes }}"
+            >
+              <div>
+                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
+                {{- if eq $level 0 }}
+                  <div
+                    class="{{ if and (not $isActive) (not $isAncestor) }}
+                      lg:hidden
+                    {{ end }} group-hover:flex lg:flex w-full justify-center lg:mt-2"
+                  >
+                    <div
+                      class="h-[1px] w-3 bg-fika-light-purple max-lg:hidden"
+                    ></div>
+                  </div>
+                {{- end }}
+              </div>
+              <div>
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-lg:hidden group-hover:lg:rotate-180"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.5 4.69 8 9.19l4.5-4.5 1.06 1.06L8 11.31 2.44 5.75 3.5 4.69Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            {{- with .Children }}
+              <div
+                class="popover-panel lg:shadow-lg lg:absolute lg:w-[354px] rounded-md bg-white lg:hidden"
+              >
+                <div class="lg:p-6 max-lg:pl-2">
+                  <ul>
+                    {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" (add $level 1)) }}
+                  </ul>
+                </div>
+              </div>
+            {{- end }}
+          </div>
+        </div>
+      {{- else }}
+        <div class="cursor-pointer group">
+          <a
+            href="{{ .URL }}"
+            {{- if eq $level 0 }}
+              class="max-lg:block hover:max-lg:underline text-gray-800
+              group-hover:text-black max-lg:p-2 {{ $classes }}"
+            {{- else }}
+              class="block hover:bg-fika-offWhite uppercase text-gray-800
+              group-hover:text-black px-4 py-3 lg:p-4 rounded-md bg-white
+              {{ $classes }}"
+            {{- end }}
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                {{ .Pre }}
+                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
+              </div>
+            </div>
+          </a>
+          {{- if eq $level 0 }}
+            <div
+              class="{{ if not $isActive }}
+                lg:hidden
+              {{ end }} group-hover:flex lg:flex w-full justify-center lg:mt-2"
+            >
+              <div class="h-[1px] w-3 bg-fika-light-purple max-lg:hidden"></div>
+            </div>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+  {{- end }}
+{{- end }}

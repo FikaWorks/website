@@ -1,8 +1,6 @@
 ---
-name: "Pawel Mincer"
-thumbnail: "profile.jpg"
-specialties: "AWS, K8S, DevOps, IaC, Automation"
-member_status: "incubating"
-linkedin: "https://www.linkedin.com/in/pawelmincer/"
-github: "https://github.com/warlockbagel"
+title: 'Pawel Mincer'
+role: 'Cloud Native Consultant'
+image: 'pawel-mincer.png'
+expertises: ['AWS', 'Kubernetes', 'DevOps', 'IaC']
 ---

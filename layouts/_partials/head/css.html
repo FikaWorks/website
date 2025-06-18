@@ -1,0 +1,53 @@
+{{- with templates.Defer }}
+  {{- /* Fonts */}}
+  {{- $fontLight := resources.Get "fonts/Patron-Light.otf" | fingerprint "sha384" }}
+  {{- $fontMedium := resources.Get "fonts/Patron-Medium.otf" | fingerprint "sha384" }}
+  {{- $fontRegular := resources.Get "fonts/Patron-Regular.otf" | fingerprint "sha384" }}
+  <link
+    rel="preload"
+    href="{{ $fontLight.RelPermalink }}"
+    as="font"
+    type="{{ $fontLight.MediaType.Type }}"
+    integrity="{{ $fontLight.Data.Integrity }}"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="{{ $fontMedium.RelPermalink }}"
+    as="font"
+    type="{{ $fontMedium.MediaType.Type }}"
+    integrity="{{ $fontMedium.Data.Integrity }}"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="{{ $fontRegular.RelPermalink }}"
+    as="font"
+    type="{{ $fontRegular.MediaType.Type }}"
+    integrity="{{ $fontRegular.Data.Integrity }}"
+    crossorigin
+  />
+
+  {{- /* Stylesheets */}}
+  {{- $css := resources.Get "css/main.css"
+    | resources.ExecuteAsTemplate "css/main.css" (dict
+    "FontLightURL"  $fontLight.RelPermalink
+    "FontMediumURL" $fontMedium.RelPermalink
+    "FontRegularURL" $fontRegular.RelPermalink
+    )
+    | postCSS (dict "config" "./postcss.config.js")
+    | css.TailwindCSS (dict "minify" (not hugo.IsDevelopment))
+  }}
+  {{- if hugo.IsDevelopment }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  {{- else }}
+    {{- with $css | fingerprint "sha384" }}
+      <link
+        rel="stylesheet"
+        href="{{ .RelPermalink }}"
+        integrity="{{ .Data.Integrity }}"
+        crossorigin="anonymous"
+      />
+    {{- end }}
+  {{- end }}
+{{- end }}
