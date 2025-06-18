@@ -207,7 +207,7 @@
       {{ range sort .Pages ".Params.event_date" "desc" }}
         {{ $filter_classes := delimit (apply .Params.event_types "printf" "filtered-item-%s" ".") " " | lower }}
         <div
-          class="col-span-full lg:col-span-4 filtered-item {{ $filter_classes }}"
+          class="col-span-full md:col-span-6 lg:col-span-4 filtered-item {{ $filter_classes }}"
         >
           <div class="relative h-full">
             <div class="relative h-full w-full bg-fika-dust p-8 grid">

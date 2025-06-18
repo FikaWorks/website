@@ -372,6 +372,7 @@
       "mb-9",
       "mb-[2px]",
       "md:block",
+      "md:col-span-6",
       "md:flex-nowrap",
       "md:flex-row",
       "md:font-light",

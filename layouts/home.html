@@ -485,9 +485,9 @@
           class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
         >
           <div class="col-span-full lg:col-start-2 lg:col-end-12">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14">
+            <div class="grid grid-cols-6 md:grid-cols-12 gap-x-10 gap-y-14">
               {{- range first 3 (where site.RegularPages "Type" "blog") }}
-                <div class="col-span-full sm:col-span-1">
+                <div class="col-span-full md:col-span-6 lg:col-span-4">
                   <div class="relative">
                     <a href="{{ .RelPermalink }}"
                       ><div class="relative mt-6 lg:mt-0">
@@ -510,7 +510,7 @@
                               </svg>
                             </div>
                             <div
-                              class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+                              class="relative min-h-full transform transition duration-300 ease-linear align-middle undefined"
                             >
                               {{- $img := .Resources.Get .Params.image }}
                               {{- if $img }}

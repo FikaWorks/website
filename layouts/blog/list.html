@@ -20,7 +20,7 @@
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       {{- range .Pages }}
-        <div class="col-span-full lg:col-span-4">
+        <div class="col-span-full md:col-span-6 lg:col-span-4">
           <div>
             <a href="{{ .RelPermalink }}"
               ><div class="relative mt-6 lg:mt-0">
@@ -43,7 +43,7 @@
                       </svg>
                     </div>
                     <div
-                      class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+                      class="relative min-h-full transform transition duration-300 ease-linear align-middle undefined"
                       style="height: 100%;"
                     >
                       {{- $img := .Resources.Get .Params.image }}
