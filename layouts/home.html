@@ -1,37 +1,18 @@
 {{- define "main" }}
   <div class="relative mb-14">
-    <div class="hidden md:block relative">
-      {{- $img := resources.Get "/images/website-background-desktop.png" }}
-      {{- $tiny := $img.Resize "640x webp" }}
-      {{- $small := $img.Resize "1024x webp" }}
-      {{- $medium := $img.Resize "1600x webp" }}
-      {{- $large := $img.Resize "2000x webp" }}
+    <div class="relative">
+      {{- $img_desktop := resources.Get "/images/website-background-desktop.png" }}
+      {{- $img_mobile := resources.Get "/images/website-background-mobile.png" }}
+      {{- $tiny := $img_mobile.Resize "640x webp" }}
+      {{- $small := $img_mobile.Resize "1280x webp" }}
+      {{- $medium := $img_desktop.Resize "1600x webp" }}
+      {{- $large := $img_desktop.Resize "2000x webp" }}
       <img
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
         src="{{ $medium.RelPermalink }}"
         srcset="
           {{- $tiny.RelPermalink }}  640w,
-          {{- $small.RelPermalink }} 1024w,
-          {{- $medium.RelPermalink }} 1600w,
-          {{- $large.RelPermalink }} 2000w
-        "
-        width="100%"
-        height="100%"
-        sizes="100vw"
-      />
-    </div>
-    <div class="md:hidden">
-      {{- $img := resources.Get "/images/website-background-mobile.png" }}
-      {{- $tiny := $img.Resize "640x webp" }}
-      {{- $small := $img.Resize "1024x webp" }}
-      {{- $medium := $img.Resize "1600x webp" }}
-      {{- $large := $img.Resize "2000x webp" }}
-      <img
-        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
-        src="{{ $medium.RelPermalink }}"
-        srcset="
-          {{- $tiny.RelPermalink }}  640w,
-          {{- $small.RelPermalink }} 1024w,
+          {{- $small.RelPermalink }} 1280w,
           {{- $medium.RelPermalink }} 1600w,
           {{- $large.RelPermalink }} 2000w
         "

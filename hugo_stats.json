@@ -381,7 +381,6 @@
       "md:grid-cols-3",
       "md:h-[314px]",
       "md:h-[400px]",
-      "md:hidden",
       "md:max-w-2xl",
       "md:mt-6",
       "md:mt-7",
