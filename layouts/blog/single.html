@@ -3,8 +3,7 @@
     {{- $img := .Resources.Get $.Params.image }}
     {{- if $img }}
       <div
-        class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
-        style="height: 580px;"
+        class="relative min-h-[250px] md:h-[400px] lg:h-[580px] transform transition duration-300 ease-linear align-middle undefined"
       >
         {{- $tiny := $img.Resize "640x webp" }}
         {{- $small := $img.Resize "1024x webp" }}
@@ -13,7 +12,7 @@
         <img
           alt="{{ .Title }}"
           src="{{ $medium.RelPermalink }}"
-          style="position: absolute; margin: auto; display: block; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+          class="absolute block mx-auto my-auto min-w-full max-w-full min-h-full max-h-full object-cover"
           srcset="
             {{- $tiny.RelPermalink }}  640w,
             {{- $small.RelPermalink }} 1024w,

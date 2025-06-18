@@ -54,7 +54,7 @@
                         <img
                           alt="{{ .Title }}"
                           src="{{ $medium.RelPermalink }}"
-                          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                          class="absolute block mx-auto my-auto min-w-full max-w-full min-h-full max-h-full object-cover"
                           srcset="
                             {{- $small.RelPermalink }}  256w,
                             {{- $medium.RelPermalink }}  512w,

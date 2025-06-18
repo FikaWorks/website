@@ -38,9 +38,6 @@ noClasses = true
 style = "catppuccin-mocha"
 tabWidth = 2
 
-[imaging]
-quality = 90
-
 [menus]
 
 [[menus.main]]
