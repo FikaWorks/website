@@ -99,3 +99,25 @@ body {
   padding: 16px;
   font-size: 0.65em;
 }
+
+table {
+  font-size: 0.8em;
+}
+
+table th,
+table td {
+  padding: 0.5em 0;
+}
+
+table td {
+  border-top: 1px solid var(--color-fika-dust);
+}
+
+table tr td {
+  vertical-align: top;
+  padding-left: 1em;
+}
+
+table tr td:first-child {
+  text-align: center;
+}
