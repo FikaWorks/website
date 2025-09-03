@@ -1,8 +1,6 @@
 +++
-date = '2018-01-01T00:00:00+02:00'
-event_date = '2025-10-10T09:00:00+00:00'
-event_location = 'Startup Village, Amsterdam Science Park, Amsterdam'
-event_types = ['workshop']
+date = '2023-01-01T08:00:00-07:00'
+draft = false
 image = 'fikaworks-days.jpg'
 title = 'FikaWorks Day 2025: Empowering Cloud Native Freelancers & Entrepreneurs'
 +++
@@ -28,39 +26,39 @@ cooperative working, FikaWorks' setup and lessons learned.
             <td nowrap>09:00 - 09:30</td>
             <td colspan="2">
                 <span class="font-bold">Welcome & Registration</span><br />
-                <span class="italic">Coffee and Croissants</span>
+                <span class="italic text-sm">Coffee and Croissants</span>
             </td>
         </tr>
         <tr>
             <td nowrap>09:30 - 09:45</td>
             <td colspan="2" class="py-4">
                 <span class="font-bold">Welcome (day schedule overview)</span><br />
-                <span class="italic">Startup Village - Intro and vision</span>
+                <span class="italic text-sm">Startup Village - Intro and vision</span>
             </td>
         </tr>
         <tr>
             <td>09:45 - 10:15</td>
             <td colspan="2">
                 <span class="font-bold">Introduction to FikaWorks Cooperative</span><br />
-                <span class="italic">Its mission as a collective of independent
+                <span class="italic text-sm">Its mission as a collective of independent
                     Cloud Native consultants (30 min)</span>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td class="text-center font-bold text-sm">
+            <td class="text-center font-bold text-sm w-1/2">
                 Room 1 (Day)
             </td>
-            <td class="text-center font-bold text-sm">
+            <td class="text-center font-bold text-sm w-1/2">
                 Room 2 (Night)
             </td>
         </tr>
         <tr>
             <td>10:30 - 11:00</td>
-            <td>
+            <td class="w-1/2">
                 <span class="font-bold">Fighting wildfire and protecting communities with AI - Andrea
                 Giardini (Cloud Consultant @ Overstory/FikaWorks)</span><br />
-                <span class="italic">As wildfires become increasingly devastating due to climate
+                <span class="italic text-sm">As wildfires become increasingly devastating due to climate
                 change, leveraging technology for environmental protection is
                 crucial. This talk focuses on the infrastructure needed to
                 support AI-driven wildfire prevention systems using Kubernetes
@@ -77,10 +75,10 @@ cooperative working, FikaWorks' setup and lessons learned.
                 protect our forests and mitigate the impact of wildfires on our
                 environment.</span>
             </td>
-            <td rowspan="5">
+            <td rowspan="5" class="w-1/2">
                 <span class="font-bold">Workshop: Code, Coach, Conquer: Level Up Your Facilitation
                 Game! - Neha Lagoo Ratnakar (Trainer/Speaker/Author)</span><br />
-                <span class="italic">This engaging workshop equips the audience with practical
+                <span class="italic text-sm">This engaging workshop equips the audience with practical
                 techniques to deliver clearer, more impactful presentations and
     training sessions in any setting. Participants will learn simple strategies
     to break down complex concepts, engage their audience, and handle questions
@@ -96,8 +94,10 @@ cooperative working, FikaWorks' setup and lessons learned.
         </tr>
         <tr>
             <td>11:15 - 11:45</td>
-            <td><span class="font-bold">Data Platform Building Blocks</span><br />
-                <span class="italic">Julian Alves<span></td>
+            <td>
+                <span class="font-bold">Data Platform Building Blocks</span><br />
+                <span class="italic text-sm">Julian Alves<span>
+            </td>
         </tr>
         <tr>
             <td>11:45 - 12:00</td>
@@ -113,14 +113,14 @@ cooperative working, FikaWorks' setup and lessons learned.
             <td>12:30 - 13:30</td>
             <td colspan="2">
                 <span class="font-bold">Lunch & Networking</span><br />
-                <span class="italic">Catered lunch; please note diet/allergy requests during registration.</span>
+                <span class="italic text-sm">Catered lunch; please note diet/allergy requests during registration.</span>
             </td>
         </tr>
         <tr>
             <td>13:30 - 14:15</td>
             <td>
                 <span class="font-bold">Working as a freelancer & DBA wet A.M.A. session</span><br />
-                <span class="italic">Jenne Termeer (Watson Parker - Senior Partner)</span>
+                <span class="italic text-sm">Jenne Termeer (Watson Parker - Senior Partner)</span>
             </td>
             <td>
                 <span class="font-bold">Open Slot: submit something!</span>
@@ -140,7 +140,7 @@ cooperative working, FikaWorks' setup and lessons learned.
             <td>
                 <span class="font-bold">Workshop: "Hands-on AI
                 workshop with MCP" (interactive technical workshop)</span><br />
-                <span class="italic">Alex Giurgiu and Valentin Stoican (<a
+                <span class="italic text-sm">Alex Giurgiu and Valentin Stoican (<a
                     href="http://mcp-cloud.ai" target="blank">mcp-cloud.ai</a>
                     founders/FikaWorks consultants)</span>
             </td>
@@ -157,7 +157,7 @@ cooperative working, FikaWorks' setup and lessons learned.
             <td>17:00 - Late</td>
             <td colspan="2">
                 <span class="font-bold">Drinks and Food Reception (till late)</span><br />
-                <span class="italic">Social gathering with drinks and food for networking and
+                <span class="italic text-sm">Social gathering with drinks and food for networking and
                 community building at the pub next to the venue.</span>
             </td>
         </tr>

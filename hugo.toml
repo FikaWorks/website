@@ -69,6 +69,11 @@ pageRef = "/services/open-source-advocacy"
 pre = '<div class="rounded-md p-[6px] lg:p-3 bg-fika-soft-blue"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"><path d="m15 6.25-.884.884 2.241 2.241h-8.92A3.134 3.134 0 0 0 5 6.938V1.25H3.75v5.688a3.125 3.125 0 0 0 0 6.124v5.688H5v-5.688a3.134 3.134 0 0 0 2.437-2.437h8.92l-2.241 2.241.884.884L18.75 10 15 6.25ZM4.375 11.875a1.875 1.875 0 1 1 0-3.75 1.875 1.875 0 0 1 0 3.75Z" fill="#D9E3FF"></path></svg></div>'
 
 [[menus.main]]
+name = 'FikaWorks Day'
+pageRef = '/fikaworks-day'
+weight = 25
+
+[[menus.main]]
 name = 'Events'
 pageRef = '/events'
 weight = 30
