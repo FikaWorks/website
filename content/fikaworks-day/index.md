@@ -10,11 +10,15 @@ insights, workshops, and networking for sharing feedback and exploring
 solutions in the Cloud Native landscape and business. We'll also cover
 cooperative working, FikaWorks' setup and lessons learned.
 
+<div class="h-[3em]"></div>
+
 ---
+
+<div class="h-[3em]"></div>
 
 ## Agenda
 
-<table class="table-auto w-full align-top">
+<table class="table-auto w-full align-top mt-[3em]">
     <thead>
         <tr>
             <th>Time</th>
@@ -163,3 +167,11 @@ cooperative working, FikaWorks' setup and lessons learned.
         </tr>
     </tbody>
 </table>
+
+---
+
+<p class="text-center mt-[3em] ">
+    <button onclick="window.open('https://fikaworksday.eventbrite.nl', '_blank')" class="px-6 py-4 rounded-full bg-(--color-fika-purple) text-white cursor-pointer">
+        Sign-up for FikaWorks Days 2025
+    </button>
+</p>
