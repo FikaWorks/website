@@ -1,0 +1,274 @@
+{{- define "main" }}
+  {{- $img := .Resources.GetMatch $.Params.image }}
+  {{- if $img }}
+    <div class="relative mb-14">
+      <div class="hidden md:block">
+        {{- $tiny := $img.Resize "640x webp" }}
+        {{- $small := $img.Resize "1024x webp" }}
+        {{- $medium := $img.Resize "1600x webp" }}
+        {{- $large := $img.Resize "2000x webp" }}
+        <img
+          alt="{{ .Title }}"
+          src="{{ $medium.RelPermalink }}"
+          srcset="
+            {{- $tiny.RelPermalink }}  640w,
+            {{- $small.RelPermalink }} 1024w,
+            {{- $medium.RelPermalink }} 1600w,
+            {{- $large.RelPermalink }} 2000w
+          "
+          width="100%"
+          height="100%"
+          sizes="100vw"
+        />
+      </div>
+    </div>
+  {{- end }}
+  <div class="bg-white py-6 lg:py-14">
+    <div id="" class="invisible relative -top-20 block"></div>
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-5xl">{{ .Title }}</div>
+        <div class="mt-6 lg:mt-8">
+          <div class="font-light text-lg lg:text-2xl">
+            {{- partial "helpers/enhanced-content-page.html" .Content }}
+          </div>
+          <div class="text-center mt-[3em] mb-[6em]">
+            <a href="https://fikaworksday.eventbrite.nl" target="_blank">
+              <div
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
+                <div
+                  class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+                >
+                Sign-up for FikaWorks Days 2025<svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="mt-[4em] lg:mt-[6em]">
+          <h2 class="text-xl font-medium lg:text-3xl">Informations</h2>
+          <table class="table-auto w-full align-top mt-[3em] text-[16px]!">
+            <tr>
+              <th class="text-left">Date</th>
+              <td>Friday 10th of October 2025</td>
+            </tr>
+            <tr>
+              <th class="text-left">Location</th>
+              <td>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&amp;destination=Startup+Village,+Science+Park+608,+1098+XH+Amsterdam+Netherlands"
+                  target="_blank"
+                  class="w-full md:w-auto"
+                  >
+                Startup Village<br />
+                Science Park 608, 1098 XH Amsterdam, Netherlands</a>
+              </td>
+            </tr>
+            <tr>
+              <th class="text-left">Target Audience</th>
+              <td>Freelancers, Independent Consultants, and Entrepreneurs</td>
+            </tr>
+            <tr>
+              <th class="text-left">Admission</th>
+              <td>Free Community Event (Registration Required/Donations welcomed)</td>
+            </tr>
+            <tr>
+              <th class="text-left">Expected Attendance</th>
+              <td>100 Participants</td>
+            </tr>
+          </table>
+        </div>
+        <div class="mt-[4em] lg:mt-[6em]">
+          <h2 class="text-xl font-medium lg:text-3xl">Agenda</h2>
+          <table class="table-auto w-full align-top mt-[3em]">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th colspan="2">Session / Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td nowrap>09:00 - 09:30</td>
+                <td colspan="2">
+                  <span class="font-bold">Welcome & Registration</span><br />
+                  <span class="italic text-sm">Coffee and Croissants</span>
+                </td>
+              </tr>
+              <tr>
+                <td nowrap>09:30 - 09:45</td>
+                <td colspan="2" class="py-4">
+                  <span class="font-bold">Welcome (day schedule overview)</span><br />
+                  <span class="italic text-sm">Startup Village - Intro and vision</span>
+                </td>
+              </tr>
+              <tr>
+                <td>09:45 - 10:15</td>
+                <td colspan="2">
+                  <span class="font-bold">Introduction to FikaWorks Cooperative</span><br />
+                  <span class="italic text-sm">Its mission as a collective of independent
+                      Cloud Native consultants (30 min)</span>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="text-center font-bold text-sm w-1/2">
+                  Room 1 (Day)
+                </td>
+                <td class="text-center font-bold text-sm w-1/2">
+                  Room 2 (Night)
+                </td>
+              </tr>
+              <tr>
+                <td>10:30 - 11:00</td>
+                <td class="w-1/2">
+                  <span class="font-bold">Fighting wildfire and protecting communities with AI - Andrea
+                    Giardini (Cloud Consultant @ Overstory/FikaWorks)</span><br />
+                  <span class="italic text-sm">As wildfires become increasingly devastating due to climate
+                      change, leveraging technology for environmental protection is
+                      crucial. This talk focuses on the infrastructure needed to
+                      support AI-driven wildfire prevention systems using Kubernetes
+                      and cloud-native technologies. We will discuss the challenges
+                      of managing robust data pipelines for processing satellite
+                      imagery and environmental data, emphasizing the importance of
+                      GPU acceleration for AI. Additionally, we will explore
+                      strategies for efficient storage solutions to handle large
+                      datasets, ensuring scalability and performance. Attendees will
+                      gain insights into the architectural considerations and
+                      operational challenges of deploying an effective, resilient
+                      wildfire monitoring and prevention infrastructure. Join us in
+                      understanding how we can harness the power of technology to
+                      protect our forests and mitigate the impact of wildfires on our
+                      environment.</span>
+                </td>
+                <td rowspan="5" class="w-1/2">
+                  <span class="font-bold">Workshop: Code, Coach, Conquer: Level Up Your Facilitation
+                      Game! - Neha Lagoo Ratnakar (Trainer/Speaker/Author)</span><br />
+                  <span class="italic text-sm">This engaging workshop equips the audience with practical
+                      techniques to deliver clearer, more impactful presentations and
+                      training sessions in any setting. Participants will learn simple strategies
+                      to break down complex concepts, engage their audience, and handle questions
+                      with confidence, whether it's a regular work meeting, a demo to a
+                      colleague, or a public or company workshop. Through interactive exercises,
+                      they will gain a framework for structuring content and tips to keep learners engaged.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>11:00 - 11:15</td>
+                <td>Coffee Break</td>
+              </tr>
+              <tr>
+                <td>11:15 - 11:45</td>
+                <td>
+                  <span class="font-bold">Data Platform Building Blocks</span><br />
+                  <span class="italic text-sm">Julian Alves<span>
+                </td>
+              </tr>
+              <tr>
+                <td>11:45 - 12:00</td>
+                <td>Coffee Break</td>
+              </tr>
+              <tr>
+                <td>12:00 - 12:30</td>
+                <td>
+                  <span class="font-bold">Open Slot: submit something!</span>
+                </td>
+              </tr>
+              <tr>
+                <td>12:30 - 13:30</td>
+                <td colspan="2">
+                  <span class="font-bold">Lunch & Networking</span><br />
+                  <span class="italic text-sm">Catered lunch; please note diet/allergy requests during registration.</span>
+                </td>
+              </tr>
+              <tr>
+                <td>13:30 - 14:15</td>
+                <td>
+                  <span class="font-bold">Working as a freelancer & DBA wet A.M.A. session</span><br />
+                  <span class="italic text-sm">Jenne Termeer (Watson Parker - Senior Partner)</span>
+                </td>
+                <td>
+                  <span class="font-bold">Open Slot: submit something!</span>
+                </td>
+              </tr>
+              <tr>
+                <td>14:15 - 14:30</td>
+                <td colspan="2">Coffee Break</td>
+              </tr>
+              <tr>
+                <td>14:30 - 16:15</td>
+                <td>
+                  <span class="font-bold"><a href="https://en.wikipedia.org/wiki/Open_space_technology"
+                    target="blank">Open Space</a>: We build
+                    the agenda together</span>
+                </td>
+                <td>
+                  <span class="font-bold">Workshop: "Hands-on AI
+                    workshop with MCP" (interactive technical workshop)</span><br />
+                  <span class="italic text-sm">Alex Giurgiu and Valentin Stoican (<a
+                    href="http://mcp-cloud.ai" target="blank">mcp-cloud.ai</a>
+                    founders/FikaWorks consultants)</span>
+                </td>
+              </tr>
+              <tr>
+                <td>16:15 - 16:30</td>
+                <td colspan="2">Coffee Break</td>
+              </tr>
+              <tr>
+                <td>16:30 - 17:00</td>
+                <td colspan="2">Closing Keynote</td>
+              </tr>
+              <tr>
+                <td>17:00 - Late</td>
+                <td colspan="2">
+                  <span class="font-bold">Drinks and Food Reception (till late)</span><br />
+                  <span class="italic text-sm">Social gathering with drinks and food for networking and
+                    community building at the pub next to the venue.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center my-[6em]">
+            <a href="https://fikaworksday.eventbrite.nl" target="_blank">
+              <div
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
+                <div
+                  class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+                >
+                Sign-up for FikaWorks Days 2025<svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{- partial "cta.html" . }}
+{{- end }}
