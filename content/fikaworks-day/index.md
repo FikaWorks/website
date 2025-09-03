@@ -168,6 +168,8 @@ cooperative working, FikaWorks' setup and lessons learned.
     </tbody>
 </table>
 
+<div class="h-[3em]"></div>
+
 ---
 
 <p class="text-center mt-[3em] ">
