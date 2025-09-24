@@ -27,5 +27,8 @@
     "prettier-plugin-go-template": "^0.0.15",
     "pretty-quick": "^4.2.2",
     "tailwindcss": "^4.1.10"
+  },
+  "dependencies": {
+    "hugo": "^0.0.3"
   }
 }

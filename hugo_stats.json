@@ -116,7 +116,6 @@
       "disabled:border-gray-200",
       "disabled:cursor-not-allowed",
       "disabled:text-gray-200",
-      "duration-200",
       "duration-300",
       "ease-linear",
       "filter-count",
@@ -475,7 +474,6 @@
       "px-5",
       "px-6",
       "px-9",
-      "py-2",
       "py-3",
       "py-4",
       "py-5",
@@ -526,7 +524,6 @@
       "top-10",
       "transform",
       "transition",
-      "transition-colors",
       "truncate",
       "undefined",
       "underline",
@@ -631,6 +628,7 @@
       "the-aws-sdk",
       "the-consultancy",
       "the-current-system",
+      "the-custom-cloud-infrastructure-package-can-include",
       "the-do-all-consultancy",
       "the-functionality",
       "the-good-and-the-bad",
@@ -648,7 +646,8 @@
       "what-i-dont-enjoy",
       "what-i-enjoy",
       "what-we-cover",
-      "you-only-see-the-good"
+      "you-only-see-the-good",
+      "your-vision-our-cloud-expertise"
     ]
   }
 }
