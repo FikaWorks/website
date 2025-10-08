@@ -6,7 +6,7 @@ disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
 
 [params]
-description = "FikaWorks is a community-driven engineering collective helping businesses adopt cloud-native technologies and accelerate digital transformation."
+description = "We design and deliver modular, enterprise-grade cloud solutions that integrate seamlessly with major providers such as Azure, AWS, and Google Cloud as well as Sovereign Neo-Cloud. By applying modern cloud-native engineering practices, we help businesses scale efficiently, operate securely, and innovate faster—turning complex challenges into sustainable competitive advantage."
 twitter_handler = "@fikaworks"
 
 [taxonomies]
