@@ -41,14 +41,14 @@ tabWidth = 2
 [menus]
 
 [[menus.main]]
-name = 'Why'
-pageRef = '/why'
-weight = 10
+name = 'Our Services'
+pageRef = '/services'
+weight = 20
 
 [[menus.main]]
-name = 'Offering'
-pageRef = '/offering'
-weight = 20
+name = 'Who We Are'
+pageRef = '/about'
+weight = 22
 
 [[menus.main]]
 name = 'FikaWorks Day'
@@ -70,10 +70,6 @@ name = 'Contact'
 pageRef = '/contact'
 weight = 50
 
-[[menus.main]]
-name = 'Members'
-pageRef = '/members'
-weight = 60
 
 [module]
 [module.hugoVersion]

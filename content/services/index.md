@@ -1,7 +1,7 @@
 +++
 date = '2023-01-01T08:00:00-07:00'
 draft = false
-title = 'Offering'
+title = 'Our Services'
 +++
 
 Every organization’s cloud journey is different, but the challenges are often
