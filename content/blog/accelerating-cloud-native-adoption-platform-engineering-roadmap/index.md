@@ -43,14 +43,16 @@ they will go live. This will make the so-called Day 2 operations easier on the
 long run. [GitOps](https://about.gitlab.com/topics/gitops/) practices are
 becoming the golden standard in managing the lifecycle of the infrastructure.
 
-## Standardizing Application Delivery
+### Standardizing Application Delivery
 
-Conatainers are the standard unit of application packaging and distribution already for a few year. Most applications are already containerised and there's automation and AI tooling that makes that part trivial Also, if we talk about enterprise applications, the vendors distribute their
-applications as container images. If you do need to start from scratch, build on
-top of official images, and use them as inspiration in regards to layering
-structure, configuration management, parameter injection, permissions. There's
-work done on optimising those images already and they're also tested against
-vulnerabilities. Minimalism is key here:
+Containers are the standard unit for packaging and distributing applications. 
+Most applications today are already containerized, and with the help of AI tooling, 
+the process has become almost trivial for those that are not.
+When it comes to enterprise software, vendors typically distribute their applications as container images.
+If you do need to build from scratch, start with official base images — they’re a great reference for best practices in layering, 
+configuration management, parameter injection and permissions. These images are already battle-tested,
+ optimized and scanned for vulnerabilities, so you benefit from a solid and secure foundation. 
+ Minimalism is key here:
 
 - the smaller the image the better (less area to attack, faster start-time, less
   storage consumed, data transfer costs, etc)
@@ -61,7 +63,7 @@ vulnerabilities. Minimalism is key here:
 There is excellent documentation around that part, and quite a few developers
 are already familiar with this topic.
 
-## Providing a Secure Artifact Management Service
+### Providing a Secure Artifact Management Service
 
 Once you can build the images, you'll need to store them somewhere. If you
 will run Kubernetes in a public cloud, your registry should be in the same
@@ -89,7 +91,7 @@ need to consider:
   (like registry on prem and platform in the cloud) due to transfer costs and
   latency (especially with AI images)
 
-## Embedding Security as a Platform Service
+### Embedding Security as a Platform Service
 
 Kubernetes is not good at keeping secrets. The default secret primitives are
 not actually secret, and can be quickly cause major security incidents. There
@@ -105,7 +107,7 @@ are a few options for handling the management of sensitive data in Kubernetes:
 Next to storing the secrets themselve, you need to figure who will have access
 and based on what roles/policies to consume them.
 
-## Delivering Observability Capabilities
+### Delivering Observability Capabilities
 
 All vendors support and can consume Kubernetes metrics and logs, but
 this migration is a good opportunity to catch up and get rid of legacy.
@@ -121,31 +123,27 @@ Migration to Kubernetes brings most of the time the "you build it you run it"
 paradigm, so you'll need to be confident you're monitoring the right things, and
 don't wake up people in the middle of the night for things that are not urgent.
 
-## Automating Progressive Delivery
+### Automating Progressive Delivery
 
-Migration to Kubernetes doesn't necessarily mean you will need a completely new
-CI/CD stack, but there are new products that have better understanding of the
-new infrastructure compared to the good old Jenkins. There's a momentum towards
-GitOps practices (even without Git), basically versioning the state of everything that runs in
+Migrating to a new platform doesn’t necessarily require adopting an entirely new software delivery tool. 
+However, some products are better optimized and provide deeper integration with the new infrastructure.
+ There's a momentum towards GitOps practices (even without Git), basically versioning the state of everything that runs in
 Kubernetes (including the infrastructure itself), storing it in git and
-reconciling to the desired state. To follow this path, there are new tools (like
-[argo cd](https://argoproj.github.io/argo-cd/),
-[weave flux](https://github.com/fluxcd/flux)) that facilitate those patterns and
+reconciling to the desired state. To follow this path, there are  tools (like
+[argo-cd](https://argoproj.github.io/argo-cd/),
+[flux](https://github.com/fluxcd/flux)) that facilitate those patterns and
 allow progressive delivery of the application.
 
-Think first at your current requirements in regards to application delivery, maybe there are
-tools you currently use that you can take with you. First of all, you will need to cover the basics
-and ensure your applications can build, run tests and can be deployed using
-containers. The fancy stuff (like service meshes) may or may not be needed at
+ Depending on how significant the shift is from your previous platform, you may be able to carry over some of the tools you’re already using. 
+ First of all, you will need to cover the basics and ensure your applications can build, run tests and can be deployed using
+containers. The fancy stuff may or may not be needed at
 all, don't over engineer the CI/CD, it should be trivial to deploy.
 
-To handle the yaml hell you will probably need to use a tool that can template
-or help you customize the Kubernetes manifests. This is needed to facilitate
-application updates. You will need to think about how to introduce a new
-environment variable, promote a new container image/release or how to create a
-new environment without duplicating the number of lines of configuration.
+To manage the so-called “YAML hell,” you’ll likely need a tool that supports templating or helps you customize Kubernetes manifests. This simplifies application updates and maintenance.
 
-## Figure out the dependencies (enterprise spaghetti)
+You’ll need to consider how to introduce new environment variables, promote new container images or releases, and create new environments — all without duplicating large portions of configuration. It’s also important to decide how much of this complexity you want to expose to your development teams.
+
+### Map Out Dependencies (Enterprise Spaghetti)
 
 Often, a new platform based on Kubernetes is linked to a broader ambition for enterprises to
 consume/migrate to cloud and eventually use more open source. If you worked in
@@ -173,14 +171,15 @@ There is a few options for fixing it:
 
 - Operate the changes at the legacy system (hard)
 
-## Platform adoption
+### Platform adoption
 
-It doesn't really matter how beautiful the new platform is if the
-developers are not using it. The platform adoption should happen during the
-entire migration process, and it is arguably the most important part. Kubernetes
-is just the bottom layer of your new technology stack, the way your development
-teams are leveraging it, will be the differentiator for the business at the end
-of the day. There are a few things that will facilitate the adoption:
+No matter how well-designed or feature-rich your platform is, it won’t deliver value if your development teams aren’t actively using it. 
+Building without short feedback loops risks project failure 
+and creates an opportunity for vendors to convince management that their tool is a silver bullet.
+Platform adoption should be integrated throughout the entire migration process — arguably the most critical factor for success. 
+Kubernetes is just the foundation of your new technology stack;
+how your development teams leverage it will ultimately determine the business impact. 
+There are a few things that will facilitate the adoption:
 
 **Train the people** - Don't expect to get adoption without investing the right
 amount of time into training the people. There are a lot of new technologies and
@@ -198,7 +197,7 @@ and keep the developers teams happy. This includes good documentation and
 examples, FAQ's, easy access, usability and in general a focus on the removal of
 friction in using the platform. This is your chance to adopt [InnerSource](https://about.gitlab.com/topics/version-control/what-is-innersource/) best practices.
 
-## Platform Go-Live Enablement
+### Platform Go-Live Enablement
 
 With all those in place, you are ready to go live. There are a few possible
 scenarios that will help to minimise the risks of failure at this stage. If you
@@ -208,7 +207,7 @@ previous application learnings, common sense and complexity. Good luck with your
 migration and enjoy the ride!
 
 #### Where to go next from here?
-A platform is never done. Requirements evolve, new tooling and practices emerge all the time. A deeper description of the following topics is outside the scope of this article, but there are the next steps in hardening your platform:
+A platform is never done. Requirements evolve, new tooling and practices emerge all the time. A deeper description of the following tools and concepts is outside the scope of this article, but these are the next steps in hardening your platform:
 
 > - Real Developer portal and golden paths (e.g., Backstage) for self‑service and standards
 > - Policy‑as‑code and governance (OPA Gatekeeper/Kyverno, Conftest, Checkov/tfsec)
@@ -223,7 +222,6 @@ A platform is never done. Requirements evolve, new tooling and practices emerge 
 
 
 
-
-_Photo Notes: I took this picture at Utrecht Central Station while commuting to the Rabobank HQ—the very project that inspired this post!_
+_Photo Notes: I took this picture at Utrecht Central Station while commuting to the Rabobank HQ, where the project that inspired this post was delivered!_
 
 _Refreshed: This post was revisited and updated to keep the information timely and relevant._
