@@ -12,7 +12,7 @@ After taking a set of applications live on a new in-house build platform (based 
 
 Standing up a cluster or a few sample services is easy; building a resilient, secure, and usable platform is not. So getting the Platform Foundations or Platform Readiness is actually what we're striving for; and this takes time and deliberate sequencing. You’ll need to ensure both the applications are optimized for the platform and the platform is properly prepared to support the applications. You don’t need to do everything at once: decouple, deliver incrementally, and validate with real teams. That’s how you de-risk, keep momentum, and continuously deliver value stakeholders can see. Building something and having it adopted by the teams are also 2 different things and a lot of platform implementations fail miserably at this. This post covers only the very basics of the foundational concepts.
 
-## Constructing the Enterprise-Grade Platform Core
+### Constructing the Enterprise-Grade Platform Core
 
 While this may seems counterintuitive for some people that adopt Kubernetes,
 building an enterprise production grade platform will take months and will
@@ -206,7 +206,7 @@ simplest applications and create a plan to migrate what can be migrated based on
 previous application learnings, common sense and complexity. Good luck with your
 migration and enjoy the ride!
 
-#### Where to go next from here?
+### Where to go next from here?
 A platform is never done. Requirements evolve, new tooling and practices emerge all the time. A deeper description of the following tools and concepts is outside the scope of this article, but these are the next steps in hardening your platform:
 
 > - Real Developer portal and golden paths (e.g., Backstage) for self‑service and standards
