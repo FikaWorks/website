@@ -208,7 +208,7 @@ previous application learnings, common sense and complexity. Good luck with your
 migration and enjoy the ride!
 
 #### Where to go next from here?
-A platform is never done. Requirements evolve, new tooling and practices emerge all the time. A deeper description of the following topics is outside the scope of this article but are the next steps in hardening your platform:
+A platform is never done. Requirements evolve, new tooling and practices emerge all the time. A deeper description of the following topics is outside the scope of this article, but there are the next steps in hardening your platform:
 
 > - Real Developer portal and golden paths (e.g., Backstage) for self‑service and standards
 > - Policy‑as‑code and governance (OPA Gatekeeper/Kyverno, Conftest, Checkov/tfsec)
