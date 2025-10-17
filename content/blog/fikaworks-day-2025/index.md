@@ -7,7 +7,7 @@ tags = ['un-conference', 'collective', 'fikaworks', 'company', 'coop', 'entrepre
 title = 'Why We Organized Fikaworks Day Differently—And Why It Matters'
 +++
 
-After our initial gathering in Haarlem (NL) in 2024, we just knew we were onto something good. We were seriously tired of the traditional, corporate "broadcast" model—the kind where people sit nodding along to everything that's on the stage. We believed, fundamentally, that we can build a different type of event. So, we organized the second Fikaworks Day in Amsterdam. This time, with clarity on what we were fighting against and why it matters. We wanted a peer-to-peer exchange where everyone can share and learn at the same time.
+After our initial gathering in Haarlem (NL) in 2024, we just knew we were onto something good. We were seriously tired of the traditional "broadcast" model—the kind where people sit nodding along to everything that's on the stage. We believed, fundamentally, that we can build a different type of event. So, we organized the second Fikaworks Day in Amsterdam. This time, with clarity on what we were fighting against and why it matters. We wanted a peer-to-peer exchange where everyone can share and learn at the same time.
 
 ### The Luxury of Face-to-Face: Our Core Intent
 
@@ -36,13 +36,13 @@ We carefully curated the day to balance hands-on, high-impact and actionable kno
 
 *The Technical Edge:* The content was never theoretical, we focused on real-world implementations, from deploying AI infrastructure for wildfire mitigation to solving complex Image Distribution challenges, culminating in a hands-on MCP workshop demonstrating agentic workflows for Kubernetes diagnostics.
 
-*Independent Professional Skills*: We dedicated time to the skills that power our careers, including [Neha Lagoo Ratnakar](https://www.linkedin.com/in/neharatnakar/)'s practical workshop on Enhancing Facilitation Skills (Code, Coach, Conquer!) and a session with writing on Technical Book Authorship.
+*Independent Professional Skills*: We dedicated time to the skills that power our careers, including [Neha Lagoo Ratnakar](https://www.linkedin.com/in/neharatnakar/)'s practical workshop on Enhancing Facilitation Skills (Code, Coach, Conquer!) and a session on Technical Book Authorship.
 
 *The Open Space Model:* The Heart of the Day: The afternoon was dedicated to the participant-driven Open Space. This is the collaborative core where attendees set the agenda on the spot, ensuring every conversation was directly relevant to the most pressing, current challenges, driving real-time, collective problem-solving (from Cooperatively working, to Vibe Coding and Certifications).
 
  Especially when it comes to AI—there are no best practices yet. Every new tool, every new workflow, every emerging model is uncharted territory. Fikaworks Day was about exploration and learning.
 
-For speaker websites, LinkedIn profiles, and full event details, visit the [FikaWorks Day page](https://fika.works/fikaworks-day/).
+For full event details, visit the [FikaWorks Day page](https://fika.works/fikaworks-day/).
 
 ![FikaWorks Day 2025 - people](fikaworks_day_2025_4.jpg)
 
