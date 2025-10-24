@@ -4,7 +4,7 @@ draft = false
 title = 'Workshop Retrospective: We Built AI Agents That Actually Work'
 author = 'Alex Giurgiu & Valentin Stoican'
 image = 'workshop-retrospective-ai-agents-1.jpg'
-tags = ['AI agents', 'mcp', 'workflow automation', 'incident response', 'platform engineering', 'kubernetes', 'fikaworks day']
+tags = ['AI agents', 'MCP', 'workflow automation', 'incident response', 'platform engineering', 'kubernetes', 'fikaworks day']
 +++
 
 Last Friday, twenty-odd engineers and not only, spent two hours getting their hands dirty with MCP servers and AI agents. This was the Hands-on AI workshop with MCP at [FikaWorks Day](https://fika.works/fikaworks-day/), and I'm still processing what we learned.
