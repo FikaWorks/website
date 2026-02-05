@@ -12,6 +12,7 @@
       {{- $medium := $img.Resize "1600x webp" }}
       {{- $large := $img.Resize "2700x webp" }}
       <img
+        alt=""
         src="{{ $medium.RelPermalink }}"
         srcset="
           {{ $tiny.RelPermalink }}  640w,

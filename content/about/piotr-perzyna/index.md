@@ -1,6 +1,6 @@
 ---
 title: 'Pit Perzyna'
 role: 'Cloud Engineer'
-image: 'piotr-perzyna.png'
+image: 'piotr-perzyna.webp'
 expertises: ['SRE', 'Kubernetes', 'AWS']
 ---

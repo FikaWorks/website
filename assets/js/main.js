@@ -5,7 +5,7 @@ const initMainMenu = function () {
 
   const menuToggle = function () {
     if (menu.querySelector('nav').classList.toggle('max-lg:hidden')) {
-      kabel.innerHTML = 'Menu';
+      label.innerHTML = 'Menu';
     } else {
       label.innerHTML = 'Close';
     }

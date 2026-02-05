@@ -1,0 +1,11 @@
+[settings]
+experimental = true
+lockfile = true
+locked = true
+
+[tools]
+hugo-extended = "0.155.2"
+node = "24.13.0"
+
+[hooks]
+postinstall = ["npm install"]

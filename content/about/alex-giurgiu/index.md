@@ -1,6 +1,6 @@
 ---
 title: 'Alex Giurgiu'
 role: 'Cloud Engineer'
-image: 'alex-giurgiu.png'
+image: 'alex-giurgiu.webp'
 expertises: ['Kubernetes', 'IaC', 'Golang']
 ---
