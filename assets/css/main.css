@@ -78,7 +78,7 @@ body {
 [type='email']:focus,
 textarea:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(140 125 229 / var(--tw-ring-opacity));
 }
 
 .height-scroll {
