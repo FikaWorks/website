@@ -3,7 +3,7 @@
     {{- $img := .Resources.Get $.Params.image }}
     {{- if $img }}
       <div
-        class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle undefined"
+        class="relative min-h-[120px] transform transition duration-300 ease-linear align-middle"
         style="height: 580px;"
       >
         {{- $tiny := $img.Resize "640x webp" }}

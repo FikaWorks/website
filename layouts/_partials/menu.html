@@ -55,7 +55,7 @@
           <div class="children-menu">
             <a
               href="{{ .URL }}"
-              class="flex items-center max-lg:p-2 gap-2 text-gray-800 group-hover:text-black focus:outline-none {{ $classes }}"
+              class="flex items-center max-lg:p-2 gap-2 text-gray-800 group-hover:text-black focus:outline-none transition-colors duration-200 {{ $classes }}"
             >
               <div>
                 <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
@@ -77,7 +77,7 @@
                   height="16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-lg:hidden group-hover:lg:rotate-180"
+                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-lg:hidden group-hover:lg:rotate-180 transition-transform duration-200"
                 >
                   <path
                     fill-rule="evenodd"
@@ -107,11 +107,12 @@
             href="{{ .URL }}"
             {{- if eq $level 0 }}
               class="max-lg:block hover:max-lg:underline text-gray-800
-              group-hover:text-black max-lg:p-2 {{ $classes }}"
+              group-hover:text-black max-lg:p-2 transition-colors duration-200
+              {{ $classes }}"
             {{- else }}
               class="block hover:bg-fika-offWhite uppercase text-gray-800
               group-hover:text-black px-4 py-3 lg:p-4 rounded-md bg-white
-              {{ $classes }}"
+              transition-colors duration-200 {{ $classes }}"
             {{- end }}
           >
             <div class="flex items-center justify-between">
