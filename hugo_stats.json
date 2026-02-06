@@ -87,8 +87,11 @@
       "border-2",
       "border-b-[16px]",
       "border-b-fika-soft-blue",
+      "border-b-fika-soft-blue-hover",
       "border-b-fika-soft-green",
+      "border-b-fika-soft-green-hover",
       "border-b-fika-soft-yellow",
+      "border-b-fika-soft-yellow-hover",
       "border-gray-400",
       "border-gray-800",
       "border-green-500",
@@ -299,7 +302,6 @@
       "lg:mt-2",
       "lg:mt-20",
       "lg:mt-4",
-      "lg:mt-6",
       "lg:mt-8",
       "lg:mt-[6em]",
       "lg:my-20",
@@ -551,6 +553,7 @@
       "z-60"
     ],
     "ids": [
+      "",
       "add-the-oidc-identity-provider",
       "agenda",
       "ai",

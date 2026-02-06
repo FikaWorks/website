@@ -1,8 +1,8 @@
 {{- define "main" }}
   <div class="relative mb-14">
     <div class="relative">
-      {{- $img_desktop := resources.Get "/images/website-background-desktop.png" }}
-      {{- $img_mobile := resources.Get "/images/website-background-mobile.png" }}
+      {{- $img_desktop := resources.Get "/images/website-background-desktop.jpeg" }}
+      {{- $img_mobile := resources.Get "/images/website-background-mobile.jpeg" }}
       {{- $tiny := $img_mobile.Resize "640x webp" }}
       {{- $small := $img_mobile.Resize "1280x webp" }}
       {{- $medium := $img_desktop.Resize "1600x webp" }}
