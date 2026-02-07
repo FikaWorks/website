@@ -213,6 +213,7 @@
       "highlight",
       "hover:bg-fika-ash",
       "hover:bg-fika-hover-purple",
+      "hover:bg-fika-purple",
       "hover:bg-gray-300",
       "hover:bg-white",
       "hover:border-black",
