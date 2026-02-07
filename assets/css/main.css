@@ -127,12 +127,12 @@ table tr td {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   color: white;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.125rem;
   z-index: 10;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 3px white;

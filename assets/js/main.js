@@ -112,8 +112,10 @@ const initTimelineCurve = function () {
   const svg = document.getElementById('timeline-curve');
   if (!container || !svg) return;
 
+  const wrapper = svg.parentElement; // The centered wrapper div (col-start-2 col-end-12)
+
   const draw = function () {
-    container.querySelectorAll('.timeline-dot').forEach((el) => el.remove());
+    wrapper.querySelectorAll('.timeline-dot').forEach((el) => el.remove());
 
     const steps = container.querySelectorAll('[data-timeline-step]');
     if (steps.length === 0 || window.innerWidth < 1024) {
@@ -121,15 +123,23 @@ const initTimelineCurve = function () {
       return;
     }
 
-    const rect = container.getBoundingClientRect();
+    const rect = wrapper.getBoundingClientRect();
     const centerX = rect.width / 2;
-    const amplitude = rect.width * 0.06;
 
     const points = Array.from(steps).map((step, index) => {
       const stepRect = step.getBoundingClientRect();
+      const innerBlock = step.querySelector(':scope > div');
+      const innerRect = innerBlock.getBoundingClientRect();
       const y = stepRect.top + stepRect.height / 2 - rect.top;
-      const direction = index % 2 === 0 ? -1 : 1;
-      const x = centerX + amplitude * direction;
+      const isLeft = index % 2 === 0;
+
+      let x;
+      if (isLeft) {
+        x = innerRect.right - rect.left;
+      } else {
+        x = innerRect.left - rect.left;
+      }
+
       return { x, y, colorClass: step.dataset.color };
     });
 
@@ -146,7 +156,7 @@ const initTimelineCurve = function () {
 
     svg.setAttribute('width', rect.width);
     svg.setAttribute('height', rect.height);
-    svg.innerHTML = `<path d="${d}" stroke="#d1c6b3" stroke-width="2" fill="none" stroke-linecap="round" />`;
+    svg.innerHTML = `<path d="${d}" stroke="#d1c6b3" stroke-width="3" stroke-opacity="1" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />`;
 
     points.forEach((p, i) => {
       const dot = document.createElement('div');
@@ -154,7 +164,7 @@ const initTimelineCurve = function () {
       dot.textContent = (i + 1).toString().padStart(2, '0');
       dot.style.left = `${p.x}px`;
       dot.style.top = `${p.y}px`;
-      container.appendChild(dot);
+      wrapper.appendChild(dot);
     });
   };
 
