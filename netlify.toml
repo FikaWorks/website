@@ -1,5 +1,9 @@
 [build]
-command = "git config core.quotepath false && npm ci --also=dev && hugo version && hugo --gc --minify"
+command = """\
+  git config core.quotepath false && \
+  npm ci --also=dev && \
+  hugo --gc --minify --baseURL "${URL}"
+  """
 
 [context.production.environment]
 HUGO_VERSION = "0.155.0"
@@ -7,7 +11,11 @@ NODE_VERSION = "24"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "git config core.quotepath false && npm ci --also=dev && hugo version && hugo --gc --minify -b $DEPLOY_PRIME_URL"
+command = """\
+  git config core.quotepath false && \
+  npm ci --also=dev && \
+  hugo --gc --minify --baseURL "${DEPLOY_PRIME_URL}"
+  """
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.155.0"
