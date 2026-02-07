@@ -1,6 +1,9 @@
 [settings]
 experimental = true
 lockfile = true
+
+## cannot use locked at this time because netlify also uses mise to install its
+## dependencies
 # locked = true
 
 [tools]
