@@ -2,25 +2,23 @@
   {{- $img := .Resources.GetMatch $.Params.image }}
   {{- if $img }}
     <div class="relative mb-14">
-      <div class="hidden md:block">
-        {{- $tiny := $img.Resize "640x webp" }}
-        {{- $small := $img.Resize "1024x webp" }}
-        {{- $medium := $img.Resize "1600x webp" }}
-        {{- $large := $img.Resize "2000x webp" }}
-        <img
-          alt="{{ .Title }}"
-          src="{{ $medium.RelPermalink }}"
-          srcset="
-            {{- $tiny.RelPermalink }}  640w,
-            {{- $small.RelPermalink }} 1024w,
-            {{- $medium.RelPermalink }} 1600w,
-            {{- $large.RelPermalink }} 2000w
-          "
-          width="100%"
-          height="100%"
-          sizes="100vw"
-        />
-      </div>
+      {{- $tiny := $img.Resize "640x webp" }}
+      {{- $small := $img.Resize "1024x webp" }}
+      {{- $medium := $img.Resize "1600x webp" }}
+      {{- $large := $img.Resize "2000x webp" }}
+      <img
+        alt="{{ .Title }}"
+        src="{{ $medium.RelPermalink }}"
+        srcset="
+          {{- $tiny.RelPermalink }}  640w,
+          {{- $small.RelPermalink }} 1024w,
+          {{- $medium.RelPermalink }} 1600w,
+          {{- $large.RelPermalink }} 2000w
+        "
+        width="100%"
+        height="100%"
+        sizes="100vw"
+      />
     </div>
   {{- end }}
   <div class="bg-white py-6 lg:py-14">

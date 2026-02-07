@@ -38,6 +38,10 @@
   --color-fika-soft-blue-hover: #f0f3fb;
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
+  --color-fika-soft-pink-hover: #fdf2f6;
+  --color-fika-text-green: #2d8f4e;
+  --color-fika-text-yellow: #8b7355;
+  --color-fika-text-blue: #2c4a8c;
 
   --breakpoint-3xl: 2000px;
   --breakpoint-4xl: 3000px;
@@ -78,7 +82,7 @@ body {
 [type='email']:focus,
 textarea:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(140 125 229 / var(--tw-ring-opacity));
 }
 
 .height-scroll {
@@ -118,6 +122,18 @@ table tr td {
   padding-left: 1em;
 }
 
-table tr td:first-child {
-  text-align: center;
+.timeline-dot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px white;
 }

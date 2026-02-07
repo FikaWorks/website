@@ -61,7 +61,7 @@
           <div class="z-30 w-full md:w-[236px]">
             <div class="relative mt-1">
               <button
-                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-white border-gray-800 text-black"
+                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-white border-gray-800 text-black"
                 id="filter-btn"
                 type="button"
               >
@@ -255,11 +255,11 @@
               >
                 <span
                   href="{{ .RelPermalink }}"
-                  class="group-hover:text-fika-hover-purple"
+                  class="group-hover:text-fika-hover-purple transition-colors duration-200"
                   >View event</span
                 >
                 <div
-                  class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white group-hover:bg-fika-hover-purple"
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white group-hover:bg-fika-hover-purple transition-colors duration-200"
                 >
                   <svg
                     viewBox="0 0 20 20"

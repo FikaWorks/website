@@ -1,7 +1,7 @@
 {{- $input := . | lower }}
 {{- $filtered := slice }}
-{{- $members := site.GetPage "section" "members" }}
-{{- range $members.Pages }}
+{{- $about := site.GetPage "section" "about" }}
+{{- range $about.Pages }}
   {{- $expertises := .Params.expertises }}
   {{- if $expertises }}
     {{- $normalized := apply $expertises "lower" "." }}

@@ -1,0 +1,14 @@
+[settings]
+experimental = true
+lockfile = true
+
+## cannot use locked at this time because netlify also uses mise to install its
+## dependencies
+# locked = true
+
+[tools]
+hugo-extended = "0.155.2"
+node = "24.13.0"
+
+[hooks]
+postinstall = ['[ -z "$CI" ] && npm install || true']

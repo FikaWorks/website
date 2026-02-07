@@ -1,20 +1,13 @@
 [build]
-command = "git config core.quotepath false && npm ci --also=dev && hugo version && hugo --gc --minify"
+publish = "public"
+command = """\
+  git config core.quotepath false && \
+  npm ci --include=dev && \
+  hugo --gc --minify --baseURL "${URL}"
+  """
 
-[context.production.environment]
-HUGO_VERSION = "0.147.0"
-NODE_VERSION = "23"
+[build.environment]
+HUGO_VERSION = "0.155.0"
+NODE_VERSION = "24.13.0"
 HUGO_ENV = "production"
-
-[context.deploy-preview]
-command = "git config core.quotepath false && npm ci --also=dev && hugo version && hugo --gc --minify -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.147.0"
-NODE_VERSION = "23"
-HUGO_ENV = "production"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.147.0"
-NODE_VERSION = "23"
-HUGO_ENV = "production"
+TZ = "Europe/Amsterdam"

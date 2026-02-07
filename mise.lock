@@ -1,0 +1,12 @@
+[[tools.hugo-extended]]
+version = "0.155.2"
+backend = "aqua:gohugoio/hugo/hugo-extended"
+"platforms.linux-arm64" = { checksum = "sha256:2b6119fa7c8cf06325b54281b5f4fd6f0f3dbd3507a48248e6ea759d5b852787", url = "https://github.com/gohugoio/hugo/releases/download/v0.155.2/hugo_extended_0.155.2_linux-arm64.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:2bf76c75610e75fa5d15fd3dd0e1377c16ce4fa7202713283c744a19323ff419", url = "https://github.com/gohugoio/hugo/releases/download/v0.155.2/hugo_extended_0.155.2_linux-amd64.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:08e65f45d34fe22683f09c6ac3ad5fd2ca22f944046b32faad9e2397a81f2b05", url = "https://github.com/gohugoio/hugo/releases/download/v0.155.2/hugo_extended_0.155.2_darwin-universal.pkg"}
+"platforms.macos-x64" = { checksum = "sha256:08e65f45d34fe22683f09c6ac3ad5fd2ca22f944046b32faad9e2397a81f2b05", url = "https://github.com/gohugoio/hugo/releases/download/v0.155.2/hugo_extended_0.155.2_darwin-universal.pkg"}
+"platforms.windows-x64" = { checksum = "sha256:bdc1842dd4e8c782061397c709be6970093fda435ef6f11e25c99b5cd5233d32", url = "https://github.com/gohugoio/hugo/releases/download/v0.155.2/hugo_extended_0.155.2_windows-amd64.zip"}
+
+[[tools.node]]
+version = "24.13.0"
+backend = "core:node"
