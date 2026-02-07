@@ -107,8 +107,72 @@ const initForms = function () {
     .forEach((f) => f.addEventListener('submit', handleSubmit));
 };
 
+const initTimelineCurve = function () {
+  const container = document.getElementById('timeline-container');
+  const svg = document.getElementById('timeline-curve');
+  if (!container || !svg) return;
+
+  const draw = function () {
+    container.querySelectorAll('.timeline-dot').forEach((el) => el.remove());
+
+    const steps = container.querySelectorAll('[data-timeline-step]');
+    if (steps.length === 0 || window.innerWidth < 1024) {
+      svg.innerHTML = '';
+      return;
+    }
+
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const amplitude = rect.width * 0.06;
+
+    const points = Array.from(steps).map((step, index) => {
+      const stepRect = step.getBoundingClientRect();
+      const y = stepRect.top + stepRect.height / 2 - rect.top;
+      const direction = index % 2 === 0 ? -1 : 1;
+      const x = centerX + amplitude * direction;
+      return { x, y, colorClass: step.dataset.color };
+    });
+
+    let d = `M ${points[0].x} ${points[0].y}`;
+
+    for (let i = 0; i < points.length - 1; i++) {
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      const distY = p2.y - p1.y;
+      const cp1 = { x: p1.x, y: p1.y + distY * 0.5 };
+      const cp2 = { x: p2.x, y: p2.y - distY * 0.5 };
+      d += ` C ${cp1.x} ${cp1.y}, ${cp2.x} ${cp2.y}, ${p2.x} ${p2.y}`;
+    }
+
+    svg.setAttribute('width', rect.width);
+    svg.setAttribute('height', rect.height);
+    svg.innerHTML = `<path d="${d}" stroke="#d1c6b3" stroke-width="2" fill="none" stroke-linecap="round" />`;
+
+    points.forEach((p, i) => {
+      const dot = document.createElement('div');
+      dot.className = `timeline-dot ${p.colorClass}`;
+      dot.textContent = (i + 1).toString().padStart(2, '0');
+      dot.style.left = `${p.x}px`;
+      dot.style.top = `${p.y}px`;
+      container.appendChild(dot);
+    });
+  };
+
+  requestAnimationFrame(() => {
+    draw();
+    setTimeout(draw, 500);
+  });
+
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 150);
+  });
+};
+
 window.addEventListener('load', function () {
   initMainMenu();
   initFilters();
   initForms();
+  initTimelineCurve();
 });

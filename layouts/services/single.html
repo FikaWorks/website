@@ -1,183 +1,277 @@
 {{- define "main" }}
-  <div class="relative w-full pb-6 pt-9 lg:py-14">
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-20"
-    >
-      <div class="col-span-full lg:col-start-3 lg:col-end-11">
-        <div class="pt-3 px-10 py-6 lg:py-14">
-          <div
-            class="pb-5 font-light lg:pb-6 py-6 mt-10 lg:py-14 text-center text-2xl lg:text-3xl font-light"
-          >
-            {{ .Content }}
-          </div>
-        </div>
-        <div class="pt-4 lg:pt-6 text-center">
-          <a href="#approach"
-            ><div
-              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+  <div class="relative w-full pb-6 pt-9 lg:py-0">
+    <div class="relative overflow-hidden">
+      {{- $hero_img := resources.Get "/images/bg-cloud-curly.jpeg" }}
+      {{- $hero_small := $hero_img.Resize "800x webp" }}
+      {{- $hero_medium := $hero_img.Resize "1600x webp" }}
+      {{- $hero_large := $hero_img.Resize "2000x webp" }}
+      <img
+        alt=""
+        src="{{ $hero_medium.RelPermalink }}"
+        srcset="
+          {{- $hero_small.RelPermalink }}  800w,
+          {{- $hero_medium.RelPermalink }} 1600w,
+          {{- $hero_large.RelPermalink }} 2000w
+        "
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-white/50"></div>
+      <div
+        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 mt-20 lg:mt-0 lg:min-h-[80vh] lg:items-center lg:content-center"
+      >
+        <div
+          class="col-span-full lg:col-start-3 lg:col-end-11 lg:pt-[90px] pb-10 lg:pb-14"
+        >
+          <div class="pt-3 px-10 py-6 lg:py-14">
+            <div
+              class="pb-5 font-light lg:pb-6 py-6 mt-10 lg:mt-0 lg:py-14 text-center text-2xl lg:text-3xl font-light text-black"
             >
-              <div
-                class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              {{ .Content }}
+            </div>
+          </div>
+          <div class="pt-4 lg:pt-6 text-center">
+            <a href="#approach"
+              ><div
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
               >
-                Discover our approach<svg
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                <div
+                  class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
                 >
-                  <path
-                    d="M12.667 9.333 8 14m0 0L3.333 9.333M8 14V2"
-                    stroke="#fff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div></div
-          ></a>
+                  Discover our approach<svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      d="M12.667 9.333 8 14m0 0L3.333 9.333M8 14V2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div></div
+            ></a>
+          </div>
         </div>
       </div>
     </div>
     <div id="approach"></div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-14 lg:mt-20"
-    >
-      <div class="col-span-full lg:col-start-3 lg:col-end-8">
-        <div class="bg-fika-soft-green">
-          <div class="px-6 py-8 lg:px-12 lg:py-10">
+    <div class="mx-3 md:mx-10 mt-14 lg:mt-20 mb-10 lg:mb-14">
+      <h3 class="text-3xl font-medium lg:text-5xl text-center">Our Approach</h3>
+    </div>
+    <div id="timeline-container" class="relative mx-3 md:mx-10">
+      <svg
+        id="timeline-curve"
+        class="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      ></svg>
+
+      <div class="flex flex-col gap-y-5 lg:gap-y-6">
+        <div
+          data-timeline-step
+          data-color="bg-fika-soft-green"
+          class="relative flex lg:justify-start justify-center"
+        >
+          <div class="w-full lg:w-[42%] lg:mr-auto relative">
             <div
-              class="text-5xl lg:text-6xl font-medium text-white/40 mb-3 lg:mb-4"
+              class="lg:hidden absolute left-0 top-[-12px] bg-fika-soft-green text-white text-sm font-medium px-3 py-1 rounded-full z-20"
             >
               01
             </div>
-            <h3 class="text-2xl font-medium lg:text-3xl">Discover Together</h3>
-            <div class="pt-3 text-base font-light lg:pt-4 lg:text-lg">
-              <p class="font-light">
-                We start by listening. Through collaborative workshops, we
-                uncover your business goals, technology landscape, and
-                operational challenges. This alignment ensures we're solving the
-                problems that matter most.
-              </p>
+            <div
+              class="bg-fika-soft-green rounded-2xl overflow-hidden relative px-8 py-8 lg:px-10 lg:py-10 lg:min-h-[220px]"
+            >
+              <svg
+                class="absolute -top-10 -right-10 w-56 h-56 lg:w-72 lg:h-72 opacity-[0.18] pointer-events-none"
+                fill="white"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+              <div class="relative z-10">
+                <h3 class="text-2xl font-medium lg:text-3xl mb-3 lg:mb-4">
+                  Discover Together
+                </h3>
+                <p class="text-base lg:text-lg font-light">
+                  We start by listening. Through collaborative workshops, we
+                  uncover your business goals, technology landscape, and
+                  operational challenges. This alignment ensures we're solving
+                  the problems that matter most.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-6 lg:mt-10"
-    >
-      <div class="col-span-full lg:col-start-6 lg:col-end-11">
-        <div class="bg-fika-soft-yellow">
-          <div class="px-6 py-8 lg:px-12 lg:py-10">
+
+        <div
+          data-timeline-step
+          data-color="bg-fika-soft-yellow"
+          class="relative flex lg:justify-end justify-center"
+        >
+          <div class="w-full lg:w-[42%] lg:ml-auto relative">
             <div
-              class="text-5xl lg:text-6xl font-medium text-white/40 mb-3 lg:mb-4"
+              class="lg:hidden absolute left-0 top-[-12px] bg-fika-soft-yellow text-white text-sm font-medium px-3 py-1 rounded-full z-20"
             >
               02
             </div>
-            <h3 class="text-2xl font-medium lg:text-3xl">
-              Design with Purpose
-            </h3>
-            <div class="pt-3 text-base font-light lg:pt-4 lg:text-lg">
-              <p class="font-light">
-                Next, we translate insights into a clear, actionable roadmap.
-                Our experts co-create architecture blueprints and migration
-                strategies that blend modern cloud-native practices with your
-                unique business needs.
-              </p>
+            <div
+              class="bg-fika-soft-yellow rounded-2xl overflow-hidden relative px-8 py-8 lg:px-10 lg:py-10 lg:min-h-[220px]"
+            >
+              <svg
+                class="absolute -top-10 -left-10 w-56 h-56 lg:w-72 lg:h-72 opacity-[0.18] pointer-events-none"
+                fill="white"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"
+                />
+              </svg>
+              <div class="relative z-10">
+                <h3 class="text-2xl font-medium lg:text-3xl mb-3 lg:mb-4">
+                  Design with Purpose
+                </h3>
+                <p class="text-base lg:text-lg font-light">
+                  Next, we translate insights into a clear, actionable roadmap.
+                  Our experts co-create architecture blueprints and migration
+                  strategies that blend modern cloud-native practices with your
+                  unique business needs.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-6 lg:mt-10"
-    >
-      <div class="col-span-full lg:col-start-3 lg:col-end-8">
-        <div class="bg-fika-soft-pink">
-          <div class="px-6 py-8 lg:px-12 lg:py-10">
+
+        <div
+          data-timeline-step
+          data-color="bg-fika-soft-pink"
+          class="relative flex lg:justify-start justify-center"
+        >
+          <div class="w-full lg:w-[42%] lg:mr-auto relative">
             <div
-              class="text-5xl lg:text-6xl font-medium text-white/40 mb-3 lg:mb-4"
+              class="lg:hidden absolute left-0 top-[-12px] bg-fika-soft-pink text-white text-sm font-medium px-3 py-1 rounded-full z-20"
             >
               03
             </div>
-            <h3 class="text-2xl font-medium lg:text-3xl">Build for Impact</h3>
-            <div class="pt-3 text-base font-light lg:pt-4 lg:text-lg">
-              <p class="font-light">
-                With the plan in place, we implement with precision. By
-                embedding automation, security, and scalability into every step,
-                we help you accelerate adoption, reduce risks, and unlock the
-                full potential of your platform.
-              </p>
+            <div
+              class="bg-fika-soft-pink rounded-2xl overflow-hidden relative px-8 py-8 lg:px-10 lg:py-10 lg:min-h-[220px]"
+            >
+              <svg
+                class="absolute -top-10 -right-10 w-56 h-56 lg:w-72 lg:h-72 opacity-[0.18] pointer-events-none"
+                fill="white"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+                />
+              </svg>
+              <div class="relative z-10">
+                <h3 class="text-2xl font-medium lg:text-3xl mb-3 lg:mb-4">
+                  Build for Impact
+                </h3>
+                <p class="text-base lg:text-lg font-light">
+                  With the plan in place, we implement with precision. By
+                  embedding automation, security, and scalability into every
+                  step, we help you accelerate adoption, reduce risks, and
+                  unlock the full potential of your platform.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-6 lg:mt-10"
-    >
-      <div class="col-span-full lg:col-start-6 lg:col-end-11">
-        <div class="bg-fika-soft-blue">
-          <div class="px-6 py-8 lg:px-12 lg:py-10">
+
+        <div
+          data-timeline-step
+          data-color="bg-fika-soft-blue"
+          class="relative flex lg:justify-end justify-center"
+        >
+          <div class="w-full lg:w-[42%] lg:ml-auto relative">
             <div
-              class="text-5xl lg:text-6xl font-medium text-white/40 mb-3 lg:mb-4"
+              class="lg:hidden absolute left-0 top-[-12px] bg-fika-soft-blue text-white text-sm font-medium px-3 py-1 rounded-full z-20"
             >
               04
             </div>
-            <h3 class="text-2xl font-medium lg:text-3xl">
-              Empower for the Future
-            </h3>
-            <div class="pt-3 text-base font-light lg:pt-4 lg:text-lg">
-              <p class="font-light">
-                Finally, we ensure your teams are ready to own and evolve the
-                solution. Through knowledge transfer, training, and optional
-                ongoing support, we leave behind more than technology—we leave
-                behind capability and confidence.
-              </p>
+            <div
+              class="bg-fika-soft-blue rounded-2xl overflow-hidden relative px-8 py-8 lg:px-10 lg:py-10 lg:min-h-[220px]"
+            >
+              <svg
+                class="absolute -top-10 -left-10 w-56 h-56 lg:w-72 lg:h-72 opacity-[0.18] pointer-events-none"
+                fill="white"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 10.69l4.05-4.05c.47-.47 1.15-.68 1.81-.55l1.33.26zM11.17 17s3.74-1.55 5.89-3.7c5.4-5.4 4.5-9.62 4.21-10.57-.95-.3-5.17-1.19-10.57 4.21C8.55 9.09 7 12.83 7 12.83l4.17 4.17zm3.46 8.46c2.29-2.04 5.58-3.44 5.89-3.57L19.31 22l-4.05-4.05c-.47-.47-.68-1.15-.55-1.81l-.06-.33zM9 18c0 .83-.34 1.58-.88 2.12C7.26 21 4.5 21.5 2 21.5c.5-2.5 1-5.26 1.88-6.12A2.996 2.996 0 019 18z"
+                />
+              </svg>
+              <div class="relative z-10">
+                <h3 class="text-2xl font-medium lg:text-3xl mb-3 lg:mb-4">
+                  Empower for the Future
+                </h3>
+                <p class="text-base lg:text-lg font-light">
+                  Finally, we ensure your teams are ready to own and evolve the
+                  solution. Through knowledge transfer, training, and optional
+                  ongoing support, we leave behind more than technology—we leave
+                  behind capability and confidence.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-14 lg:mt-20 py-10 lg:py-14"
-    >
-      <div class="col-span-full lg:col-start-3 lg:col-end-11">
-        <div class="pt-3 text-center text-base font-light lg:pt-6 lg:text-2xl">
-          <h3 class="text-3xl font-medium lg:text-5xl">
-            Our Value Proposition
-          </h3>
-          <div class="pb-5 font-light lg:pb-6 py-6 lg:py-10">
-            <p class="pb-5 font-light lg:pb-6">
-              At FikaWorks, we combine deep technical expertise with the
-              strength of a collaborative community to deliver solutions that
-              truly make an impact. Every engagement is supported by specialized
-              professionals who are committed not only to technical excellence
-              but also to your long-term success.
-            </p>
-            <p class="pb-5 font-light lg:pb-6">
-              We design and deliver <strong>modular</strong>,
-              <strong>enterprise-grade cloud solutions</strong> that integrate
-              seamlessly with major providers such as Azure, AWS, and Google
-              Cloud as well as Sovereign Neo-Cloud.
-            </p>
-            <p>
-              By applying modern cloud-native engineering practices, we help
-              businesses <strong>scale efficiently</strong>,
-              <strong>operate securely</strong>, and
-              <strong>innovate faster</strong>—turning complex challenges into
-              sustainable competitive advantage.
-            </p>
+    <div class="relative mt-10 lg:mt-14 overflow-hidden">
+      <div class="absolute inset-0" style="background-color: #f4f1e7;"></div>
+      <div
+        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 py-12 lg:py-16 lg:min-h-[60vh] lg:items-center lg:content-center"
+      >
+        <div class="col-span-full lg:col-start-3 lg:col-end-11">
+          <div
+            class="pt-3 text-center text-base font-light lg:pt-6 lg:text-2xl text-black"
+          >
+            <h3 class="text-3xl font-medium lg:text-5xl">
+              Our Value Proposition
+            </h3>
+            <div class="pb-5 font-light lg:pb-6 py-6 lg:py-10">
+              <p class="pb-5 font-light lg:pb-6">
+                At FikaWorks, we combine deep technical expertise with the
+                strength of a collaborative community to deliver solutions that
+                truly make an impact. Every engagement is supported by
+                specialized professionals who are committed not only to
+                technical excellence but also to your long-term success.
+              </p>
+              <p class="pb-5 font-light lg:pb-6">
+                We design and deliver <strong>modular</strong>,
+                <strong>enterprise-grade cloud solutions</strong> that integrate
+                seamlessly with major providers such as Azure, AWS, and Google
+                Cloud as well as Sovereign Neo-Cloud.
+              </p>
+              <p>
+                By applying modern cloud-native engineering practices, we help
+                businesses <strong>scale efficiently</strong>,
+                <strong>operate securely</strong>, and
+                <strong>innovate faster</strong>—turning complex challenges into
+                sustainable competitive advantage.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div id="services"></div>
-    <div class="bg-white py-6 lg:py-14">
+    <div class="bg-white py-4 lg:py-10">
       <div
         class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
       >
         <div class="col-span-full lg:col-start-2 lg:col-end-12">
-          <h3 class="text-3xl font-medium lg:text-5xl mb-10 lg:mb-14">
+          <h3 class="text-3xl font-medium lg:text-5xl mb-8 lg:mb-10">
             Our Services
           </h3>
           <div
@@ -234,7 +328,7 @@
                   </div>
                   <a href="/contact">
                     <div
-                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-green active:text-fika-purple rounded-[40px] transition-colors duration-200"
                     >
                       <div
                         class="font-medium text-center flex items-center text-xl gap-4"
@@ -308,7 +402,7 @@
                   </div>
                   <a href="/contact">
                     <div
-                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-yellow active:text-fika-purple rounded-[40px] transition-colors duration-200"
                     >
                       <div
                         class="font-medium text-center flex items-center text-xl gap-4"
@@ -382,7 +476,7 @@
                   </div>
                   <a href="/contact">
                     <div
-                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                      class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-blue active:text-fika-purple rounded-[40px] transition-colors duration-200"
                     >
                       <div
                         class="font-medium text-center flex items-center text-xl gap-4"

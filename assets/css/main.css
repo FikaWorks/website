@@ -39,6 +39,9 @@
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
   --color-fika-soft-pink-hover: #fdf2f6;
+  --color-fika-text-green: #2d8f4e;
+  --color-fika-text-yellow: #8b7355;
+  --color-fika-text-blue: #2c4a8c;
 
   --breakpoint-3xl: 2000px;
   --breakpoint-4xl: 3000px;
@@ -119,6 +122,18 @@ table tr td {
   padding-left: 1em;
 }
 
-table tr td:first-child {
-  text-align: center;
+.timeline-dot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px white;
 }
