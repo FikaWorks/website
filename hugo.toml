@@ -43,6 +43,11 @@ tabWidth = 2
 [[menus.main]]
 name = 'Our Services'
 pageRef = '/services'
+weight = 10
+
+[[menus.main]]
+name = 'Why'
+pageRef = '/why'
 weight = 20
 
 [[menus.main]]
