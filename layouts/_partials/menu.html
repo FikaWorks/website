@@ -12,15 +12,15 @@
 
 {{- with index site.Menus $menuID }}
   <nav
-    class="max-lg:absolute max-lg:w-full max-lg:top-0 max-lg:hidden lg:flex lg:flex-wrap"
+    class="max-[1060px]:absolute max-[1060px]:w-full max-[1060px]:top-0 max-[1060px]:hidden min-[1061px]:flex min-[1061px]:flex-wrap"
   >
-    <div class="lg:hidden transform opacity-100">
+    <div class="min-[1061px]:hidden transform opacity-100">
       <div class="fixed inset-0 bg-black opacity-30"></div>
     </div>
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="-mr-2 h-[90px] max-lg:hidden"
+      class="-mr-2 h-[90px] max-[1060px]:hidden"
       viewBox="0 0 111 90"
     >
       <path
@@ -29,7 +29,7 @@
       ></path>
     </svg>
     <div
-      class="relative lg:flex lg:items-center gap-12 bg-white pr-10 max-lg:px-3 max-lg:pt-30 max-lg:pb-10"
+      class="relative min-[1061px]:flex min-[1061px]:items-center gap-12 bg-white pr-10 max-[1060px]:px-3 max-[1060px]:pt-30 max-[1060px]:pb-10"
     >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
     </div>
@@ -55,18 +55,20 @@
           <div class="children-menu">
             <a
               href="{{ .URL }}"
-              class="flex items-center max-lg:p-2 gap-2 text-gray-800 group-hover:text-black focus:outline-none transition-colors duration-200 {{ $classes }}"
+              class="flex items-center max-[1060px]:p-2 gap-2 text-gray-800 group-hover:text-black focus:outline-none transition-colors duration-200 {{ $classes }}"
             >
               <div>
-                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
+                <span class="text-xl min-[1061px]:text-sm font-medium"
+                  >{{ .Name }}</span
+                >
                 {{- if eq $level 0 }}
                   <div
                     class="{{ if and (not $isActive) (not $isAncestor) }}
-                      lg:hidden
-                    {{ end }} group-hover:flex lg:flex w-full justify-center lg:mt-2"
+                      min-[1061px]:hidden
+                    {{ end }} group-hover:flex min-[1061px]:flex w-full justify-center min-[1061px]:mt-2"
                   >
                     <div
-                      class="h-[1px] w-3 bg-fika-light-purple max-lg:hidden"
+                      class="h-[1px] w-3 bg-fika-light-purple max-[1060px]:hidden"
                     ></div>
                   </div>
                 {{- end }}
@@ -77,7 +79,7 @@
                   height="16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-lg:hidden group-hover:lg:rotate-180 transition-transform duration-200"
+                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-[1060px]:hidden group-hover:min-[1061px]:rotate-180 transition-transform duration-200"
                 >
                   <path
                     fill-rule="evenodd"
@@ -90,9 +92,9 @@
             </a>
             {{- with .Children }}
               <div
-                class="popover-panel lg:shadow-lg lg:absolute lg:w-[354px] rounded-md bg-white lg:hidden"
+                class="popover-panel min-[1061px]:shadow-lg min-[1061px]:absolute min-[1061px]:w-[354px] rounded-md bg-white min-[1061px]:hidden"
               >
-                <div class="lg:p-6 max-lg:pl-2">
+                <div class="min-[1061px]:p-6 max-[1060px]:pl-2">
                   <ul>
                     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" (add $level 1)) }}
                   </ul>
@@ -106,29 +108,33 @@
           <a
             href="{{ .URL }}"
             {{- if eq $level 0 }}
-              class="max-lg:block hover:max-lg:underline text-gray-800
-              group-hover:text-black max-lg:p-2 transition-colors duration-200
-              {{ $classes }}"
+              class="max-[1060px]:block hover:max-[1060px]:underline
+              text-gray-800 group-hover:text-black max-[1060px]:p-2
+              transition-colors duration-200 {{ $classes }}"
             {{- else }}
               class="block hover:bg-fika-offWhite uppercase text-gray-800
-              group-hover:text-black px-4 py-3 lg:p-4 rounded-md bg-white
-              transition-colors duration-200 {{ $classes }}"
+              group-hover:text-black px-4 py-3 min-[1061px]:p-4 rounded-md
+              bg-white transition-colors duration-200 {{ $classes }}"
             {{- end }}
           >
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
                 {{ .Pre }}
-                <span class="text-xl lg:text-sm font-medium">{{ .Name }}</span>
+                <span class="text-xl min-[1061px]:text-sm font-medium"
+                  >{{ .Name }}</span
+                >
               </div>
             </div>
           </a>
           {{- if eq $level 0 }}
             <div
               class="{{ if not $isActive }}
-                lg:hidden
-              {{ end }} group-hover:flex lg:flex w-full justify-center lg:mt-2"
+                min-[1061px]:hidden
+              {{ end }} group-hover:flex min-[1061px]:flex w-full justify-center min-[1061px]:mt-2"
             >
-              <div class="h-[1px] w-3 bg-fika-light-purple max-lg:hidden"></div>
+              <div
+                class="h-[1px] w-3 bg-fika-light-purple max-[1060px]:hidden"
+              ></div>
             </div>
           {{- end }}
         </div>
