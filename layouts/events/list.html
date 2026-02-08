@@ -1,5 +1,7 @@
 {{ define "main" }}
-  <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-fika-light-purple">
+  <div
+    class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-fika-light-purple dark:bg-gray-900 dark:text-white"
+  >
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
@@ -15,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
     >
@@ -55,13 +57,13 @@
           {{- $totalEvents := len .Pages -}}
 
 
-          <span class="text-base font-medium text-gray-800"
+          <span class="text-base font-medium text-gray-800 dark:text-gray-200"
             >Filter by event type</span
           >
           <div class="z-30 w-full md:w-[236px]">
             <div class="relative mt-1">
               <button
-                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-white border-gray-800 text-black"
+                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-white dark:bg-gray-800 border-gray-800 dark:border-gray-600 text-black dark:text-white"
                 id="filter-btn"
                 type="button"
               >
@@ -69,7 +71,7 @@
                   <span class="block truncate capitalize filter-label"
                     >All Events</span
                   ><span
-                    class="rounded-full w-5 h-5 flex justify-center items-center bg-black text-white filter-count"
+                    class="rounded-full w-5 h-5 flex justify-center items-center bg-black dark:bg-white text-white dark:text-black filter-count"
                     >{{ $totalEvents }}</span
                   >
                 </div>
@@ -91,11 +93,11 @@
                 ></span>
               </button>
               <ul
-                class="absolute mt-2 max-h-60 w-full overflow-auto rounded-md bg-gray-100 py-3 px-2 text-base focus:outline-none sm:text-sm filter-list hidden"
+                class="absolute mt-2 max-h-60 w-full overflow-auto rounded-md bg-gray-100 dark:bg-gray-800 py-3 px-2 text-base focus:outline-none sm:text-sm filter-list hidden"
                 tabindex="0"
               >
                 <li
-                  class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 hover:bg-white hover:text-black"
+                  class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white"
                   role="option"
                   tabindex="-1"
                   data-value=""
@@ -159,7 +161,7 @@
                   {{- $type  := . }}
                   {{- $count := index $counts $type }}
                   <li
-                    class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 hover:bg-white hover:text-black"
+                    class="relative cursor-default select-none py-3 pl-12 pr-3 rounded-lg mb-2 text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white"
                     role="option"
                     tabindex="-1"
                     data-value="{{ $type | urlize }}"
@@ -210,7 +212,9 @@
           class="col-span-full md:col-span-6 lg:col-span-4 filtered-item {{ $filter_classes }}"
         >
           <div class="relative h-full">
-            <div class="relative h-full w-full bg-fika-dust p-8 grid">
+            <div
+              class="relative h-full w-full bg-fika-dust dark:bg-gray-800 dark:text-white p-8 grid"
+            >
               <div class="flex items-center gap-2 self-start">
                 <svg
                   viewBox="0 0 20 20"
@@ -222,7 +226,7 @@
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M6 2a1 1 0 0 0-1 1v1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H7V3a1 1 0 0 0-1-1Zm0 5a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H6Z"
-                    fill="#111827"
+                    fill="currentColor"
                   ></path></svg
                 ><span class="text-base font-medium lg:text-xl">
                   {{ $dateHuman := .Params.event_date | time.Format ":date_long" }}
@@ -259,7 +263,7 @@
                   >View event</span
                 >
                 <div
-                  class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white group-hover:bg-fika-hover-purple transition-colors duration-200"
+                  class="flex h-9 w-9 items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black group-hover:bg-fika-hover-purple dark:group-hover:bg-fika-hover-purple transition-colors duration-200"
                 >
                   <svg
                     viewBox="0 0 20 20"

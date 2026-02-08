@@ -23,21 +23,21 @@
       </div>
     </div>
   {{- end }}
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 py-6 lg:py-14">
     <div id="" class="invisible relative -top-20 block"></div>
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        <div class="text-3xl font-medium lg:text-5xl">{{ .Title }}</div>
+        <div class="text-3xl font-medium lg:text-5xl dark:text-white">{{ .Title }}</div>
         <div class="mt-6 lg:mt-8">
-          <div class="font-light text-lg lg:text-2xl">
+            <div class="font-light text-lg lg:text-2xl dark:text-gray-200">
             {{- partial "helpers/enhanced-content-page.html" .Content }}
           </div>
           <div class="text-center mt-[3em] mb-[6em]">
             <a href="https://fikaworksday.eventbrite.nl" target="_blank">
               <div
-                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black dark:bg-white dark:text-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
                 <div
                   class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
                 >
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="mt-[4em] lg:mt-[6em]" id="information">
-          <h2 class="text-xl font-medium lg:text-3xl">
+          <h2 class="text-xl font-medium lg:text-3xl dark:text-white">
             <a class="no-underline hover:underline" href="#information">Informations</a>
           </h2>
           <table class="table-auto w-full align-top mt-[3em] text-[16px]!">
@@ -99,7 +99,7 @@
           </table>
         </div>
         <div class="mt-[4em] lg:mt-[6em]" id="agenda">
-          <h2 class="text-xl font-medium lg:text-3xl">
+          <h2 class="text-xl font-medium lg:text-3xl dark:text-white">
             <a class="no-underline hover:underline" href="#agenda">Agenda</a>
           </h2>
           <table class="table-auto w-full align-top mt-[3em]">
@@ -334,7 +334,7 @@ We’ll walk through how automatic provisioning works with PXE boot and show how
             </tbody>
           </table>
           <div class="mt-[4em] lg:mt-[6em]" id="workshop-requirements">
-            <h2 class="text-xl font-medium lg:text-3xl">
+            <h2 class="text-xl font-medium lg:text-3xl dark:text-white">
               <a class="no-underline hover:underline" href="#workshop-requirements">Workshop requirements</a>
             </h2>
             <table class="table-auto w-full align-top mt-[3em] text-sm">
@@ -374,7 +374,7 @@ We’ll walk through how automatic provisioning works with PXE boot and show how
           <div class="text-center my-[6em]">
             <a href="https://fikaworksday.eventbrite.nl" target="_blank">
               <div
-                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black dark:bg-white dark:text-black active:bg-fika-purple cursor-pointer text-white rounded-[40px]" >
                 <div
                   class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
                 >

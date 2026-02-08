@@ -147,6 +147,36 @@ table tr td {
   box-shadow: 0 0 0 3px white;
 }
 
+/* Dark mode overrides */
+.dark .list-background li {
+  background-color: #1f2937;
+  box-shadow: -1.25rem 0 #1f2937;
+}
+
+.dark .timeline-dot {
+  box-shadow: 0 0 0 3px #111827;
+}
+
+.dark table {
+  color: #e5e7eb;
+}
+
+.dark table th {
+  color: #f9fafb;
+}
+
+.dark table td {
+  border-top-color: #374151;
+}
+
+.dark table a {
+  color: #c4b5fd;
+}
+
+.dark table img[src*='icons8'] {
+  filter: invert(1);
+}
+
 /* Theme Toggle Animation */
 html.dark .sun-icon {
   opacity: 0;

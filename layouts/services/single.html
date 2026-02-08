@@ -5,6 +5,10 @@
       {{- $hero_small := $hero_img.Resize "800x webp" }}
       {{- $hero_medium := $hero_img.Resize "1600x webp" }}
       {{- $hero_large := $hero_img.Resize "2000x webp" }}
+      {{- $hero_img_dark := resources.Get "/images/bg-cloud-curly-dark.jpeg" }}
+      {{- $hero_small_dark := $hero_img_dark.Resize "800x webp" }}
+      {{- $hero_medium_dark := $hero_img_dark.Resize "1600x webp" }}
+      {{- $hero_large_dark := $hero_img_dark.Resize "2000x webp" }}
       <img
         alt=""
         src="{{ $hero_medium.RelPermalink }}"
@@ -14,9 +18,20 @@
           {{- $hero_large.RelPermalink }} 2000w
         "
         sizes="100vw"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover dark:hidden"
       />
-      <div class="absolute inset-0 bg-white/50"></div>
+      <img
+        alt=""
+        src="{{ $hero_medium_dark.RelPermalink }}"
+        srcset="
+          {{- $hero_small_dark.RelPermalink }}  800w,
+          {{- $hero_medium_dark.RelPermalink }} 1600w,
+          {{- $hero_large_dark.RelPermalink }} 2000w
+        "
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover hidden dark:block"
+      />
+      <div class="absolute inset-0 bg-white/50 dark:bg-black/50"></div>
       <div
         class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 mt-20 lg:mt-0 lg:min-h-[80vh] lg:items-center lg:content-center"
       >
@@ -25,7 +40,7 @@
         >
           <div class="pt-3 px-10 py-6 lg:py-14">
             <div
-              class="pb-5 font-light lg:pb-6 py-6 mt-10 lg:mt-0 lg:py-14 text-center text-2xl lg:text-3xl font-light text-black"
+              class="pb-5 font-light lg:pb-6 py-6 mt-10 lg:mt-0 lg:py-14 text-center text-2xl lg:text-3xl font-light text-black dark:text-white"
             >
               {{ .Content }}
             </div>
@@ -33,7 +48,7 @@
           <div class="pt-4 lg:pt-6 text-center">
             <a href="#approach"
               ><div
-                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-white dark:text-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
               >
                 <div
                   class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
@@ -59,7 +74,7 @@
     </div>
     <div id="approach"></div>
     <div class="mx-3 md:mx-10 mt-14 lg:mt-20 mb-12 lg:mb-16">
-      <h3 class="text-3xl font-medium lg:text-5xl text-center">Our Approach</h3>
+      <h3 class="text-3xl font-medium lg:text-5xl text-center dark:text-white">Our Approach</h3>
     </div>
     <div
       id="timeline-container"
@@ -245,13 +260,13 @@
       </div>
     </div>
     <div class="relative mt-10 lg:mt-14 overflow-hidden">
-        <div class="absolute inset-0" style="background-color: #f4f1e7;"></div>
+        <div class="absolute inset-0 bg-[#f4f1e7] dark:bg-gray-800"></div>
         <div
           class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 py-16 lg:py-24 lg:min-h-[60vh] lg:items-center lg:content-center"
         >
           <div class="col-span-full lg:col-start-3 lg:col-end-11">
             <div
-              class="pt-3 text-center text-base font-light lg:pt-6 lg:text-2xl text-black"
+              class="pt-3 text-center text-base font-light lg:pt-6 lg:text-2xl text-black dark:text-white"
             >
               <h3 class="text-3xl font-medium lg:text-5xl">
                 Our Value Proposition
@@ -283,12 +298,12 @@
         </div>
       </div>
       <div id="services"></div>
-      <div class="bg-white py-10 lg:py-16">
+      <div class="bg-white dark:bg-gray-900 py-10 lg:py-16">
         <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pb-8 lg:pb-12"
         >
           <div class="col-span-full lg:col-start-2 lg:col-end-12">
-            <h3 class="text-3xl font-medium lg:text-5xl mb-8 lg:mb-10">
+            <h3 class="text-3xl font-medium lg:text-5xl mb-8 lg:mb-10 dark:text-white">
               Our Services
             </h3>
             <div
