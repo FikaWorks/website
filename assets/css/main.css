@@ -40,6 +40,14 @@
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
   --color-fika-soft-pink-hover: #fdf2f6;
+  --color-fika-soft-green-shadow: #1a3a24;
+  --color-fika-soft-yellow-shadow: #3a3520;
+  --color-fika-soft-blue-shadow: #1a2540;
+  --color-fika-soft-pink-shadow: #3a1a28;
+  --color-fika-soft-green-dark: #2d6b42;
+  --color-fika-soft-yellow-dark: #8a7a2e;
+  --color-fika-soft-blue-dark: #3d5a8a;
+  --color-fika-soft-pink-dark: #9e4a6e;
   --color-fika-text-green: #2d8f4e;
   --color-fika-text-yellow: #8b7355;
   --color-fika-text-blue: #2c4a8c;
@@ -142,10 +150,12 @@ table tr td {
 /* Theme Toggle Animation */
 html.dark .sun-icon {
   opacity: 0;
-  transform: translate(-50%, -50%) rotate(-90deg) scale(0);
+  rotate: -90deg;
+  scale: 0;
 }
 
 html.dark .moon-icon {
   opacity: 1;
-  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  rotate: 0deg;
+  scale: 1;
 }

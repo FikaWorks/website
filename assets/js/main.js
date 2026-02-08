@@ -4,7 +4,7 @@ const initMainMenu = function () {
   const label = menu.querySelector('.menu-label');
 
   const menuToggle = function () {
-    if (menu.querySelector('nav').classList.toggle('max-[1060px]:hidden')) {
+    if (menu.querySelector('nav').classList.toggle('max-[1145px]:hidden')) {
       label.innerHTML = 'Menu';
     } else {
       label.innerHTML = 'Close';
