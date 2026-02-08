@@ -180,9 +180,29 @@ const initTimelineCurve = function () {
   });
 };
 
+const initThemeToggle = function () {
+  const toggles = document.querySelectorAll('.theme-toggle-btn');
+  toggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (typeof window.toggleTheme === 'function') {
+        window.toggleTheme();
+      }
+    });
+  });
+};
+
+const toggleTheme = function () {
+  const html = document.documentElement;
+  const isDarkMode = html.classList.toggle('dark');
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+};
+
+window.toggleTheme = toggleTheme;
+
 window.addEventListener('load', function () {
   initMainMenu();
   initFilters();
   initForms();
   initTimelineCurve();
+  initThemeToggle();
 });

@@ -10,6 +10,20 @@
     {{- printf "%s | %s" .Title site.Title }}
   {{- end -}}
 </title>
+<script>
+  // Initialize theme before CSS loads to prevent flash of wrong theme
+  (function () {
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+
+    // Apply dark class if: stored theme is 'dark' OR (no stored theme AND system prefers dark)
+    if (storedTheme === 'dark' || (storedTheme === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
 {{- partialCached "head/css.html" . }}
 {{- partialCached "head/js.html" . }}
 {{- partial "head/seo.html" . }}

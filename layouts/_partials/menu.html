@@ -32,6 +32,9 @@
       class="relative min-[1061px]:flex min-[1061px]:items-center gap-12 bg-white pr-10 max-[1060px]:px-3 max-[1060px]:pt-30 max-[1060px]:pb-10"
     >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
+      <div class="max-[1060px]:hidden">
+        {{ partial "theme-toggle.html" . }}
+      </div>
     </div>
   </nav>
 {{- end }}

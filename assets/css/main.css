@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 @source "hugo_stats.json";
 
 @font-face {
@@ -136,4 +137,15 @@ table tr td {
   z-index: 10;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 3px white;
+}
+
+/* Theme Toggle Animation */
+html.dark .sun-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0);
+}
+
+html.dark .moon-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
 }

@@ -7,7 +7,15 @@
       {{- $small := $img_mobile.Resize "1280x webp" }}
       {{- $medium := $img_desktop.Resize "1600x webp" }}
       {{- $large := $img_desktop.Resize "2000x webp" }}
+
+      {{- $img_desktop_dark := resources.Get "/images/website-background-desktop-dark.jpeg" }}
+      {{- $img_mobile_dark := resources.Get "/images/website-background-mobile-dark.jpeg" }}
+      {{- $tiny_dark := $img_mobile_dark.Resize "640x webp" }}
+      {{- $small_dark := $img_mobile_dark.Resize "1280x webp" }}
+      {{- $medium_dark := $img_desktop_dark.Resize "1600x webp" }}
+      {{- $large_dark := $img_desktop_dark.Resize "2000x webp" }}
       <img
+        class="dark:hidden"
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
         src="{{ $medium.RelPermalink }}"
         srcset="
@@ -15,6 +23,20 @@
           {{- $small.RelPermalink }} 1280w,
           {{- $medium.RelPermalink }} 1600w,
           {{- $large.RelPermalink }} 2000w
+        "
+        width="100%"
+        height="100%"
+        sizes="100vw"
+      />
+      <img
+        class="hidden dark:block invert"
+        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
+        src="{{ $medium_dark.RelPermalink }}"
+        srcset="
+          {{- $tiny_dark.RelPermalink }}  640w,
+          {{- $small_dark.RelPermalink }} 1280w,
+          {{- $medium_dark.RelPermalink }} 1600w,
+          {{- $large_dark.RelPermalink }} 2000w
         "
         width="100%"
         height="100%"
@@ -32,7 +54,7 @@
       <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
         <a href="/services">
           <div
-            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black dark:bg-white dark:text-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
           >
             <div
               class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
@@ -56,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
     >
@@ -76,7 +98,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div class="invisible relative -top-20 block"></div>
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
@@ -98,7 +120,7 @@
       </div>
     </div>
     <div class="-mt-2">
-      <div class="bg-white lg:py-14 py-6">
+      <div class="bg-white dark:bg-gray-900 lg:py-14 py-6">
         <div
           class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
         >
@@ -345,7 +367,7 @@
     </div>
   </div>
   <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-12 bg-white lg:my-28"
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-12 bg-white dark:bg-gray-900 dark:text-white lg:my-28"
   >
     <div class="z-10 col-span-full pt-4 lg:col-span-5 lg:col-start-2 lg:pt-20">
       <div class="text-3xl font-medium lg:text-5xl">View our work</div>
@@ -359,16 +381,18 @@
       </div>
     </div>
     <div
-      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite"
+      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite dark:bg-gray-800"
     ></div>
     <div
       class="z-10 col-span-full -mt-2 flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:mt-0 lg:pt-20"
     >
       <div>
-        <div class="w-full bg-fika-dust p-8">
+        <div class="w-full bg-fika-dust dark:bg-gray-700 p-8">
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">100% open source</span>
-            <div class="pt-4 text-lg font-light text-gray-800">
+            <div
+              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
+            >
               <p class="pb-5 font-light lg:pb-6">
                 We promote open source technologies and we like to contribute
                 back.
@@ -377,7 +401,7 @@
           </div>
           <a href="https://github.com/FikaWorks">
             <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
             >
               <div
                 class="font-medium text-center flex items-center text-xl gap-4"
@@ -408,10 +432,12 @@
         </div>
       </div>
       <div>
-        <div class="w-full bg-fika-dust p-8">
+        <div class="w-full bg-fika-dust dark:bg-gray-700 p-8">
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">engage with our engineers</span>
-            <div class="pt-4 text-lg font-light text-gray-800">
+            <div
+              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
+            >
               <p class="pb-5 font-light lg:pb-6">
                 We are active in the community: meetups, podcasts, conferences.
               </p>
@@ -419,7 +445,7 @@
           </div>
           <a href="/events">
             <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
             >
               <div
                 class="font-medium text-center flex items-center text-xl gap-4"
