@@ -113,6 +113,11 @@ body {
   font-size: 0.65em;
 }
 
+.dark .highlight pre {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
 table {
   font-size: 0.8em;
 }
@@ -151,6 +156,11 @@ table tr td {
 .dark .list-background li {
   background-color: #1f2937;
   box-shadow: -1.25rem 0 #1f2937;
+}
+
+.dark blockquote {
+  border-left-color: #4b5563;
+  color: #d1d5db;
 }
 
 .dark .timeline-dot {

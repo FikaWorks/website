@@ -4,13 +4,17 @@
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-span-5 lg:col-start-2">
-        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
-        <div class="mt-6 text-lg font-light lg:text-2xl">
+        <h1 class="text-3xl font-medium lg:text-7xl dark:text-white">
+          {{ .Title }}
+        </h1>
+        <div class="mt-6 text-lg font-light lg:text-2xl dark:text-gray-200">
           <p class="pb-5 font-light lg:pb-6">
             {{ .Content }}
           </p>
         </div>
-        <div class="mt-7 text-sm font-light lg:mt-8 lg:text-base">
+        <div
+          class="mt-7 text-sm font-light lg:mt-8 lg:text-base dark:text-gray-200"
+        >
           <p class="pb-2 font-medium text-base lg:text-lg">🏢 Offices:</p>
           <p class="pb-3 font-light">
             <strong>Haarlem </strong><br />
@@ -24,7 +28,9 @@
             Science park 608 <br />
             1098 XH Amsterdam, The Netherlands
           </p>
-          <p class="text-sm italic text-gray-600 lg:text-base">
+          <p
+            class="text-sm italic text-gray-600 dark:text-gray-400 lg:text-base"
+          >
             📅 Meeting at our offices is available by appointment only. Please
             contact us in advance to schedule a visit via info@fika.works
           </p>
@@ -55,7 +61,7 @@
                 type="text"
                 autocomplete="name"
                 placeholder="your full name"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -76,7 +82,7 @@
                 type="email"
                 autocomplete="email"
                 placeholder="your email address"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -97,7 +103,7 @@
                 type="tel"
                 autocomplete="phone"
                 placeholder="your phone number"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -117,7 +123,7 @@
                 type="text"
                 autocomplete="company"
                 placeholder="your company name"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -137,7 +143,7 @@
                 type="text"
                 autocomplete="subject"
                 placeholder="What is your inquiry?"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -156,7 +162,7 @@
                 name="message"
                 rows="5"
                 placeholder="Tell us what you need, we will help you as best as we can."
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
               ></textarea>
             </div>
           </div>
