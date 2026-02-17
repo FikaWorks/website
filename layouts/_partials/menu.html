@@ -15,21 +15,23 @@
     class="max-[1145px]:absolute max-[1145px]:w-full max-[1145px]:top-0 max-[1145px]:hidden min-[1145px]:flex min-[1145px]:flex-wrap"
   >
     <div class="min-[1145px]:hidden transform opacity-100">
-      <div class="fixed inset-0 bg-black dark:bg-gray-950 opacity-30"></div>
+      <div
+        class="fixed inset-0 bg-black dark:bg-gray-950 opacity-30 transition-none"
+      ></div>
     </div>
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="-mr-2 h-[90px] max-[1145px]:hidden"
+      class="-mr-2 h-[90px] max-[1145px]:hidden transition-none"
       viewBox="0 0 111 90"
     >
       <path
         d="M110.304 90H89.325a12.199 12.199 0 0 1-9.21-4.199L9.21 4.2A12.2 12.2 0 0 0 0 0h110.304v90Z"
-        class="fill-white dark:fill-gray-950"
+        class="fill-white dark:fill-gray-950 transition-none"
       ></path>
     </svg>
     <div
-      class="relative min-[1145px]:flex min-[1145px]:items-center gap-12 bg-white dark:bg-gray-950 pr-10 max-[1145px]:px-3 max-[1145px]:pt-30 max-[1145px]:pb-10"
+      class="relative min-[1145px]:flex min-[1145px]:items-center gap-12 bg-white dark:bg-gray-950 pr-10 max-[1145px]:px-3 max-[1145px]:pt-30 max-[1145px]:pb-10 transition-none"
     >
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" 0) }}
       <div class="max-[1145px]:hidden">

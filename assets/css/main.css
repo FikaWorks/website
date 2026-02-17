@@ -30,7 +30,7 @@
   --color-fika-light-purple: #d0cbf2;
   --color-fika-purple: #8c7de5;
   --color-fika-hover-purple: #a397ea;
-  --color-fika-orange: #ff8c3c;
+  --color-fika-orange: #e67a2e;
   --color-fika-soft-pink: #ec96b5;
   --color-fika-soft-blue: #9aafe3;
   --color-fika-sky-blue: #97ced6;
@@ -51,6 +51,9 @@
   --color-fika-text-green: #2d8f4e;
   --color-fika-text-yellow: #8b7355;
   --color-fika-text-blue: #2c4a8c;
+  --color-fika-dark-bg: #09071f;
+  --color-fika-dark-surface: #161825;
+  --color-fika-dark-elevated: #1e2130;
 
   --breakpoint-3xl: 2000px;
   --breakpoint-4xl: 3000px;
@@ -114,7 +117,7 @@ body {
 }
 
 .dark .highlight pre {
-  background-color: #1f2937;
+  background-color: var(--color-gray-800);
   color: #e5e7eb;
 }
 
@@ -154,17 +157,17 @@ table tr td {
 
 /* Dark mode overrides */
 .dark .list-background li {
-  background-color: #1f2937;
-  box-shadow: -1.25rem 0 #1f2937;
+  background-color: var(--color-gray-800);
+  box-shadow: -1.25rem 0 var(--color-gray-800);
 }
 
 .dark blockquote {
-  border-left-color: #4b5563;
+  border-left-color: var(--color-gray-700);
   color: #d1d5db;
 }
 
 .dark .timeline-dot {
-  box-shadow: 0 0 0 3px #111827;
+  box-shadow: 0 0 0 3px var(--color-gray-900);
 }
 
 .dark table {
@@ -176,7 +179,7 @@ table tr td {
 }
 
 .dark table td {
-  border-top-color: #374151;
+  border-top-color: var(--color-gray-700);
 }
 
 .dark table a {
@@ -198,4 +201,44 @@ html.dark .moon-icon {
   opacity: 1;
   rotate: 0deg;
   scale: 1;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sun-icon,
+  .moon-icon {
+    transition: none !important;
+  }
+}
+
+/* Smooth theme transitions for theme-aware elements */
+body,
+.bg-white,
+.bg-fika-offWhite,
+.bg-fika-dust,
+.bg-gray-100,
+.bg-gray-800 {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+nav svg,
+nav svg path,
+nav button,
+nav .bg-white,
+nav .dark\:bg-gray-950 {
+  transition: none !important;
+}
+
+.dark {
+  --color-gray-950: #030712;
+  --color-gray-900: #09071f;
+  --color-gray-800: #161825;
+  --color-gray-750: #1e2130;
+  --color-gray-700: #2a2d3e;
+  --color-fika-dark-bg: #09071f;
+  --color-fika-dark-surface: #161825;
+  --color-fika-dark-elevated: #1e2130;
 }
