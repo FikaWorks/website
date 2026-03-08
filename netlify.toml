@@ -7,7 +7,7 @@ command = """\
   """
 
 [build.environment]
-HUGO_VERSION = "0.155.0"
-NODE_VERSION = "24.13.0"
+HUGO_VERSION = "0.157.0"
+NODE_VERSION = "24.14.0"
 HUGO_ENV = "production"
 TZ = "Europe/Amsterdam"

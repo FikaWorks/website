@@ -16,16 +16,16 @@
   "description": "",
   "devDependencies": {
     "@headlessui/tailwindcss": "^0.2.2",
-    "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.10",
-    "autoprefixer": "^10.4.21",
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
     "husky": "^9.1.7",
-    "postcss": "^8.5.5",
+    "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "prettier-plugin-go-template": "^0.0.15",
     "pretty-quick": "^4.2.2",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.2.1"
   }
 }

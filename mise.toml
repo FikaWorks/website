@@ -7,8 +7,8 @@ lockfile = true
 # locked = true
 
 [tools]
-hugo-extended = "0.155.2"
-node = "24.13.0"
+hugo-extended = "0.157.0"
+node = "24.14.0"
 
 [hooks]
 postinstall = ['[ -z "$CI" ] && npm install || true']
