@@ -1,5 +1,5 @@
 {{- define "main" }}
-  <div class="relative w-full pb-6 pt-9 lg:py-0">
+  <div class="relative w-full">
     <div class="relative overflow-hidden dark-services-bg dark:bg-gray-900 min-h-screen">
       {{- $hero_img := resources.Get "/images/bg-cloud-curly.jpeg" }}
       {{- $hero_small := $hero_img.Resize "800x webp" }}
@@ -307,7 +307,7 @@
                     class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green dark:border-b-fika-soft-green-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green dark:bg-fika-soft-green-dark"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green dark:bg-fika-soft-green-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
@@ -344,10 +344,10 @@
                     </div>
                     <a href="/contact">
                       <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-green dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                        class="group inline-block cursor-pointer text-black dark:text-white hover:text-fika-text-green dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
                         <div
-                          class="font-medium text-center flex items-center text-xl gap-4"
+                          class="font-medium flex items-center text-xl gap-4"
                         >
                           <svg
                             viewBox="0 0 32 32"
@@ -367,7 +367,7 @@
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="dark:stroke-black"
+                              class="dark:stroke-gray-900"
                             ></path></svg
                           >Get in touch
                         </div>
@@ -390,7 +390,7 @@
                     class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow dark:border-b-fika-soft-yellow-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow dark:bg-fika-soft-yellow-dark"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow dark:bg-fika-soft-yellow-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
@@ -465,7 +465,7 @@
                     class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-blue dark:border-b-fika-soft-blue-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-blue dark:bg-fika-soft-blue-dark"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-blue dark:bg-fika-soft-blue-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
