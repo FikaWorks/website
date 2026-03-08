@@ -412,6 +412,7 @@
       "lg:pt-14",
       "lg:pt-16",
       "lg:pt-20",
+      "lg:pt-28",
       "lg:pt-36",
       "lg:pt-6",
       "lg:pt-[120px]",
@@ -563,6 +564,7 @@
       "pr-8",
       "pt-14",
       "pt-2",
+      "pt-20",
       "pt-28",
       "pt-3",
       "pt-36",
@@ -599,7 +601,6 @@
       "rounded-md",
       "rounded-xl",
       "scale-0",
-      "scroll-mt-24",
       "select-none",
       "self-end",
       "self-start",
@@ -680,6 +681,7 @@
       "z-[1]"
     ],
     "ids": [
+      "",
       "1-what-we-set-out-to-do",
       "10-the-bigger-picture",
       "2-what-actually-happened",
