@@ -1,6 +1,6 @@
 {{- define "main" }}
   <div class="relative mb-14">
-    <div class="relative">
+    <div class="relative dark-hero-bg dark:bg-gray-900">
       {{- $img_desktop := resources.Get "/images/website-background-desktop.jpeg" }}
       {{- $img_mobile := resources.Get "/images/website-background-mobile.jpeg" }}
       {{- $tiny := $img_mobile.Resize "640x webp" }}
@@ -8,6 +8,7 @@
       {{- $medium := $img_desktop.Resize "1600x webp" }}
       {{- $large := $img_desktop.Resize "2000x webp" }}
       <img
+        class="dark:hidden"
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
         src="{{ $medium.RelPermalink }}"
         srcset="
@@ -20,19 +21,20 @@
         height="100%"
         sizes="100vw"
       />
+      <div class="hidden dark:block w-full" style="aspect-ratio: 16/9;"></div>
     </div>
     <div
       class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
     >
       <h1
-        class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl"
+        class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl dark:text-white"
       >
         Collectively Engineered to Innovate, Scale and Secure
       </h1>
       <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
         <a href="/services">
           <div
-            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
           >
             <div
               class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
@@ -56,7 +58,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
     >
@@ -76,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white py-6 lg:py-14">
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div class="invisible relative -top-20 block"></div>
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
@@ -98,7 +100,7 @@
       </div>
     </div>
     <div class="-mt-2">
-      <div class="bg-white lg:py-14 py-6">
+      <div class="bg-white dark:bg-gray-900 lg:py-14 py-6">
         <div
           class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
         >
@@ -111,16 +113,18 @@
                   class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
                 >
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green-hover"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green-hover dark:border-b-fika-soft-green-shadow"
                   ></div>
-                  <div class="h-full bg-fika-soft-green-hover"></div>
+                  <div
+                    class="h-full bg-fika-soft-green-hover dark:bg-fika-soft-green-shadow"
+                  ></div>
                 </div>
                 <div class="h-full relative z-10">
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green dark:border-b-fika-soft-green-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green dark:bg-fika-soft-green-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
@@ -142,11 +146,12 @@
                       ></path>
                     </svg>
                     <div class="my-6 lg:mt-11 lg:mb-9">
-                      <span class="text-xl font-medium lg:text-3xl"
+                      <span
+                        class="text-xl font-medium lg:text-3xl dark:text-white"
                         >Platform Go-Live Enablement</span
                       >
                       <p
-                        class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg"
+                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
                       >
                         Confidently launch production with FikaWorks' hands-on
                         Go-Live Enablement support.
@@ -154,7 +159,7 @@
                     </div>
                     <a href="/services">
                       <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-green active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-green dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
                         <div
                           class="font-medium text-center flex items-center text-xl gap-4"
@@ -177,6 +182,7 @@
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
+                              class="dark:stroke-black"
                             ></path></svg
                           >Read more
                         </div>
@@ -190,16 +196,18 @@
                   class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
                 >
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow-hover"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow-hover dark:border-b-fika-soft-yellow-shadow"
                   ></div>
-                  <div class="h-full bg-fika-soft-yellow-hover"></div>
+                  <div
+                    class="h-full bg-fika-soft-yellow-hover dark:bg-fika-soft-yellow-shadow"
+                  ></div>
                 </div>
                 <div class="h-full relative z-10">
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow dark:border-b-fika-soft-yellow-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow dark:bg-fika-soft-yellow-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
@@ -213,11 +221,12 @@
                       ></path>
                     </svg>
                     <div class="my-6 lg:mt-11 lg:mb-9">
-                      <span class="text-xl font-medium lg:text-3xl"
+                      <span
+                        class="text-xl font-medium lg:text-3xl dark:text-white"
                         >Discovery Workshop</span
                       >
                       <p
-                        class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg"
+                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
                       >
                         Define strategy and roadmap with FikaWorks'
                         collaborative Discovery Workshop.
@@ -225,7 +234,7 @@
                     </div>
                     <a href="/services">
                       <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-yellow active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-yellow dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
                         <div
                           class="font-medium text-center flex items-center text-xl gap-4"
@@ -248,6 +257,7 @@
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
+                              class="dark:stroke-black"
                             ></path></svg
                           >Read more
                         </div>
@@ -261,16 +271,18 @@
                   class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
                 >
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-blue-hover"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-blue-hover dark:border-b-fika-soft-blue-shadow"
                   ></div>
-                  <div class="h-full bg-fika-soft-blue-hover"></div>
+                  <div
+                    class="h-full bg-fika-soft-blue-hover dark:bg-fika-soft-blue-shadow"
+                  ></div>
                 </div>
                 <div class="h-full relative z-10">
                   <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-blue"
+                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-blue dark:border-b-fika-soft-blue-dark"
                   ></div>
                   <div
-                    class="px-5 lg:px-8 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-blue"
+                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-blue dark:bg-fika-soft-blue-dark"
                   >
                     <svg
                       viewBox="0 0 20 20"
@@ -284,11 +296,12 @@
                       ></path>
                     </svg>
                     <div class="my-6 lg:mt-11 lg:mb-9">
-                      <span class="text-xl font-medium lg:text-3xl"
+                      <span
+                        class="text-xl font-medium lg:text-3xl dark:text-white"
                         >Platform Readiness Service</span
                       >
                       <p
-                        class="mt-2 text-base font-light text-gray-800 lg:mt-4 lg:text-lg"
+                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
                       >
                         Validate and optimize your platform with FikaWorks'
                         expert Readiness Service.
@@ -296,7 +309,7 @@
                     </div>
                     <a href="/services">
                       <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-text-blue active:text-fika-purple rounded-[40px] transition-colors duration-200"
+                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-blue dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
                         <div
                           class="font-medium text-center flex items-center text-xl gap-4"
@@ -319,6 +332,7 @@
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
+                              class="dark:stroke-black"
                             ></path></svg
                           >Read more
                         </div>
@@ -338,14 +352,14 @@
       <div class="col-span-full lg:col-start-2 lg:col-end-10 lg:-mt-2 mt-0">
         <a
           href="/services"
-          class="group font-medium hover:text-fika-purple text-fika-purple cursor-pointer underline underline-offset-8 text-lg transition-colors duration-200"
+          class="group font-medium hover:text-fika-purple dark:hover:text-gray-300 text-fika-purple dark:text-gray-300 cursor-pointer underline underline-offset-8 text-lg transition-colors duration-200"
           ><span>See our services</span></a
         >
       </div>
     </div>
   </div>
   <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-12 bg-white lg:my-28"
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-12 bg-white dark:bg-gray-900 dark:text-white lg:my-28"
   >
     <div class="z-10 col-span-full pt-4 lg:col-span-5 lg:col-start-2 lg:pt-20">
       <div class="text-3xl font-medium lg:text-5xl">View our work</div>
@@ -359,16 +373,20 @@
       </div>
     </div>
     <div
-      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite"
+      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite dark:bg-fika-dark-surface"
     ></div>
     <div
       class="z-10 col-span-full -mt-2 flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:mt-0 lg:pt-20"
     >
       <div>
-        <div class="w-full bg-fika-dust p-8">
+        <div
+          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
+        >
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">100% open source</span>
-            <div class="pt-4 text-lg font-light text-gray-800">
+            <div
+              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
+            >
               <p class="pb-5 font-light lg:pb-6">
                 We promote open source technologies and we like to contribute
                 back.
@@ -377,7 +395,7 @@
           </div>
           <a href="https://github.com/FikaWorks">
             <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
             >
               <div
                 class="font-medium text-center flex items-center text-xl gap-4"
@@ -396,10 +414,10 @@
                   ></rect>
                   <path
                     d="m12.5 9 8 7.5-8 7.5"
-                    stroke="#fff"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="stroke-white dark:stroke-black"
                   ></path></svg
                 >Check our projects on Github
               </div>
@@ -408,10 +426,14 @@
         </div>
       </div>
       <div>
-        <div class="w-full bg-fika-dust p-8">
+        <div
+          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
+        >
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">engage with our engineers</span>
-            <div class="pt-4 text-lg font-light text-gray-800">
+            <div
+              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
+            >
               <p class="pb-5 font-light lg:pb-6">
                 We are active in the community: meetups, podcasts, conferences.
               </p>
@@ -419,7 +441,7 @@
           </div>
           <a href="/events">
             <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
+              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
             >
               <div
                 class="font-medium text-center flex items-center text-xl gap-4"
@@ -438,10 +460,10 @@
                   ></rect>
                   <path
                     d="m12.5 9 8 7.5-8 7.5"
-                    stroke="#fff"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="stroke-white dark:stroke-black"
                   ></path></svg
                 >Check our events
               </div>

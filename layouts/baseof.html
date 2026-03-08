@@ -6,7 +6,7 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body>
+  <body class="dark:bg-gray-900">
     <div>
       <header
         class="absolute inset-x-0 top-0 z-40 h-[90px] w-full bg-transparent"
@@ -19,10 +19,12 @@
         {{ block "main" . }}{{ end }}
       </main>
     </div>
-    <footer
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 my-14 lg:my-20"
-    >
-      {{ partial "footer.html" . }}
-    </footer>
+    <div class="dark:bg-gray-950">
+      <footer
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
+      >
+        {{ partial "footer.html" . }}
+      </footer>
+    </div>
   </body>
 </html>

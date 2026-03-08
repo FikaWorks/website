@@ -4,7 +4,7 @@ const initMainMenu = function () {
   const label = menu.querySelector('.menu-label');
 
   const menuToggle = function () {
-    if (menu.querySelector('nav').classList.toggle('max-[1060px]:hidden')) {
+    if (menu.querySelector('nav').classList.toggle('max-[1145px]:hidden')) {
       label.innerHTML = 'Menu';
     } else {
       label.innerHTML = 'Close';
@@ -27,12 +27,21 @@ const initFilters = function () {
     const items = filter.querySelectorAll('li');
 
     const filterToggle = function () {
-      if (document.querySelector('ul.filter-list').classList.toggle('hidden')) {
-        filterBtn.classList =
-          'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-white border-gray-800 text-black';
+      const isHidden = document
+        .querySelector('ul.filter-list')
+        .classList.toggle('hidden');
+      const isDarkMode = document.documentElement.classList.contains('dark');
+
+      if (isHidden) {
+        // Closed state
+        filterBtn.className = isDarkMode
+          ? 'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-gray-800 border-gray-600 text-white'
+          : 'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-white border-gray-800 text-black';
       } else {
-        filterBtn.classList =
-          'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-black border-black text-white';
+        // Open state
+        filterBtn.className = isDarkMode
+          ? 'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-white border-white text-black'
+          : 'relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none bg-black border-black text-white';
       }
     };
 
@@ -66,12 +75,18 @@ const initFilters = function () {
         items.forEach((menu_item) => {
           filterLabel.innerHTML = this.dataset.label;
           filterCount.innerHTML = this.dataset.count;
+          const isDarkMode =
+            document.documentElement.classList.contains('dark');
           if (menu_item.dataset.value === clickedDataValue) {
+            const fillColor = isDarkMode ? '#fff' : '#000';
+            const strokeColor = isDarkMode ? '#000' : '#fff';
             menu_item.querySelector('svg').innerHTML =
-              '<g clip-path="url(#single_select_selected_svg__a)"><rect x="4" y="4" width="16" height="16" rx="8" fill="#000"></rect><rect x="4" y="4" width="16" height="16" rx="8" stroke="#fff" stroke-width="2"></rect></g><rect x="1" y="1" width="22" height="22" rx="11" stroke="#000" stroke-width="2"></rect><defs><clipPath id="single_select_selected_svg__a"><rect width="24" height="24" rx="12" fill="#fff"></rect></clipPath></defs>';
+              `<g clip-path="url(#single_select_selected_svg__a)"><rect x="4" y="4" width="16" height="16" rx="8" fill="${fillColor}"></rect><rect x="4" y="4" width="16" height="16" rx="8" stroke="${strokeColor}" stroke-width="2"></rect></g><rect x="1" y="1" width="22" height="22" rx="11" stroke="${fillColor}" stroke-width="2"></rect><defs><clipPath id="single_select_selected_svg__a"><rect width="24" height="24" rx="12" fill="${strokeColor}"></rect></clipPath></defs>`;
           } else {
+            const fillColor = isDarkMode ? '#374151' : '#fff';
+            const strokeColor = isDarkMode ? '#4b5563' : '#BDBDBD';
             menu_item.querySelector('svg').innerHTML =
-              '<rect x="1" y="1" width="22" height="22" rx="11" fill="#fff"></rect><rect x="1" y="1" width="22" height="22" rx="11" stroke="#BDBDBD" stroke-width="2"></rect>';
+              `<rect x="1" y="1" width="22" height="22" rx="11" fill="${fillColor}"></rect><rect x="1" y="1" width="22" height="22" rx="11" stroke="${strokeColor}" stroke-width="2"></rect>`;
           }
         });
       });
@@ -180,9 +195,29 @@ const initTimelineCurve = function () {
   });
 };
 
+const initThemeToggle = function () {
+  const toggles = document.querySelectorAll('.theme-toggle-btn');
+  toggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (typeof window.toggleTheme === 'function') {
+        window.toggleTheme();
+      }
+    });
+  });
+};
+
+const toggleTheme = function () {
+  const html = document.documentElement;
+  const isDarkMode = html.classList.toggle('dark');
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+};
+
+window.toggleTheme = toggleTheme;
+
 window.addEventListener('load', function () {
   initMainMenu();
   initFilters();
   initForms();
   initTimelineCurve();
+  initThemeToggle();
 });

@@ -21,28 +21,33 @@
           "
           sizes="100vw"
         />
+        <div class="absolute inset-0 hidden dark:block bg-black/20"></div>
       </div>
     {{- end }}
   </div>
   <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pb-16 lg:pb-24"
   >
     <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-2 lg:pt-[120px]">
       <div class="top-10 flex flex-row gap-5 lg:sticky lg:flex-col lg:gap-0">
         <p
-          class="text-sm font-medium text-gray-800 md:text-base md:font-light lg:mb-5"
+          class="text-sm font-medium text-gray-800 dark:text-gray-300 md:text-base md:font-light lg:mb-5"
         >
           Published on <br />
           {{- $dateHuman := .Date | time.Format ":date_long" }}
           {{- $dateHuman }}
         </p>
-        <p class="text-sm text-gray-800 md:text-base lg:mb-5">
+        <p
+          class="text-sm text-gray-800 dark:text-gray-300 md:text-base lg:mb-5"
+        >
           Written by <br />{{ .Params.author }}
         </p>
         <div class="hidden flex-col md:mt-7 lg:flex">
-          <p class="mb-5">Share this post</p>
+          <p class="mb-5 dark:text-gray-200">Share this post</p>
           <div class="flex gap-4">
-            <div class="text-black hover:text-fika-purple">
+            <div
+              class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+            >
               <button
                 aria-label="facebook"
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -62,7 +67,9 @@
                 </svg>
               </button>
             </div>
-            <div class="text-black hover:text-fika-purple">
+            <div
+              class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+            >
               <button
                 aria-label="twitter"
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -82,7 +89,9 @@
                 </svg>
               </button>
             </div>
-            <div class="text-black hover:text-fika-purple">
+            <div
+              class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+            >
               <button
                 aria-label="telegram"
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -102,7 +111,9 @@
                 </svg>
               </button>
             </div>
-            <div class="text-black hover:text-fika-purple">
+            <div
+              class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+            >
               <button
                 aria-label="whatsapp"
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -128,7 +139,9 @@
                 </svg>
               </button>
             </div>
-            <div class="text-black hover:text-fika-purple">
+            <div
+              class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+            >
               <button
                 aria-label="email"
                 class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -151,6 +164,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    class="dark:stroke-gray-900"
                   ></path>
                 </svg>
               </button>
@@ -164,18 +178,23 @@
     >
       <div class="flex flex-wrap gap-3">
         {{- range .Params.tags }}
-          <div class="inline-block rounded bg-fika-dust py-[6px] px-3">
-            <span class="flex items-center text-xs font-normal capitalize"
+          <div
+            class="inline-block rounded bg-fika-dust dark:bg-gray-700 py-[6px] px-3"
+          >
+            <span
+              class="flex items-center text-xs font-normal capitalize dark:text-gray-200"
               >•
               {{ . }}
             </span>
           </div>
         {{- end }}
       </div>
-      <h1 class="mb-8 mt-12 text-2xl font-medium leading-tight lg:text-5xl">
+      <h1
+        class="mb-8 mt-12 text-2xl font-medium leading-tight lg:text-5xl dark:text-white"
+      >
         {{ .Title }}
       </h1>
-      <div class="text-lg font-light">
+      <div class="text-lg font-light dark:text-gray-200">
         {{ partial "helpers/enhanced-content.html" .Content }}
       </div>
     </div>
@@ -183,10 +202,12 @@
   <div
     class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 lg:hidden"
   >
-    <div class="col-span-full my-10 flex flex-col">
-      <p class="mb-6">Share this post</p>
+    <div class="col-span-full mt-10 mb-16 lg:mb-24 flex flex-col">
+      <p class="mb-6 dark:text-gray-200">Share this post</p>
       <div class="flex gap-10">
-        <div class="text-black hover:text-fika-purple">
+        <div
+          class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+        >
           <button
             aria-label="facebook"
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -206,7 +227,9 @@
             </svg>
           </button>
         </div>
-        <div class="text-black hover:text-fika-purple">
+        <div
+          class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+        >
           <button
             aria-label="twitter"
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -226,7 +249,9 @@
             </svg>
           </button>
         </div>
-        <div class="text-black hover:text-fika-purple">
+        <div
+          class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+        >
           <button
             aria-label="telegram"
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -246,7 +271,9 @@
             </svg>
           </button>
         </div>
-        <div class="text-black hover:text-fika-purple">
+        <div
+          class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+        >
           <button
             aria-label="whatsapp"
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -272,7 +299,9 @@
             </svg>
           </button>
         </div>
-        <div class="text-black hover:text-fika-purple">
+        <div
+          class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300"
+        >
           <button
             aria-label="email"
             class="react-share__ShareButton h-8 w-8 cursor-pointer"
@@ -290,6 +319,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                class="dark:stroke-gray-900"
               ></path>
             </svg>
           </button>

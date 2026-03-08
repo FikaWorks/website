@@ -1,13 +1,15 @@
 {{- define "main" }}
-  <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-white">
+  <div class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-white dark:bg-gray-900">
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-start-2 lg:col-end-8">
-        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
+        <h1 class="text-3xl font-medium lg:text-7xl dark:text-white">
+          {{ .Title }}
+        </h1>
       </div>
       <div class="col-span-full lg:col-start-8 lg:col-end-13">
-        <div class="text-lg font-light lg:text-2xl">
+        <div class="text-lg font-light lg:text-2xl dark:text-gray-200">
           <p class="pb-5 font-light lg:pb-6">
             {{ .Content }}
           </p>
@@ -15,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-white pb-6 lg:pb-14">
+  <div class="bg-white dark:bg-gray-900 pb-14 lg:pb-24">
     <div
       class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
     >
@@ -33,12 +35,26 @@
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 315 42"
+                        class="dark:hidden"
                       >
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
                           d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
                           fill="#fff"
+                        ></path>
+                      </svg>
+                      <svg
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 315 42"
+                        class="hidden dark:block"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M303 29.5c6.615 0 11.979 5.352 12 11.961V0H.478a12 12 0 0 1 8.984 4.045l18.956 21.41a12 12 0 0 0 8.985 4.045H303Z"
+                          fill="#0B0F19"
                         ></path>
                       </svg>
                     </div>
@@ -70,9 +86,9 @@
                       <div class="mt-3">
                         {{- range .Params.tags }}
                           <span
-                            class="inline-block rounded bg-fika-dust py-[6px] px-3 mt-1"
+                            class="inline-block rounded bg-fika-dust dark:bg-gray-700 py-[6px] px-3 mt-1"
                             ><span
-                              class="flex items-center text-xs font-normal capitalize"
+                              class="flex items-center text-xs font-normal capitalize dark:text-gray-200"
                               >• {{ . }}</span
                             ></span
                           >
@@ -83,17 +99,20 @@
                 </div>
                 <div class="mt-7">
                   <div class="flex gap-5 font-medium">
-                    <span class="text-gray-800">{{ .Params.author }}</span
-                    ><span class="text-gray-600">
+                    <span class="text-gray-800 dark:text-gray-300"
+                      >{{ .Params.author }}</span
+                    ><span class="text-gray-600 dark:text-gray-400">
                       {{- .ReadingTime }} minutes reading</span
                     >
                   </div>
                   <span
-                    class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple"
+                    class="mt-2 text-2xl font-medium hover:underline hover:underline-offset-8 leading-10 hover:decoration-fika-purple dark:text-white"
                     >{{ .Title }}</span
                   >
                   <div class="mt-3 lg:hidden">
-                    <p class="text-lg font-medium underline underline-offset-2">
+                    <p
+                      class="text-lg font-medium underline underline-offset-2 dark:text-white"
+                    >
                       Read more
                     </p>
                   </div>

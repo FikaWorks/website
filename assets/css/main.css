@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 @source "hugo_stats.json";
 
 @font-face {
@@ -29,7 +30,7 @@
   --color-fika-light-purple: #d0cbf2;
   --color-fika-purple: #8c7de5;
   --color-fika-hover-purple: #a397ea;
-  --color-fika-orange: #ff8c3c;
+  --color-fika-orange: #e67a2e;
   --color-fika-soft-pink: #ec96b5;
   --color-fika-soft-blue: #9aafe3;
   --color-fika-sky-blue: #97ced6;
@@ -39,9 +40,24 @@
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
   --color-fika-soft-pink-hover: #fdf2f6;
+  --color-fika-soft-green-shadow: #0d2818;
+  --color-fika-soft-yellow-shadow: #2a2008;
+  --color-fika-soft-blue-shadow: #0f1a30;
+  --color-fika-soft-pink-shadow: #2a0f1e;
+  --color-fika-soft-green-dark: #064e3b;
+  --color-fika-soft-yellow-dark: #422006;
+  --color-fika-soft-blue-dark: #1e3a5f;
+  --color-fika-soft-pink-dark: #701a4e;
   --color-fika-text-green: #2d8f4e;
   --color-fika-text-yellow: #8b7355;
   --color-fika-text-blue: #2c4a8c;
+  --color-fika-accent-green: #34d399;
+  --color-fika-accent-yellow: #facc15;
+  --color-fika-accent-blue: #60a5fa;
+  --color-fika-accent-pink: #f472b6;
+  --color-fika-dark-bg: #09071f;
+  --color-fika-dark-surface: #161825;
+  --color-fika-dark-elevated: #1e2130;
 
   --breakpoint-3xl: 2000px;
   --breakpoint-4xl: 3000px;
@@ -104,6 +120,11 @@ body {
   font-size: 0.65em;
 }
 
+.dark .highlight pre {
+  background-color: var(--color-gray-800);
+  color: #e5e7eb;
+}
+
 table {
   font-size: 0.8em;
 }
@@ -136,4 +157,281 @@ table tr td {
   z-index: 10;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 3px white;
+}
+
+.dark .dark-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(140, 125, 229, 0.2) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(140, 125, 229, 0.15) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(140, 125, 229, 0.18) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 85%,
+      rgba(140, 125, 229, 0.2) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 5% 50%,
+      rgba(140, 125, 229, 0.15) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(140, 125, 229, 0.15) 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(rgba(140, 125, 229, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 125, 229, 0.03) 1px, transparent 1px),
+    linear-gradient(
+      45deg,
+      rgba(140, 125, 229, 0.02) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(34, 211, 238, 0.02) 100%
+    ),
+    radial-gradient(
+      ellipse at 80% 90%,
+      rgba(140, 125, 229, 0.07) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 20% 10%,
+      rgba(34, 211, 238, 0.035) 0%,
+      transparent 50%
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-services-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle 2px at 15% 25%,
+      rgba(124, 111, 208, 0.35) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 2px at 85% 15%,
+      rgba(34, 211, 238, 0.3) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 2px at 45% 45%,
+      rgba(124, 111, 208, 0.3) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 2px at 75% 65%,
+      rgba(34, 211, 238, 0.3) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 2px at 25% 80%,
+      rgba(124, 111, 208, 0.3) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 1.5px at 60% 10%,
+      rgba(34, 211, 238, 0.25) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle 1.5px at 5% 55%,
+      rgba(124, 111, 208, 0.25) 0%,
+      transparent 100%
+    ),
+    linear-gradient(rgba(124, 111, 208, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 111, 208, 0.04) 1px, transparent 1px),
+    radial-gradient(
+      circle 800px at 0% 0%,
+      rgba(124, 111, 208, 0.09) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 600px at 100% 100%,
+      rgba(34, 211, 238, 0.06) 0%,
+      transparent 70%
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-cta-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+    repeating-radial-gradient(
+      ellipse at 50% 150%,
+      rgba(34, 211, 238, 0.02) 0%,
+      transparent 5%,
+      transparent 10%,
+      rgba(140, 125, 229, 0.02) 15%,
+      transparent 20%
+    ),
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(140, 125, 229, 0.07) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(34, 211, 238, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 0% 100%,
+      rgba(244, 114, 182, 0.025) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(140, 125, 229, 0.06) 0%,
+      transparent 50%
+    );
+  background-size:
+    100px 100px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .list-background li {
+  background-color: var(--color-gray-800);
+  box-shadow: -1.25rem 0 var(--color-gray-800);
+}
+
+.dark blockquote {
+  border-left-color: var(--color-gray-700);
+  color: #d1d5db;
+}
+
+.dark .timeline-dot {
+  box-shadow: 0 0 0 3px var(--color-gray-900);
+}
+
+.dark table {
+  color: #e5e7eb;
+}
+
+.dark table th {
+  color: #f9fafb;
+}
+
+.dark table td {
+  border-top-color: var(--color-gray-700);
+}
+
+.dark table a {
+  color: #94a3b8;
+}
+
+.dark table a:hover {
+  color: #e2e8f0;
+}
+
+.dark table img[src*='icons8'] {
+  filter: invert(1);
+}
+
+/* Theme Toggle Animation */
+html.dark .sun-icon {
+  opacity: 0;
+  rotate: -90deg;
+  scale: 0;
+}
+
+html.dark .moon-icon {
+  opacity: 1;
+  rotate: 0deg;
+  scale: 1;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sun-icon,
+  .moon-icon {
+    transition: none !important;
+  }
+}
+
+/* Smooth theme transitions for theme-aware elements */
+body,
+.bg-white,
+.bg-fika-offWhite,
+.bg-fika-dust,
+.bg-gray-100,
+.bg-gray-800 {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+nav svg,
+nav svg path,
+nav button,
+nav .bg-white,
+nav .dark\:bg-gray-950 {
+  transition: none !important;
+}
+
+.dark {
+  --color-gray-950: #080b14;
+  --color-gray-900: #0b0f19;
+  --color-gray-800: #161b28;
+  --color-gray-750: #1e2433;
+  --color-gray-700: #2a3142;
+  --color-fika-dark-bg: #0b0f19;
+  --color-fika-dark-surface: #111827;
+  --color-fika-dark-elevated: #1e2433;
+  --color-fika-purple: #7c6fd0;
+  --color-fika-hover-purple: #9087d9;
+  --color-fika-light-purple: #4a4273;
 }
