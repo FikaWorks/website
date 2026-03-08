@@ -1,14 +1,10 @@
 {{- define "main" }}
   <div class="relative w-full pb-6 pt-9 lg:py-0">
-    <div class="relative overflow-hidden">
+    <div class="relative overflow-hidden dark-services-bg dark:bg-gray-900">
       {{- $hero_img := resources.Get "/images/bg-cloud-curly.jpeg" }}
       {{- $hero_small := $hero_img.Resize "800x webp" }}
       {{- $hero_medium := $hero_img.Resize "1600x webp" }}
       {{- $hero_large := $hero_img.Resize "2000x webp" }}
-      {{- $hero_img_dark := resources.Get "/images/bg-cloud-curly-dark.jpeg" }}
-      {{- $hero_small_dark := $hero_img_dark.Resize "800x webp" }}
-      {{- $hero_medium_dark := $hero_img_dark.Resize "1600x webp" }}
-      {{- $hero_large_dark := $hero_img_dark.Resize "2000x webp" }}
       <img
         alt=""
         src="{{ $hero_medium.RelPermalink }}"
@@ -20,18 +16,7 @@
         sizes="100vw"
         class="absolute inset-0 w-full h-full object-cover dark:hidden"
       />
-      <img
-        alt=""
-        src="{{ $hero_medium_dark.RelPermalink }}"
-        srcset="
-          {{- $hero_small_dark.RelPermalink }}  800w,
-          {{- $hero_medium_dark.RelPermalink }} 1600w,
-          {{- $hero_large_dark.RelPermalink }} 2000w
-        "
-        sizes="100vw"
-        class="absolute inset-0 w-full h-full object-cover hidden dark:block"
-      />
-      <div class="absolute inset-0 bg-white/50 dark:bg-black/50"></div>
+      <div class="absolute inset-0 bg-white/50 dark:bg-transparent"></div>
       <div
         class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 mt-20 lg:mt-0 lg:min-h-[80vh] lg:items-center lg:content-center"
       >
@@ -48,7 +33,7 @@
           <div class="pt-4 lg:pt-6 text-center">
             <a href="#approach"
               ><div
-                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-white dark:text-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+                class="cta-glow group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-fika-purple dark:hover:bg-fika-hover-purple active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
               >
                 <div
                   class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"

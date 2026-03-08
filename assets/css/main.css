@@ -40,17 +40,21 @@
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
   --color-fika-soft-pink-hover: #fdf2f6;
-  --color-fika-soft-green-shadow: #1a3a24;
-  --color-fika-soft-yellow-shadow: #3a3520;
-  --color-fika-soft-blue-shadow: #1a2540;
-  --color-fika-soft-pink-shadow: #3a1a28;
-  --color-fika-soft-green-dark: #2d6b42;
-  --color-fika-soft-yellow-dark: #8a7a2e;
-  --color-fika-soft-blue-dark: #3d5a8a;
-  --color-fika-soft-pink-dark: #9e4a6e;
+  --color-fika-soft-green-shadow: #0d2818;
+  --color-fika-soft-yellow-shadow: #2a2008;
+  --color-fika-soft-blue-shadow: #0f1a30;
+  --color-fika-soft-pink-shadow: #2a0f1e;
+  --color-fika-soft-green-dark: #064e3b;
+  --color-fika-soft-yellow-dark: #422006;
+  --color-fika-soft-blue-dark: #1e3a5f;
+  --color-fika-soft-pink-dark: #701a4e;
   --color-fika-text-green: #2d8f4e;
   --color-fika-text-yellow: #8b7355;
   --color-fika-text-blue: #2c4a8c;
+  --color-fika-accent-green: #34d399;
+  --color-fika-accent-yellow: #facc15;
+  --color-fika-accent-blue: #60a5fa;
+  --color-fika-accent-pink: #f472b6;
   --color-fika-dark-bg: #09071f;
   --color-fika-dark-surface: #161825;
   --color-fika-dark-elevated: #1e2130;
@@ -155,7 +159,178 @@ table tr td {
   box-shadow: 0 0 0 3px white;
 }
 
-/* Dark mode overrides */
+.dark .dark-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(140, 125, 229, 0.2) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(140, 125, 229, 0.15) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(140, 125, 229, 0.18) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 85%,
+      rgba(140, 125, 229, 0.2) 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 5% 50%,
+      rgba(140, 125, 229, 0.15) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(140, 125, 229, 0.15) 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(rgba(140, 125, 229, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 125, 229, 0.03) 1px, transparent 1px),
+    linear-gradient(
+      45deg,
+      rgba(140, 125, 229, 0.02) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(34, 211, 238, 0.02) 100%
+    ),
+    radial-gradient(
+      ellipse at 80% 90%,
+      rgba(140, 125, 229, 0.07) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 20% 10%,
+      rgba(34, 211, 238, 0.035) 0%,
+      transparent 50%
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-services-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 239px,
+      rgba(34, 211, 238, 0.08) 239px,
+      rgba(34, 211, 238, 0.08) 241px,
+      transparent 241px
+    ),
+    linear-gradient(
+      transparent 319px,
+      rgba(140, 125, 229, 0.08) 319px,
+      rgba(140, 125, 229, 0.08) 321px,
+      transparent 321px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 639px,
+      rgba(140, 125, 229, 0.06) 639px,
+      rgba(140, 125, 229, 0.06) 641px,
+      transparent 641px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(34, 211, 238, 0.02) 10px,
+      rgba(34, 211, 238, 0.02) 11px
+    ),
+    linear-gradient(rgba(140, 125, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 125, 229, 0.04) 1px, transparent 1px),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(230, 122, 46, 0.03) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(140, 125, 229, 0.06) 0%,
+      transparent 50%
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    80px 80px,
+    80px 80px,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-cta-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+    repeating-radial-gradient(
+      ellipse at 50% 150%,
+      rgba(34, 211, 238, 0.02) 0%,
+      transparent 5%,
+      transparent 10%,
+      rgba(140, 125, 229, 0.02) 15%,
+      transparent 20%
+    ),
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(140, 125, 229, 0.07) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(34, 211, 238, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 0% 100%,
+      rgba(244, 114, 182, 0.025) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(140, 125, 229, 0.06) 0%,
+      transparent 50%
+    );
+  background-size:
+    100px 100px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
 .dark .list-background li {
   background-color: var(--color-gray-800);
   box-shadow: -1.25rem 0 var(--color-gray-800);
@@ -188,6 +363,15 @@ table tr td {
 
 .dark table img[src*='icons8'] {
   filter: invert(1);
+}
+
+/* Dark mode CTA button glow */
+.dark .cta-glow {
+  box-shadow: 0 0 24px -6px rgba(140, 125, 229, 0.4);
+}
+
+.dark .cta-glow:hover {
+  box-shadow: 0 0 32px -4px rgba(140, 125, 229, 0.55);
 }
 
 /* Theme Toggle Animation */
@@ -234,11 +418,11 @@ nav .dark\:bg-gray-950 {
 
 .dark {
   --color-gray-950: #12112a;
-  --color-gray-900: #09071f;
-  --color-gray-800: #1e2035;
-  --color-gray-750: #252840;
-  --color-gray-700: #2f3348;
-  --color-fika-dark-bg: #09071f;
-  --color-fika-dark-surface: #161830;
-  --color-fika-dark-elevated: #232640;
+  --color-gray-900: #0b0f19;
+  --color-gray-800: #161b28;
+  --color-gray-750: #1e2433;
+  --color-gray-700: #2a3142;
+  --color-fika-dark-bg: #0b0f19;
+  --color-fika-dark-surface: #111827;
+  --color-fika-dark-elevated: #1e2433;
 }

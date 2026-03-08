@@ -1,19 +1,12 @@
 {{- define "main" }}
   <div class="relative mb-14">
-    <div class="relative">
+    <div class="relative dark-hero-bg dark:bg-gray-900">
       {{- $img_desktop := resources.Get "/images/website-background-desktop.jpeg" }}
       {{- $img_mobile := resources.Get "/images/website-background-mobile.jpeg" }}
       {{- $tiny := $img_mobile.Resize "640x webp" }}
       {{- $small := $img_mobile.Resize "1280x webp" }}
       {{- $medium := $img_desktop.Resize "1600x webp" }}
       {{- $large := $img_desktop.Resize "2000x webp" }}
-
-      {{- $img_desktop_dark := resources.Get "/images/website-background-desktop-dark.jpeg" }}
-      {{- $img_mobile_dark := resources.Get "/images/website-background-mobile-dark.jpeg" }}
-      {{- $tiny_dark := $img_mobile_dark.Resize "640x webp" }}
-      {{- $small_dark := $img_mobile_dark.Resize "1280x webp" }}
-      {{- $medium_dark := $img_desktop_dark.Resize "1600x webp" }}
-      {{- $large_dark := $img_desktop_dark.Resize "2000x webp" }}
       <img
         class="dark:hidden"
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
@@ -28,20 +21,7 @@
         height="100%"
         sizes="100vw"
       />
-      <img
-        class="hidden dark:block"
-        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
-        src="{{ $medium_dark.RelPermalink }}"
-        srcset="
-          {{- $tiny_dark.RelPermalink }}  640w,
-          {{- $small_dark.RelPermalink }} 1280w,
-          {{- $medium_dark.RelPermalink }} 1600w,
-          {{- $large_dark.RelPermalink }} 2000w
-        "
-        width="100%"
-        height="100%"
-        sizes="100vw"
-      />
+      <div class="hidden dark:block w-full" style="aspect-ratio: 16/9;"></div>
     </div>
     <div
       class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
@@ -54,7 +34,7 @@
       <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
         <a href="/services">
           <div
-            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black dark:bg-white dark:text-black active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            class="cta-glow group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black dark:bg-fika-purple dark:hover:bg-fika-hover-purple active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
           >
             <div
               class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
@@ -399,7 +379,9 @@
       class="z-10 col-span-full -mt-2 flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:mt-0 lg:pt-20"
     >
       <div>
-        <div class="w-full bg-fika-dust dark:bg-fika-dark-elevated p-8">
+        <div
+          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
+        >
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">100% open source</span>
             <div
@@ -444,7 +426,9 @@
         </div>
       </div>
       <div>
-        <div class="w-full bg-fika-dust dark:bg-fika-dark-elevated p-8">
+        <div
+          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
+        >
           <div class="mb-1 lg:mb-2">
             <span class="text-3xl font-medium">engage with our engineers</span>
             <div
