@@ -1,6 +1,6 @@
 {{- define "main" }}
   <div class="relative w-full pb-6 pt-9 lg:py-0">
-    <div class="relative overflow-hidden dark-services-bg dark:bg-gray-900">
+    <div class="relative overflow-hidden dark-services-bg dark:bg-gray-900 min-h-screen">
       {{- $hero_img := resources.Get "/images/bg-cloud-curly.jpeg" }}
       {{- $hero_small := $hero_img.Resize "800x webp" }}
       {{- $hero_medium := $hero_img.Resize "1600x webp" }}
@@ -18,14 +18,14 @@
       />
       <div class="absolute inset-0 bg-white/50 dark:bg-transparent"></div>
       <div
-        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 mt-20 lg:mt-0 lg:min-h-[80vh] lg:items-center lg:content-center"
+        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 min-h-screen items-center content-center"
       >
         <div
-          class="col-span-full lg:col-start-3 lg:col-end-11 lg:pt-[90px] pb-10 lg:pb-14"
+          class="col-span-full lg:col-start-3 lg:col-end-11"
         >
-          <div class="pt-3 px-10 py-6 lg:py-14">
+          <div class="px-10 py-6 lg:py-10">
             <div
-              class="pb-5 font-light lg:pb-6 py-6 mt-10 lg:mt-0 lg:py-14 text-center text-2xl lg:text-3xl font-light text-black dark:text-white"
+              class="font-light text-center text-2xl lg:text-3xl text-black dark:text-white"
             >
               {{ .Content }}
             </div>
@@ -33,7 +33,7 @@
           <div class="pt-4 lg:pt-6 text-center">
             <a href="#approach"
               ><div
-                class="cta-glow group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-fika-purple dark:hover:bg-fika-hover-purple active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
               >
                 <div
                   class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"

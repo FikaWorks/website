@@ -236,54 +236,65 @@ table tr td {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(
-      90deg,
-      transparent 239px,
-      rgba(34, 211, 238, 0.08) 239px,
-      rgba(34, 211, 238, 0.08) 241px,
-      transparent 241px
-    ),
-    linear-gradient(
-      transparent 319px,
-      rgba(140, 125, 229, 0.08) 319px,
-      rgba(140, 125, 229, 0.08) 321px,
-      transparent 321px
-    ),
-    linear-gradient(
-      90deg,
-      transparent 639px,
-      rgba(140, 125, 229, 0.06) 639px,
-      rgba(140, 125, 229, 0.06) 641px,
-      transparent 641px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 10px,
-      rgba(34, 211, 238, 0.02) 10px,
-      rgba(34, 211, 238, 0.02) 11px
-    ),
-    linear-gradient(rgba(140, 125, 229, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(140, 125, 229, 0.04) 1px, transparent 1px),
     radial-gradient(
-      ellipse at 10% 90%,
-      rgba(230, 122, 46, 0.03) 0%,
-      transparent 40%
+      circle at 10% 20%,
+      rgba(124, 111, 208, 0.05) 0%,
+      transparent 25%
     ),
     radial-gradient(
-      ellipse at 90% 10%,
-      rgba(140, 125, 229, 0.06) 0%,
-      transparent 50%
-    );
+      circle at 85% 80%,
+      rgba(34, 211, 238, 0.03) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle 1px at 20% 30%,
+      rgba(124, 111, 208, 0.18) 0%,
+      rgba(124, 111, 208, 0.18) 100%
+    ),
+    radial-gradient(
+      circle 1px at 80% 20%,
+      rgba(34, 211, 238, 0.15) 0%,
+      rgba(34, 211, 238, 0.15) 100%
+    ),
+    radial-gradient(
+      circle 1px at 65% 70%,
+      rgba(124, 111, 208, 0.15) 0%,
+      rgba(124, 111, 208, 0.15) 100%
+    ),
+    radial-gradient(
+      circle 1px at 35% 75%,
+      rgba(34, 211, 238, 0.12) 0%,
+      rgba(34, 211, 238, 0.12) 100%
+    ),
+    radial-gradient(
+      circle 1px at 90% 50%,
+      rgba(124, 111, 208, 0.12) 0%,
+      rgba(124, 111, 208, 0.12) 100%
+    ),
+    radial-gradient(
+      circle 1px at 10% 60%,
+      rgba(34, 211, 238, 0.1) 0%,
+      rgba(34, 211, 238, 0.1) 100%
+    ),
+    radial-gradient(
+      circle 0.5px at 50% 15%,
+      rgba(124, 111, 208, 0.15) 0%,
+      rgba(124, 111, 208, 0.15) 100%
+    ),
+    linear-gradient(rgba(124, 111, 208, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 111, 208, 0.015) 1px, transparent 1px);
   background-size:
     100% 100%,
     100% 100%,
     100% 100%,
     100% 100%,
-    80px 80px,
-    80px 80px,
     100% 100%,
-    100% 100%;
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    120px 120px,
+    120px 120px;
 }
 
 .dark .dark-cta-bg::after {
@@ -358,20 +369,15 @@ table tr td {
 }
 
 .dark table a {
-  color: #c4b5fd;
+  color: #94a3b8;
+}
+
+.dark table a:hover {
+  color: #e2e8f0;
 }
 
 .dark table img[src*='icons8'] {
   filter: invert(1);
-}
-
-/* Dark mode CTA button glow */
-.dark .cta-glow {
-  box-shadow: 0 0 24px -6px rgba(140, 125, 229, 0.4);
-}
-
-.dark .cta-glow:hover {
-  box-shadow: 0 0 32px -4px rgba(140, 125, 229, 0.55);
 }
 
 /* Theme Toggle Animation */
@@ -417,7 +423,7 @@ nav .dark\:bg-gray-950 {
 }
 
 .dark {
-  --color-gray-950: #12112a;
+  --color-gray-950: #080b14;
   --color-gray-900: #0b0f19;
   --color-gray-800: #161b28;
   --color-gray-750: #1e2433;
@@ -425,4 +431,7 @@ nav .dark\:bg-gray-950 {
   --color-fika-dark-bg: #0b0f19;
   --color-fika-dark-surface: #111827;
   --color-fika-dark-elevated: #1e2433;
+  --color-fika-purple: #7c6fd0;
+  --color-fika-hover-purple: #9087d9;
+  --color-fika-light-purple: #4a4273;
 }
