@@ -218,40 +218,43 @@
       </div>
 
       <div class="col-span-full sm:col-start-1 sm:col-end-13">
-        <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div
+          class="grid grid-cols-2 gap-4 sm:gap-10 md:grid-cols-3 lg:grid-cols-4"
+        >
           {{- range .Pages }}
             {{- $filter_classes := delimit (apply .Params.expertises "printf" "filtered-item-%s" ".") " " | lower }}
-            <div
-              class="col-span-full sm:col-span-1 filtered-item {{ $filter_classes }}"
-            >
-              <div class="relative">
+            <div class="col-span-1 filtered-item {{ $filter_classes }}">
+              <div class="relative dark:text-white">
                 <div
-                  class="relative h-full w-full bg-fika-dust dark:bg-gray-800 dark:border dark:border-white/5 dark:text-white"
+                  class="dark:p-px dark:bg-white/5 dark:[clip-path:polygon(0_0,calc(100%-20px)_0,100%_20px,100%_100%,0_100%)]"
                 >
                   <div
-                    class="absolute top-0 right-0 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-white dark:border-t-gray-900"
-                  ></div>
-                  <div class="w-full">
+                    class="relative h-full w-full bg-fika-dust dark:bg-gray-800 dark:[clip-path:polygon(0_0,calc(100%-20px)_0,100%_20px,100%_100%,0_100%)]"
+                  >
                     <div
-                      class="relative transform transition duration-300 ease-linear align-middle"
-                    >
-                      {{- $img := .Resources.Get .Params.image }}
-                      {{- if $img }}
-                        {{- $small := $img.Resize "128x webp" }}
-                        {{- $medium := $img.Resize "256x webp" }}
-                        {{- $large := $img.Resize "512x webp" }}
-                        <img
-                          alt="{{ .Title }}"
-                          src="{{ $medium.RelPermalink }}"
-                          srcset="
-                            {{ $small.RelPermalink }} 128w,
-                            {{ $medium.RelPermalink }} 256w,
-                            {{ $large.RelPermalink }} 512w
-                          "
-                          sizes="100vw"
-                          class="dark:ring-1 dark:ring-gray-700"
-                        />
-                      {{- end }}
+                      class="absolute top-0 right-0 z-10 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-white dark:hidden"
+                    ></div>
+                    <div class="w-full">
+                      <div
+                        class="relative transform transition duration-300 ease-linear align-middle"
+                      >
+                        {{- $img := .Resources.Get .Params.image }}
+                        {{- if $img }}
+                          {{- $small := $img.Resize "128x webp" }}
+                          {{- $medium := $img.Resize "256x webp" }}
+                          {{- $large := $img.Resize "512x webp" }}
+                          <img
+                            alt="{{ .Title }}"
+                            src="{{ $medium.RelPermalink }}"
+                            srcset="
+                              {{ $small.RelPermalink }} 128w,
+                              {{ $medium.RelPermalink }} 256w,
+                              {{ $large.RelPermalink }} 512w
+                            "
+                            sizes="100vw"
+                          />
+                        {{- end }}
+                      </div>
                     </div>
                   </div>
                 </div>
