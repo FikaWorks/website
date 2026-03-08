@@ -1,0 +1,295 @@
+{{- define "main" }}
+  <section
+    class="relative min-h-screen flex flex-col justify-center bg-fika-offWhite dark:bg-gray-900 dark-services-bg overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] dark:hidden"
+    ></div>
+    <div
+      class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl font-medium text-black dark:text-white"
+        >
+          {{ .Params.hero_title }}
+        </h1>
+        {{ if .Params.hero_subtitle }}
+          <p
+            class="text-xl lg:text-2xl font-light mt-4 lg:mt-6 text-gray-600 dark:text-gray-300"
+          >
+            {{ .Params.hero_subtitle }}
+          </p>
+        {{ end }}
+        <div class="mt-8 lg:mt-10">
+          <a href="/contact"
+            ><div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-center py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                Get in touch<svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div></div
+          ></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div
+        class="col-span-full lg:col-start-2 lg:col-end-10 text-lg font-light lg:text-2xl dark:text-gray-200"
+      >
+        {{ partial "helpers/enhanced-content-page.html" .Content }}
+      </div>
+    </div>
+  </section>
+
+  {{ if .Params.challenges }}
+    <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-10">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-14"
+          >
+            The Go-Live Challenge
+          </h2>
+          <div class="divide-y divide-gray-300 dark:divide-gray-700">
+            {{ range .Params.challenges }}
+              <div class="flex items-start gap-4 py-5 lg:py-6">
+                <span
+                  class="w-1.5 h-1.5 mt-2.5 rounded-full bg-fika-purple shrink-0"
+                ></span>
+                <p class="text-base lg:text-lg font-light dark:text-gray-200">
+                  {{ .text }}
+                </p>
+              </div>
+            {{ end }}
+          </div>
+          {{ if .Params.challenges_footer }}
+            <p class="text-base font-light italic mt-8 dark:text-gray-400">
+              {{ .Params.challenges_footer }}
+            </p>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ if .Params.provides }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-10">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-14"
+          >
+            What We Provide
+          </h2>
+          <div class="divide-y divide-gray-300 dark:divide-gray-700">
+            {{ range .Params.provides }}
+              <div class="flex items-start gap-4 py-5 lg:py-6">
+                <span
+                  class="w-1.5 h-1.5 mt-2.5 rounded-full bg-fika-purple shrink-0"
+                ></span>
+                <p class="text-base lg:text-lg font-light dark:text-gray-200">
+                  {{ .text }}
+                </p>
+              </div>
+            {{ end }}
+          </div>
+          {{ if .Params.provides_footer }}
+            <p class="text-base font-light italic mt-8 dark:text-gray-400">
+              {{ .Params.provides_footer }}
+            </p>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+
+  <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+        <h2
+          class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-16"
+        >
+          Engagement Deliverables
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {{ if .Params.included }}
+            <div
+              class="bg-white dark:bg-gray-800 dark:border dark:border-white/5 p-6 lg:p-8 rounded-lg"
+            >
+              <h3 class="text-xl font-medium lg:text-2xl mb-6 dark:text-white">
+                What's Included
+              </h3>
+              <ul class="space-y-4">
+                {{ range .Params.included }}
+                  <li class="flex items-start">
+                    <span
+                      class="w-1.5 h-1.5 mt-2.5 mr-3 rounded-full bg-fika-purple shrink-0"
+                    ></span>
+                    <span
+                      class="text-base lg:text-lg font-light dark:text-gray-200"
+                      >{{ .text }}</span
+                    >
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+          {{ if .Params.deliverables }}
+            <div
+              class="bg-white dark:bg-gray-800 dark:border dark:border-white/5 p-6 lg:p-8 rounded-lg"
+            >
+              <h3 class="text-xl font-medium lg:text-2xl mb-6 dark:text-white">
+                What You Receive
+              </h3>
+              <ul class="space-y-4">
+                {{ range .Params.deliverables }}
+                  <li class="flex items-start">
+                    <span
+                      class="w-1.5 h-1.5 mt-2.5 mr-3 rounded-full bg-fika-purple shrink-0"
+                    ></span>
+                    <span
+                      class="text-base lg:text-lg font-light dark:text-gray-200"
+                      >{{ .text }}</span
+                    >
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+          {{ if .Params.outcomes }}
+            <div
+              class="bg-white dark:bg-gray-800 dark:border dark:border-white/5 p-6 lg:p-8 rounded-lg"
+            >
+              <h3 class="text-xl font-medium lg:text-2xl mb-6 dark:text-white">
+                Outcome
+              </h3>
+              <ul class="space-y-4">
+                {{ range .Params.outcomes }}
+                  <li class="flex items-start">
+                    <span
+                      class="w-1.5 h-1.5 mt-2.5 mr-3 rounded-full bg-fika-purple shrink-0"
+                    ></span>
+                    <span
+                      class="text-base lg:text-lg font-light dark:text-gray-200"
+                      >{{ .text }}</span
+                    >
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ if .Params.process }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div class="mx-3 md:mx-10 mb-14 lg:mb-20">
+        <h2
+          class="text-3xl font-medium lg:text-5xl text-center dark:text-white"
+        >
+          FikaWorks 5-Step Process
+        </h2>
+      </div>
+      <div
+        id="timeline-container"
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-12 relative">
+          <svg
+            id="timeline-curve"
+            class="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-[1]"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          ></svg>
+          <div class="flex flex-col gap-y-5 lg:gap-y-6">
+            {{ range $index, $element := .Params.process }}
+              {{ $isEven := eq (math.Mod $index 2) 0 }}
+              <div
+                data-timeline-step
+                data-color="bg-gray-700"
+                class="relative flex justify-center {{ if $isEven }}
+                  lg:justify-start
+                {{ else }}
+                  lg:justify-end
+                {{ end }}"
+              >
+                <div
+                  class="w-full lg:w-[42%] {{ if $isEven }}
+                    lg:mr-auto
+                  {{ else }}
+                    lg:ml-auto
+                  {{ end }} relative"
+                >
+                  <div
+                    class="lg:hidden absolute left-0 top-[-12px] bg-gray-700 text-white text-base font-medium px-4 py-1.5 rounded-full z-20"
+                  >
+                    {{ .step }}
+                  </div>
+                  <div
+                    class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
+                  >
+                    <div
+                      class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-gray-300 dark:border-b-gray-700"
+                    ></div>
+                    <div class="h-full bg-gray-300 dark:bg-gray-700"></div>
+                  </div>
+                  <div class="h-full relative z-10">
+                    <div
+                      class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-dust dark:border-b-gray-800"
+                    ></div>
+                    <div
+                      class="bg-fika-dust dark:bg-gray-800 relative overflow-hidden px-5 py-6 lg:px-8 lg:py-8 lg:min-h-[200px]"
+                    >
+                      <div class="relative z-10">
+                        <h3
+                          class="text-2xl font-medium lg:text-3xl mb-2 lg:mb-3 dark:text-white"
+                        >
+                          {{ .title }}
+                        </h3>
+                        <p
+                          class="text-base lg:text-lg font-light leading-relaxed dark:text-gray-200"
+                        >
+                          {{ .description }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{- partial "cta.html" . }}
+{{- end }}
