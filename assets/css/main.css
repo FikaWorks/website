@@ -233,12 +233,12 @@ nav .dark\:bg-gray-950 {
 }
 
 .dark {
-  --color-gray-950: #030712;
+  --color-gray-950: #12112a;
   --color-gray-900: #09071f;
-  --color-gray-800: #161825;
-  --color-gray-750: #1e2130;
-  --color-gray-700: #2a2d3e;
+  --color-gray-800: #1e2035;
+  --color-gray-750: #252840;
+  --color-gray-700: #2f3348;
   --color-fika-dark-bg: #09071f;
-  --color-fika-dark-surface: #161825;
-  --color-fika-dark-elevated: #1e2130;
+  --color-fika-dark-surface: #161830;
+  --color-fika-dark-elevated: #232640;
 }
