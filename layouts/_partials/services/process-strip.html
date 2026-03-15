@@ -1,0 +1,48 @@
+<div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+  <div class="z-10 col-span-full lg:col-span-4 lg:col-start-2 lg:pt-4">
+    <div class="max-w-xl">
+      <div class="text-base font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+        Structured delivery
+      </div>
+      <p class="mt-6 text-lg font-light leading-8 text-gray-800 dark:text-gray-200 lg:text-2xl lg:leading-10">
+        Five focused steps, from alignment to delivery, with each phase building cleanly on the last.
+      </p>
+      <p class="mt-5 max-w-lg text-base font-light leading-7 text-gray-600 dark:text-gray-300 lg:text-lg">
+        A compact view of how the engagement moves forward.
+      </p>
+    </div>
+  </div>
+  <div class="absolute right-0 top-0 z-0 hidden h-full max-h-[92%] min-h-[520px] w-3/4 bg-fika-offWhite dark:bg-fika-dark-surface lg:block"></div>
+  <div class="z-10 col-span-full lg:col-span-5 lg:col-start-7 lg:pt-4">
+    <div class="relative">
+      <div class="flex flex-col gap-5 lg:gap-6">
+        {{ range $index, $element := .Params.process }}
+          <article class="relative flex items-start gap-4 lg:gap-5">
+            {{ if lt $index (sub (len $.Params.process) 1) }}
+              <div class="absolute left-[17px] top-[22px] hidden h-[calc(100%+1.25rem)] w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 lg:block lg:h-[calc(100%+1.5rem)]"></div>
+            {{ end }}
+            <div class="relative z-10 pt-1">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-fika-purple text-sm font-medium text-white">
+                {{ .step }}
+              </span>
+            </div>
+            <div class="min-w-0 flex-1 bg-fika-dust px-5 py-5 dark:bg-fika-dark-elevated dark:border dark:border-white/5 lg:px-6 lg:py-6">
+              <div class="flex flex-col gap-2 lg:flex-row lg:items-baseline lg:justify-between lg:gap-4">
+                <h3 class="text-xl font-medium leading-snug dark:text-white lg:text-2xl">
+                  {{ .title }}
+                </h3>
+                <div class="text-xs font-medium uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
+                  Step {{ .step }}
+                </div>
+              </div>
+              <p class="pt-3 text-sm font-light leading-7 text-gray-700 dark:text-gray-200 lg:text-base">
+                {{ .description }}
+              </p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

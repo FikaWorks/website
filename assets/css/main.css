@@ -40,14 +40,14 @@
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
   --color-fika-soft-pink-hover: #fdf2f6;
-  --color-fika-soft-green-shadow: #0d2818;
-  --color-fika-soft-yellow-shadow: #2a2008;
-  --color-fika-soft-blue-shadow: #0f1a30;
-  --color-fika-soft-pink-shadow: #2a0f1e;
-  --color-fika-soft-green-dark: #064e3b;
-  --color-fika-soft-yellow-dark: #422006;
-  --color-fika-soft-blue-dark: #1e3a5f;
-  --color-fika-soft-pink-dark: #701a4e;
+  --color-fika-soft-green-shadow: #0f2c25;
+  --color-fika-soft-yellow-shadow: #35270b;
+  --color-fika-soft-blue-shadow: #132443;
+  --color-fika-soft-pink-shadow: #35172f;
+  --color-fika-soft-green-dark: #0a6b56;
+  --color-fika-soft-yellow-dark: #6a4a10;
+  --color-fika-soft-blue-dark: #29548c;
+  --color-fika-soft-pink-dark: #8d2d62;
   --color-fika-text-green: #2d8f4e;
   --color-fika-text-yellow: #8b7355;
   --color-fika-text-blue: #2c4a8c;
@@ -238,50 +238,61 @@ table tr td {
   background:
     radial-gradient(
       circle 2px at 15% 25%,
-      rgba(124, 111, 208, 0.35) 0%,
+      rgba(167, 128, 255, 0.42) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 2px at 85% 15%,
-      rgba(34, 211, 238, 0.3) 0%,
+      rgba(96, 165, 250, 0.26) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 2px at 45% 45%,
-      rgba(124, 111, 208, 0.3) 0%,
+      rgba(167, 128, 255, 0.34) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 2px at 75% 65%,
-      rgba(34, 211, 238, 0.3) 0%,
+      rgba(96, 165, 250, 0.24) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 2px at 25% 80%,
-      rgba(124, 111, 208, 0.3) 0%,
+      rgba(167, 128, 255, 0.32) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 1.5px at 60% 10%,
-      rgba(34, 211, 238, 0.25) 0%,
+      rgba(244, 114, 182, 0.16) 0%,
       transparent 100%
     ),
     radial-gradient(
       circle 1.5px at 5% 55%,
-      rgba(124, 111, 208, 0.25) 0%,
+      rgba(167, 128, 255, 0.26) 0%,
       transparent 100%
     ),
-    linear-gradient(rgba(124, 111, 208, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 111, 208, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(167, 128, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 128, 255, 0.06) 1px, transparent 1px),
     radial-gradient(
-      circle 800px at 0% 0%,
-      rgba(124, 111, 208, 0.09) 0%,
-      transparent 70%
+      circle 900px at 12% 18%,
+      rgba(108, 20, 238, 0.34) 0%,
+      transparent 58%
     ),
     radial-gradient(
-      circle 600px at 100% 100%,
-      rgba(34, 211, 238, 0.06) 0%,
-      transparent 70%
+      circle 720px at 85% 20%,
+      rgba(79, 70, 229, 0.24) 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle 680px at 80% 100%,
+      rgba(96, 165, 250, 0.18) 0%,
+      transparent 58%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(24, 19, 56, 0.96) 0%,
+      rgba(31, 21, 79, 0.94) 42%,
+      rgba(11, 15, 25, 0.98) 100%
     );
   background-size:
     100% 100%,
@@ -293,6 +304,116 @@ table tr td {
     100% 100%,
     60px 60px,
     60px 60px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-services-bg-blue::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 2px at 15% 25%, rgba(125, 211, 252, 0.34) 0%, transparent 100%),
+    radial-gradient(circle 2px at 85% 15%, rgba(96, 165, 250, 0.28) 0%, transparent 100%),
+    radial-gradient(circle 2px at 45% 45%, rgba(59, 130, 246, 0.32) 0%, transparent 100%),
+    radial-gradient(circle 2px at 75% 65%, rgba(129, 140, 248, 0.24) 0%, transparent 100%),
+    radial-gradient(circle 2px at 25% 80%, rgba(125, 211, 252, 0.26) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 139, 250, 0.14) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 5% 55%, rgba(96, 165, 250, 0.24) 0%, transparent 100%),
+    linear-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    radial-gradient(circle 900px at 12% 18%, rgba(22, 101, 216, 0.32) 0%, transparent 58%),
+    radial-gradient(circle 720px at 85% 20%, rgba(79, 70, 229, 0.18) 0%, transparent 48%),
+    radial-gradient(circle 680px at 80% 100%, rgba(56, 189, 248, 0.16) 0%, transparent 58%),
+    linear-gradient(135deg, rgba(9, 23, 52, 0.96) 0%, rgba(15, 39, 88, 0.94) 42%, rgba(11, 15, 25, 0.98) 100%);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-services-bg-teal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 2px at 15% 25%, rgba(94, 234, 212, 0.34) 0%, transparent 100%),
+    radial-gradient(circle 2px at 85% 15%, rgba(45, 212, 191, 0.28) 0%, transparent 100%),
+    radial-gradient(circle 2px at 45% 45%, rgba(20, 184, 166, 0.3) 0%, transparent 100%),
+    radial-gradient(circle 2px at 75% 65%, rgba(56, 189, 248, 0.18) 0%, transparent 100%),
+    radial-gradient(circle 2px at 25% 80%, rgba(94, 234, 212, 0.24) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 128, 255, 0.12) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 5% 55%, rgba(45, 212, 191, 0.22) 0%, transparent 100%),
+    linear-gradient(rgba(94, 234, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+    radial-gradient(circle 900px at 12% 18%, rgba(13, 148, 136, 0.3) 0%, transparent 58%),
+    radial-gradient(circle 720px at 85% 20%, rgba(8, 145, 178, 0.18) 0%, transparent 48%),
+    radial-gradient(circle 680px at 80% 100%, rgba(45, 212, 191, 0.16) 0%, transparent 58%),
+    linear-gradient(135deg, rgba(8, 31, 41, 0.96) 0%, rgba(10, 54, 63, 0.94) 42%, rgba(11, 15, 25, 0.98) 100%);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+.dark .dark-services-bg-amber::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 2px at 15% 25%, rgba(253, 224, 71, 0.3) 0%, transparent 100%),
+    radial-gradient(circle 2px at 85% 15%, rgba(251, 191, 36, 0.24) 0%, transparent 100%),
+    radial-gradient(circle 2px at 45% 45%, rgba(245, 158, 11, 0.26) 0%, transparent 100%),
+    radial-gradient(circle 2px at 75% 65%, rgba(251, 146, 60, 0.18) 0%, transparent 100%),
+    radial-gradient(circle 2px at 25% 80%, rgba(253, 224, 71, 0.2) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 128, 255, 0.1) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 5% 55%, rgba(251, 191, 36, 0.2) 0%, transparent 100%),
+    linear-gradient(rgba(251, 191, 36, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.045) 1px, transparent 1px),
+    radial-gradient(circle 900px at 12% 18%, rgba(180, 83, 9, 0.26) 0%, transparent 58%),
+    radial-gradient(circle 720px at 85% 20%, rgba(217, 119, 6, 0.18) 0%, transparent 48%),
+    radial-gradient(circle 680px at 80% 100%, rgba(251, 191, 36, 0.12) 0%, transparent 58%),
+    linear-gradient(135deg, rgba(44, 24, 9, 0.96) 0%, rgba(76, 43, 10, 0.92) 42%, rgba(11, 15, 25, 0.98) 100%);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    100% 100%,
+    100% 100%,
     100% 100%,
     100% 100%;
 }
@@ -425,13 +546,21 @@ nav .dark\:bg-gray-950 {
 .dark {
   --color-gray-950: #080b14;
   --color-gray-900: #0b0f19;
-  --color-gray-800: #161b28;
-  --color-gray-750: #1e2433;
-  --color-gray-700: #2a3142;
+  --color-gray-800: #141b2c;
+  --color-gray-750: #1b2440;
+  --color-gray-700: #2c3854;
   --color-fika-dark-bg: #0b0f19;
-  --color-fika-dark-surface: #111827;
-  --color-fika-dark-elevated: #1e2433;
-  --color-fika-purple: #7c6fd0;
-  --color-fika-hover-purple: #9087d9;
-  --color-fika-light-purple: #4a4273;
+  --color-fika-dark-surface: #10172a;
+  --color-fika-dark-elevated: #17213a;
+  --color-fika-purple: #8f63f7;
+  --color-fika-hover-purple: #a07af9;
+  --color-fika-light-purple: #56419a;
+  --color-fika-soft-green-shadow: #12352d;
+  --color-fika-soft-yellow-shadow: #3f2f0f;
+  --color-fika-soft-blue-shadow: #173055;
+  --color-fika-soft-pink-shadow: #441b39;
+  --color-fika-soft-green-dark: #0c745d;
+  --color-fika-soft-yellow-dark: #755116;
+  --color-fika-soft-blue-dark: #2f5f9e;
+  --color-fika-soft-pink-dark: #a13a73;
 }
