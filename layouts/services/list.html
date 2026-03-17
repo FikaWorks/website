@@ -5,13 +5,17 @@
       {{- $hero_small := $hero_img.Resize "800x webp" }}
       {{- $hero_medium := $hero_img.Resize "1600x webp" }}
       {{- $hero_large := $hero_img.Resize "2000x webp" }}
+      {{- $hero_xlarge := $hero_img.Resize "3000x webp" }}
+      {{- $hero_xxlarge := $hero_img.Resize "4000x webp" }}
       <img
         alt=""
         src="{{ $hero_medium.RelPermalink }}"
         srcset="
           {{- $hero_small.RelPermalink }}  800w,
           {{- $hero_medium.RelPermalink }} 1600w,
-          {{- $hero_large.RelPermalink }} 2000w
+          {{- $hero_large.RelPermalink }} 2000w,
+          {{- $hero_xlarge.RelPermalink }} 3000w,
+          {{- $hero_xxlarge.RelPermalink }} 4000w
         "
         sizes="100vw"
         class="absolute inset-0 w-full h-full object-cover dark:hidden"

@@ -7,6 +7,8 @@
       {{- $small := $img_mobile.Resize "1280x webp" }}
       {{- $medium := $img_desktop.Resize "1600x webp" }}
       {{- $large := $img_desktop.Resize "2000x webp" }}
+      {{- $xlarge := $img_desktop.Resize "3000x webp" }}
+      {{- $xxlarge := $img_desktop.Resize "4000x webp" }}
       <img
         class="absolute inset-0 w-full h-full object-cover dark:hidden"
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
@@ -15,7 +17,9 @@
           {{- $tiny.RelPermalink }}  640w,
           {{- $small.RelPermalink }} 1280w,
           {{- $medium.RelPermalink }} 1600w,
-          {{- $large.RelPermalink }} 2000w
+          {{- $large.RelPermalink }} 2000w,
+          {{- $xlarge.RelPermalink }} 3000w,
+          {{- $xxlarge.RelPermalink }} 4000w
         "
         sizes="100vw"
       />

@@ -57,24 +57,24 @@ text = 'Your business, engineering, operations, and security stakeholders'
 
 [[process]]
 step = '01'
-title = 'Discover Together'
-description = 'Verify basic requirements and site readiness'
+title = 'Discovery'
+description = 'We review your current setup, confirm requirements, and agree on scope.'
 [[process]]
 step = '02'
-title = 'Design with Purpose'
-description = 'Design basic configuration based on assessment'
+title = 'Design'
+description = 'We map out the target configuration based on what the assessment uncovered.'
 [[process]]
 step = '03'
-title = 'Build for Impact'
-description = 'Implement seamlessly — get up and running quickly'
+title = 'Build'
+description = 'We implement the plan and get things up and running.'
 [[process]]
 step = '04'
-title = 'Empower for the Future'
-description = 'Verify your teams and systems are working optimally'
+title = 'Validate'
+description = 'We verify everything works and your team can run it confidently.'
 [[process]]
 step = '05'
-title = 'Conclude'
-description = 'Provide "as-built" documentation and knowledge transfer'
+title = 'Handoff'
+description = 'We deliver as-built documentation and walk your team through it.'
 
 [[benefits]]
 text = 'Faster clarity and alignment across teams'
