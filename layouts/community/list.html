@@ -1,0 +1,71 @@
+{{- define "main" }}
+  {{- $hero_img := .Resources.GetMatch $.Params.hero_image }}
+  {{- if $hero_img }}
+    <div class="relative mb-14">
+      <div class="hidden md:block">
+        {{- $tiny := $hero_img.Resize "640x webp" }}
+        {{- $small := $hero_img.Resize "1024x webp" }}
+        {{- $medium := $hero_img.Resize "1600x webp" }}
+        {{- $large := $hero_img.Resize "2000x webp" }}
+        {{- $xlarge := $hero_img.Resize "3000x webp" }}
+        {{- $xxlarge := $hero_img.Resize "4000x webp" }}
+        <img
+          alt="{{ .Title }}"
+          src="{{ $medium.RelPermalink }}"
+          srcset="
+            {{- $tiny.RelPermalink }} 640w,
+            {{- $small.RelPermalink }} 1024w,
+            {{- $medium.RelPermalink }} 1600w,
+            {{- $large.RelPermalink }} 2000w,
+            {{- $xlarge.RelPermalink }} 3000w,
+            {{- $xxlarge.RelPermalink }} 4000w
+          "
+          width="100%"
+          height="100%"
+          sizes="100vw"
+        />
+      </div>
+    </div>
+  {{- end }}
+  <div
+    class="bg-white dark:bg-gray-900 dark:text-white {{ if not $hero_img }}
+      pt-28 lg:pt-36
+    {{ end }} pb-6 lg:pb-14"
+  >
+    <div id="" class="invisible relative -top-20 block"></div>
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-5xl">{{ .Title }}</div>
+        <div class="mt-6 lg:mt-8">
+          <div class="font-light text-lg lg:text-2xl">
+            {{- partial "helpers/enhanced-content-page.html" .Content }}
+          </div>
+        </div>
+
+        {{- $img2 := .Resources.GetMatch $.Params.image_2 }}
+        {{- if $img2 }}
+          <div class="my-12 lg:my-16">
+            {{- $img2_small := $img2.Resize "800x webp" }}
+            {{- $img2_medium := $img2.Resize "1200x webp" }}
+            {{- $img2_large := $img2.Resize "1600x webp" }}
+            <img
+              alt="FikaWorks Community Event"
+              src="{{ $img2_medium.RelPermalink }}"
+              srcset="
+                {{- $img2_small.RelPermalink }} 800w,
+                {{- $img2_medium.RelPermalink }} 1200w,
+                {{- $img2_large.RelPermalink }} 1600w
+              "
+              class="w-full rounded-lg shadow-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+        {{- end }}
+
+      </div>
+    </div>
+  </div>
+  {{- partial "cta.html" . }}
+{{- end }}
