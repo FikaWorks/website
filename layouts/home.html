@@ -7,6 +7,8 @@
       {{- $small := $img_mobile.Resize "1280x webp" }}
       {{- $medium := $img_desktop.Resize "1600x webp" }}
       {{- $large := $img_desktop.Resize "2000x webp" }}
+      {{- $xlarge := $img_desktop.Resize "3000x webp" }}
+      {{- $xxlarge := $img_desktop.Resize "4000x webp" }}
       <img
         class="absolute inset-0 w-full h-full object-cover dark:hidden"
         alt="FikaWorks, we are the next wave of Cloud Native Consultants"
@@ -15,7 +17,9 @@
           {{- $tiny.RelPermalink }}  640w,
           {{- $small.RelPermalink }} 1280w,
           {{- $medium.RelPermalink }} 1600w,
-          {{- $large.RelPermalink }} 2000w
+          {{- $large.RelPermalink }} 2000w,
+          {{- $xlarge.RelPermalink }} 3000w,
+          {{- $xxlarge.RelPermalink }} 4000w
         "
         sizes="100vw"
       />
@@ -154,7 +158,7 @@
                         Go-Live Enablement support.
                       </p>
                     </div>
-                    <a href="/services">
+                    <a href="/services/platform-go-live-enablement/">
                       <div
                         class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-green dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
@@ -229,7 +233,7 @@
                         collaborative Discovery Workshop.
                       </p>
                     </div>
-                    <a href="/services">
+                    <a href="/services/discovery-workshop/">
                       <div
                         class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-yellow dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >
@@ -304,7 +308,7 @@
                         expert Readiness Service.
                       </p>
                     </div>
-                    <a href="/services">
+                    <a href="/services/platform-readiness-service/">
                       <div
                         class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-blue dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
                       >

@@ -128,6 +128,19 @@ const initTimelineCurve = function () {
   if (!container || !svg) return;
 
   const wrapper = svg.parentElement; // The centered wrapper div (col-start-2 col-end-12)
+  const getStrokeColor = function () {
+    const styles = getComputedStyle(document.documentElement);
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    return (
+      styles
+        .getPropertyValue(isDarkMode ? '--color-gray-700' : '--color-fika-ash')
+        .trim() || '#d1c6b3'
+    );
+  };
+
+  const scheduleDraw = function () {
+    requestAnimationFrame(draw);
+  };
 
   const draw = function () {
     wrapper.querySelectorAll('.timeline-dot').forEach((el) => el.remove());
@@ -171,7 +184,7 @@ const initTimelineCurve = function () {
 
     svg.setAttribute('width', rect.width);
     svg.setAttribute('height', rect.height);
-    svg.innerHTML = `<path d="${d}" stroke="#d1c6b3" stroke-width="3" stroke-opacity="1" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />`;
+    svg.innerHTML = `<path d="${d}" stroke="${getStrokeColor()}" stroke-width="3" stroke-opacity="1" stroke-dasharray="6 6" fill="none" stroke-linecap="round" />`;
 
     points.forEach((p, i) => {
       const dot = document.createElement('div');
@@ -183,16 +196,24 @@ const initTimelineCurve = function () {
     });
   };
 
-  requestAnimationFrame(() => {
-    draw();
-    setTimeout(draw, 500);
-  });
+  scheduleDraw();
+  setTimeout(scheduleDraw, 300);
+
+  if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+    document.fonts.ready.then(scheduleDraw);
+  }
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const resizeObserver = new ResizeObserver(scheduleDraw);
+    resizeObserver.observe(wrapper);
+  }
 
   let resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(draw, 150);
+    resizeTimer = setTimeout(scheduleDraw, 150);
   });
+  window.addEventListener('themechange', scheduleDraw);
 };
 
 const initThemeToggle = function () {
@@ -210,6 +231,7 @@ const toggleTheme = function () {
   const html = document.documentElement;
   const isDarkMode = html.classList.toggle('dark');
   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  window.dispatchEvent(new Event('themechange'));
 };
 
 window.toggleTheme = toggleTheme;

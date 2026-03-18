@@ -1,0 +1,41 @@
+{{ $items := .items }}
+{{ $title := .title }}
+{{ $subtitle := .subtitle }}
+<div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+  <div class="z-10 col-span-full lg:col-span-4 lg:col-start-2 lg:pt-8">
+    <div class="max-w-xl">
+      <div class="text-3xl font-medium lg:text-5xl dark:text-white">
+        {{ $title }}
+      </div>
+      {{ if $subtitle }}
+        <p class="mt-6 text-lg font-light leading-8 text-gray-800 dark:text-gray-200 lg:text-2xl lg:leading-10">
+          {{ $subtitle }}
+        </p>
+      {{ end }}
+    </div>
+  </div>
+  <div class="absolute right-0 top-0 z-0 hidden h-full max-h-[92%] min-h-[420px] w-3/4 bg-white dark:bg-fika-dark-surface lg:block"></div>
+  <div class="z-10 col-span-full flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:pt-8">
+    {{ range $index, $item := $items }}
+      <div>
+        <div class="w-full lg:max-w-[34rem] bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8">
+          <div class="text-2xl font-medium lg:text-3xl dark:text-white">
+            {{ $item.title }}
+          </div>
+          <ul class="pt-6 space-y-4">
+            {{ range $item.items }}
+              <li class="flex items-start">
+                <span
+                  class="w-1.5 h-1.5 mt-2.5 mr-3 rounded-full bg-fika-purple shrink-0"
+                ></span>
+                <span class="text-base lg:text-lg font-light text-gray-800 dark:text-gray-200">
+                  {{ .text }}
+                </span>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
