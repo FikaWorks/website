@@ -1,0 +1,109 @@
+{{- $url := .Permalink -}}
+{{- $title := .Title -}}
+{{- $whatsAppText := printf "%s %s" $title $url -}}
+{{- $emailBody := printf "%s\n\n%s" $title $url -}}
+{{- $facebookHref := printf "https://www.facebook.com/sharer/sharer.php?u=%s" ($url | urlquery) -}}
+{{- $twitterHref := printf "https://twitter.com/intent/tweet?text=%s&url=%s" ($title | urlquery) ($url | urlquery) -}}
+{{- $telegramHref := printf "https://t.me/share/url?url=%s&text=%s" ($url | urlquery) ($title | urlquery) -}}
+{{- $whatsAppHref := printf "https://wa.me/?text=%s" ($whatsAppText | urlquery) -}}
+{{- $emailHref := printf "mailto:?subject=%s&body=%s" ($title | urlquery) ($emailBody | urlquery) -}}
+
+<div class="flex gap-4">
+  <div class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300">
+    <a
+      aria-label="Share on Facebook"
+      class="react-share__ShareButton block h-8 w-8 cursor-pointer"
+      {{ printf "href=%q" $facebookHref | safeHTMLAttr }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0 16C0 7.163 7.163 0 16 0s16 7.163 16 16-7.163 16-16 16S0 24.837 0 16Zm16-8c4.4 0 8 3.6 8 8 0 4-2.9 7.4-6.9 8v-5.7H19l.4-2.3h-2.2v-1.5c0-.6.3-1.2 1.3-1.2h1v-2s-.9-.2-1.8-.2c-1.8 0-3 1.1-3 3.1V16h-2v2.3h2v5.6C10.9 23.3 8 20 8 16c0-4.4 3.6-8 8-8Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+  </div>
+  <div class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300">
+    <a
+      aria-label="Share on X"
+      class="react-share__ShareButton block h-8 w-8 cursor-pointer"
+      {{ printf "href=%q" $twitterHref | safeHTMLAttr }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0 16C0 7.163 7.163 0 16 0s16 7.163 16 16-7.163 16-16 16S0 24.837 0 16Zm22.1-4.5c.7-.1 1.3-.2 1.9-.5-.4.7-1 1.3-1.7 1.7.2 4.7-3.2 9.8-9.3 9.8-1.8 0-3.5-.6-5-1.5 1.7.2 3.5-.3 4.7-1.2-1.5 0-2.7-1-3.1-2.3.5.1 1 0 1.5-.1-1.5-.4-2.6-1.8-2.6-3.3.5.2 1 .4 1.5.4-1.4-1-1.9-2.9-1-4.4 1.7 2 4.1 3.3 6.8 3.4-.5-2 1.1-4 3.2-4 .9 0 1.8.4 2.4 1 .8-.2 1.5-.4 2.1-.8-.2.8-.7 1.4-1.4 1.8Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+  </div>
+  <div class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300">
+    <a
+      aria-label="Share on Telegram"
+      class="react-share__ShareButton block h-8 w-8 cursor-pointer"
+      {{ printf "href=%q" $telegramHref | safeHTMLAttr }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16Zm.692-19.993c-1.433.596-4.297 1.83-8.592 3.701-.698.278-1.063.549-1.096.814-.056.449.505.625 1.27.866.104.032.212.066.322.102.752.245 1.764.53 2.29.542.477.01 1.01-.186 1.598-.59 4.013-2.709 6.084-4.078 6.214-4.108.092-.02.22-.047.305.03.087.076.078.221.069.26-.056.237-2.26 2.287-3.4 3.347-.356.33-.608.565-.66.619-.115.12-.233.233-.346.342-.699.674-1.223 1.179.029 2.004.602.396 1.083.724 1.563 1.051.525.358 1.048.714 1.725 1.158.172.113.337.23.497.344.61.436 1.16.826 1.837.764.393-.036.8-.406 1.007-1.51.488-2.61 1.447-8.263 1.669-10.592a2.602 2.602 0 0 0-.025-.58.621.621 0 0 0-.21-.4c-.176-.143-.448-.173-.57-.17-.554.009-1.405.305-5.496 2.006Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+  </div>
+  <div class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300">
+    <a
+      aria-label="Share on WhatsApp"
+      class="react-share__ShareButton block h-8 w-8 cursor-pointer"
+      {{ printf "href=%q" $whatsAppHref | safeHTMLAttr }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.6 21.7c1 .6 2.2.9 3.4.9 3.7 0 6.6-3 6.6-6.5 0-1.8-.6-3.4-1.9-4.7-1.3-1.2-2.9-1.9-4.7-1.9-3.6 0-6.6 3-6.6 6.6 0 1.2.3 2.4 1 3.5l.2.3-.7 2.4 2.5-.7.2.1Zm5.6-4.7c.2 0 1.2.5 1.4.6.031.016.062.029.093.042.167.07.323.136.407.558.1 0 .1.4-.1.9-.1.4-.9.9-1.3.9-.068 0-.133.006-.202.012-.34.03-.786.07-2.198-.512-1.753-.701-2.968-2.4-3.309-2.877a1.856 1.856 0 0 0-.091-.123c-.017-.034-.052-.088-.097-.16-.221-.35-.703-1.11-.703-1.94 0-1 .5-1.5.7-1.7.2-.2.4-.2.5-.2h.4c.1 0 .3 0 .4.3.2.4.6 1.4.6 1.5 0 .033.011.067.022.1.023.067.045.133-.022.2-.05.05-.075.1-.1.15-.025.05-.05.1-.1.15l-.3.3c-.1.1-.2.2-.1.4s.5.9 1.1 1.4c.675.59 1.208.825 1.478.944.05.022.09.04.122.056.2 0 .3 0 .4-.1.05-.1.175-.25.3-.4.125-.15.25-.3.3-.4.1-.2.2-.2.4-.1Z"
+          fill="currentColor"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0 16C0 7.163 7.163 0 16 0s16 7.163 16 16-7.163 16-16 16S0 24.837 0 16Zm16-8c2.1 0 4.1.8 5.6 2.3 1.5 1.5 2.4 3.5 2.4 5.6 0 4.4-3.6 8-8 8-1.3 0-2.6-.4-3.8-1L8 24l1.1-4C8.4 18.8 8 17.4 8 16c0-4.4 3.6-8 8-8Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+  </div>
+  <div class="text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300">
+    <a
+      aria-label="Share by email"
+      class="react-share__ShareButton block h-8 w-8 cursor-pointer"
+      {{ printf "href=%q" $emailHref | safeHTMLAttr }}
+    >
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+        <path
+          d="M10 11.5h12a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H10A1.5 1.5 0 0 1 8.5 19v-6a1.5 1.5 0 0 1 1.5-1.5Zm0 .8 6 4.8 6-4.8"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="dark:stroke-gray-900"
+        ></path>
+      </svg>
+    </a>
+  </div>
+</div>
