@@ -11,3 +11,9 @@ HUGO_VERSION = "0.157.0"
 NODE_VERSION = "24.14.0"
 HUGO_ENV = "production"
 TZ = "Europe/Amsterdam"
+
+# Redirects
+[[redirects]]
+from = "/why"
+to = "/about"
+status = 301

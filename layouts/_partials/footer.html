@@ -13,7 +13,7 @@
       </svg>
     </div>
     <p class="mt-6 text-lg font-medium text-gray-800 dark:text-gray-200">
-      Consulting is more than giving advice.
+      Collectively Engineered to Adapt, Innovate and Grow
     </p>
   </div>
   <div class="mt-2 flex gap-10 lg:mt-10 lg:gap-6">
@@ -78,7 +78,7 @@
   <a
     href="/about"
     class="cursor-pointer text-xl font-medium dark:text-white hover:text-fika-purple dark:hover:text-gray-300 transition-colors duration-200"
-    >Who We Are</a
+    >About</a
   >
   <a
     href="/events"
@@ -103,8 +103,9 @@
   <form
     name="newsletter"
     id="newsletter-form"
+    action="https://fika.us22.list-manage.com/subscribe/post?u=5c8c58763a9d1612bdddab5db&amp;id=2dd4f0e54f"
     method="post"
-    data-netlify="true"
+    target="_blank"
     role="form"
   >
     <div class="flex flex-col items-start gap-7 lg:flex-row lg:gap-2">
@@ -112,17 +113,23 @@
         <div class="w-full">
           <div class="flex justify-between"></div>
           <input
-            id="email"
-            name="email"
+            id="mce-EMAIL"
+            name="EMAIL"
             type="email"
             autocomplete="email"
             placeholder="your email address"
             class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
             value=""
+            required
           />
+          <!-- Real people should not fill this in and expect good things -->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="b_5c8c58763a9d1612bdddab5db_2dd4f0e54f" tabindex="-1" value="">
+          </div>
         </div>
       </div>
       <button
+        type="submit"
         class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black dark:bg-gray-700 dark:hover:bg-gray-600 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-lg transition-colors duration-200"
       >
         <div class="font-medium text-center py-[14px] px-5 text-sm">
