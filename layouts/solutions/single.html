@@ -1,0 +1,257 @@
+{{- define "main" }}
+  <!-- Hero -->
+  <section
+    class="relative min-h-screen flex flex-col justify-center bg-fika-offWhite dark:bg-gray-900 dark-services-bg overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] dark:hidden"
+    ></div>
+    <div
+      class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl font-medium text-black dark:text-white"
+        >
+          {{ .Params.hero_title | default .Title }}
+        </h1>
+        {{ if .Params.hero_subtitle }}
+          <p
+            class="text-xl lg:text-2xl font-light mt-4 lg:mt-6 text-gray-600 dark:text-gray-300"
+          >
+            {{ .Params.hero_subtitle }}
+          </p>
+        {{ end }}
+        <div class="mt-8 lg:mt-10">
+          <a href="{{ .Params.cta_url | default "/contact" }}"
+            ><div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-center py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                {{ .Params.cta_text | default "Get in touch" }}<svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div></div
+          ></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  {{ if .Params.problem }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div
+          class="col-span-full lg:col-start-2 lg:col-end-10"
+        >
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-8 lg:mb-10"
+          >
+            The Problem
+          </h2>
+          <p class="text-lg font-light lg:text-2xl dark:text-gray-200 leading-relaxed">
+            {{ .Params.problem.text }}
+          </p>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Introduction / Body Content -->
+  {{ if .Content }}
+    <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div
+          class="col-span-full lg:col-start-2 lg:col-end-10 text-lg font-light lg:text-2xl dark:text-gray-200"
+        >
+          {{ partial "helpers/enhanced-content-page.html" .Content }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- What We Deliver -->
+  {{ if .Params.delivers }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-12">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-14"
+          >
+            What We Deliver
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
+            {{ range $i, $item := .Params.delivers }}
+              <div class="bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 px-6 py-5 lg:px-8 lg:py-6 flex items-start gap-4">
+                <span
+                  class="text-sm font-medium text-fika-purple dark:text-fika-light-purple bg-fika-offWhite dark:bg-gray-800 w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                >{{ add $i 1 }}</span>
+                <p class="text-base lg:text-lg font-light text-gray-800 dark:text-gray-200">
+                  {{ $item.text }}
+                </p>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- How We're Different -->
+  {{ if .Params.differentiator }}
+    <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-10">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-8 lg:mb-10"
+          >
+            How We're Different
+          </h2>
+          <p class="text-lg font-light lg:text-2xl dark:text-gray-200 leading-relaxed">
+            {{ .Params.differentiator.text | markdownify }}
+          </p>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Typical Outcomes -->
+  {{ if .Params.outcomes }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-12">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-14"
+          >
+            Typical Outcomes
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
+            {{ range $i, $item := .Params.outcomes }}
+              <div class="bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 px-6 py-5 lg:px-8 lg:py-6 flex items-start gap-4">
+                <span
+                  class="text-sm font-medium text-fika-purple dark:text-fika-light-purple bg-fika-offWhite dark:bg-gray-800 w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                >{{ add $i 1 }}</span>
+                <p class="text-base lg:text-lg font-light text-gray-800 dark:text-gray-200">
+                  {{ $item.text }}
+                </p>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- How We Deliver This -->
+  {{ if .Params.related_services }}
+    <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div class="col-span-full lg:col-start-2 lg:col-end-12">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white mb-10 lg:mb-14"
+          >
+            How We Deliver This
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
+            {{ range .Params.related_services }}
+              <div class="bg-white dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-xl font-medium lg:text-2xl dark:text-white mb-3 lg:mb-4">
+                    {{ .name }}
+                  </h3>
+                  <p class="text-base font-light text-gray-700 dark:text-gray-300">
+                    {{ .description }}
+                  </p>
+                </div>
+                <a href="{{ .url }}" class="mt-6 group inline-block cursor-pointer text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300 transition-colors duration-200">
+                  <div class="font-medium flex items-center text-lg gap-3">
+                    <svg
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-6 h-6 flex-shrink-0 flex-grow-0"
+                    >
+                      <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                      <path
+                        d="m12.5 9 8 7.5-8 7.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="dark:stroke-gray-900"
+                      ></path>
+                    </svg>Learn more
+                  </div>
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Training Module -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-10 p-6 lg:p-8 bg-fika-offWhite dark:bg-fika-dark-elevated dark:border dark:border-white/5">
+          <div>
+            <h3 class="text-xl font-medium lg:text-2xl dark:text-white mb-2">Training & Enablement</h3>
+            <p class="text-base font-light text-gray-700 dark:text-gray-300">
+              Hands-on, practitioner-led workshops can be added to any engagement — Kubernetes, platform engineering, AI agents, and more.
+            </p>
+          </div>
+          <a href="/solutions/workshops-training/" class="shrink-0 group inline-block cursor-pointer text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300 transition-colors duration-200">
+            <div class="font-medium flex items-center text-lg gap-3">
+              <svg
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 flex-shrink-0 flex-grow-0"
+              >
+                <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                <path
+                  d="m12.5 9 8 7.5-8 7.5"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="dark:stroke-gray-900"
+                ></path>
+              </svg>View workshops
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{- partial "cta.html" . }}
+{{- end }}

@@ -1,10 +1,11 @@
 +++
 date = '2023-01-01T08:00:00-07:00'
 draft = false
-title = 'Platform Go-Live Enablement'
+title = 'Go-Live Enablement'
 layout = 'platform-go-live-enablement'
-hero_title = 'Platform Go-Live Enablement'
+hero_title = 'Go-Live Enablement'
 hero_subtitle = 'Ensure a Smooth and Confident Transition to Production'
+aliases = ['/services/platform-go-live-enablement/', '/how-we-work/platform-go-live-enablement/']
 
 [[challenges]]
 text = 'Architecture or security gaps emerging late'
@@ -91,7 +92,7 @@ text = 'Verified compliance and security posture'
 text = 'Improved reliability & performance'
 +++
 
-The Platform Go-Live Enablement Service provides structured, expert-led support
+The Go-Live Enablement Service provides structured, expert-led support
 to ensure the successful transition of a cloud-native or Kubernetes-based
 platform into production. Leveraging FikaWorks' deep technical expertise and
 proven implementation patterns, this service validates your architecture,

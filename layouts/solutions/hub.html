@@ -1,0 +1,138 @@
+{{- define "main" }}
+  <!-- Hero -->
+  <section
+    class="relative min-h-[70vh] flex flex-col justify-center bg-fika-offWhite dark:bg-gray-900 dark-services-bg overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] dark:hidden"
+    ></div>
+    <div
+      class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl font-medium text-black dark:text-white"
+        >
+          {{ .Params.hero_title | default .Title }}
+        </h1>
+        {{ if .Params.hero_subtitle }}
+          <p
+            class="text-xl lg:text-2xl font-light mt-4 lg:mt-6 text-gray-600 dark:text-gray-300"
+          >
+            {{ .Params.hero_subtitle }}
+          </p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  {{ if .Content }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div
+        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      >
+        <div
+          class="col-span-full lg:col-start-2 lg:col-end-10 text-lg font-light lg:text-2xl dark:text-gray-200"
+        >
+          {{ partial "helpers/enhanced-content-page.html" .Content }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  <!-- Three Layers -->
+  <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
+          <!-- Layer 1 -->
+          <div class="relative">
+            <div class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green-hover dark:border-b-fika-soft-green-shadow"></div>
+              <div class="h-full bg-fika-soft-green-hover dark:bg-fika-soft-green-shadow"></div>
+            </div>
+            <div class="h-full relative z-10">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green dark:border-b-fika-soft-green-dark"></div>
+              <div class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green dark:bg-fika-soft-green-dark">
+                <div>
+                  <p class="text-sm font-medium uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Layer 1</p>
+                  <span class="text-xl font-medium lg:text-2xl dark:text-white">AI Adoption Governance</span>
+                  <p class="mt-3 text-base font-light text-gray-800 dark:text-gray-200 lg:text-lg">
+                    Frameworks for safe AI adoption: model evaluation, data governance, risk assessment, and responsible-AI policies. Where most enterprises need to start.
+                  </p>
+                </div>
+                <a href="/solutions/ai-adoption-governance/" class="mt-6 group inline-block cursor-pointer text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200">
+                  <div class="font-medium flex items-center text-xl gap-4">
+                    <svg viewBox="0 0 32 32" fill="none" class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0">
+                      <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                      <path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path>
+                    </svg>Explore governance
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Layer 2 -->
+          <div class="relative">
+            <div class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow-hover dark:border-b-fika-soft-yellow-shadow"></div>
+              <div class="h-full bg-fika-soft-yellow-hover dark:bg-fika-soft-yellow-shadow"></div>
+            </div>
+            <div class="h-full relative z-10">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow dark:border-b-fika-soft-yellow-dark"></div>
+              <div class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow dark:bg-fika-soft-yellow-dark">
+                <div>
+                  <p class="text-sm font-medium uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Layer 2</p>
+                  <span class="text-xl font-medium lg:text-2xl dark:text-white">AI Agents for Operations</span>
+                  <p class="mt-3 text-base font-light text-gray-800 dark:text-gray-200 lg:text-lg">
+                    Design, build, and deploy AI agents that automate operational workflows: incident triage, infrastructure remediation, change management.
+                  </p>
+                </div>
+                <a href="/solutions/ai-agents-for-operations/" class="mt-6 group inline-block cursor-pointer text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200">
+                  <div class="font-medium flex items-center text-xl gap-4">
+                    <svg viewBox="0 0 32 32" fill="none" class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0">
+                      <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                      <path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path>
+                    </svg>Explore agents
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Layer 3 -->
+          <div class="relative">
+            <div class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-pink-hover dark:border-b-fika-soft-pink-shadow"></div>
+              <div class="h-full bg-fika-soft-pink-hover dark:bg-fika-soft-pink-shadow"></div>
+            </div>
+            <div class="h-full relative z-10">
+              <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-pink dark:border-b-fika-soft-pink-dark"></div>
+              <div class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-pink dark:bg-fika-soft-pink-dark">
+                <div>
+                  <p class="text-sm font-medium uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">Layer 3</p>
+                  <span class="text-xl font-medium lg:text-2xl dark:text-white">Agentic Infrastructure</span>
+                  <p class="mt-3 text-base font-light text-gray-800 dark:text-gray-200 lg:text-lg">
+                    MCP servers, agentic pipeline orchestration, production observability, and safety rails to scale AI across your organisation.
+                  </p>
+                </div>
+                <a href="/solutions/agentic-infrastructure/" class="mt-6 group inline-block cursor-pointer text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200">
+                  <div class="font-medium flex items-center text-xl gap-4">
+                    <svg viewBox="0 0 32 32" fill="none" class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0">
+                      <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                      <path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path>
+                    </svg>Explore infrastructure
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{- partial "cta.html" . }}
+{{- end }}

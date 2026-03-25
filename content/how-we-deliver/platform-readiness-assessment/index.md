@@ -1,10 +1,11 @@
 +++
 date = '2023-01-01T08:00:00-07:00'
 draft = false
-title = 'Platform Readiness Service'
+title = 'Platform Readiness Assessment'
 layout = 'platform-readiness-service'
-hero_title = 'Platform Readiness Service'
-hero_subtitle = 'Validate, Assess, and Optimize Your Cloud-Native Platform'
+hero_title = 'Platform Readiness Assessment'
+hero_subtitle = 'Validate, Assess, and Optimise Your Cloud-Native Platform'
+aliases = ['/services/platform-readiness-service/', '/how-we-work/platform-readiness-service/']
 
 [[scope_areas]]
 title = 'Architecture Assessment'
@@ -67,11 +68,11 @@ title = 'Handoff'
 description = 'We deliver as-built documentation and walk your team through it.'
 +++
 
-The Platform Readiness Service offers comprehensive validation, assessment, and
-optimization recommendations for establishing an optimal cloud-native platform
+The Platform Readiness Assessment offers comprehensive validation, assessment, and
+optimisation recommendations for establishing an optimal cloud-native platform
 across private, public, or hybrid cloud infrastructures.
 
-This service utilizes a structured, interview-based methodology to thoroughly
+This service utilises a structured, interview-based methodology to thoroughly
 review your current technological landscape.
 
 The outcome is a detailed, expert assessment report, which includes specific,

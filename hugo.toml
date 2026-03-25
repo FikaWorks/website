@@ -41,27 +41,78 @@ tabWidth = 2
 [menus]
 
 [[menus.main]]
-name = 'Our Services'
-pageRef = '/services'
+name = 'Solutions'
+pageRef = '/solutions'
 weight = 10
 
 [[menus.main]]
-name = 'Platform Go-Live Enablement'
-pageRef = '/services/platform-go-live-enablement'
-parent = 'Our Services'
+name = 'Cloud Migrations'
+pageRef = '/solutions/cloud-migrations'
+parent = 'Solutions'
 weight = 1
+[menus.main.params]
+category = 'Modernise'
 
 [[menus.main]]
-name = 'Discovery Workshop'
-pageRef = '/services/discovery-workshop'
-parent = 'Our Services'
+name = 'Platform Engineering'
+pageRef = '/solutions/platform-engineering'
+parent = 'Solutions'
 weight = 2
+[menus.main.params]
+category = 'Accelerate'
 
 [[menus.main]]
-name = 'Platform Readiness Service'
-pageRef = '/services/platform-readiness-service'
-parent = 'Our Services'
+name = 'Developer Portal'
+pageRef = '/solutions/developer-portal'
+parent = 'Solutions'
 weight = 3
+[menus.main.params]
+category = 'Accelerate'
+
+[[menus.main]]
+name = 'CI/CD & Delivery Acceleration'
+pageRef = '/solutions/cicd-delivery-acceleration'
+parent = 'Solutions'
+weight = 4
+[menus.main.params]
+category = 'Accelerate'
+
+[[menus.main]]
+name = 'Cloud Cost Optimisation'
+pageRef = '/solutions/cloud-cost-optimisation'
+parent = 'Solutions'
+weight = 5
+[menus.main.params]
+category = 'Accelerate'
+
+[[menus.main]]
+name = 'AI Adoption Governance'
+pageRef = '/solutions/ai-adoption-governance'
+parent = 'Solutions'
+weight = 6
+[menus.main.params]
+category = 'Innovate'
+
+[[menus.main]]
+name = 'AI Agents for Operations'
+pageRef = '/solutions/ai-agents-for-operations'
+parent = 'Solutions'
+weight = 7
+[menus.main.params]
+category = 'Innovate'
+
+[[menus.main]]
+name = 'Agentic Infrastructure'
+pageRef = '/solutions/agentic-infrastructure'
+parent = 'Solutions'
+weight = 8
+[menus.main.params]
+category = 'Innovate'
+
+[[menus.main]]
+name = 'How We Deliver'
+pageRef = '/how-we-deliver'
+weight = 15
 
 [[menus.main]]
 name = 'About'
