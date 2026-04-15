@@ -1,0 +1,150 @@
+{{- define "main" }}
+  <div class="relative w-full">
+    <div class="relative overflow-hidden dark-services-bg dark:bg-gray-900 min-h-screen">
+      {{- $hero_img := resources.Get "/images/bg-cloud-curly.jpeg" }}
+      {{- $hero_small := $hero_img.Resize "800x webp" }}
+      {{- $hero_medium := $hero_img.Resize "1600x webp" }}
+      {{- $hero_large := $hero_img.Resize "2000x webp" }}
+      {{- $hero_xlarge := $hero_img.Resize "3000x webp" }}
+      {{- $hero_xxlarge := $hero_img.Resize "4000x webp" }}
+      <img
+        alt=""
+        src="{{ $hero_medium.RelPermalink }}"
+        srcset="
+          {{- $hero_small.RelPermalink }}  800w,
+          {{- $hero_medium.RelPermalink }} 1600w,
+          {{- $hero_large.RelPermalink }} 2000w,
+          {{- $hero_xlarge.RelPermalink }} 3000w,
+          {{- $hero_xxlarge.RelPermalink }} 4000w
+        "
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover dark:hidden"
+      />
+      <div class="absolute inset-0 bg-white/50 dark:bg-transparent"></div>
+      <div
+        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 min-h-screen items-center content-center"
+      >
+        <div class="col-span-full lg:col-start-3 lg:col-end-11">
+          <div class="px-10 py-6 lg:py-10">
+            <div class="font-light text-center text-2xl lg:text-3xl text-black dark:text-white">
+              {{ .Content }}
+            </div>
+          </div>
+          <div class="pt-4 lg:pt-6 text-center">
+            <a href="#solutions"
+              ><div
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+              >
+                <div
+                  class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+                >
+                  Explore our solutions<svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      d="M12.667 9.333 8 14m0 0L3.333 9.333M8 14V2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div></div
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions Grid -->
+    <div id="solutions" class="bg-white dark:bg-gray-900 py-16 lg:py-24">
+      {{- $solutions := where (where .Pages "Params.draft" "ne" true) "Params.exclude_from_nav" "ne" true }}
+      {{- $colors := slice "fika-soft-green" "fika-soft-yellow" "fika-soft-pink" "fika-soft-blue" "fika-soft-green" "fika-soft-yellow" "fika-soft-pink" "fika-soft-blue" "fika-soft-green" }}
+
+      <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
+        <div class="col-span-full lg:col-start-2 lg:col-end-12">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-10 lg:gap-y-10">
+            {{- range $i, $page := $solutions.ByWeight }}
+              {{- $color := index $colors $i }}
+              <div class="relative">
+                <div class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0">
+                  <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-{{ $color }}-hover dark:border-b-{{ $color }}-shadow"></div>
+                  <div class="h-full bg-{{ $color }}-hover dark:bg-{{ $color }}-shadow"></div>
+                </div>
+                <div class="h-full relative z-10">
+                  <div class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-{{ $color }} dark:border-b-{{ $color }}-dark"></div>
+                  <div class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-{{ $color }} dark:bg-{{ $color }}-dark">
+                    <div class="my-4 lg:mt-6 lg:mb-8">
+                      <span class="text-xl font-medium lg:text-2xl dark:text-white">{{ $page.Title }}</span>
+                      <p class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-3 lg:text-lg">
+                        {{ $page.Params.hero_subtitle }}
+                      </p>
+                    </div>
+                    <a href="{{ $page.RelPermalink }}">
+                      <div class="group inline-block cursor-pointer text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200">
+                        <div class="font-medium flex items-center text-xl gap-4">
+                          <svg viewBox="0 0 32 32" fill="none" class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0">
+                            <rect width="32" height="32" rx="16" fill="currentColor"></rect>
+                            <path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path>
+                          </svg>Learn more
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {{- end }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How We Deliver Section -->
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[#f4f1e7] dark:bg-gray-800"></div>
+      <div
+        class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6 py-16 lg:py-24 lg:min-h-[40vh] lg:items-center lg:content-center"
+      >
+        <div class="col-span-full lg:col-start-3 lg:col-end-11">
+          <div class="text-center">
+            <h3 class="text-3xl font-medium lg:text-5xl dark:text-white">
+              How We Deliver
+            </h3>
+            <div class="pb-5 font-light lg:pb-6 py-6 lg:py-10 text-base lg:text-2xl text-black dark:text-white">
+              <p class="pb-5 font-light lg:pb-6">
+                Every solution is delivered through our proven methodology — a structured 5-step process
+                that takes you from Discovery through Handoff. We assemble the right specialists from our
+                cooperative network for each phase of your engagement.
+              </p>
+            </div>
+            <a href="/how-we-deliver/"
+              ><div
+                class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+              >
+                <div
+                  class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+                >
+                  See our approach<svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div></div
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ partial "cta.html" . }}
+  </div>
+{{- end }}

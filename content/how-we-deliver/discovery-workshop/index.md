@@ -5,6 +5,7 @@ title = 'Discovery Workshop'
 layout = 'discovery-workshop'
 hero_title = 'Discovery Workshop'
 hero_subtitle = 'Accelerate Time to Value'
+aliases = ['/services/discovery-workshop/', '/how-we-work/discovery-workshop/']
 
 [[challenges]]
 text = 'Difficulty aligning business and engineering on platform goals'

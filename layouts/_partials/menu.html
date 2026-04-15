@@ -50,6 +50,8 @@
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- $level := .level }}
+  {{- $scratch := newScratch }}
+  {{- $scratch.Set "prevCategory" "" }}
   {{- range .menuEntries }}
     {{- $hasChildren := .HasChildren }}
     {{- $isActive := $page.IsMenuCurrent .Menu . }}
@@ -59,6 +61,21 @@
       {{- $classes = printf "%s %s" $classes "active" }}
     {{- else if $isAncestor }}
       {{- $classes = printf "%s %s" $classes "ancestor" }}
+    {{- end }}
+    {{- if and (gt $level 0) .Params.category }}
+      {{- $currentCategory := .Params.category }}
+      {{- $prevCategory := $scratch.Get "prevCategory" }}
+      {{- if ne $currentCategory $prevCategory }}
+        <li
+          class="px-4 pt-4 pb-1 min-[1145px]:px-4 min-[1145px]:pt-4 min-[1145px]:pb-1 {{ if $prevCategory }}border-t border-gray-200 dark:border-gray-700 mt-2{{ end }}"
+        >
+          <span
+            class="text-[10px] min-[1145px]:text-[10px] font-medium uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500"
+            >{{ $currentCategory }}</span
+          >
+        </li>
+      {{- end }}
+      {{- $scratch.Set "prevCategory" $currentCategory }}
     {{- end }}
     <div>
       {{- if $hasChildren }}
@@ -105,7 +122,7 @@
               <div
                 class="popover-panel min-[1145px]:shadow-lg min-[1145px]:absolute min-[1145px]:w-[354px] rounded-md bg-white dark:bg-gray-800 dark:border dark:border-white/5 min-[1145px]:hidden"
               >
-                <div class="min-[1145px]:p-6 max-[1145px]:pl-2">
+                <div class="min-[1145px]:p-4 max-[1145px]:pl-2">
                   <ul>
                     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "level" (add $level 1)) }}
                   </ul>
@@ -125,9 +142,9 @@
               duration-200 {{ $classes }}"
             {{- else }}
               class="block hover:bg-fika-offWhite dark:hover:bg-gray-700
-              uppercase text-gray-800 dark:text-gray-200 group-hover:text-black
-              dark:group-hover:text-white px-4 py-3 min-[1145px]:p-4 rounded-md
-              bg-white dark:bg-gray-800 transition-colors duration-200
+              text-gray-800 dark:text-gray-200 group-hover:text-black
+              dark:group-hover:text-white px-4 py-2.5 min-[1145px]:px-4 min-[1145px]:py-2.5 rounded-md
+              transition-colors duration-200
               {{ $classes }}"
             {{- end }}
           >

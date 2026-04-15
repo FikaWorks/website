@@ -1,0 +1,43 @@
+{{- define "main" }}
+  <!-- Hero -->
+  <section
+    class="relative min-h-[70vh] flex flex-col justify-center bg-fika-offWhite dark:bg-gray-900 dark-services-bg overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] dark:hidden"
+    ></div>
+    <div
+      class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-3 lg:col-end-11 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white"
+        >
+          {{ .Params.hero_title | default .Title }}
+        </h1>
+        {{ if .Params.hero_subtitle }}
+          <p
+            class="text-xl lg:text-2xl font-light mt-4 lg:mt-6 text-gray-600 dark:text-gray-300"
+          >
+            {{ .Params.hero_subtitle }}
+          </p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div
+        class="col-span-full lg:col-start-2 lg:col-end-10 text-lg font-light lg:text-xl dark:text-gray-200"
+      >
+        {{ partial "helpers/enhanced-content-page.html" .Content }}
+      </div>
+    </div>
+  </section>
+
+  {{- partial "cta.html" . }}
+{{- end }}

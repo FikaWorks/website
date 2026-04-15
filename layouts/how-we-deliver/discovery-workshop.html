@@ -1,0 +1,86 @@
+{{- define "main" }}
+  <!-- Hero -->
+  <section
+    class="relative min-h-screen flex flex-col justify-center bg-fika-offWhite dark:bg-gray-900 dark-services-bg overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] dark:hidden"
+    ></div>
+    <div
+      class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12 text-center">
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl font-medium text-black dark:text-white"
+        >
+          {{ .Params.hero_title }}
+        </h1>
+        {{ if .Params.hero_subtitle }}
+          <p
+            class="text-xl lg:text-2xl font-light mt-4 lg:mt-6 text-gray-600 dark:text-gray-300"
+          >
+            {{ .Params.hero_subtitle }}
+          </p>
+        {{ end }}
+        <div class="mt-8 lg:mt-10">
+          <a href="/contact"
+            ><div
+              class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
+            >
+              <div
+                class="font-medium text-center flex items-center justify-center py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
+              >
+                Book a Workshop<svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div></div
+          ></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div
+        class="col-span-full lg:col-start-2 lg:col-end-10 text-lg font-light lg:text-2xl dark:text-gray-200"
+      >
+        {{ partial "helpers/enhanced-content-page.html" .Content }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Deliverables -->
+  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    {{ partial "services/stacked-panels.html" (dict "title" "Workshop Deliverables" "subtitle" "A workshop format that makes the scope, outputs, and participation model easy to understand at a glance." "items" (slice (dict "title" "What's Included" "items" .Params.included) (dict "title" "What You Receive" "items" .Params.deliverables) (dict "title" "Who Participates" "items" .Params.participants))) }}
+  </section>
+
+  {{ if .Params.process }}
+    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 mb-14 lg:mb-20 lg:gap-10 gap-6">
+        <div class="col-span-full lg:col-span-4 lg:col-start-2">
+          <h2
+            class="text-3xl font-medium lg:text-5xl dark:text-white"
+          >
+            FikaWorks 5-Step Process
+          </h2>
+        </div>
+      </div>
+      {{ partial "services/process-strip.html" . }}
+    </section>
+  {{ end }}
+
+  {{- partial "cta.html" . }}
+{{- end }}
