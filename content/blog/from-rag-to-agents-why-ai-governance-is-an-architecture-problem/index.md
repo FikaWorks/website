@@ -3,6 +3,7 @@ author = 'Alex Giurgiu'
 date = '2026-03-24T10:00:00+02:00'
 draft = false
 tags = ['AI agents', 'AI governance', 'enterprise AI', 'platform engineering', 'MCP', 'architecture']
+image = 'from-rag-to-agents-why-ai-governance-is-an-architecture-problem.jpg'
 title = 'From RAG to Agents: Why AI Governance Is an Architecture Problem'
 +++
 
