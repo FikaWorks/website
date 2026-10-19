@@ -1,0 +1,262 @@
+{{- define "main" }}
+  {{- $ring := dict
+    "blue" "border-fika-soft-blue"
+    "yellow" "border-fika-soft-yellow"
+    "green" "border-fika-soft-green"
+    "purple" "border-fika-light-purple"
+  }}
+  {{- $input := "block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2" }}
+  {{- $label := "mb-4 block text-lg font-medium dark:text-white" }}
+
+  <!-- Hero -->
+  {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Join us" "body" .Params.intro "cta_text" "Join the community" "cta_url" "#sign-up" "cta2_text" "Why FikaWorks" "cta2_url" "/cooperative/") }}
+
+  <!-- How to join -->
+  <div class="bg-white dark:bg-gray-900 dark:text-white py-10 lg:py-16">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+        <h2 class="text-3xl font-medium lg:text-5xl">How to join</h2>
+        <ol class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 lg:mt-10">
+          {{- range $i, $s := .Params.steps }}
+            <li
+              class="bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8"
+            >
+              <span class="text-sm font-medium text-gray-600 dark:text-gray-300"
+                >Step {{ add $i 1 }}</span
+              >
+              <h3 class="mt-2 text-xl font-medium lg:text-2xl">
+                {{ $s.title }}
+              </h3>
+              <p
+                class="mt-3 text-base font-light lg:text-lg text-gray-800 dark:text-gray-200"
+              >
+                {{ $s.text }}
+              </p>
+              {{- with $s.note }}
+                <p
+                  class="mt-3 text-sm font-medium text-gray-600 dark:text-gray-300"
+                >
+                  {{ . }}
+                </p>
+              {{- end }}
+            </li>
+          {{- end }}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- What the cooperative offers -->
+  <div class="bg-white dark:bg-gray-900 dark:text-white pb-10 lg:pb-16">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+        <h2 class="text-3xl font-medium lg:text-5xl">
+          What the cooperative offers
+        </h2>
+        <div
+          class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-10 lg:grid-cols-3"
+        >
+          {{- range .Params.offers }}
+            <div
+              class="flex gap-4 border border-gray-200 dark:border-white/10 p-6 lg:p-8"
+            >
+              <div
+                class="mt-1 h-6 w-6 flex-none rounded-full border-4 {{ index $ring (.color | default "blue") }}"
+                aria-hidden="true"
+              ></div>
+              <div>
+                <h3 class="text-xl font-medium lg:text-2xl">
+                  {{ .title }}
+                  {{- if .members_only }}
+                    <span
+                      class="ml-2 align-middle rounded-full bg-fika-light-purple px-2 py-0.5 text-xs font-medium text-black"
+                      >Members</span
+                    >
+                  {{- end }}
+                </h3>
+                <p
+                  class="mt-2 text-base font-light lg:text-lg text-gray-800 dark:text-gray-200"
+                >
+                  {{ .text }}
+                </p>
+              </div>
+            </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How we work -->
+  <div class="bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white py-10 lg:py-16">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+        <div class="font-light text-lg lg:text-2xl">
+          {{- partial "helpers/enhanced-content-page.html" .Content }}
+        </div>
+        {{- with .Params.facts }}
+          <p
+            class="mt-8 border-y border-black dark:border-white/40 py-4 text-base font-medium lg:text-xl"
+          >
+            {{ . }}
+          </p>
+        {{- end }}
+        <p class="mt-8 text-base font-light lg:text-lg dark:text-gray-200">
+          Read more
+          <a class="underline hover:text-fika-purple" href="/cooperative/"
+            >about the cooperative</a
+          >, our <a class="underline hover:text-fika-purple" href="/community/"
+            >community</a
+          >,
+          <a class="underline hover:text-fika-purple" href="/events/"
+            >upcoming events</a
+          >
+          and
+          <a class="underline hover:text-fika-purple" href="/fikaworks-day/"
+            >FikaWorks Day</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign-up form -->
+  <div
+    id="sign-up"
+    class="scroll-mt-24 bg-white dark:bg-gray-900 dark:text-white py-12 lg:py-20"
+  >
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-2 lg:col-end-6">
+        <h2 class="text-3xl font-medium lg:text-5xl">Start with the community</h2>
+        <p class="mt-6 text-lg font-light lg:text-2xl dark:text-gray-200">
+          Tell us a bit about yourself. We'll get back to you within a few
+          working days and invite you to our Slack and next events.
+        </p>
+        <p class="mt-6 text-base font-light lg:text-lg dark:text-gray-200">
+          Prefer email? Write to
+          <a class="underline hover:text-fika-purple" href="mailto:info@fika.works"
+            >info@fika.works</a
+          >.
+        </p>
+      </div>
+      <div class="col-span-full lg:col-start-7 lg:col-end-12">
+        <form
+          name="join"
+          id="join-form"
+          method="post"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="flex flex-col gap-6"
+        >
+          <input type="hidden" name="form-name" value="join" />
+          <p class="hidden">
+            <label>Leave this empty: <input name="bot-field" /></label>
+          </p>
+          <div>
+            <label for="join-name" class="{{ $label }}">Full name*</label>
+            <input
+              id="join-name"
+              name="name"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="your full name"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-email" class="{{ $label }}">Email*</label>
+            <input
+              id="join-email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="your email address"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-linkedin" class="{{ $label }}"
+              >LinkedIn or website (optional)</label
+            >
+            <input
+              id="join-linkedin"
+              name="linkedin"
+              type="url"
+              placeholder="https://"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-role" class="{{ $label }}">What do you do?*</label>
+            <select id="join-role" name="role" required class="{{ $input }}">
+              <option value="" disabled selected>Choose one</option>
+              <option>Architect</option>
+              <option>Engineer (platform, SRE, DevOps, cloud)</option>
+              <option>Developer</option>
+              <option>Delivery lead</option>
+              <option>DevRel</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="join-message" class="{{ $label }}"
+              >Anything you'd like us to know? (optional)</label
+            >
+            <textarea
+              id="join-message"
+              name="message"
+              rows="4"
+              placeholder="Your experience, what you're looking for, where we met…"
+              class="{{ $input }}"
+            ></textarea>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="join-privacy"
+              name="privacy"
+              type="checkbox"
+              required
+              class="h-6 w-6 rounded border-2 border-gray-400 bg-white text-black checked:bg-black focus:ring-0 dark:border-gray-500 dark:bg-gray-800"
+            />
+            <label
+              for="join-privacy"
+              class="ml-4 text-sm font-normal text-gray-600 dark:text-gray-300"
+              >I accept the fika.works General terms and Privacy policy.</label
+            >
+          </div>
+          <div class="mt-4">
+            <button
+              type="submit"
+              class="w-full cursor-pointer rounded-[40px] bg-black py-5 text-base font-medium text-white transition-colors duration-200 hover:bg-fika-hover-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 lg:w-max lg:px-10 lg:py-6 lg:text-xl dark:border dark:border-white/20 dark:bg-transparent dark:hover:bg-white/5"
+            >
+              Join the community
+            </button>
+          </div>
+          <div>
+            <div
+              class="form-success hidden bg-green-100 dark:bg-green-900/50 border-green-500 dark:border-green-400 border-2 rounded-md px-5 py-3 text-green-900 dark:text-green-100"
+            >
+              Thanks for reaching out. We'll be in touch soon.
+            </div>
+            <div
+              class="form-failed hidden bg-red-100 dark:bg-red-900/50 border-red-500 dark:border-red-400 border-2 rounded-md px-5 py-3 text-red-900 dark:text-red-100"
+            >
+              Something went wrong while sending the form. Please try again or
+              email info@fika.works.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{{- end }}

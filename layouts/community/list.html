@@ -1,43 +1,13 @@
 {{- define "main" }}
+  {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Community" "cta_text" "Join the community" "cta_url" "/cooperative/join/" "cta2_text" "Upcoming events" "cta2_url" "/events/") }}
   {{- $hero_img := .Resources.GetMatch $.Params.hero_image }}
-  {{- if $hero_img }}
-    <div class="relative mb-14">
-      <div class="hidden md:block">
-        {{- $tiny := $hero_img.Resize "640x webp" }}
-        {{- $small := $hero_img.Resize "1024x webp" }}
-        {{- $medium := $hero_img.Resize "1600x webp" }}
-        {{- $large := $hero_img.Resize "2000x webp" }}
-        {{- $xlarge := $hero_img.Resize "3000x webp" }}
-        {{- $xxlarge := $hero_img.Resize "4000x webp" }}
-        <img
-          alt="{{ .Title }}"
-          src="{{ $medium.RelPermalink }}"
-          srcset="
-            {{- $tiny.RelPermalink }} 640w,
-            {{- $small.RelPermalink }} 1024w,
-            {{- $medium.RelPermalink }} 1600w,
-            {{- $large.RelPermalink }} 2000w,
-            {{- $xlarge.RelPermalink }} 3000w,
-            {{- $xxlarge.RelPermalink }} 4000w
-          "
-          width="100%"
-          height="100%"
-          sizes="100vw"
-        />
-      </div>
-    </div>
-  {{- end }}
-  <div
-    class="bg-white dark:bg-gray-900 dark:text-white {{ if not $hero_img }}
-      pt-28 lg:pt-36
-    {{ end }} pb-6 lg:pb-14"
-  >
-    <div id="" class="invisible relative -top-20 block"></div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
-    >
+  <div class="bg-white dark:bg-gray-900 dark:text-white pt-12 lg:pt-16 pb-6 lg:pb-14">
+    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
       <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        <div class="text-3xl font-medium lg:text-5xl">{{ .Title }}</div>
+        {{- with $hero_img }}
+          {{- $m := .Resize "1600x webp" }}
+          <img alt="FikaWorks community event" src="{{ $m.RelPermalink }}" class="mb-10 w-full aspect-[21/9] object-cover" loading="lazy" />
+        {{- end }}
         <div class="mt-6 lg:mt-8">
           <div class="font-light text-lg lg:text-2xl">
             {{- partial "helpers/enhanced-content-page.html" .Content }}
@@ -67,5 +37,5 @@
       </div>
     </div>
   </div>
-  {{- partial "cta.html" . }}
+  {{- partial "cta-join.html" . }}
 {{- end }}

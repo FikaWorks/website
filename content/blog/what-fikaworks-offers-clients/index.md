@@ -7,6 +7,9 @@ tags = ['collective', 'fikaworks', 'company', 'coop', 'clients', 'cloud native']
 title = 'What FikaWorks Has to Offer Our Clients'
 +++
 
+> **Note (2026):** this post describes how FikaWorks worked in its early years. Some details, such as how fees and dues work, have changed since. See [Why FikaWorks](/cooperative/) and [Join FikaWorks](/cooperative/join/) for how the cooperative works today.
+
+
 To understand why clients would choose FikaWorks, clients should understand how
 FikaWorks is organized.
 

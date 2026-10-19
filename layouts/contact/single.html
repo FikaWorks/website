@@ -15,23 +15,17 @@
         <div
           class="mt-7 text-sm font-light lg:mt-8 lg:text-base dark:text-gray-200"
         >
-          <p class="pb-2 font-medium text-base lg:text-lg">🏢 Offices:</p>
-          <p class="pb-3 font-light">
+          <p class="pb-2 font-medium text-base lg:text-lg">🏢 Office:</p>
+          <p class="pb-5 font-light lg:pb-6">
             <strong>Haarlem </strong><br />
             Bakke Rij <br />
             Hendrik Figeeweg 3F<br />
             2031 BJ Haarlem, The Netherlands
           </p>
-          <p class="pb-5 font-light lg:pb-6">
-            <strong>Amsterdam </strong><br />
-            Startup Village<br />
-            Science park 608 <br />
-            1098 XH Amsterdam, The Netherlands
-          </p>
           <p
             class="text-sm italic text-gray-600 dark:text-gray-400 lg:text-base"
           >
-            📅 Meeting at our offices is available by appointment only. Please
+            📅 Meeting at our office is available by appointment only. Please
             contact us in advance to schedule a visit via info@fika.works
           </p>
         </div>
@@ -93,13 +87,12 @@
                 <label
                   for="phone"
                   class="mb-4 text-lg font-medium dark:text-white"
-                  >Phone number*</label
+                  >Phone number (Optional)</label
                 >
               </div>
               <input
                 id="phone"
                 name="phone"
-                required=""
                 type="tel"
                 autocomplete="phone"
                 placeholder="your phone number"
@@ -132,20 +125,35 @@
             <div class="w-full">
               <div class="flex justify-between">
                 <label
-                  for="subject"
+                  for="topic"
                   class="mb-4 text-lg font-medium dark:text-white"
-                  >Subject</label
+                  >What brings you here?</label
                 >
               </div>
-              <input
-                id="subject"
-                name="subject"
-                type="text"
-                autocomplete="subject"
-                placeholder="What is your inquiry?"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
-                value=""
-              />
+              <select
+                id="topic"
+                name="topic"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+              >
+                <option value="" disabled selected>Choose one</option>
+                <option value="assess">Assess: discovery workshop or readiness review</option>
+                <option value="build">Build: a platform or go-live</option>
+                <option value="migration">Cloud or sovereign migration</option>
+                <option value="reliability">Reliability and observability</option>
+                <option value="security">Security and compliance</option>
+                <option value="ai">AI and agents</option>
+                <option value="run">Run: managed platform care</option>
+                <option value="fractional">Lead: a fractional SRE, Architect or Delivery Lead</option>
+                <option value="training">Enablement and training</option>
+                <option value="documentation">Documentation and DevRel</option>
+                <option value="custom">A custom engagement</option>
+                <option value="product">Early access: one of our products</option>
+                <option value="product-fikaworks-agent">Early access: FikaWorks Agent</option>
+                <option value="product-fikaworks-migrate">Early access: FikaWorks Migrate</option>
+                <option value="product-fikaworks-security-platform">Early access: FikaWorks Security Platform</option>
+                <option value="joining">Joining FikaWorks</option>
+                <option value="other">Something else</option>
+              </select>
             </div>
           </div>
           <div class="mt-6 w-full lg:mt-0">
@@ -208,6 +216,17 @@
             </div>
           </div>
         </form>
+        <script>
+          (function () {
+            try {
+              var topic = new URLSearchParams(window.location.search).get('topic');
+              var select = document.getElementById('topic');
+              if (topic && select && select.querySelector('option[value="' + CSS.escape(topic) + '"]')) {
+                select.value = topic;
+              }
+            } catch (e) {}
+          })();
+        </script>
       </div>
     </div>
   </div>

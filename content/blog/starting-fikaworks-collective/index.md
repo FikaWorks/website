@@ -7,6 +7,9 @@ tags = ['collective', 'fikaworks', 'company', 'coop', 'entrepreneurship']
 title = 'Starting FikaWorks Collective'
 +++
 
+> **Note (2026):** this post describes how FikaWorks worked in its early years. Some details, such as how fees and dues work, have changed since. See [Why FikaWorks](/cooperative/) and [Join FikaWorks](/cooperative/join/) for how the cooperative works today.
+
+
 As of 13th of May 2020, we are officially registered as a coop with the Dutch
 chamber of commerce under the FikaWorks\[^1] name. FikaWorks is a collective (a
 coop) of independent IT consultants from the Netherlands, active in the cloud

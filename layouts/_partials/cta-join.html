@@ -1,52 +1,36 @@
 <div class="relative w-full pt-9 lg:pt-14">
   <div
-    class="h-[320px] md:block lg:h-[428px] 2xl:h-[540px] 3xl:h-[780px] 4xl:h-[856px]"
+    class="h-[380px] md:block lg:h-[500px] 2xl:h-[540px] 3xl:h-[780px] 4xl:h-[856px]"
   >
     <div
-      class="relative dark-cta-bg dark:bg-gray-900 min-h-[120px] transform transition duration-300 ease-linear align-middle"
+      class="relative overflow-hidden bg-fika-offWhite dark:bg-gray-900 min-h-[120px]"
       style="height: 100%;"
     >
-      {{- $img := resources.Get "/images/cta-background.jpeg" }}
-      {{- $tiny := $img.Resize "1080x webp" }}
-      {{- $small := $img.Resize "1200x webp" }}
-      {{- $medium := $img.Resize "1600x webp" }}
-      {{- $large := $img.Resize "2700x webp" }}
-      <img
-        class="absolute inset-0 m-auto min-w-full max-w-full min-h-full max-h-full object-cover dark:hidden"
-        alt=""
-        src="{{ $medium.RelPermalink }}"
-        srcset="
-          {{ $tiny.RelPermalink }}  640w,
-          {{ $small.RelPermalink }} 1080w,
-          {{ $medium.RelPermalink }} 1200w,
-          {{ $large.RelPermalink }} 1600w
-        "
-        sizes="100vw"
-      />
+      {{ partial "bg-image.html" (dict "lazy" true) }}
     </div>
   </div>
   <div
     class="absolute left-1/2 top-1/2 z-10 flex w-full max-w-[660px] -translate-x-1/2 -translate-y-1/2 flex-wrap items-center justify-center px-4"
   >
-    <h3 class="text-3xl font-medium lg:text-5xl dark:text-white">
+    <h3 class="text-center text-balance text-3xl font-medium lg:text-5xl dark:text-white">
       Wanna join FikaWorks ?
     </h3>
     <div
       class="pt-3 text-center text-base font-light lg:pt-6 lg:text-3xl dark:text-gray-200"
     >
       <p class="pb-5 font-light lg:pb-6">
-        Reach out to join our community and to learn more about how we onboard new members.
+        Start in our community and see how members join the cooperative.
       </p>
     </div>
     <div class="pt-4 lg:pt-6">
-      <a href="/contact"
+      <a href="/cooperative/join/"
         ><div
           class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-hover-purple bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
         >
           <div
             class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
           >
-            Contact us<svg
+            How to join<svg
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

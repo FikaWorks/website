@@ -1,0 +1,7 @@
+{{- /* Stage heading: ring, name and intro. @context dict: stage, ring */}}
+{{- $s := .stage }}
+<div class="flex items-center gap-4">
+  <span class="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-[6px] {{ index .ring $s.color }}" aria-hidden="true"></span>
+  <h2 class="text-3xl font-medium lg:text-5xl">{{ $s.name }}</h2>
+</div>
+<p class="mt-3 text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">{{ $s.intro }}</p>
