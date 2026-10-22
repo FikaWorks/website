@@ -285,6 +285,7 @@ enable = true
 [[build.cachebusters]]
 source = 'assets/notwatching/hugo_stats\.json'
 target = 'css'
-[[build.cachebusters]]
-source = '(postcss|tailwind)\.config\.js'
-target = 'css'
+
+# Hugo 0.165+ no longer allows the Tailwind CLI by default; css.TailwindCSS needs it.
+[security.exec]
+allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^tailwindcss$']

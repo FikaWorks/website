@@ -35,7 +35,6 @@
     "FontMediumURL" $fontMedium.RelPermalink
     "FontRegularURL" $fontRegular.RelPermalink
     )
-    | postCSS (dict "config" "./postcss.config.js")
     | css.TailwindCSS (dict "minify" (not hugo.IsDevelopment))
   }}
   {{- if hugo.IsDevelopment }}
