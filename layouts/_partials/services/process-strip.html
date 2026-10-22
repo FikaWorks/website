@@ -1,16 +1,16 @@
-<div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-  <div class="z-10 col-span-full lg:col-span-4 lg:col-start-2 lg:pt-4">
+<div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+  <div class="z-10 col-span-full lg:col-span-5 lg:col-start-1 lg:pt-4">
     <div class="max-w-xl">
       <div class="text-base font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
         How we work
       </div>
-      <p class="mt-6 text-lg font-light leading-8 text-gray-800 dark:text-gray-200 lg:text-2xl lg:leading-10">
+      <p class="mt-6 text-lg font-normal leading-8 text-gray-800 dark:text-gray-200 lg:text-xl lg:leading-10">
         Five clear steps, so you always know where things stand.
       </p>
     </div>
   </div>
   <div class="absolute right-0 top-0 z-0 hidden h-full max-h-[92%] min-h-[520px] w-3/4 bg-fika-offWhite dark:bg-fika-dark-surface lg:block"></div>
-  <div class="z-10 col-span-full lg:col-span-5 lg:col-start-7 lg:pt-4">
+  <div class="z-10 col-span-full lg:col-span-6 lg:col-start-7 lg:pt-4">
     <div class="relative">
       <div class="flex flex-col gap-5 lg:gap-6">
         {{ range $index, $element := .Params.process }}
@@ -32,7 +32,7 @@
                   Step {{ .step }}
                 </div>
               </div>
-              <p class="pt-3 text-sm font-light leading-7 text-gray-700 dark:text-gray-200 lg:text-base">
+              <p class="pt-3 text-sm font-normal leading-7 text-gray-700 dark:text-gray-200 lg:text-base">
                 {{ .description }}
               </p>
             </div>

@@ -7,10 +7,10 @@
   {{- $p := .Params }}
   {{- $ring := dict "blue" "border-fika-soft-blue" "yellow" "border-fika-soft-yellow" "green" "border-fika-soft-green" "purple" "border-fika-light-purple" }}
   {{- $check := `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-1 h-4 w-4 flex-none text-fika-purple dark:text-fika-light-purple"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>` }}
-  {{- $wrap := "grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6" }}
-  {{- $col := "col-span-full lg:col-start-2 lg:col-end-12" }}
+  {{- $wrap := "grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6" }}
+  {{- $col := "col-span-full" }}
   {{- $eyebrow := "text-sm font-medium uppercase tracking-[0.15em] text-gray-600 dark:text-gray-300" }}
-  {{- $h2 := "text-3xl font-medium lg:text-5xl text-balance" }}
+  {{- $h2 := "text-3xl font-medium lg:text-heading text-balance" }}
 
   {{ partial "page-hero.html" (dict "page" .) }}
 
@@ -20,7 +20,7 @@
       <div class="{{ $wrap }}">
         <div class="{{ $col }} grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">
           <h2 class="lg:col-span-5 text-2xl font-medium lg:text-4xl text-balance">{{ .title }}</h2>
-          <p class="lg:col-span-7 text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300 text-pretty">{{ .text }}</p>
+          <p class="lg:col-span-7 text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300 text-pretty">{{ .text }}</p>
         </div>
       </div>
     </section>
@@ -31,7 +31,7 @@
       <div class="{{ $wrap }}">
         <div class="{{ $col }}">
           <h2 class="{{ $h2 }}">{{ .title }}</h2>
-          {{- with .text }}<p class="mt-3 max-w-3xl text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
+          {{- with .text }}<p class="mt-3 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
           <ul class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
             {{- range .items }}
               <li class="border-t border-gray-300 dark:border-white/20 pt-5">
@@ -39,7 +39,7 @@
                   <span class="h-5 w-5 flex-none rounded-full border-4 {{ index $ring .color }}" aria-hidden="true"></span>
                   {{ .title }}
                 </h3>
-                <p class="mt-3 text-base lg:text-lg font-light text-gray-700 dark:text-gray-300">{{ .text }}</p>
+                <p class="mt-3 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
               </li>
             {{- end }}
           </ul>
@@ -53,18 +53,18 @@
       <div class="{{ $wrap }}">
         <div class="{{ $col }}">
           <h2 class="{{ $h2 }}">{{ .title }}</h2>
-          {{- with .text }}<p class="mt-3 max-w-3xl text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
+          {{- with .text }}<p class="mt-3 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
           <ul class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {{- range .items }}
               <li class="flex flex-col border border-gray-200 dark:border-white/10 bg-fika-offWhite dark:bg-fika-dark-elevated p-6 lg:p-8">
                 <p class="{{ $eyebrow }}">{{ .status }}</p>
                 <h3 class="mt-3 text-2xl font-medium lg:text-3xl">{{ .name }}</h3>
                 <p class="mt-1 text-lg font-medium text-gray-700 dark:text-gray-200">{{ .role }}</p>
-                <p class="mt-4 text-base font-light text-gray-700 dark:text-gray-300">{{ .text }}</p>
+                <p class="mt-4 text-base font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
                 {{- with .features }}
                   <ul class="mt-5 space-y-3">
                     {{- range . }}
-                      <li class="flex gap-3 text-base font-light text-gray-800 dark:text-gray-200">{{ $check | safeHTML }}<span>{{ . }}</span></li>
+                      <li class="flex gap-3 text-base font-normal text-gray-800 dark:text-gray-200">{{ $check | safeHTML }}<span>{{ . }}</span></li>
                     {{- end }}
                   </ul>
                 {{- end }}
@@ -83,7 +83,7 @@
           <div class="lg:col-span-5">
             {{- with $d.eyebrow }}<p class="{{ $eyebrow }}">{{ . }}</p>{{ end }}
             <h2 class="mt-3 text-3xl font-medium lg:text-4xl text-balance">{{ $d.title }}</h2>
-            <p class="mt-4 text-base lg:text-lg font-light text-gray-700 dark:text-gray-300">{{ $d.text }}</p>
+            <p class="mt-4 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ $d.text }}</p>
           </div>
           <div class="lg:col-span-7">
             {{- with $d.list }}
@@ -92,13 +92,13 @@
                 {{- range $j, $item := . }}
                   <li class="flex gap-5 py-4">
                     <span class="w-6 flex-none text-lg font-medium text-fika-purple dark:text-fika-light-purple">{{ add $j 1 }}</span>
-                    <span class="text-base lg:text-lg font-light text-gray-800 dark:text-gray-200">{{ $item }}</span>
+                    <span class="text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ $item }}</span>
                   </li>
                 {{- end }}
               </ol>
             {{- end }}
             {{- with $d.note }}
-              <p class="{{ if $d.list }}mt-6{{ end }} border-l-4 border-fika-light-purple pl-5 text-base lg:text-lg font-light text-gray-700 dark:text-gray-300">{{ . }}</p>
+              <p class="{{ if $d.list }}mt-6{{ end }} border-l-4 border-fika-light-purple pl-5 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ . }}</p>
             {{- end }}
           </div>
         </div>
@@ -111,7 +111,7 @@
       <div class="{{ $wrap }}">
         <div class="{{ $col }}">
           <h2 class="{{ $h2 }} max-w-4xl">{{ .title }}</h2>
-          <p class="mt-4 max-w-3xl text-lg font-light lg:text-xl text-gray-700 dark:text-gray-300">{{ .text }}</p>
+          <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">{{ .text }}</p>
           <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
             {{- range .groups }}
               <div>
@@ -144,7 +144,7 @@
                   {{- end }}
                 </ul>
               {{- end }}
-              {{- with .note }}<p class="mt-6 text-base font-light text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
+              {{- with .note }}<p class="mt-6 text-base font-normal text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
             </div>
           {{- end }}
           {{- with $p.deploy }}
@@ -157,7 +157,7 @@
                       <h3 class="text-lg font-medium lg:text-xl">{{ .name }}</h3>
                       <p class="mt-1 {{ $eyebrow }} text-xs">{{ .status }}</p>
                     </div>
-                    <p class="sm:col-span-8 text-base lg:text-lg font-light text-gray-700 dark:text-gray-300">{{ .text }}</p>
+                    <p class="sm:col-span-8 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
                   </li>
                 {{- end }}
               </ul>
@@ -173,8 +173,8 @@
       <div class="{{ $wrap }}">
         <div class="{{ $col }}">
           <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-300">Early access</p>
-          <h2 class="mt-3 text-3xl font-medium lg:text-5xl">{{ .title }}</h2>
-          <p class="mt-4 max-w-3xl text-lg font-light lg:text-2xl text-gray-200">{{ .text }}</p>
+          <h2 class="mt-3 text-3xl font-medium lg:text-heading">{{ .title }}</h2>
+          <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-200">{{ .text }}</p>
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             {{- with $p.cta_url }}
               <a href="{{ . }}" class="inline-flex items-center justify-center rounded-[40px] bg-white px-9 py-5 text-base font-medium text-black hover:bg-fika-light-purple transition-colors duration-200 lg:text-xl">{{ $p.cta_text | default "Ask for early access" }}</a>

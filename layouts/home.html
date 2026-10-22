@@ -3,7 +3,7 @@
   {{- $arrowIcon := `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z" fill="currentColor"></path></svg>` }}
   <!-- Hero -->
   <div class="relative">
-    <div class="relative overflow-hidden bg-fika-offWhite dark:bg-gray-900 min-h-screen">
+    <div class="relative overflow-hidden bg-fika-offWhite dark:bg-gray-900 min-h-[min(100svh,47.5rem)]">
       {{ partial "bg-image.html" (dict) }}
     </div>
     <div
@@ -11,7 +11,7 @@
     >
       <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-700 dark:text-gray-300">Collectively engineered</p>
       <h1
-        class="mt-4 max-w-sm text-center text-5xl font-medium md:max-w-3xl md:text-6xl lg:max-w-5xl lg:text-8xl dark:text-white"
+        class="mt-4 max-w-sm text-center text-5xl font-medium md:max-w-3xl md:text-6xl lg:max-w-5xl lg:text-7xl dark:text-white"
       >
         Cloud native. Agent ready.
       </h1>
@@ -26,10 +26,10 @@
 
   <!-- What we do: the journey -->
   <section class="py-12 lg:py-20 bg-white dark:bg-gray-900 dark:text-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12">
-        <h2 class="text-3xl font-medium lg:text-5xl">Start where you are</h2>
-        <p class="mt-4 max-w-3xl text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <h2 class="text-3xl font-medium lg:text-heading">Start where you are</h2>
+        <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">
           From a first assessment to a platform in production, and a senior expert who stays close.
         </p>
         <ol class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,12 +43,12 @@
               <a href="{{ .url }}" class="group flex h-full flex-col bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8 hover:bg-fika-offWhite dark:hover:bg-white/10 transition-colors duration-200">
                 <span class="block h-8 w-8 rounded-full border-[6px] {{ index $ring .color }}" aria-hidden="true"></span>
                 <span class="mt-4 block text-2xl font-medium lg:text-3xl">{{ .name }}</span>
-                <span class="mt-2 block text-base font-light lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</span>
+                <span class="mt-2 block text-base font-normal lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</span>
               </a>
             </li>
           {{- end }}
         </ol>
-        <p class="mt-8 text-lg font-light text-gray-700 dark:text-gray-300">
+        <p class="mt-8 text-lg font-normal text-gray-700 dark:text-gray-300">
           Prefer to start from the problem? <a href="/solutions/" class="font-medium text-black dark:text-white underline underline-offset-8 hover:text-fika-purple">Browse our solutions</a>
         </p>
       </div>
@@ -57,11 +57,11 @@
 
   <!-- Why a cooperative, for buyers -->
   <section class="py-12 lg:py-20 bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
         <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">Why a cooperative</p>
-        <h2 class="mt-4 max-w-4xl text-3xl font-medium lg:text-5xl text-balance">Your budget goes to the professionals doing the work.</h2>
-        <p class="mt-4 max-w-3xl text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">The person who scopes your work delivers it, with a community of 150+ senior professionals behind them.</p>
+        <h2 class="mt-4 max-w-4xl text-3xl font-medium lg:text-heading text-balance">Your budget goes to the professionals doing the work.</h2>
+        <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">The person who scopes your work delivers it, with a community of 150+ senior professionals behind them.</p>
         <div class="mt-8 lg:mt-10">
           {{ partial "pyramid-money.html" . }}
         </div>
@@ -72,12 +72,12 @@
 
   <!-- Products -->
   <section class="py-12 lg:py-16 bg-white dark:bg-gray-900">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10">
         <div>
           <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-300">Products · Early access</p>
           <p class="mt-3 text-2xl font-medium lg:text-4xl">What we are building next</p>
-          <p class="mt-3 max-w-2xl text-base font-light lg:text-lg text-gray-200">AI agents that work alongside our experts, a sovereign migration assessment and a security platform, all running in your own infrastructure.</p>
+          <p class="mt-3 max-w-2xl text-base font-normal lg:text-lg text-gray-200">AI agents that work alongside our experts, a sovereign migration assessment and a security platform, all running in your own infrastructure.</p>
         </div>
         <a href="/products/" class="shrink-0 inline-flex items-center justify-center rounded-[40px] bg-white px-8 py-4 text-base font-medium text-black hover:bg-fika-light-purple transition-colors duration-200 lg:text-lg">See our products</a>
       </div>

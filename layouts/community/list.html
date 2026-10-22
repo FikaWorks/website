@@ -2,14 +2,14 @@
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Community" "cta_text" "Join the community" "cta_url" "/cooperative/join/" "cta2_text" "Upcoming events" "cta2_url" "/events/") }}
   {{- $hero_img := .Resources.GetMatch $.Params.hero_image }}
   <div class="bg-white dark:bg-gray-900 dark:text-white pt-12 lg:pt-16 pb-6 lg:pb-14">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-10">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full lg:col-start-1 lg:col-end-10">
         {{- with $hero_img }}
           {{- $m := .Resize "1600x webp" }}
           <img alt="FikaWorks community event" src="{{ $m.RelPermalink }}" class="mb-10 w-full aspect-[21/9] object-cover" loading="lazy" />
         {{- end }}
         <div class="mt-6 lg:mt-8">
-          <div class="font-light text-lg lg:text-2xl">
+          <div class="font-normal text-lg lg:text-xl">
             {{- partial "helpers/enhanced-content-page.html" .Content }}
           </div>
         </div>

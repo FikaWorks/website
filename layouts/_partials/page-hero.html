@@ -27,9 +27,9 @@
 >
   {{ partial "bg-image.html" (dict) }}
   <div
-    class="relative z-10 grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 lg:gap-10 gap-6"
+    class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container lg:gap-10 gap-6"
   >
-    <div class="col-span-full lg:col-start-2 lg:col-end-11">
+    <div class="col-span-full lg:col-start-1 lg:col-end-11">
       {{- with $eyebrow }}
         <p
           class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300"
@@ -38,20 +38,20 @@
         </p>
       {{- end }}
       <h1
-        class="mt-4 text-4xl md:text-5xl lg:text-7xl font-medium text-black dark:text-white text-balance"
+        class="mt-4 text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white text-balance"
       >
         {{ $title }}
       </h1>
       {{- with $subtitle }}
         <p
-          class="mt-6 max-w-3xl text-xl lg:text-2xl font-light text-gray-700 dark:text-gray-300 text-pretty"
+          class="mt-6 max-w-3xl text-xl lg:text-xl font-normal text-gray-700 dark:text-gray-300 text-pretty"
         >
           {{ . }}
         </p>
       {{- end }}
       {{- with .body }}
         <div
-          class="mt-6 max-w-3xl text-base lg:text-lg font-light text-gray-700 dark:text-gray-300"
+          class="mt-6 max-w-3xl text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300"
         >
           {{ . }}
         </div>

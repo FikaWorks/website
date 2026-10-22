@@ -9,7 +9,7 @@
   <body class="dark:bg-gray-900">
     <div>
       <header
-        class="absolute inset-x-0 top-0 z-40 h-[90px] w-full bg-transparent"
+        class="absolute inset-x-0 top-0 z-40 h-16 min-[1145px]:h-[76px] w-full border-b border-black/[0.08] bg-white dark:border-white/10 dark:bg-gray-950"
       >
         {{ partial "header.html" . }}
       </header>
@@ -21,7 +21,7 @@
     </div>
     <div class="dark:bg-gray-950">
       <footer
-        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
+        class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
       >
         {{ partial "footer.html" . }}
       </footer>

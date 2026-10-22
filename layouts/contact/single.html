@@ -1,22 +1,22 @@
 {{ define "main" }}
   <div class="pt-36 pb-16 lg:pb-24">
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
-      <div class="col-span-full lg:col-span-5 lg:col-start-2">
-        <h1 class="text-3xl font-medium lg:text-7xl dark:text-white">
+      <div class="col-span-full lg:col-span-6 lg:col-start-1">
+        <h1 class="text-3xl font-medium lg:text-6xl dark:text-white">
           {{ .Title }}
         </h1>
-        <div class="mt-6 text-lg font-light lg:text-2xl dark:text-gray-200">
-          <p class="pb-5 font-light lg:pb-6">
+        <div class="mt-6 text-lg font-normal lg:text-xl dark:text-gray-200">
+          <p class="pb-5 font-normal lg:pb-6">
             {{ .Content }}
           </p>
         </div>
         <div
-          class="mt-7 text-sm font-light lg:mt-8 lg:text-base dark:text-gray-200"
+          class="mt-7 text-sm font-normal lg:mt-8 lg:text-base dark:text-gray-200"
         >
           <p class="pb-2 font-medium text-base lg:text-lg">🏢 Office:</p>
-          <p class="pb-5 font-light lg:pb-6">
+          <p class="pb-5 font-normal lg:pb-6">
             <strong>Haarlem </strong><br />
             Bakke Rij <br />
             Hendrik Figeeweg 3F<br />
@@ -30,7 +30,7 @@
           </p>
         </div>
       </div>
-      <div class="col-span-full mb-1 lg:col-start-7 lg:col-end-11 lg:mb-0">
+      <div class="col-span-full mb-1 lg:col-start-8 lg:col-end-13 lg:mb-0">
         <form
           name="contact"
           id="contact-form"
@@ -55,7 +55,7 @@
                 type="text"
                 autocomplete="name"
                 placeholder="your full name"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -76,7 +76,7 @@
                 type="email"
                 autocomplete="email"
                 placeholder="your email address"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -96,7 +96,7 @@
                 type="tel"
                 autocomplete="phone"
                 placeholder="your phone number"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -116,7 +116,7 @@
                 type="text"
                 autocomplete="company"
                 placeholder="your company name"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
                 value=""
               />
             </div>
@@ -133,7 +133,7 @@
               <select
                 id="topic"
                 name="topic"
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
               >
                 <option value="" disabled selected>Choose one</option>
                 <option value="assess">Assess: discovery workshop or readiness review</option>
@@ -170,7 +170,7 @@
                 name="message"
                 rows="5"
                 placeholder="Tell us what you need, we will help you as best as we can."
-                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-light outline-0 ring-fika-purple focus:ring-2"
+                class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2"
               ></textarea>
             </div>
           </div>

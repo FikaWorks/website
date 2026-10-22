@@ -11,13 +11,6 @@
 
 @font-face {
   font-family: 'Patron';
-  font-weight: 300;
-  font-style: normal;
-  src: url('{{ .FontLightURL }}') format('opentype');
-}
-
-@font-face {
-  font-family: 'Patron';
   font-weight: 500;
   font-style: normal;
   src: url('{{ .FontMediumURL }}') format('opentype');
@@ -59,10 +52,22 @@
   --color-fika-dark-surface: #161825;
   --color-fika-dark-elevated: #1e2130;
 
-  --breakpoint-3xl: 2000px;
-  --breakpoint-4xl: 3000px;
+  /* Section headings (h2). Page titles use text-6xl, the home title text-7xl. */
+  --text-heading: 2.75rem;
+  --text-heading--line-height: 1.12;
 
   --default-font-family: 'Patron', var(--font-sans);
+}
+
+/* Page content sits in one centred 1280px column on every page, aligned with
+   the header and footer; section backgrounds still run edge to edge.
+   Use on the inner wrapper of each section, e.g.
+   <section class="bg-..."><div class="page-container grid ...">…</div></section> */
+@utility page-container {
+  margin-inline: 0.75rem;
+  @media (width >= 48rem) {
+    margin-inline: max(2.5rem, calc((100% - 80rem) / 2));
+  }
 }
 
 * {

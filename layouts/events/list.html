@@ -2,7 +2,7 @@
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Events & Insights · Events" "subtitle" .Params.heading) }}
   <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full">
         <div class="flex flex-wrap items-center gap-6 lg:flex-nowrap">
@@ -233,7 +233,7 @@
                   >{{ .Params.event_location }}</span
                 >
               </div>
-              <span class="block text-3xl font-medium lg:text-5xl"
+              <span class="block text-3xl font-medium lg:text-heading"
                 >{{ .Title }}</span
               >
               <a

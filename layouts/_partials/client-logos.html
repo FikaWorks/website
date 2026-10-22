@@ -4,8 +4,8 @@
 */}}
 {{- $title := .title | default "Organisations we have worked with" }}
 <section class="py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
-  <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-    <div class="col-span-full lg:col-start-2 lg:col-end-12">
+  <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+    <div class="col-span-full">
       <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">
         {{ $title }}
       </p>
@@ -34,7 +34,7 @@
               {{- end }}
             </div>
             {{- if not $.compact }}
-              <p class="mt-3 text-sm font-light text-gray-600 dark:text-gray-300 lg:text-base">{{ .work }}</p>
+              <p class="mt-3 text-sm font-normal text-gray-600 dark:text-gray-300 lg:text-base">{{ .work }}</p>
             {{- end }}
           </li>
         {{- end }}

@@ -3,17 +3,17 @@
   <!-- Why a cooperative -->
   {{- with .Params.story }}
   <section class="py-12 lg:py-20 bg-white dark:bg-gray-900 dark:text-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12 grid grid-cols-1 gap-10 lg:grid-cols-12">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <h2 class="text-3xl font-medium lg:text-5xl">{{ .title }}</h2>
-          <div class="mt-6 text-lg font-light lg:text-2xl text-gray-800 dark:text-gray-200 [&>p]:mb-5">{{ .text | markdownify }}</div>
+          <h2 class="text-3xl font-medium lg:text-heading">{{ .title }}</h2>
+          <div class="mt-6 text-lg font-normal lg:text-xl text-gray-800 dark:text-gray-200 [&>p]:mb-5">{{ .text | markdownify }}</div>
         </div>
         <ul class="lg:col-span-6 lg:col-start-7 flex flex-col gap-6">
           {{- range .points }}
             <li class="border-t border-black dark:border-white/30 pt-4">
               <p class="text-xl font-medium lg:text-2xl">{{ .title }}</p>
-              <p class="mt-2 text-base font-light lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</p>
+              <p class="mt-2 text-base font-normal lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</p>
             </li>
           {{- end }}
           {{- with .closing }}
@@ -32,16 +32,16 @@
   {{- $ring := dict "blue" "border-fika-soft-blue" "yellow" "border-fika-soft-yellow" "green" "border-fika-soft-green" "purple" "border-fika-light-purple" }}
   {{- with .Params.why }}
   <div class="bg-white dark:bg-gray-900 dark:text-white py-10 lg:py-16">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12">
-        <h2 class="mb-8 text-3xl font-medium lg:text-5xl">What it means for you</h2>
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <h2 class="mb-8 text-3xl font-medium lg:text-heading">What it means for you</h2>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
           {{- range . }}
           <div class="flex gap-5 bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8">
             <span class="mt-1 h-7 w-7 flex-none rounded-full border-[5px] border-black dark:border-white" aria-hidden="true"></span>
             <div>
               <h2 class="text-xl font-medium lg:text-3xl">{{ .title }}</h2>
-              <p class="mt-3 text-base lg:text-lg font-light text-gray-800 dark:text-gray-200">{{ .text }}</p>
+              <p class="mt-3 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .text }}</p>
             </div>
           </div>
           {{- end }}
@@ -54,14 +54,14 @@
 
   <!-- How the cooperative works -->
   <section class="py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12">
-        <h2 class="text-3xl font-medium lg:text-5xl">How the cooperative works</h2>
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <h2 class="text-3xl font-medium lg:text-heading">How the cooperative works</h2>
         <div class="mt-8 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-3">
           {{- range .Params.how }}
             <div class="border-t border-black dark:border-white/30 pt-4">
               <h3 class="text-lg font-medium lg:text-xl">{{ .title }}</h3>
-              <p class="mt-2 text-base font-light lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</p>
+              <p class="mt-2 text-base font-normal lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</p>
             </div>
           {{- end }}
         </div>
@@ -84,28 +84,28 @@
 
   <!-- Numbers and values -->
   <section class="py-12 lg:py-16 bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white">
-    <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-      <div class="col-span-full lg:col-start-2 lg:col-end-12 grid grid-cols-1 gap-10 lg:grid-cols-2">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
-          <h2 class="text-3xl font-medium lg:text-5xl">In numbers</h2>
+          <h2 class="text-3xl font-medium lg:text-heading">In numbers</h2>
           <dl class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {{- range .Params.numbers }}
               <div class="bg-white dark:bg-fika-dark-elevated p-6">
                 <dt class="sr-only">{{ .label }}</dt>
-                <dd class="text-4xl font-medium lg:text-5xl">{{ .value }}</dd>
+                <dd class="text-4xl font-medium lg:text-heading">{{ .value }}</dd>
                 <dd class="mt-2 text-base font-medium">{{ .label }}</dd>
-                <dd class="mt-1 text-sm font-light text-gray-700 dark:text-gray-300">{{ .text }}</dd>
+                <dd class="mt-1 text-sm font-normal text-gray-700 dark:text-gray-300">{{ .text }}</dd>
               </div>
             {{- end }}
           </dl>
         </div>
         <div>
-          <h2 class="text-3xl font-medium lg:text-5xl">Our values</h2>
+          <h2 class="text-3xl font-medium lg:text-heading">Our values</h2>
           <ul class="mt-8 flex flex-col gap-4">
             {{- range .Params.values }}
               <li class="bg-white dark:bg-fika-dark-elevated p-6">
                 <p class="text-lg font-medium lg:text-xl">{{ .title }}</p>
-                <p class="mt-1 text-base font-light text-gray-700 dark:text-gray-300">{{ .text }}</p>
+                <p class="mt-1 text-base font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
               </li>
             {{- end }}
           </ul>
@@ -118,9 +118,9 @@
 
   {{- with .Params.giving_back }}
     <section class="pb-12 lg:pb-16 bg-white dark:bg-gray-900 dark:text-white">
-      <div class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6">
-        <div class="col-span-full lg:col-start-2 lg:col-end-12">
-          <p class="border-y border-black dark:border-white/30 py-6 text-base font-light lg:text-xl">{{ . }} <a class="font-medium underline underline-offset-4 hover:text-fika-purple" href="/community/">Our community</a></p>
+      <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+        <div class="col-span-full">
+          <p class="border-y border-black dark:border-white/30 py-6 text-base font-normal lg:text-xl">{{ . }} <a class="font-medium underline underline-offset-4 hover:text-fika-purple" href="/community/">Our community</a></p>
         </div>
       </div>
     </section>
@@ -128,11 +128,11 @@
 
   <div id="team" class="bg-white dark:bg-gray-900 dark:text-white py-6 md:py-14">
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full">
-        <h2 class="text-3xl font-medium lg:text-5xl dark:text-white">Meet our members</h2>
-        <p class="mt-3 mb-8 lg:mb-10 max-w-3xl text-lg font-light lg:text-2xl text-gray-700 dark:text-gray-300">The {{ len (where .Pages "Params.role" "!=" nil) }} members who own the cooperative. Behind them stands a community of 150+ people we work with.</p>
+        <h2 class="text-3xl font-medium lg:text-heading dark:text-white">Meet our members</h2>
+        <p class="mt-3 mb-8 lg:mb-10 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">The {{ len (where .Pages "Params.role" "!=" nil) }} members who own the cooperative. Behind them stands a community of 150+ people we work with.</p>
         <div class="flex flex-wrap items-center gap-6 lg:flex-nowrap">
           {{- $counts := dict -}}
           {{- $uniqueExpertisesMap := dict -}}
@@ -360,7 +360,7 @@
                 </div>
                 <div class="mt-6">
                   {{- if .Params.linkedin }}<a href="{{ .Params.linkedin }}" class="text-2xl font-medium hover:text-fika-purple underline-offset-4 hover:underline" rel="noopener">{{ .Title }}</a>{{- else }}{{- if .Params.linkedin }}<a href="{{ .Params.linkedin }}" class="text-2xl font-medium hover:text-fika-purple underline-offset-4 hover:underline" rel="noopener">{{ .Title }}</a>{{- else }}<span class="text-2xl font-medium">{{ .Title }}</span>{{- end }}{{- end }}
-                  <p class="mt-1 text-sm font-light">{{ .Params.role }}</p>
+                  <p class="mt-1 text-sm font-normal">{{ .Params.role }}</p>
                   <div class="mt-4 flex gap-3 w-full flex-wrap">
                     {{- range .Params.expertises }}
                       <span

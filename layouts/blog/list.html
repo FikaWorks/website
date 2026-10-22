@@ -2,7 +2,7 @@
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Events & Insights · Blog" "subtitle" (.Content | plainify | strings.TrimSpace)) }}
   <div class="bg-white dark:bg-gray-900 pt-12 lg:pt-16 pb-14 lg:pb-24">
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
       {{- range .Pages }}
         <div class="col-span-full md:col-span-6 lg:col-span-4">
