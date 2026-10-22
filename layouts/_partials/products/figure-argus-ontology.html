@@ -1,0 +1,63 @@
+{{- /*
+  Illustration for the Argus "map" section: one image with one identity on
+  the map, running in three environments. Example data, not a screenshot.
+  @context details entry from content/products/fikaworks-argus/index.md
+*/}}
+<figure class="rounded-[1.25rem] border border-gray-200 bg-surface p-5 dark:border-white/10 lg:p-6">
+  <svg
+    viewBox="0 0 480 300"
+    class="h-auto w-full text-gray-900 dark:text-white"
+    role="img"
+    aria-labelledby="ontology-title ontology-desc"
+    style="font-family: inherit"
+  >
+    <title id="ontology-title">Example of the Argus map</title>
+    <desc id="ontology-desc">
+      A repository builds the image payments-api 1.8, which the identity
+      deploy-bot deploys. The same image runs in prod-eu, prod-us and staging
+      and has one vulnerability, so one fix closes it in all three.
+    </desc>
+
+    <g fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5">
+      <path d="M150 62 C 168 62, 165 132, 180 132" />
+      <path d="M150 238 C 168 238, 165 168, 180 168" />
+      <path d="M320 150 C 342 150, 338 52, 360 52" />
+      <path d="M320 150 L 360 150" />
+      <path d="M320 150 C 342 150, 338 248, 360 248" />
+    </g>
+    <g font-size="10" fill="currentColor" fill-opacity="0.65" letter-spacing="0.06em">
+      <text x="152" y="96" text-anchor="end">BUILDS</text>
+      <text x="152" y="212" text-anchor="end">DEPLOYS</text>
+      <text x="415" y="20" text-anchor="middle">RUNS IN</text>
+    </g>
+
+    <g font-size="9.5" letter-spacing="0.12em" fill="#1d1d1b" fill-opacity="0.6">
+      <rect x="10" y="40" width="140" height="44" rx="12" fill="var(--color-fika-soft-yellow)" fill-opacity="1" />
+      <text x="24" y="58">REPOSITORY</text>
+      <rect x="10" y="216" width="140" height="44" rx="12" fill="var(--color-fika-light-purple)" fill-opacity="1" />
+      <text x="24" y="234">IDENTITY</text>
+      <rect x="180" y="104" width="140" height="92" rx="14" fill="var(--color-fika-soft-blue)" fill-opacity="1" />
+      <text x="194" y="124">IMAGE</text>
+      <rect x="360" y="30" width="110" height="44" rx="12" fill="var(--color-fika-sage-light)" fill-opacity="1" />
+      <text x="374" y="48">CLUSTER</text>
+      <rect x="360" y="128" width="110" height="44" rx="12" fill="var(--color-fika-sage-light)" fill-opacity="1" />
+      <text x="374" y="146">CLUSTER</text>
+      <rect x="360" y="226" width="110" height="44" rx="12" fill="var(--color-fika-sage-light)" fill-opacity="1" />
+      <text x="374" y="244">CLUSTER</text>
+    </g>
+    <g font-size="13" font-weight="500" fill="#1d1d1b">
+      <text x="24" y="75">payments-api</text>
+      <text x="24" y="251">deploy-bot</text>
+      <text x="194" y="143">payments-api:1.8</text>
+      <text x="374" y="65">prod-eu</text>
+      <text x="374" y="163">prod-us</text>
+      <text x="374" y="261">staging</text>
+    </g>
+    <rect x="194" y="158" width="102" height="22" rx="11" fill="#1d1d1b" />
+    <text x="245" y="173" font-size="11" font-weight="500" fill="#fff" text-anchor="middle">1 vulnerability</text>
+  </svg>
+  <figcaption class="mt-4 text-sm text-gray-600 dark:text-gray-300">
+    Example: one image with one identity, running in three environments. One
+    vulnerability, one fix.
+  </figcaption>
+</figure>

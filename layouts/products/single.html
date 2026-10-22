@@ -84,6 +84,10 @@
             {{- with $d.eyebrow }}<p class="{{ $eyebrow }}">{{ . }}</p>{{ end }}
             <h2 class="mt-3 text-3xl font-medium lg:text-4xl text-balance">{{ $d.title }}</h2>
             <p class="mt-4 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ $d.text }}</p>
+            {{- /* Optional illustration: layouts/_partials/products/<figure>.html */}}
+            {{- with $d.figure }}
+              <div class="mt-8">{{ partial (printf "products/%s.html" .) $d }}</div>
+            {{- end }}
           </div>
           <div class="lg:col-span-7">
             {{- with $d.list }}
@@ -136,6 +140,19 @@
           {{- with $p.integrations }}
             <div class="lg:col-span-5">
               <h2 class="text-3xl font-medium lg:text-4xl">{{ .title }}</h2>
+              {{- with .text }}<p class="mt-4 text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
+              {{- /* One list (items), or titled groups (groups: [{title, items}]). */}}
+              {{- $more := .more }}
+              {{- with .items }}
+                <ul class="mt-5 flex flex-wrap gap-2">
+                  {{- range . }}
+                    <li class="bg-surface border border-gray-200 dark:border-white/10 px-3 py-1.5 text-sm lg:text-base">{{ . }}</li>
+                  {{- end }}
+                  {{- with $more }}
+                    <li class="border border-dashed border-gray-400 dark:border-white/30 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-300 lg:text-base">{{ . }}</li>
+                  {{- end }}
+                </ul>
+              {{- end }}
               {{- range .groups }}
                 <h3 class="mt-6 {{ $eyebrow }}">{{ .title }}</h3>
                 <ul class="mt-3 flex flex-wrap gap-2">
@@ -145,6 +162,9 @@
                 </ul>
               {{- end }}
               {{- with .note }}<p class="mt-6 text-base font-normal text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
+              {{- with .custom }}
+                <p class="mt-6 border-t border-gray-300 dark:border-white/15 pt-5 text-base font-medium lg:text-lg">{{ . }}</p>
+              {{- end }}
             </div>
           {{- end }}
           {{- with $p.deploy }}

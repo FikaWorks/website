@@ -22,7 +22,7 @@ text = 'Three agents work on one map, towards one target, behind one gate.'
 [[how.items]]
 title = 'The map'
 color = 'blue'
-text = 'Everything in your environments and how it connects: cloud resources, clusters, workloads, images, repositories and identities. Every change and scan keeps it current. Each thing has one identity across environments, so one fix closes a gap everywhere it appears.'
+text = 'An ontology of everything in your environments and how it connects, kept current by every change and scan. It is what lets Argus fix once and see attacks across your estate.'
 [[how.items]]
 title = 'The target'
 color = 'yellow'
@@ -68,6 +68,19 @@ features = [
 ]
 
 # ------------------------------------------------------------ deep dives
+[[details]]
+eyebrow = 'The map'
+title = 'One map of everything you run'
+text = 'Argus builds an ontology of your estate: every cloud resource, cluster, workload, image, repository and identity, and how they connect. Each thing has one identity across all your environments, and every change and scan keeps the map current.'
+figure = 'figure-argus-ontology'
+list_title = 'What the map lets Argus do'
+list = [
+  'Fix once, everywhere. An image running in prod-eu, prod-us and staging is one thing on the map, so one fix closes the gap in every environment.',
+  'Read attacks across your estate. An exposed workload, an over-privileged identity and an unexpected process, seen together on the map, read as an attack in progress.',
+  'Learn from its own work. Every approval, verified fix, confirmed link and closed incident teaches it more about your estate, and that learning stays in your environment.',
+]
+note = 'We are fine-tuning an open-weight model to read the map. It runs where Argus runs, in our service, in your cloud or on the private box, so your data does not leave.'
+
 [[details]]
 eyebrow = 'Scout'
 title = 'It watches, and contains within the limits you set'
@@ -125,11 +138,23 @@ items = [
 # ------------------------------------------------------------ works with
 [integrations]
 title = 'Works with'
-groups = [
-  { title = 'Runs on and changes', items = ['Kubernetes', 'Helm', 'Argo CD', 'Flux', 'GitLab'] },
-  { title = 'Reads', items = ['Trivy', 'Kyverno', 'Falco'] },
+text = 'Argus connects to the clouds, platforms and tools you already run, with multiple organisations from day one. Among them:'
+items = [
+  'AWS',
+  'Azure',
+  'Google Cloud',
+  'Kubernetes',
+  'GitHub',
+  'GitLab',
+  'Helm',
+  'Argo CD',
+  'Flux',
+  'Trivy',
+  'Kyverno',
+  'Falco',
 ]
-note = 'Kubernetes and Git environments today, with multiple organisations from day one. Azure is next, then other clouds and Terraform.'
+more = 'and more'
+custom = 'Using something else? We build custom integrations when your environment needs them.'
 
 # ------------------------------------------------------------ deployment
 [deploy]
