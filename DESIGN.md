@@ -71,7 +71,8 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
 - **Colour dots.** Stage markers are filled dots
   (`rounded-full bg-fika-soft-blue`), never outline rings.
 - **Page header.** `page-hero.html` with `decor-circles.html`: flat colour
-  circles and thin outline circles bleeding off the corners.
+  circles and thin outline circles, cut only by a real edge (the header bar or
+  the side of the screen), never by the end of the section.
 - **Closing call to action.** `cta.html` / `cta-join.html`, built on
   `cta-panel.html`: a lavender card in the content column.
 - **Header.** A white bar with a thin bottom border, like the other white

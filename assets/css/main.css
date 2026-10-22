@@ -419,8 +419,10 @@ nav .dark\:bg-gray-950 {
     }
   }
 
-  /* Page-header decoration: flat colour circles and thin outline circles in the
-     corners, as on the leaflets. Rendered by _partials/decor-circles.html. */
+  /* Page-header decoration: flat colour circles and thin outline circles, as
+     on the leaflets. Like the leaflets bleeding off the paper edge, they are
+     only ever cut by a real edge: the header bar (top right) or the side of
+     the screen (left). Rendered by _partials/decor-circles.html. */
   .decor-circles span {
     position: absolute;
     border-radius: 9999px;
@@ -454,24 +456,26 @@ nav .dark\:bg-gray-950 {
     background: var(--color-fika-soft-blue);
   }
   .decor-circles .c-lavender {
-    width: clamp(9rem, 20vw, 20rem);
+    width: clamp(8rem, 16vw, 20rem);
     aspect-ratio: 1;
-    left: clamp(-6rem, -6vw, -3rem);
-    bottom: clamp(-10rem, -10vw, -5rem);
+    left: 0;
+    top: 60%;
+    transform: translate(-68%, -50%);
     background: var(--color-fika-light-purple);
   }
   .decor-circles .c-ring-bottom {
-    width: clamp(8rem, 17vw, 17rem);
+    width: clamp(7rem, 13vw, 16rem);
     aspect-ratio: 1;
-    left: clamp(-1rem, 1vw, 2rem);
-    bottom: clamp(-11rem, -11vw, -6rem);
+    left: 0;
+    top: 68%;
+    transform: translate(-62%, -50%);
     border: 1.5px solid currentColor;
   }
   .decor-circles .c-dot-yellow {
     width: clamp(1.5rem, 2.6vw, 2.6rem);
     aspect-ratio: 1;
-    left: clamp(10rem, 22vw, 22rem);
-    bottom: clamp(1.5rem, 3vw, 3rem);
+    left: clamp(0.75rem, 2vw, 3rem);
+    top: 24%;
     background: var(--color-fika-soft-yellow);
   }
   .decor-circles .c-dot-green {
@@ -482,7 +486,6 @@ nav .dark\:bg-gray-950 {
     background: var(--color-fika-soft-green);
   }
   .dark .decor-circles {
-    color: rgb(255 255 255 / 0.5);
     opacity: 0.85;
   }
 }
