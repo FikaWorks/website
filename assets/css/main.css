@@ -19,16 +19,18 @@
 @theme {
   --color-fika-ash: #d1c6b3;
   --color-fika-dust: #efeae1;
-  --color-fika-offWhite: #fbf8f3;
-  --color-fika-light-purple: #d0cbf2;
-  --color-fika-purple: #8c7de5;
-  --color-fika-hover-purple: #a397ea;
+  --color-fika-offWhite: #fdfaf6; /* leaflet paper */
+  --color-fika-light-purple: #d4d1de; /* leaflet lavender */
+  --color-fika-purple: #6f84b5; /* leaflet periwinkle, darkened for text contrast */
+  --color-fika-hover-purple: #7d93bf;
   --color-fika-orange: #e67a2e;
   --color-fika-soft-pink: #ec96b5;
-  --color-fika-soft-blue: #9aafe3;
+  --color-fika-soft-blue: #aab5d0; /* leaflet periwinkle */
   --color-fika-sky-blue: #97ced6;
-  --color-fika-soft-green: #93d7a6;
-  --color-fika-soft-yellow: #efe585;
+  --color-fika-soft-green: #99c69d; /* leaflet sage */
+  --color-fika-soft-yellow: #eee79f; /* leaflet butter */
+  --color-fika-butter-light: #fefad8; /* leaflet card yellow */
+  --color-fika-sage-light: #b6ceb6; /* leaflet card green */
   --color-fika-soft-blue-hover: #f0f3fb;
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
@@ -253,9 +255,9 @@ nav .dark\:bg-gray-950 {
   --color-fika-dark-bg: #0b0f19;
   --color-fika-dark-surface: #10172a;
   --color-fika-dark-elevated: #17213a;
-  --color-fika-purple: #8f63f7;
-  --color-fika-hover-purple: #a07af9;
-  --color-fika-light-purple: #56419a;
+  --color-fika-purple: #a3b3d8; /* periwinkle on dark */
+  --color-fika-hover-purple: #bcc7e3;
+  --color-fika-light-purple: #4c5070; /* lavender on dark */
   --color-fika-soft-green-shadow: #12352d;
   --color-fika-soft-yellow-shadow: #3f2f0f;
   --color-fika-soft-blue-shadow: #173055;
@@ -264,4 +266,207 @@ nav .dark\:bg-gray-950 {
   --color-fika-soft-yellow-dark: #755116;
   --color-fika-soft-blue-dark: #2f5f9e;
   --color-fika-soft-pink-dark: #a13a73;
+}
+
+/* ---------------------------------------------------------------------------
+   Design language (see DESIGN.md). Taken from the FikaWorks print leaflets:
+   warm paper, soft stage colours, rounded colour cards and ruled headings.
+   --------------------------------------------------------------------------- */
+@layer components {
+  /* Stage tones. A tone sets the card fill and the badge colour. */
+  .tone-blue {
+    --tone: var(--color-fika-soft-blue);
+    --tone-badge: var(--color-fika-light-purple);
+  }
+  .tone-yellow {
+    --tone: var(--color-fika-butter-light);
+    --tone-badge: var(--color-fika-soft-yellow);
+  }
+  .tone-green {
+    --tone: var(--color-fika-sage-light);
+    --tone-badge: var(--color-fika-soft-green);
+  }
+  .tone-purple {
+    --tone: var(--color-fika-light-purple);
+    --tone-badge: var(--color-fika-soft-blue);
+  }
+  .tone-neutral {
+    --tone: var(--color-fika-dust);
+    --tone-badge: var(--color-fika-ash);
+  }
+
+  /* The one card: rounded, filled with its tone, no border. */
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    background: var(--tone, var(--color-fika-dust));
+    color: var(--color-gray-900);
+    transition: filter 0.2s;
+    @media (width >= 64rem) {
+      padding: 2rem;
+    }
+  }
+  a.card:hover {
+    filter: brightness(0.96);
+  }
+  .card-badge {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--tone-badge);
+  }
+  .dark .card {
+    background: rgb(255 255 255 / 0.06);
+    color: #fff;
+  }
+  .card-dot {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--tone-badge);
+  }
+  .dark .card-dot {
+    background: var(--tone);
+  }
+  .dark .card-badge {
+    background: var(--tone);
+    color: var(--color-gray-900);
+  }
+
+  /* Section heading with the leaflet rule: "Our services ————". */
+  .title-rule {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .title-rule::after {
+    content: '';
+    flex: 1 0 3rem;
+    height: 1px;
+    background: currentColor;
+    @media (width < 48rem) {
+      display: none;
+    }
+  }
+  .dark .title-rule::after {
+    opacity: 0.35;
+  }
+
+  /* Numbered steps joined by a line (leaflet "How to join"). */
+  .steps {
+    display: grid;
+    gap: 2rem;
+  }
+  .steps > li {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+  }
+  .steps > li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 1.75rem;
+    top: 3.5rem;
+    bottom: -2rem;
+    width: 1px;
+    background: currentColor;
+  }
+  .step-num {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: none;
+    border-radius: 9999px;
+    border: 1px solid currentColor;
+    background: var(--tone-badge);
+    color: var(--color-gray-900);
+    font-size: 1.375rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 0 4px var(--color-fika-offWhite);
+  }
+  .dark .step-num {
+    box-shadow: inset 0 0 0 4px var(--color-gray-900);
+  }
+
+  /* One vertical rhythm for content sections; heroes and dark bands keep their own. */
+  .section-pad {
+    padding-block: 2.5rem;
+    @media (width >= 64rem) {
+      padding-block: 3.5rem;
+    }
+  }
+
+  /* Page-header decoration: flat colour circles and thin outline circles in the
+     corners, as on the leaflets. Rendered by _partials/decor-circles.html. */
+  .decor-circles span {
+    position: absolute;
+    border-radius: 9999px;
+  }
+  .decor-circles .c-green {
+    width: clamp(9rem, 22vw, 22rem);
+    aspect-ratio: 1;
+    right: clamp(-5rem, -4vw, -2rem);
+    top: clamp(-9rem, -9vw, -4rem);
+    background: var(--color-fika-soft-green);
+  }
+  .decor-circles .c-yellow {
+    width: clamp(8rem, 19vw, 19rem);
+    aspect-ratio: 1;
+    right: clamp(-9rem, -8vw, -4rem);
+    top: clamp(-3rem, -2vw, -1rem);
+    background: var(--color-fika-soft-yellow);
+  }
+  .decor-circles .c-ring-top {
+    width: clamp(9rem, 21vw, 21rem);
+    aspect-ratio: 1;
+    right: clamp(-3rem, -2vw, -1rem);
+    top: clamp(-11rem, -11vw, -5rem);
+    border: 1.5px solid currentColor;
+  }
+  .decor-circles .c-dot-blue {
+    width: clamp(1.75rem, 3.5vw, 3.5rem);
+    aspect-ratio: 1;
+    right: clamp(9rem, 26vw, 26rem);
+    top: clamp(5rem, 9vw, 8rem);
+    background: var(--color-fika-soft-blue);
+  }
+  .decor-circles .c-lavender {
+    width: clamp(9rem, 20vw, 20rem);
+    aspect-ratio: 1;
+    left: clamp(-6rem, -6vw, -3rem);
+    bottom: clamp(-10rem, -10vw, -5rem);
+    background: var(--color-fika-light-purple);
+  }
+  .decor-circles .c-ring-bottom {
+    width: clamp(8rem, 17vw, 17rem);
+    aspect-ratio: 1;
+    left: clamp(-1rem, 1vw, 2rem);
+    bottom: clamp(-11rem, -11vw, -6rem);
+    border: 1.5px solid currentColor;
+  }
+  .decor-circles .c-dot-yellow {
+    width: clamp(1.5rem, 2.6vw, 2.6rem);
+    aspect-ratio: 1;
+    left: clamp(10rem, 22vw, 22rem);
+    bottom: clamp(1.5rem, 3vw, 3rem);
+    background: var(--color-fika-soft-yellow);
+  }
+  .decor-circles .c-dot-green {
+    width: clamp(1rem, 1.6vw, 1.6rem);
+    aspect-ratio: 1;
+    right: clamp(4rem, 12vw, 12rem);
+    bottom: clamp(2rem, 4vw, 4rem);
+    background: var(--color-fika-soft-green);
+  }
+  .dark .decor-circles {
+    color: rgb(255 255 255 / 0.5);
+    opacity: 0.85;
+  }
 }

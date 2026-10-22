@@ -207,6 +207,36 @@ name = 'Products'
 pageRef = '/products'
 weight = 18
 
+[[menus.main]]
+name = 'All products'
+pageRef = '/products'
+parent = 'Products'
+weight = 1
+
+[[menus.main]]
+name = 'FikaWorks Agent'
+url = '/products/#fikaworks-agent'
+parent = 'Products'
+weight = 2
+[menus.main.params]
+category = 'Early access'
+
+[[menus.main]]
+name = 'FikaWorks Migrate'
+url = '/products/#fikaworks-migrate'
+parent = 'Products'
+weight = 3
+[menus.main.params]
+category = 'Early access'
+
+[[menus.main]]
+name = 'FikaWorks Argus'
+pageRef = '/products/fikaworks-argus'
+parent = 'Products'
+weight = 4
+[menus.main.params]
+category = 'Early access'
+
 # Cooperative: who we are and how to join
 [[menus.main]]
 name = 'Cooperative'

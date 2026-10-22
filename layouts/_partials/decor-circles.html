@@ -1,0 +1,12 @@
+{{- /*
+  Page-header decoration from the leaflets: flat colour circles and thin
+  outline circles bleeding off the corners. Covers the nearest positioned
+  parent (which should clip with overflow-hidden). Styles: .decor-circles in
+  main.css.
+
+  @example {{ partial "decor-circles.html" . }}
+*/}}
+<div class="decor-circles pointer-events-none absolute inset-0 text-gray-900" aria-hidden="true">
+  <span class="c-green"></span><span class="c-yellow"></span><span class="c-ring-top"></span><span class="c-dot-blue"></span>
+  <span class="c-lavender"></span><span class="c-ring-bottom"></span><span class="c-dot-yellow"></span><span class="c-dot-green"></span>
+</div>

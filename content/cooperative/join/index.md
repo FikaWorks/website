@@ -20,26 +20,32 @@ facts = 'Founded 2020 · 10 members · 150+ in the wider community · One member
 
 [[offers]]
 title = 'Admin & back office'
+icon = 'file-text'
 text = 'Shared support for invoicing, payments, email and tools.'
 color = 'blue'
 [[offers]]
 title = 'Contract management'
+icon = 'file-certificate'
 text = 'One client contract, matching member terms, reusable templates.'
 color = 'yellow'
 [[offers]]
 title = 'Leads'
+icon = 'chart-bar'
 text = 'Projects and RFPs found by the cooperative, members first.'
 color = 'green'
 [[offers]]
 title = 'Know-how'
+icon = 'users-group'
 text = 'Peers to talk through rates, contracts and tech challenges.'
 color = 'purple'
 [[offers]]
 title = 'Coworking & networking'
+icon = 'affiliate'
 text = 'Coworking days, a shared office, gatherings and conferences.'
 color = 'blue'
 [[offers]]
 title = 'Co-ownership'
+icon = 'chart-pie'
 text = 'Vote, help shape the cooperative, share in its profit.'
 color = 'yellow'
 members_only = true

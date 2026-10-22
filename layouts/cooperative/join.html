@@ -1,9 +1,9 @@
 {{- define "main" }}
-  {{- $ring := dict
-    "blue" "border-fika-soft-blue"
-    "yellow" "border-fika-soft-yellow"
-    "green" "border-fika-soft-green"
-    "purple" "border-fika-light-purple"
+  {{- $dot := dict
+    "blue" "bg-fika-soft-blue"
+    "yellow" "bg-fika-soft-yellow"
+    "green" "bg-fika-soft-green"
+    "purple" "bg-fika-light-purple"
   }}
   {{- $input := "block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2" }}
   {{- $label := "mb-4 block text-lg font-medium dark:text-white" }}
@@ -12,21 +12,18 @@
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Join us" "body" .Params.intro "cta_text" "Join the community" "cta_url" "#sign-up" "cta2_text" "Why FikaWorks" "cta2_url" "/cooperative/") }}
 
   <!-- How to join -->
-  <div class="bg-white dark:bg-gray-900 dark:text-white py-10 lg:py-16">
+  <div class="bg-fika-offWhite dark:bg-gray-900 dark:text-white section-pad">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full">
-        <h2 class="text-3xl font-medium lg:text-heading">How to join</h2>
-        <ol class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 lg:mt-10">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">How to join</h2>
+        <ol class="steps mt-8 lg:mt-10 max-w-3xl">
           {{- range $i, $s := .Params.steps }}
-            <li
-              class="bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8"
-            >
-              <span class="text-sm font-medium text-gray-600 dark:text-gray-300"
-                >Step {{ add $i 1 }}</span
-              >
-              <h3 class="mt-2 text-xl font-medium lg:text-2xl">
+            <li class="{{ index (slice "tone-purple" "tone-green" "tone-yellow") (mod $i 3) }}">
+              <span class="step-num" aria-hidden="true">{{ add $i 1 }}</span>
+              <div class="pt-2">
+              <h3 class="text-xl font-medium lg:text-2xl"><span class="sr-only">Step {{ add $i 1 }}: </span>
                 {{ $s.title }}
               </h3>
               <p
@@ -41,6 +38,7 @@
                   {{ . }}
                 </p>
               {{- end }}
+              </div>
             </li>
           {{- end }}
         </ol>
@@ -49,12 +47,12 @@
   </div>
 
   <!-- What the cooperative offers -->
-  <div class="bg-white dark:bg-gray-900 dark:text-white pb-10 lg:pb-16">
+  <div class="bg-fika-offWhite dark:bg-gray-900 dark:text-white section-pad">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full">
-        <h2 class="text-3xl font-medium lg:text-heading">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">
           What the cooperative offers
         </h2>
         <div
@@ -62,12 +60,9 @@
         >
           {{- range .Params.offers }}
             <div
-              class="flex gap-4 border border-gray-200 dark:border-white/10 p-6 lg:p-8"
+              class="card flex-row gap-5 tone-{{ .color | default "blue" }}"
             >
-              <div
-                class="mt-1 h-6 w-6 flex-none rounded-full border-4 {{ index $ring (.color | default "blue") }}"
-                aria-hidden="true"
-              ></div>
+              <div class="card-badge" aria-hidden="true">{{ with .icon }}{{ partial "icon.html" (dict "name" . "class" "h-7 w-7") }}{{ end }}</div>
               <div>
                 <h3 class="text-xl font-medium lg:text-2xl">
                   {{ .title }}
@@ -92,12 +87,12 @@
   </div>
 
   <!-- How we work -->
-  <div class="bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white py-10 lg:py-16">
+  <div class="bg-fika-offWhite dark:bg-gray-900 dark:text-white section-pad">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
-      <div class="col-span-full lg:col-start-1 lg:col-end-10">
-        <div class="font-normal text-lg lg:text-xl">
+      <div class="col-span-full card tone-purple lg:p-12">
+        <div class="font-normal text-lg lg:text-xl max-w-4xl">
           {{- partial "helpers/enhanced-content-page.html" .Content }}
         </div>
         {{- with .Params.facts }}
@@ -129,13 +124,13 @@
   <!-- Sign-up form -->
   <div
     id="sign-up"
-    class="scroll-mt-24 bg-white dark:bg-gray-900 dark:text-white py-12 lg:py-20"
+    class="scroll-mt-24 bg-fika-offWhite dark:bg-gray-900 dark:text-white section-pad"
   >
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full lg:col-start-1 lg:col-end-6">
-        <h2 class="text-3xl font-medium lg:text-heading">Start with the community</h2>
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">Start with the community</h2>
         <p class="mt-6 text-lg font-normal lg:text-xl dark:text-gray-200">
           Tell us a bit about yourself. We'll get back to you within a few
           working days and invite you to our Slack and next events.

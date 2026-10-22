@@ -1,0 +1,13 @@
+{{- /*
+  Inline outline icon from assets/icons (Tabler Icons, MIT licence).
+  @context dict: name (file name without .svg), class (CSS classes)
+  @example {{ partial "icon.html" (dict "name" "stack-2" "class" "h-6 w-6") }}
+*/}}
+{{- $class := .class | default "h-6 w-6" }}
+{{- with resources.Get (printf "icons/%s.svg" .name) }}
+  {{- .Content
+    | replaceRE `\s*class="[^"]*"` (printf ` class="%s" aria-hidden="true" focusable="false"` $class)
+    | replaceRE `stroke-width="2"` `stroke-width="1.5"`
+    | safeHTML
+  }}
+{{- end }}

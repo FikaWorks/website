@@ -5,11 +5,11 @@
     "green" "bg-fika-soft-green"
     "purple" "bg-fika-light-purple"
   }}
-  {{- $ring := dict
-    "blue" "border-fika-soft-blue"
-    "yellow" "border-fika-soft-yellow"
-    "green" "border-fika-soft-green"
-    "purple" "border-fika-light-purple"
+  {{- $dot := dict
+    "blue" "bg-fika-soft-blue"
+    "yellow" "bg-fika-soft-yellow"
+    "green" "bg-fika-soft-green"
+    "purple" "bg-fika-light-purple"
   }}
   {{- $arrow := `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true" class="w-6 h-6 flex-shrink-0"><rect width="32" height="32" rx="16" fill="currentColor"></rect><path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path></svg>` }}
 
@@ -18,7 +18,7 @@
   <section
     class="relative pt-36 pb-14 lg:pt-48 lg:pb-20 bg-fika-offWhite dark:bg-gray-900 overflow-hidden"
   >
-    {{ partial "bg-image.html" (dict) }}
+    {{ partial "decor-circles.html" . }}
     <div
       class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container lg:gap-10 gap-6"
     >
@@ -53,7 +53,7 @@
                 class="flex items-center gap-3 rounded-full bg-white dark:bg-fika-dark-elevated px-5 py-3 text-base lg:text-xl font-medium text-black dark:text-white hover:bg-fika-dust dark:hover:bg-white/10 transition-colors duration-200"
               >
                 <span
-                  class="h-5 w-5 rounded-full border-4 {{ index $ring $s.color }}"
+                  class="h-5 w-5 rounded-full {{ index $dot $s.color }}"
                   aria-hidden="true"
                 ></span>
                 {{ $s.name }}
@@ -79,12 +79,12 @@
     {{- if lt (add $i 1) (len $stages) }}{{ $next = index $stages (add $i 1) }}{{ end }}
     {{- if and (eq (len $s.services) 1) $next (eq (len $next.services) 1) }}
       {{- $skip = true }}
-      <section class="py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
+      <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
         <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
           <div class="col-span-full grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-6 lg:gap-10">
             {{- range $st := slice $s $next }}
               <div id="{{ $st.name | urlize }}" class="scroll-mt-24 flex flex-col">
-                {{ partial "services/stage-head.html" (dict "stage" $st "ring" $ring) }}
+                {{ partial "services/stage-head.html" (dict "stage" $st "dot" $dot) }}
                 <div class="mt-8 grid flex-1 grid-cols-1">
                   {{- range $st.services }}
                     {{ partial "services/stage-card.html" (dict "service" . "stage" $st "bg" $bg "arrow" $arrow) }}
@@ -96,11 +96,11 @@
         </div>
       </section>
     {{- else }}
-      <section id="{{ $s.name | urlize }}" class="scroll-mt-24 py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
+      <section id="{{ $s.name | urlize }}" class="scroll-mt-24 section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
         <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
           <div class="col-span-full">
-            {{ partial "services/stage-head.html" (dict "stage" $s "ring" $ring) }}
-            <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {{ partial "services/stage-head.html" (dict "stage" $s "dot" $dot) }}
+            <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 {{ if eq (mod (len $s.services) 3) 0 }}lg:grid-cols-3{{ end }}">
               {{- range $s.services }}
                 {{ partial "services/stage-card.html" (dict "service" . "stage" $s "bg" $bg "arrow" $arrow) }}
               {{- end }}
@@ -115,20 +115,20 @@
   {{- with .Params.across }}
     <section
       id="across-every-stage"
-      class="scroll-mt-24 py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white"
+      class="scroll-mt-24 section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white"
     >
       <div
         class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
       >
         <div class="col-span-full">
-          <h2 class="text-3xl font-medium lg:text-heading">Across every stage</h2>
+          <h2 class="text-3xl font-medium lg:text-heading title-rule">Across every stage</h2>
           <div
             class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
-            {{- range . }}
+            {{- range $i, $a := . }}
               <a
                 href="{{ .url }}"
-                class="group flex flex-col justify-between border border-gray-200 dark:border-white/10 p-6 lg:p-8 hover:bg-fika-offWhite dark:hover:bg-white/5 transition-colors duration-200"
+                class="card group justify-between {{ index (slice "tone-purple" "tone-green" "tone-yellow" "tone-blue") (mod $i 4) }}"
               >
                 <div>
                   <h3 class="text-xl font-medium lg:text-2xl">{{ .title }}</h3>
@@ -157,13 +157,13 @@
   {{- end }}
 
   <!-- Products teaser -->
-  <section class="py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full">
         <div
-          class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10"
+          class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between rounded-[1.25rem] bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10"
         >
           <div>
             <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-300">
@@ -190,12 +190,12 @@
 
   <!-- What every engagement includes -->
   {{- with .Params.includes }}
-    <section class="py-12 lg:py-20 bg-white dark:bg-gray-900 dark:text-white">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
       <div
         class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
       >
         <div class="col-span-full">
-          <h2 class="text-3xl font-medium lg:text-heading">
+          <h2 class="text-3xl font-medium lg:text-heading title-rule">
             What every engagement includes
           </h2>
           <ul class="mt-8 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-4">
@@ -215,7 +215,7 @@
 
   <!-- Process -->
   {{- if .Params.process }}
-    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
       {{ partial "services/process-strip.html" . }}
     </section>
   {{- end }}

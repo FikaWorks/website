@@ -1,19 +1,21 @@
 {{- define "main" }}
-  {{- $ring := dict "blue" "border-fika-soft-blue" "yellow" "border-fika-soft-yellow" "green" "border-fika-soft-green" "purple" "border-fika-light-purple" }}
+  {{- $dot := dict "blue" "bg-fika-soft-blue" "yellow" "bg-fika-soft-yellow" "green" "bg-fika-soft-green" "purple" "bg-fika-light-purple" }}
   {{- $arrow := `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true" class="w-6 h-6 flex-shrink-0"><rect width="32" height="32" rx="16" fill="currentColor"></rect><path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path></svg>` }}
   {{ partial "page-hero.html" (dict "page" . "cta_text" "Talk to us" "cta_url" "/contact/" "cta2_text" "Or see how you can work with us" "cta2_url" "/services/") }}
 
   {{- $all := where (where .Pages "Params.draft" "ne" true) "Params.exclude_from_nav" "ne" true }}
-  {{- range $g := .Params.groups }}
-    <section id="{{ $g.name | urlize }}" class="scroll-mt-24 py-12 lg:py-16 bg-white dark:bg-gray-900 dark:text-white">
+  {{- range $gi, $g := .Params.groups }}
+    {{- $tone := index (slice "tone-blue" "tone-yellow" "tone-green" "tone-purple") (mod $gi 4) }}
+    {{- $n := len (where $all "Params.group" $g.key) }}{{ if $g.lead }}{{ $n = add $n 1 }}{{ end }}
+    <section id="{{ $g.name | urlize }}" class="scroll-mt-24 section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
-          <h2 class="text-3xl font-medium lg:text-heading">{{ $g.name }}</h2>
+          <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ $g.name }}</h2>
           <p class="mt-3 text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">{{ $g.intro }}</p>
-          <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 {{ if eq (mod $n 3) 0 }}lg:grid-cols-3{{ end }}">
             {{- with $g.lead }}
               {{- with site.GetPage . }}
-                <a href="{{ .RelPermalink }}" class="group flex flex-col justify-between p-6 lg:p-8 bg-black text-white dark:bg-fika-dark-elevated dark:border dark:border-white/10 transition-colors duration-200">
+                <a href="{{ .RelPermalink }}" class="card group justify-between bg-black text-white dark:bg-fika-dark-elevated">
                   <div>
                     <h3 class="text-xl font-medium lg:text-2xl">AI &amp; Agents: the overview</h3>
                     <p class="mt-3 text-base lg:text-lg font-normal text-gray-200">{{ .Params.hero_subtitle }}</p>
@@ -23,7 +25,7 @@
               {{- end }}
             {{- end }}
             {{- range (where $all "Params.group" $g.key).ByWeight }}
-              <a href="{{ .RelPermalink }}" class="group flex flex-col justify-between p-6 lg:p-8 bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 hover:bg-fika-offWhite dark:hover:bg-white/10 transition-colors duration-200">
+              <a href="{{ .RelPermalink }}" class="card group justify-between {{ $tone }}">
                 <div>
                   <h3 class="text-xl font-medium lg:text-2xl">{{ .Title }}</h3>
                   <p class="mt-3 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .Params.hero_subtitle }}</p>
@@ -38,11 +40,11 @@
   {{- end }}
 
   <!-- How you work with us -->
-  <section class="py-12 lg:py-20 bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white">
+  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div class="max-w-3xl">
-          <h2 class="text-3xl font-medium lg:text-heading">How you work with us</h2>
+          <h2 class="text-3xl font-medium lg:text-heading title-rule">How you work with us</h2>
           <p class="mt-4 text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">
             Every solution is delivered through our services: Assess, Build, Run or Lead.
           </p>

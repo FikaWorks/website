@@ -12,10 +12,10 @@
 
   <!-- Roles (fractional) -->
   {{ with .Params.roles }}
-    <section class="py-16 lg:py-24 bg-fika-offWhite dark:bg-fika-dark-surface">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
-          <h2 class="text-3xl font-medium lg:text-heading dark:text-white mb-10 lg:mb-14">{{ $.Params.roles_title | default "Three roles" }}</h2>
+          <h2 class="text-3xl font-medium lg:text-heading dark:text-white mb-10 lg:mb-14 title-rule">{{ $.Params.roles_title | default "Three roles" }}</h2>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
             {{ range . }}
               <div class="bg-white dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8">
@@ -41,11 +41,11 @@
   <!-- A typical week (fractional) -->
   {{ with .Params.week }}
     {{- $days := slice "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun" }}
-    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900 dark:text-white">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
           {{ with $.Params.options }}
-            <h2 class="text-3xl font-medium lg:text-heading">{{ $.Params.options_title | default "Two ways to work with us" }}</h2>
+            <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ $.Params.options_title | default "Two ways to work with us" }}</h2>
             <div class="mt-8 mb-16 lg:mb-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
               {{ range . }}
                 <div class="border-2 {{ if .primary }}border-black dark:border-white{{ else }}border-gray-300 dark:border-white/25{{ end }} p-6 lg:p-8">
@@ -62,7 +62,7 @@
             </div>
           {{ end }}
           <div class="flex flex-wrap items-center gap-3">
-            <h2 class="text-3xl font-medium lg:text-heading">{{ .title | default "What a typical week looks like" }}</h2>
+            <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ .title | default "What a typical week looks like" }}</h2>
             <span class="rounded-full border border-gray-400 px-3 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">Illustrative</span>
           </div>
           <div class="mt-10 overflow-x-auto">
@@ -104,7 +104,7 @@
 
   <!-- Beyond time + terms + agent (fractional) -->
   {{ if or .Params.beyond .Params.terms .Params.agent }}
-    <section class="py-12 lg:py-16 bg-fika-offWhite dark:bg-fika-dark-surface dark:text-white">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div>

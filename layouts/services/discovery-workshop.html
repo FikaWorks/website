@@ -3,7 +3,7 @@
   {{ partial "page-hero.html" (dict "page" . "cta_text" (.Params.cta_text | default "Talk to us") "cta_url" (.Params.cta_url | default "/contact/")) }}
 
   <!-- Introduction -->
-  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+  <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
@@ -16,12 +16,12 @@
   </section>
 
   <!-- Workshop deliverables -->
-  <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+  <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
     {{ partial "services/stacked-panels.html" (dict "title" "Workshop deliverables" "subtitle" "A workshop format that makes the scope, outputs, and participation model easy to understand at a glance." "items" (slice (dict "title" "What’s included" "items" .Params.included) (dict "title" "What you receive" "items" .Params.deliverables) (dict "title" "Who participates" "items" .Params.participants))) }}
   </section>
 
   {{ if .Params.process }}
-    <section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+    <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container mb-14 lg:mb-20 lg:gap-10 gap-6">
         <div class="col-span-full lg:col-span-5 lg:col-start-1">
           <h2

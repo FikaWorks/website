@@ -1,0 +1,19 @@
+{{- /*
+  Lavender call-to-action panel (leaflet "Join the community" style).
+  @context dict: title, text, link_text, link_url
+*/}}
+<section class="section-pad bg-fika-offWhite dark:bg-gray-900">
+  <div class="page-container">
+    <div class="card tone-purple items-center px-6 py-14 text-center lg:py-20">
+      <h2 class="max-w-2xl text-balance text-3xl font-medium lg:text-heading">{{ .title }}</h2>
+      <p class="mt-4 max-w-xl text-lg font-normal lg:mt-6 lg:text-2xl text-gray-800 dark:text-gray-200">{{ .text }}</p>
+      <a
+        href="{{ .link_url }}"
+        class="mt-8 inline-flex items-center gap-3 rounded-[40px] bg-black px-9 py-5 text-base font-medium text-white transition-colors duration-200 hover:bg-fika-hover-purple lg:mt-10 lg:px-10 lg:py-6 lg:text-xl dark:bg-white dark:text-black dark:hover:bg-fika-light-purple"
+      >
+        {{- .link_text -}}
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4 flex-shrink-0 lg:h-5 lg:w-5"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z" fill="currentColor"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
