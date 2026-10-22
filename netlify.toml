@@ -7,6 +7,8 @@ command = """\
   """
 
 [build.environment]
+# Netlify installs Hugo and Node with mise, so mise.toml and mise.lock decide
+# the versions actually used. Keep these values in sync with them.
 HUGO_VERSION = "0.168.0"
 NODE_VERSION = "24.14.0"
 HUGO_ENV = "production"
