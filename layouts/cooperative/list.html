@@ -2,7 +2,7 @@
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative" "subtitle" .Params.heading "cta_text" "Talk to us" "cta_url" "/contact/" "cta2_text" "Join FikaWorks" "cta2_url" "/cooperative/join/") }}
   <!-- Why a cooperative -->
   {{- with .Params.story }}
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
@@ -31,7 +31,7 @@
   <!-- Why FikaWorks -->
   {{- $dot := dict "blue" "bg-fika-soft-blue" "yellow" "bg-fika-soft-yellow" "green" "bg-fika-soft-green" "purple" "bg-fika-light-purple" }}
   {{- with .Params.why }}
-  <div class="bg-fika-offWhite dark:bg-gray-900 dark:text-white section-pad">
+  <div class="bg-page dark:text-white section-pad">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full">
         <h2 class="mb-8 text-3xl font-medium lg:text-heading title-rule">What it means for you</h2>
@@ -53,7 +53,7 @@
 
 
   <!-- How the cooperative works -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full">
         <h2 class="text-3xl font-medium lg:text-heading title-rule">How the cooperative works</h2>
@@ -83,14 +83,14 @@
   </section>
 
   <!-- Numbers and values -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
           <h2 class="text-3xl font-medium lg:text-heading title-rule">In numbers</h2>
           <dl class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {{- range .Params.numbers }}
-              <div class="bg-white dark:bg-fika-dark-elevated p-6">
+              <div class="bg-surface p-6">
                 <dt class="sr-only">{{ .label }}</dt>
                 <dd class="text-4xl font-medium lg:text-heading">{{ .value }}</dd>
                 <dd class="mt-2 text-base font-medium">{{ .label }}</dd>
@@ -103,7 +103,7 @@
           <h2 class="text-3xl font-medium lg:text-heading title-rule">Our values</h2>
           <ul class="mt-8 flex flex-col gap-4">
             {{- range .Params.values }}
-              <li class="bg-white dark:bg-fika-dark-elevated p-6">
+              <li class="bg-surface p-6">
                 <p class="text-lg font-medium lg:text-xl">{{ .title }}</p>
                 <p class="mt-1 text-base font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
               </li>
@@ -117,7 +117,7 @@
   {{- partial "client-logos.html" (dict "title" "Trusted by") }}
 
   {{- with .Params.giving_back }}
-    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+    <section class="section-pad bg-page dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
           <p class="border-y border-black dark:border-white/30 py-6 text-base font-normal lg:text-xl">{{ . }} <a class="font-medium underline underline-offset-4 hover:text-fika-purple" href="/community/">Our community</a></p>
@@ -126,7 +126,7 @@
     </section>
   {{- end }}
 
-  <div id="team" class="bg-fika-offWhite dark:bg-gray-900 dark:text-white py-6 md:py-14">
+  <div id="team" class="bg-page dark:text-white py-6 md:py-14">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
@@ -174,7 +174,7 @@
           <div class="z-40 w-full md:w-[236px]">
             <div class="relative mt-1">
               <button
-                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-white dark:bg-gray-800 border-gray-800 dark:border-gray-600 text-black dark:text-white"
+                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-surface border-gray-800 dark:border-gray-600 text-black dark:text-white"
                 id="filter-btn"
                 type="button"
               >

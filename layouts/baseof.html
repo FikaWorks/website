@@ -6,10 +6,10 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body class="bg-fika-offWhite dark:bg-gray-900">
+  <body class="bg-page">
     <div>
       <header
-        class="absolute inset-x-0 top-0 z-40 h-16 min-[1145px]:h-[76px] w-full border-b border-black/[0.08] bg-white dark:border-white/10 dark:bg-gray-950"
+        class="absolute inset-x-0 top-0 z-40 h-16 min-[1145px]:h-[76px] w-full border-b border-black/[0.08] bg-surface dark:border-white/10"
       >
         {{ partial "header.html" . }}
       </header>
@@ -19,7 +19,7 @@
         {{ block "main" . }}{{ end }}
       </main>
     </div>
-    <div class="dark:bg-gray-950">
+    <div>
       <footer
         class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
       >

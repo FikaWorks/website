@@ -29,6 +29,13 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
 | Lead / lavender                | `fika-light-purple`                          | `#d4d1de`            |
 | Accent text, links, checkmarks | `fika-purple`                                | `#6f84b5`            |
 
+- **Page and surface.** Use `bg-page` for sections and `bg-surface` for things
+  that sit on the page (header, menus, logo box, diagrams, previews). Light
+  mode: paper and white. Dark mode: near-black and one step lighter, so the same
+  contrast holds. Don't hard-code `dark:bg-*` colours for these.
+- **Dark cards.** In dark mode a toned card becomes a 15% tint of its stage
+  colour over the page, and badges, dots and step circles keep the full pastel
+  colour.
 - The whole page is paper. Do not alternate white and beige bands. The only
   exceptions are the dark "How we're different" band and the black products
   band, used as deliberate statements.

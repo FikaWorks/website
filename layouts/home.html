@@ -3,7 +3,7 @@
   {{- $arrowIcon := `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z" fill="currentColor"></path></svg>` }}
   <!-- Hero -->
   <div class="relative">
-    <div class="relative overflow-hidden bg-fika-offWhite dark:bg-gray-900 min-h-[min(100svh,47.5rem)]">
+    <div class="relative overflow-hidden bg-page min-h-[min(100svh,47.5rem)]">
       {{ partial "decor-circles.html" . }}
     </div>
     <div
@@ -25,7 +25,7 @@
   {{- partial "client-logos.html" (dict "title" "Trusted by" "compact" true) }}
 
   <!-- What we do: the journey -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full">
         <h2 class="text-3xl font-medium lg:text-heading title-rule">Start where you are</h2>
@@ -56,7 +56,7 @@
   </section>
 
   <!-- Why a cooperative, for buyers -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full">
         <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">Why a cooperative</p>
@@ -71,7 +71,7 @@
   </section>
 
   <!-- Products -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
+  <section class="section-pad bg-page">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between rounded-[1.25rem] bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10">
         <div>

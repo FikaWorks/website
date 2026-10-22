@@ -12,13 +12,13 @@
 
   <!-- Roles (fractional) -->
   {{ with .Params.roles }}
-    <section class="section-pad bg-fika-offWhite dark:bg-gray-900">
+    <section class="section-pad bg-page">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
           <h2 class="text-3xl font-medium lg:text-heading dark:text-white mb-10 lg:mb-14 title-rule">{{ $.Params.roles_title | default "Three roles" }}</h2>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
             {{ range . }}
-              <div class="bg-white dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-6 lg:p-8">
+              <div class="bg-surface dark:border dark:border-white/5 p-6 lg:p-8">
                 <h3 class="text-xl font-medium lg:text-2xl dark:text-white">{{ .name }}</h3>
                 {{ with .summary }}<p class="mt-2 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ . }}</p>{{ end }}
                 <p class="mt-4 text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Hire us when</p>
@@ -41,7 +41,7 @@
   <!-- A typical week (fractional) -->
   {{ with .Params.week }}
     {{- $days := slice "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun" }}
-    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+    <section class="section-pad bg-page dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
           {{ with $.Params.options }}
@@ -104,14 +104,14 @@
 
   <!-- Beyond time + terms + agent (fractional) -->
   {{ if or .Params.beyond .Params.terms .Params.agent }}
-    <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+    <section class="section-pad bg-page dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div>
             {{ with .Params.beyond }}
               <h2 class="text-3xl font-medium lg:text-4xl">What you get, beyond time</h2>
               <ul class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {{ range . }}<li class="bg-white dark:bg-fika-dark-elevated px-5 py-4 text-lg font-medium">{{ . }}</li>{{ end }}
+                {{ range . }}<li class="bg-surface px-5 py-4 text-lg font-medium">{{ . }}</li>{{ end }}
               </ul>
             {{ end }}
             {{ with .Params.terms }}
@@ -121,7 +121,7 @@
             {{ end }}
           </div>
           {{ with .Params.agent }}
-            <div class="self-start border-2 border-fika-purple bg-white dark:bg-fika-dark-elevated p-6 lg:p-8">
+            <div class="self-start border-2 border-fika-purple bg-surface p-6 lg:p-8">
               <div class="flex flex-wrap items-center gap-3">
                 <h2 class="text-2xl font-medium lg:text-3xl">{{ .title }}</h2>
                 <span class="rounded-full bg-fika-light-purple px-3 py-0.5 text-sm font-medium text-black">{{ .status }}</span>

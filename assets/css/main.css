@@ -20,6 +20,10 @@
   --color-fika-ash: #d1c6b3;
   --color-fika-dust: #efeae1;
   --color-fika-offWhite: #fdfaf6; /* leaflet paper */
+  /* Roles: the page, and surfaces that sit on it (header, menus, logo box,
+     diagrams, previews). Both flip in dark mode, see .dark below. */
+  --color-page: #fdfaf6;
+  --color-surface: #ffffff;
   --color-fika-light-purple: #d4d1de; /* leaflet lavender */
   --color-fika-purple: #6f84b5; /* leaflet periwinkle, darkened for text contrast */
   --color-fika-hover-purple: #7d93bf;
@@ -255,9 +259,10 @@ nav .dark\:bg-gray-950 {
   --color-fika-dark-bg: #0b0f19;
   --color-fika-dark-surface: #10172a;
   --color-fika-dark-elevated: #17213a;
+  --color-page: #0e121c;
+  --color-surface: #19202e;
   --color-fika-purple: #a3b3d8; /* periwinkle on dark */
   --color-fika-hover-purple: #bcc7e3;
-  --color-fika-light-purple: #4c5070; /* lavender on dark */
   --color-fika-soft-green-shadow: #12352d;
   --color-fika-soft-yellow-shadow: #3f2f0f;
   --color-fika-soft-blue-shadow: #173055;
@@ -275,22 +280,27 @@ nav .dark\:bg-gray-950 {
 @layer components {
   /* Stage tones. A tone sets the card fill and the badge colour. */
   .tone-blue {
+    --tone-hue: #aab5d0;
     --tone: var(--color-fika-soft-blue);
     --tone-badge: var(--color-fika-light-purple);
   }
   .tone-yellow {
+    --tone-hue: #eee79f;
     --tone: var(--color-fika-butter-light);
     --tone-badge: var(--color-fika-soft-yellow);
   }
   .tone-green {
+    --tone-hue: #99c69d;
     --tone: var(--color-fika-sage-light);
     --tone-badge: var(--color-fika-soft-green);
   }
   .tone-purple {
+    --tone-hue: #d4d1de;
     --tone: var(--color-fika-light-purple);
     --tone-badge: var(--color-fika-soft-blue);
   }
   .tone-neutral {
+    --tone-hue: #d1c6b3;
     --tone: var(--color-fika-dust);
     --tone-badge: var(--color-fika-ash);
   }
@@ -320,8 +330,14 @@ nav .dark\:bg-gray-950 {
     border-radius: 9999px;
     background: var(--tone-badge);
   }
+  /* Dark mode keeps the stage colour as a tint of the page; untoned cards
+     sit on the surface colour, like white cards in light mode. */
   .dark .card {
-    background: rgb(255 255 255 / 0.06);
+    background: color-mix(
+      in srgb,
+      var(--tone-hue, var(--color-surface)) 15%,
+      var(--color-page)
+    );
     color: #fff;
   }
   .card-dot {
@@ -332,11 +348,11 @@ nav .dark\:bg-gray-950 {
     background: var(--tone-badge);
   }
   .dark .card-dot {
-    background: var(--tone);
+    background: var(--tone-hue);
   }
   .dark .card-badge {
-    background: var(--tone);
-    color: var(--color-gray-900);
+    background: var(--tone-hue);
+    color: var(--color-page);
   }
 
   /* Section heading with the leaflet rule: "Our services ————". */
@@ -389,10 +405,10 @@ nav .dark\:bg-gray-950 {
     color: var(--color-gray-900);
     font-size: 1.375rem;
     font-weight: 500;
-    box-shadow: inset 0 0 0 4px var(--color-fika-offWhite);
+    box-shadow: inset 0 0 0 4px var(--color-page);
   }
   .dark .step-num {
-    box-shadow: inset 0 0 0 4px var(--color-gray-900);
+    background: var(--tone-hue);
   }
 
   /* One vertical rhythm for content sections; heroes and dark bands keep their own. */

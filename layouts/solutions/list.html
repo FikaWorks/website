@@ -7,7 +7,7 @@
   {{- range $gi, $g := .Params.groups }}
     {{- $tone := index (slice "tone-blue" "tone-yellow" "tone-green" "tone-purple") (mod $gi 4) }}
     {{- $n := len (where $all "Params.group" $g.key) }}{{ if $g.lead }}{{ $n = add $n 1 }}{{ end }}
-    <section id="{{ $g.name | urlize }}" class="scroll-mt-24 section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+    <section id="{{ $g.name | urlize }}" class="scroll-mt-24 section-pad bg-page dark:text-white">
       <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
         <div class="col-span-full">
           <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ $g.name }}</h2>
@@ -40,7 +40,7 @@
   {{- end }}
 
   <!-- How you work with us -->
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div class="max-w-3xl">

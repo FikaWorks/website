@@ -1,7 +1,7 @@
 {{- define "main" }}
   {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Community" "cta_text" "Join the community" "cta_url" "/cooperative/join/" "cta2_text" "Upcoming events" "cta2_url" "/events/") }}
   {{- $hero_img := .Resources.GetMatch $.Params.hero_image }}
-  <div class="bg-fika-offWhite dark:bg-gray-900 dark:text-white pt-12 lg:pt-16 section-pad">
+  <div class="bg-page dark:text-white pt-12 lg:pt-16 section-pad">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
       <div class="col-span-full lg:col-start-1 lg:col-end-10">
         {{- with $hero_img }}

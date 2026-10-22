@@ -6,7 +6,7 @@
 {{- $title := .title | default "How we deliver this" }}
 {{- $arrow := `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true" class="w-6 h-6 flex-shrink-0"><rect width="32" height="32" rx="16" fill="currentColor"></rect><path d="m12.5 9 8 7.5-8 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-gray-900"></path></svg>` }}
 {{- if or $p.Params.related_services .training }}
-  <section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+  <section class="section-pad bg-page dark:text-white">
     <div class="grid grid-cols-6 md:grid-cols-12 page-container gap-6 lg:gap-10">
       <div class="col-span-full">
         {{- with $p.Params.related_services }}

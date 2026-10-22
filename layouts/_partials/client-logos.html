@@ -3,7 +3,7 @@
   @context dict: "title" (optional heading), "compact" (bool: logos only, no work line)
 */}}
 {{- $title := .title | default "Organisations we have worked with" }}
-<section class="section-pad bg-fika-offWhite dark:bg-gray-900 dark:text-white">
+<section class="section-pad bg-page dark:text-white">
   <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
     <div class="col-span-full">
       <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">
@@ -11,7 +11,7 @@
       </p>
       <ul class="mt-6 grid grid-cols-2 gap-px bg-gray-200 dark:bg-white/10 border border-gray-200 dark:border-white/10 lg:grid-cols-4">
         {{- range hugo.Data.clients }}
-          <li class="group flex min-w-0 flex-col justify-center bg-white dark:bg-gray-900 px-4 py-6 sm:px-6 lg:px-8 lg:py-8 min-h-[120px]">
+          <li class="group flex min-w-0 flex-col justify-center bg-surface px-4 py-6 sm:px-6 lg:px-8 lg:py-8 min-h-[120px]">
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 min-w-0 text-black dark:text-white">
               {{- with .prefix }}
                 <span class="text-lg sm:text-xl font-medium lg:text-2xl leading-tight">{{ . }}</span>
