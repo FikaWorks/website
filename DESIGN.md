@@ -67,6 +67,8 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
   circles and thin outline circles bleeding off the corners.
 - **Closing call to action.** `cta.html` / `cta-join.html`, built on
   `cta-panel.html`: a lavender card in the content column.
+- **Header.** A white bar with a thin bottom border, like the other white
+  surfaces (logo box, diagrams, previews, menu dropdowns).
 - **Buttons.** Primary: black pill (`rounded-[40px] bg-black text-white`).
   Secondary: underlined text link.
 
