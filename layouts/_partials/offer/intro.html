@@ -1,0 +1,25 @@
+{{- /*
+  The problem (as a pull quote) next to the page's own introduction.
+  @context page
+*/}}
+{{- $p := . }}
+{{- if or $p.Params.problem $p.Content }}
+  <section class="section-pad bg-page dark:text-white">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container gap-6 lg:gap-10">
+      {{- with $p.Params.problem }}
+        <div class="col-span-full {{ if $p.Content }}lg:col-start-1 lg:col-end-7{{ else }}lg:col-start-1 lg:col-end-10{{ end }}">
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">The problem</p>
+          <p class="mt-5 border-l-4 border-fika-purple pl-6 lg:pl-8 text-xl lg:text-3xl font-normal leading-snug text-gray-900 dark:text-white">
+            {{ .text }}
+          </p>
+        </div>
+      {{- end }}
+      {{- if $p.Content }}
+        <div class="col-span-full {{ if $p.Params.problem }}lg:col-start-8 lg:col-end-13 lg:pt-10{{ else }}lg:col-start-1 lg:col-end-10{{ end }} text-lg font-normal lg:text-xl text-gray-800 dark:text-gray-200">
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300 mb-5">Our approach</p>
+          {{ partial "helpers/enhanced-content-page.html" $p.Content }}
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

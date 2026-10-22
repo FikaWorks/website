@@ -1,0 +1,44 @@
+{{- /*
+  Typical outcomes as a large numbered list, next to the engagement shape
+  (services) or a "where most teams start" box (solutions).
+  @context page
+*/}}
+{{- $p := . }}
+{{- with $p.Params.outcomes }}
+  <section class="section-pad bg-page dark:text-white">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container gap-6 lg:gap-10">
+      <div class="col-span-full lg:col-start-1 lg:col-end-8">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">Typical outcomes</h2>
+        <ol class="mt-8 lg:mt-10">
+          {{- range $i, $o := . }}
+            <li class="flex items-baseline gap-6 border-b border-gray-200 dark:border-white/10 py-5 lg:py-6">
+              <span class="w-12 shrink-0 text-3xl lg:text-4xl font-medium text-fika-purple dark:text-fika-light-purple tabular-nums">{{ printf "%02d" (add $i 1) }}</span>
+              <span class="text-lg lg:text-xl font-normal text-gray-900 dark:text-gray-100">{{ $o.text }}</span>
+            </li>
+          {{- end }}
+        </ol>
+      </div>
+      <aside class="col-span-full lg:col-start-9 lg:col-end-13 self-start lg:sticky lg:top-28">
+        {{- with $p.Params.shape }}
+          <div class="card tone-green">
+            <p class="text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Engagement shape</p>
+            <p class="mt-3 text-xl font-medium lg:text-2xl">{{ . }}</p>
+            <p class="mt-4 text-base font-normal text-gray-700 dark:text-gray-300">
+              No list prices: we quote per engagement.
+            </p>
+            <a class="mt-5 inline-block text-base font-medium underline underline-offset-8 hover:text-fika-purple" href="/services/">See all services</a>
+          </div>
+        {{- else }}
+          <div class="card tone-green">
+            <p class="text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Where most teams start</p>
+            <p class="mt-3 text-xl font-medium lg:text-2xl">A fixed-scope assessment, then a build we size together.</p>
+            <ul class="mt-5 space-y-3 text-base font-medium">
+              <li><a class="underline underline-offset-8 hover:text-fika-purple" href="/services/discovery-workshop/">Discovery Workshop</a></li>
+              <li><a class="underline underline-offset-8 hover:text-fika-purple" href="/services/readiness-review/">Readiness Review</a></li>
+            </ul>
+          </div>
+        {{- end }}
+      </aside>
+    </div>
+  </section>
+{{- end }}

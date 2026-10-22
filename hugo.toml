@@ -1,5 +1,5 @@
 baseURL = 'https://fika.works/'
-languageCode = 'en-US'
+locale = 'en-US'
 title = 'FikaWorks'
 
 disableKinds = ["taxonomy", "term"]
@@ -40,6 +40,7 @@ tabWidth = 2
 
 [menus]
 
+# Solutions: the problems we solve (what)
 [[menus.main]]
 name = 'Solutions'
 pageRef = '/solutions'
@@ -51,98 +52,247 @@ pageRef = '/solutions/cloud-migrations'
 parent = 'Solutions'
 weight = 1
 [menus.main.params]
-category = 'Modernise'
+category = 'Cloud & security'
+
+[[menus.main]]
+name = 'Security & Compliance'
+pageRef = '/solutions/security-compliance'
+parent = 'Solutions'
+weight = 2
+[menus.main.params]
+category = 'Cloud & security'
 
 [[menus.main]]
 name = 'Platform Engineering'
 pageRef = '/solutions/platform-engineering'
 parent = 'Solutions'
-weight = 2
-[menus.main.params]
-category = 'Accelerate'
-
-[[menus.main]]
-name = 'Developer Portal'
-pageRef = '/solutions/developer-portal'
-parent = 'Solutions'
 weight = 3
 [menus.main.params]
-category = 'Accelerate'
+category = 'Platforms & delivery'
 
 [[menus.main]]
 name = 'CI/CD & Delivery Acceleration'
 pageRef = '/solutions/cicd-delivery-acceleration'
 parent = 'Solutions'
-weight = 4
+weight = 5
 [menus.main.params]
-category = 'Accelerate'
+category = 'Platforms & delivery'
+
+[[menus.main]]
+name = 'Reliability & Observability'
+pageRef = '/solutions/reliability-observability'
+parent = 'Solutions'
+weight = 6
+[menus.main.params]
+category = 'Platforms & delivery'
 
 [[menus.main]]
 name = 'Cloud Cost Optimisation'
 pageRef = '/solutions/cloud-cost-optimisation'
 parent = 'Solutions'
-weight = 5
+weight = 7
 [menus.main.params]
-category = 'Accelerate'
+category = 'Platforms & delivery'
+
+[[menus.main]]
+name = 'AI & Agents: overview'
+pageRef = '/solutions/ai-powered-operations'
+parent = 'Solutions'
+weight = 8
+[menus.main.params]
+category = 'AI & agents'
 
 [[menus.main]]
 name = 'AI Adoption Governance'
 pageRef = '/solutions/ai-adoption-governance'
 parent = 'Solutions'
-weight = 6
+weight = 9
 [menus.main.params]
-category = 'Innovate'
+category = 'AI & agents'
 
 [[menus.main]]
 name = 'AI Agents for Operations'
 pageRef = '/solutions/ai-agents-for-operations'
 parent = 'Solutions'
-weight = 7
+weight = 10
 [menus.main.params]
-category = 'Innovate'
+category = 'AI & agents'
 
 [[menus.main]]
 name = 'Agentic Infrastructure'
 pageRef = '/solutions/agentic-infrastructure'
 parent = 'Solutions'
-weight = 8
+weight = 11
 [menus.main.params]
-category = 'Innovate'
+category = 'AI & agents'
 
+# Services: how you work with us (how you buy)
 [[menus.main]]
-name = 'How We Deliver'
-pageRef = '/how-we-deliver'
+name = 'Services'
+pageRef = '/services'
 weight = 15
 
 [[menus.main]]
-name = 'About'
-pageRef = '/about'
+name = 'All services'
+pageRef = '/services'
+parent = 'Services'
+weight = 1
+
+[[menus.main]]
+name = 'Discovery Workshop'
+pageRef = '/services/discovery-workshop'
+parent = 'Services'
+weight = 2
+[menus.main.params]
+category = 'Assess'
+
+[[menus.main]]
+name = 'Readiness Review'
+pageRef = '/services/readiness-review'
+parent = 'Services'
+weight = 3
+[menus.main.params]
+category = 'Assess'
+
+[[menus.main]]
+name = 'Platform Build & Go-Live'
+pageRef = '/services/platform-build-go-live'
+parent = 'Services'
+weight = 4
+[menus.main.params]
+category = 'Build'
+
+[[menus.main]]
+name = 'Managed Platform Care'
+pageRef = '/services/managed-platform-care'
+parent = 'Services'
+weight = 5
+[menus.main.params]
+category = 'Run'
+
+[[menus.main]]
+name = 'Fractional Leadership'
+pageRef = '/services/fractional'
+parent = 'Services'
+weight = 6
+[menus.main.params]
+category = 'Lead'
+
+[[menus.main]]
+name = 'Enablement & Training'
+pageRef = '/services/enablement-training'
+parent = 'Services'
+weight = 7
+[menus.main.params]
+category = 'Across every stage'
+
+[[menus.main]]
+name = 'Documentation & DevRel'
+pageRef = '/services/documentation-devrel'
+parent = 'Services'
+weight = 8
+[menus.main.params]
+category = 'Across every stage'
+
+[[menus.main]]
+name = 'Custom Engagements'
+pageRef = '/services/custom-engagements'
+parent = 'Services'
+weight = 9
+[menus.main.params]
+category = 'Across every stage'
+
+[[menus.main]]
+name = 'Products'
+pageRef = '/products'
+weight = 18
+
+[[menus.main]]
+name = 'All products'
+pageRef = '/products'
+parent = 'Products'
+weight = 1
+
+[[menus.main]]
+name = 'FikaWorks Agent'
+url = '/products/#fikaworks-agent'
+parent = 'Products'
+weight = 2
+[menus.main.params]
+category = 'Early access'
+
+[[menus.main]]
+name = 'FikaWorks Migrate'
+url = '/products/#fikaworks-migrate'
+parent = 'Products'
+weight = 3
+[menus.main.params]
+category = 'Early access'
+
+[[menus.main]]
+name = 'FikaWorks Argus'
+pageRef = '/products/fikaworks-argus'
+parent = 'Products'
+weight = 4
+[menus.main.params]
+category = 'Early access'
+
+# Cooperative: who we are and how to join
+[[menus.main]]
+name = 'Cooperative'
+pageRef = '/cooperative'
 weight = 20
 
 [[menus.main]]
-name = 'Community'
-pageRef = '/community'
-weight = 25
+name = 'Why FikaWorks'
+pageRef = '/cooperative'
+parent = 'Cooperative'
+weight = 1
 
 [[menus.main]]
-name = 'FikaWorks Day'
-pageRef = '/fikaworks-day'
-parent = 'Community'
-weight = 1
+name = 'Members'
+url = '/cooperative/#team'
+parent = 'Cooperative'
+weight = 2
+
+[[menus.main]]
+name = 'Join FikaWorks'
+pageRef = '/cooperative/join'
+parent = 'Cooperative'
+weight = 4
+
+[[menus.main]]
+name = 'Community & giving back'
+pageRef = '/community'
+parent = 'Cooperative'
+weight = 3
+
+# Events & Insights: what we share and where to meet us
+[[menus.main]]
+name = 'Events & Insights'
+pageRef = '/events'
+weight = 25
 
 [[menus.main]]
 name = 'Events'
 pageRef = '/events'
-parent = 'Community'
+parent = 'Events & Insights'
+weight = 1
+
+[[menus.main]]
+name = 'FikaWorks Day'
+pageRef = '/fikaworks-day'
+parent = 'Events & Insights'
 weight = 2
 
 [[menus.main]]
 name = 'Blog'
 pageRef = '/blog'
-weight = 40
+parent = 'Events & Insights'
+weight = 3
 
 [[menus.main]]
-name = 'Contact'
+name = 'Talk to us'
 pageRef = '/contact'
 weight = 50
 
@@ -165,6 +315,7 @@ enable = true
 [[build.cachebusters]]
 source = 'assets/notwatching/hugo_stats\.json'
 target = 'css'
-[[build.cachebusters]]
-source = '(postcss|tailwind)\.config\.js'
-target = 'css'
+
+# Hugo 0.165+ no longer allows the Tailwind CLI by default; css.TailwindCSS needs it.
+[security.exec]
+allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^tailwindcss$']

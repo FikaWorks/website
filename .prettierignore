@@ -1,7 +1,6 @@
 /public
 /node_modules
 .eslintrc.js
-postcss.config.js
 .tsconfig.json
 content/**/*.md
 style.html

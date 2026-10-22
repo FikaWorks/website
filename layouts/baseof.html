@@ -1,15 +1,15 @@
 <!doctype html>
 <html
-  lang="{{ site.Language.LanguageCode }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}"
+  lang="{{ site.Language.Locale }}"
+  dir="{{ or site.Language.Direction `ltr` }}"
 >
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body class="dark:bg-gray-900">
+  <body class="bg-page">
     <div>
       <header
-        class="absolute inset-x-0 top-0 z-40 h-[90px] w-full bg-transparent"
+        class="absolute inset-x-0 top-0 z-40 h-16 min-[1145px]:h-[76px] w-full border-b border-black/[0.08] bg-surface dark:border-white/10"
       >
         {{ partial "header.html" . }}
       </header>
@@ -19,9 +19,9 @@
         {{ block "main" . }}{{ end }}
       </main>
     </div>
-    <div class="dark:bg-gray-950">
+    <div>
       <footer
-        class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
+        class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 pt-14 lg:pt-20 pb-14 lg:pb-20"
       >
         {{ partial "footer.html" . }}
       </footer>

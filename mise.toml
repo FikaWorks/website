@@ -7,7 +7,7 @@ lockfile = true
 # locked = true
 
 [tools]
-hugo-extended = "0.157.0"
+hugo-extended = "0.168.0"
 node = "24.14.0"
 
 [hooks]

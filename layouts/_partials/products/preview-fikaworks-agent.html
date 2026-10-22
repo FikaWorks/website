@@ -1,0 +1,22 @@
+{{- /*
+  Illustration for FikaWorks Agent on the Products page: the agent proposing a
+  runbook step that a person approves. Example data, not a screenshot.
+  @context product map from content/products/_index.md (front matter "products")
+*/}}
+<figure class="rounded-[1.25rem] border border-gray-200 dark:border-white/10 bg-surface p-5 lg:p-6" aria-label="Example: FikaWorks Agent proposing a runbook step for approval">
+  <figcaption class="text-xs font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Example</figcaption>
+  <div class="mt-4 space-y-3 text-sm lg:text-base">
+    <p class="bg-fika-offWhite dark:bg-white/5 px-4 py-3">
+      <span class="block text-xs font-medium text-gray-500 dark:text-gray-400">Alert · 14:06</span>
+      p95 latency is up on <span class="font-mono text-[0.9em]">checkout-api</span>
+    </p>
+    <p class="bg-fika-light-purple/40 dark:bg-fika-purple/20 px-4 py-3">
+      <span class="block text-xs font-medium text-gray-600 dark:text-gray-300">FikaWorks Agent</span>
+      The node pool scaled down at 14:02. Runbook <span class="font-mono text-[0.9em]">scale-nodepool</span> would restore capacity.
+    </p>
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2 text-sm">
+    <span class="rounded-full bg-black px-4 py-1.5 font-medium text-white dark:bg-white dark:text-black">Approve</span>
+    <span class="rounded-full border border-gray-300 dark:border-white/20 px-4 py-1.5">Ask your SRE</span>
+  </div>
+</figure>

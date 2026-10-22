@@ -1,0 +1,257 @@
+{{- define "main" }}
+  {{- $dot := dict
+    "blue" "bg-fika-soft-blue"
+    "yellow" "bg-fika-soft-yellow"
+    "green" "bg-fika-soft-green"
+    "purple" "bg-fika-light-purple"
+  }}
+  {{- $input := "block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 px-6 py-3 text-lg font-normal outline-0 ring-fika-purple focus:ring-2" }}
+  {{- $label := "mb-4 block text-lg font-medium dark:text-white" }}
+
+  <!-- Hero -->
+  {{ partial "page-hero.html" (dict "page" . "eyebrow" "Cooperative · Join us" "body" .Params.intro "cta_text" "Join the community" "cta_url" "#sign-up" "cta2_text" "Why FikaWorks" "cta2_url" "/cooperative/") }}
+
+  <!-- How to join -->
+  <div class="bg-page dark:text-white section-pad">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">How to join</h2>
+        <ol class="steps mt-8 lg:mt-10 max-w-3xl">
+          {{- range $i, $s := .Params.steps }}
+            <li class="{{ index (slice "tone-purple" "tone-green" "tone-yellow") (mod $i 3) }}">
+              <span class="step-num" aria-hidden="true">{{ add $i 1 }}</span>
+              <div class="pt-2">
+              <h3 class="text-xl font-medium lg:text-2xl"><span class="sr-only">Step {{ add $i 1 }}: </span>
+                {{ $s.title }}
+              </h3>
+              <p
+                class="mt-3 text-base font-normal lg:text-lg text-gray-800 dark:text-gray-200"
+              >
+                {{ $s.text }}
+              </p>
+              {{- with $s.note }}
+                <p
+                  class="mt-3 text-sm font-medium text-gray-600 dark:text-gray-300"
+                >
+                  {{ . }}
+                </p>
+              {{- end }}
+              </div>
+            </li>
+          {{- end }}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- What the cooperative offers -->
+  <div class="bg-page dark:text-white section-pad">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">
+          What the cooperative offers
+        </h2>
+        <div
+          class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-10 lg:grid-cols-3"
+        >
+          {{- range .Params.offers }}
+            <div
+              class="card flex-row gap-5 tone-{{ .color | default "blue" }}"
+            >
+              <div class="card-badge" aria-hidden="true">{{ with .icon }}{{ partial "icon.html" (dict "name" . "class" "h-7 w-7") }}{{ end }}</div>
+              <div>
+                <h3 class="text-xl font-medium lg:text-2xl">
+                  {{ .title }}
+                  {{- if .members_only }}
+                    <span
+                      class="ml-2 align-middle rounded-full bg-fika-light-purple px-2 py-0.5 text-xs font-medium text-black"
+                      >Members</span
+                    >
+                  {{- end }}
+                </h3>
+                <p
+                  class="mt-2 text-base font-normal lg:text-lg text-gray-800 dark:text-gray-200"
+                >
+                  {{ .text }}
+                </p>
+              </div>
+            </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How we work -->
+  <div class="bg-page dark:text-white section-pad">
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full card tone-purple lg:p-12">
+        <div class="font-normal text-lg lg:text-xl max-w-4xl">
+          {{- partial "helpers/enhanced-content-page.html" .Content }}
+        </div>
+        {{- with .Params.facts }}
+          <p
+            class="mt-8 border-y border-black dark:border-white/40 py-4 text-base font-medium lg:text-xl"
+          >
+            {{ . }}
+          </p>
+        {{- end }}
+        <p class="mt-8 text-base font-normal lg:text-lg dark:text-gray-200">
+          Read more
+          <a class="underline hover:text-fika-purple" href="/cooperative/"
+            >about the cooperative</a
+          >, our <a class="underline hover:text-fika-purple" href="/community/"
+            >community</a
+          >,
+          <a class="underline hover:text-fika-purple" href="/events/"
+            >upcoming events</a
+          >
+          and
+          <a class="underline hover:text-fika-purple" href="/fikaworks-day/"
+            >FikaWorks Day</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign-up form -->
+  <div
+    id="sign-up"
+    class="scroll-mt-24 bg-page dark:text-white section-pad"
+  >
+    <div
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
+    >
+      <div class="col-span-full lg:col-start-1 lg:col-end-6">
+        <h2 class="text-3xl font-medium lg:text-heading">Start with the community</h2>
+        <p class="mt-6 text-lg font-normal lg:text-xl dark:text-gray-200">
+          Tell us a bit about yourself. We'll get back to you within a few
+          working days and invite you to our Slack and next events.
+        </p>
+        <p class="mt-6 text-base font-normal lg:text-lg dark:text-gray-200">
+          Prefer email? Write to
+          <a class="underline hover:text-fika-purple" href="mailto:info@fika.works"
+            >info@fika.works</a
+          >.
+        </p>
+      </div>
+      <div class="col-span-full lg:col-start-7 lg:col-end-13">
+        <form
+          name="join"
+          id="join-form"
+          method="post"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="flex flex-col gap-6"
+        >
+          <input type="hidden" name="form-name" value="join" />
+          <p class="hidden">
+            <label>Leave this empty: <input name="bot-field" /></label>
+          </p>
+          <div>
+            <label for="join-name" class="{{ $label }}">Full name*</label>
+            <input
+              id="join-name"
+              name="name"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="your full name"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-email" class="{{ $label }}">Email*</label>
+            <input
+              id="join-email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="your email address"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-linkedin" class="{{ $label }}"
+              >LinkedIn or website (optional)</label
+            >
+            <input
+              id="join-linkedin"
+              name="linkedin"
+              type="url"
+              placeholder="https://"
+              class="{{ $input }}"
+            />
+          </div>
+          <div>
+            <label for="join-role" class="{{ $label }}">What do you do?*</label>
+            <select id="join-role" name="role" required class="{{ $input }}">
+              <option value="" disabled selected>Choose one</option>
+              <option>Architect</option>
+              <option>Engineer (platform, SRE, DevOps, cloud)</option>
+              <option>Developer</option>
+              <option>Delivery lead</option>
+              <option>DevRel</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="join-message" class="{{ $label }}"
+              >Anything you'd like us to know? (optional)</label
+            >
+            <textarea
+              id="join-message"
+              name="message"
+              rows="4"
+              placeholder="Your experience, what you're looking for, where we met…"
+              class="{{ $input }}"
+            ></textarea>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="join-privacy"
+              name="privacy"
+              type="checkbox"
+              required
+              class="h-6 w-6 rounded border-2 border-gray-400 bg-white text-black checked:bg-black focus:ring-0 dark:border-gray-500 dark:bg-gray-800"
+            />
+            <label
+              for="join-privacy"
+              class="ml-4 text-sm font-normal text-gray-600 dark:text-gray-300"
+              >I accept the fika.works General terms and Privacy policy.</label
+            >
+          </div>
+          <div class="mt-4">
+            <button
+              type="submit"
+              class="w-full cursor-pointer rounded-[40px] bg-black py-5 text-base font-medium text-white transition-colors duration-200 hover:bg-fika-hover-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 lg:w-max lg:px-10 lg:py-6 lg:text-xl dark:border dark:border-white/20 dark:bg-transparent dark:hover:bg-white/5"
+            >
+              Join the community
+            </button>
+          </div>
+          <div>
+            <div
+              class="form-success hidden bg-green-100 dark:bg-green-900/50 border-green-500 dark:border-green-400 border-2 rounded-md px-5 py-3 text-green-900 dark:text-green-100"
+            >
+              Thanks for reaching out. We'll be in touch soon.
+            </div>
+            <div
+              class="form-failed hidden bg-red-100 dark:bg-red-900/50 border-red-500 dark:border-red-400 border-2 rounded-md px-5 py-3 text-red-900 dark:text-red-100"
+            >
+              Something went wrong while sending the form. Please try again or
+              email info@fika.works.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{{- end }}

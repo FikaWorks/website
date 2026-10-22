@@ -1,32 +1,145 @@
 {{- define "main" }}
-  <div
-    class="bg-white dark:bg-gray-900 dark:text-white pt-28 lg:pt-36 pb-16 lg:pb-24"
-  >
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
-    >
-      <div class="col-span-full lg:col-start-2 lg:col-end-8">
-        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
-      </div>
-      {{ if .Params.subtitle }}
-        <div class="col-span-full lg:col-start-8 lg:col-end-13">
-          <div class="text-lg font-light lg:text-2xl dark:text-gray-200">
-            <p class="pb-5 font-light lg:pb-6">
-              {{ .Params.subtitle }}
-            </p>
+  {{ partial "page-hero.html" (dict "page" . "cta_text" (.Params.cta_text | default "Talk to us") "cta_url" (.Params.cta_url | default "/contact/")) }}
+
+  {{- /* white: problem as a pull quote, next to the approach */}}
+  {{ partial "offer/intro.html" . }}
+
+  {{- /* tint: checklist */}}
+  {{ partial "offer/delivers.html" . }}
+
+  {{- /* dark band */}}
+  {{ partial "offer/different.html" . }}
+
+  <!-- Roles (fractional) -->
+  {{ with .Params.roles }}
+    <section class="section-pad bg-page">
+      <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+        <div class="col-span-full">
+          <h2 class="text-3xl font-medium lg:text-heading dark:text-white mb-10 lg:mb-14 title-rule">{{ $.Params.roles_title | default "Three roles" }}</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
+            {{ range . }}
+              <div class="bg-surface dark:border dark:border-white/5 p-6 lg:p-8">
+                <h3 class="text-xl font-medium lg:text-2xl dark:text-white">{{ .name }}</h3>
+                {{ with .summary }}<p class="mt-2 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ . }}</p>{{ end }}
+                <p class="mt-4 text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Hire us when</p>
+                <p class="mt-1 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .when }}</p>
+                <p class="mt-4 text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">A typical month</p>
+                <p class="mt-1 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .month }}</p>
+                {{ with .agent }}
+                  <p class="mt-4 text-sm font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">Their FikaWorks Agent</p>
+                  <p class="mt-1 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ . }}</p>
+                {{ end }}
+              </div>
+            {{ end }}
           </div>
         </div>
-      {{ end }}
-    </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 mt-10 lg:mt-16"
-    >
-      <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        <div class="font-light text-lg lg:text-2xl">
-          {{- partial "helpers/enhanced-content-page.html" .Content }}
+      </div>
+    </section>
+  {{ end }}
+
+
+  <!-- A typical week (fractional) -->
+  {{ with .Params.week }}
+    {{- $days := slice "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun" }}
+    <section class="section-pad bg-page dark:text-white">
+      <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+        <div class="col-span-full">
+          {{ with $.Params.options }}
+            <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ $.Params.options_title | default "Two ways to work with us" }}</h2>
+            <div class="mt-8 mb-16 lg:mb-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
+              {{ range . }}
+                <div class="border-2 {{ if .primary }}border-black dark:border-white{{ else }}border-gray-300 dark:border-white/25{{ end }} p-6 lg:p-8">
+                  <p class="text-sm font-medium uppercase tracking-[0.15em] text-fika-purple dark:text-fika-light-purple">{{ .label }}</p>
+                  <h3 class="mt-2 text-2xl font-medium lg:text-3xl">{{ .title }}</h3>
+                  <p class="mt-3 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .text }}</p>
+                  {{ with .points }}
+                    <ul class="mt-5 space-y-2">
+                      {{ range . }}<li class="flex items-start gap-3 text-base font-normal text-gray-800 dark:text-gray-200"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-fika-purple"></span>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+          <div class="flex flex-wrap items-center gap-3">
+            <h2 class="text-3xl font-medium lg:text-heading title-rule">{{ .title | default "What a typical week looks like" }}</h2>
+            <span class="rounded-full border border-gray-400 px-3 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">Illustrative</span>
+          </div>
+          <div class="mt-10 overflow-x-auto">
+            <div class="min-w-[640px]">
+              <div class="grid grid-cols-[minmax(180px,1.4fr)_repeat(7,minmax(0,1fr))] border-b border-gray-300 dark:border-white/20 pb-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <span></span>
+                {{- $hours := .hours }}
+                {{- range $i, $d := $days }}<span class="text-center {{ if ge $i 5 }}text-gray-400{{ end }}">{{ $d }}{{ with $hours }}<span class="block text-xs font-normal {{ if ge $i 5 }}text-gray-400{{ else }}text-gray-500 dark:text-gray-400{{ end }}">{{ if lt $i 5 }}{{ . }}{{ else }}–{{ end }}</span>{{ end }}</span>{{ end }}
+              </div>
+              {{- range .rows }}
+                {{- $row := . }}
+                <div class="grid grid-cols-[minmax(180px,1.4fr)_repeat(7,minmax(0,1fr))] items-center border-b border-gray-200 dark:border-white/10 py-5">
+                  <div class="pr-4">
+                    <p class="text-lg font-medium">{{ .title }}</p>
+                    <p class="mt-1 text-sm font-normal text-gray-700 dark:text-gray-300">{{ .text }}</p>
+                  </div>
+                  {{- if .continuous }}
+                    <div class="col-span-7 px-1">
+                      <div class="flex h-7 items-center rounded-full border-2 border-dashed border-fika-purple bg-fika-light-purple/50 px-4 text-xs font-medium text-black dark:text-white">{{ .label }}</div>
+                    </div>
+                  {{- else }}
+                    {{- range $i, $c := .cells }}
+                      {{- $fill := cond (eq $row.style "support") "bg-gray-400" "bg-black dark:bg-white" }}
+                      <div class="flex h-7 items-center px-1 {{ if eq $c "pm" }}justify-end{{ else if eq $c "am" }}justify-start{{ else }}justify-center{{ end }} {{ if ge $i 5 }}bg-fika-offWhite dark:bg-white/5{{ end }}">
+                        {{- if eq $c "full" }}<span class="h-5 w-full rounded {{ $fill }}"></span>
+                        {{- else if or (eq $c "am") (eq $c "pm") }}<span class="h-5 w-[calc(50%-2px)] rounded {{ $fill }}"></span>{{ end }}
+                      </div>
+                    {{- end }}
+                  {{- end }}
+                </div>
+              {{- end }}
+            </div>
+          </div>
+          {{ with .note }}<p class="mt-6 max-w-3xl text-base font-normal lg:text-lg text-gray-700 dark:text-gray-300">{{ . }}</p>{{ end }}
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  {{ end }}
+
+  <!-- Beyond time + terms + agent (fractional) -->
+  {{ if or .Params.beyond .Params.terms .Params.agent }}
+    <section class="section-pad bg-page dark:text-white">
+      <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+        <div class="col-span-full grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div>
+            {{ with .Params.beyond }}
+              <h2 class="text-3xl font-medium lg:text-4xl">What you get, beyond time</h2>
+              <ul class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {{ range . }}<li class="bg-surface px-5 py-4 text-lg font-medium">{{ . }}</li>{{ end }}
+              </ul>
+            {{ end }}
+            {{ with .Params.terms }}
+              <ul class="mt-8 flex flex-wrap gap-3">
+                {{ range . }}<li class="rounded-full border-2 border-black dark:border-white px-4 py-2 text-base font-medium">{{ . }}</li>{{ end }}
+              </ul>
+            {{ end }}
+          </div>
+          {{ with .Params.agent }}
+            <div class="self-start border-2 border-fika-purple bg-surface p-6 lg:p-8">
+              <div class="flex flex-wrap items-center gap-3">
+                <h2 class="text-2xl font-medium lg:text-3xl">{{ .title }}</h2>
+                <span class="rounded-full bg-fika-light-purple px-3 py-0.5 text-sm font-medium text-black">{{ .status }}</span>
+              </div>
+              <p class="mt-4 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-200">{{ .text }}</p>
+              <a href="/products/#fikaworks-agent" class="mt-5 inline-block text-lg font-medium underline underline-offset-8 hover:text-fika-purple">About the FikaWorks Agent</a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{- /* white: numbered outcomes + engagement shape */}}
+  {{ partial "offer/outcomes.html" . }}
+
+  {{- /* tint: cards + enablement line */}}
+  {{ partial "offer/related.html" (dict "page" . "title" (.Params.related_title | default "How we deliver this") "training" (not .Params.hide_training)) }}
+
   {{- partial "cta.html" . }}
 {{- end }}

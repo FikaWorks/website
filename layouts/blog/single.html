@@ -30,12 +30,12 @@
     {{- end }}
   </div>
   <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 pb-16 lg:pb-24"
+    class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 pb-16 lg:pb-24"
   >
-    <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-2 lg:pt-[120px]">
+    <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-1 lg:pt-[120px]">
       <div class="top-10 flex flex-row gap-5 lg:sticky lg:flex-col lg:gap-0">
         <p
-          class="text-sm font-medium text-gray-800 dark:text-gray-300 md:text-base md:font-light lg:mb-5"
+          class="text-sm font-medium text-gray-800 dark:text-gray-300 md:text-base md:font-normal lg:mb-5"
         >
           Published on <br />
           {{- $dateHuman := .Date | time.Format ":date_long" }}
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div
-      class="col-span-full lg:col-span-7 lg:col-start-5 lg:col-end-11 lg:pt-16"
+      class="col-span-full lg:col-start-5 lg:col-end-12 lg:pt-16"
     >
       <div class="flex flex-wrap gap-3">
         {{- range .Params.tags }}
@@ -69,17 +69,17 @@
         {{- end }}
       </div>
       <h1
-        class="mb-8 mt-12 text-2xl font-medium leading-tight lg:text-5xl dark:text-white"
+        class="mb-8 mt-12 text-2xl font-medium leading-tight lg:text-heading dark:text-white"
       >
         {{ .Title }}
       </h1>
-      <div class="text-lg font-light dark:text-gray-200">
+      <div class="text-lg font-normal dark:text-gray-200">
         {{ partial "helpers/enhanced-content.html" .Content }}
       </div>
     </div>
   </div>
   <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 lg:hidden"
+    class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 lg:hidden"
   >
     <div class="col-span-full mt-10 mb-16 lg:mb-24 flex flex-col">
       <p class="mb-6 dark:text-gray-200">Share this post</p>

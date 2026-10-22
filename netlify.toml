@@ -7,13 +7,50 @@ command = """\
   """
 
 [build.environment]
-HUGO_VERSION = "0.157.0"
+# Netlify installs Hugo and Node with mise, so mise.toml and mise.lock decide
+# the versions actually used. Keep these values in sync with them.
+HUGO_VERSION = "0.168.0"
 NODE_VERSION = "24.14.0"
 HUGO_ENV = "production"
 TZ = "Europe/Amsterdam"
 
 # Redirects
+
+# Short addresses printed as QR codes on leaflets and the booth.
+# Keep these paths stable; change only the "to" target if pages move.
+[[redirects]]
+from = "/talk"
+to = "/contact/"
+status = 302
+
+[[redirects]]
+from = "/join"
+to = "/cooperative/join/"
+status = 302
+
+# Pages moved in the October 2026 restructure. Hugo aliases also cover these;
+# the server-side redirects keep search engines and old links on the right page.
+[[redirects]]
+from = "/how-we-deliver/*"
+to = "/services/:splat"
+status = 301
+
+[[redirects]]
+from = "/about/*"
+to = "/cooperative/"
+status = 301
+
+[[redirects]]
+from = "/members"
+to = "/cooperative/#team"
+status = 301
+
+[[redirects]]
+from = "/fikaworksday"
+to = "/fikaworks-day/"
+status = 301
+
 [[redirects]]
 from = "/why"
-to = "/about"
+to = "/cooperative/"
 status = 301

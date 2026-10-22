@@ -1,0 +1,26 @@
+# Organisations FikaWorks can name publicly.
+# logo:      file name in assets/images/clients/ (optional)
+# wide:      true for wordmarks (logo already contains the name)
+# mono:      true for single-colour marks that should follow the text colour
+# show_name: show the name as text next to the logo
+# prefix:    text shown before the logo
+- name: Shell
+  logo: shell.svg
+  show_name: true
+  work: E-charging infrastructure on AWS
+- name: Rabobank
+  logo: rabobank.svg
+  wide: true
+  show_name: false
+  work: Migration to Azure and Kubernetes
+- name: Schlumberger
+  logo: schlumberger.svg
+  wide: true
+  show_name: false
+  work: MLOps platform
+- name: Kasten by Veeam
+  logo: veeam.svg
+  wide: true
+  prefix: Kasten by
+  show_name: false
+  work: Documentation and DevRel

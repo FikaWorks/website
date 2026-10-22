@@ -1,418 +1,90 @@
 {{- define "main" }}
-  <div class="relative mb-14">
-    <div class="relative dark-hero-bg dark:bg-gray-900 min-h-screen">
-      {{- $img_desktop := resources.Get "/images/website-background-desktop.jpeg" }}
-      {{- $img_mobile := resources.Get "/images/website-background-mobile.jpeg" }}
-      {{- $tiny := $img_mobile.Resize "640x webp" }}
-      {{- $small := $img_mobile.Resize "1280x webp" }}
-      {{- $medium := $img_desktop.Resize "1600x webp" }}
-      {{- $large := $img_desktop.Resize "2000x webp" }}
-      {{- $xlarge := $img_desktop.Resize "3000x webp" }}
-      {{- $xxlarge := $img_desktop.Resize "4000x webp" }}
-      <img
-        class="absolute inset-0 w-full h-full object-cover dark:hidden"
-        alt="FikaWorks, we are the next wave of Cloud Native Consultants"
-        src="{{ $medium.RelPermalink }}"
-        srcset="
-          {{- $tiny.RelPermalink }}  640w,
-          {{- $small.RelPermalink }} 1280w,
-          {{- $medium.RelPermalink }} 1600w,
-          {{- $large.RelPermalink }} 2000w,
-          {{- $xlarge.RelPermalink }} 3000w,
-          {{- $xxlarge.RelPermalink }} 4000w
-        "
-        sizes="100vw"
-      />
+  {{- $dot := dict "blue" "bg-fika-soft-blue" "yellow" "bg-fika-soft-yellow" "green" "bg-fika-soft-green" "purple" "bg-fika-light-purple" }}
+  {{- $arrowIcon := `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z" fill="currentColor"></path></svg>` }}
+  <!-- Hero -->
+  <div class="relative">
+    <div class="relative overflow-hidden bg-page min-h-[min(100svh,47.5rem)]">
+      {{ partial "decor-circles.html" . }}
     </div>
     <div
-      class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between pt-36 lg:pt-0"
+      class="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center px-4 pt-24 lg:pt-0"
     >
+      <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-700 dark:text-gray-300">Collectively engineered</p>
       <h1
-        class="mb-9 max-w-sm text-center text-4xl font-medium md:max-w-2xl md:text-5xl lg:mb-14 lg:max-w-4xl lg:text-7xl dark:text-white"
+        class="mt-4 max-w-sm text-center text-5xl font-medium md:max-w-3xl md:text-6xl lg:max-w-5xl lg:text-7xl dark:text-white"
       >
-        Collectively Engineered to Adapt, Innovate and Grow
+        Cloud native. Agent ready.
       </h1>
-      <div class="flex gap-4 flex-col md:flex-row items-center md:gap-8">
-        <a href="/solutions">
-          <div
-            class="group inline-block lg:w-max w-full cursor-pointer hover:bg-fika-ash bg-black dark:bg-transparent dark:border dark:border-white/20 dark:hover:border-white/40 dark:hover:bg-white/5 active:bg-fika-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 text-white rounded-[40px] transition-colors duration-200"
-          >
-            <div
-              class="font-medium text-center flex items-center justify-between py-5 px-9 lg:py-6 lg:px-10 text-base lg:text-xl gap-3"
-            >
-              Explore our solutions<svg
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0 flex-grow-0"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="bg-white dark:bg-gray-900 dark:text-white py-10 lg:py-14">
-    <div class="invisible relative -top-20 block"></div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
-    >
-      <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        <div class="text-3xl font-medium lg:text-5xl"></div>
-        <div class="mt-6 lg:mt-8">
-          <div class="font-light text-lg lg:text-2xl">
-            <p class="pb-5 font-light lg:pb-6">
-              We design and deliver modular, enterprise-grade cloud solutions
-              that integrate seamlessly with major providers such as Azure, AWS,
-              and Google Cloud as well as Sovereign Neo-Cloud. By applying
-              modern cloud-native engineering practices, we help businesses
-              scale efficiently, operate securely, and innovate faster—turning
-              complex challenges into sustainable competitive advantage.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="-mt-2">
-      <div class="bg-white dark:bg-gray-900 lg:py-14 py-10">
-        <div
-          class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
-        >
-          <div class="col-span-full lg:col-start-2 lg:col-end-12">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-14 lg:gap-y-10"
-            >
-              <div class="relative">
-                <div
-                  class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
-                >
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green-hover dark:border-b-fika-soft-green-shadow"
-                  ></div>
-                  <div
-                    class="h-full bg-fika-soft-green-hover dark:bg-fika-soft-green-shadow"
-                  ></div>
-                </div>
-                <div class="h-full relative z-10">
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-green dark:border-b-fika-soft-green-dark"
-                  ></div>
-                  <div
-                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-green dark:bg-fika-soft-green-dark"
-                  >
-                    <div class="my-6 lg:mt-8 lg:mb-9">
-                      <span
-                        class="text-xl font-medium lg:text-3xl dark:text-white"
-                        >Cloud Migrations</span
-                      >
-                      <p
-                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
-                      >
-                        Move to the cloud with confidence — end-to-end migration
-                        across AWS, Azure, GCP, and Sovereign Neo-Cloud.
-                      </p>
-                    </div>
-                    <a href="/solutions/cloud-migrations/">
-                      <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-green dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
-                      >
-                        <div
-                          class="font-medium text-center flex items-center text-xl gap-4"
-                        >
-                          <svg
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
-                          >
-                            <rect
-                              width="32"
-                              height="32"
-                              rx="16"
-                              fill="currentColor"
-                            ></rect>
-                            <path
-                              d="m12.5 9 8 7.5-8 7.5"
-                              stroke="#fff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="dark:stroke-black"
-                            ></path></svg
-                          >Learn more
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="relative">
-                <div
-                  class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
-                >
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow-hover dark:border-b-fika-soft-yellow-shadow"
-                  ></div>
-                  <div
-                    class="h-full bg-fika-soft-yellow-hover dark:bg-fika-soft-yellow-shadow"
-                  ></div>
-                </div>
-                <div class="h-full relative z-10">
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-yellow dark:border-b-fika-soft-yellow-dark"
-                  ></div>
-                  <div
-                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-yellow dark:bg-fika-soft-yellow-dark"
-                  >
-                    <div class="my-6 lg:mt-8 lg:mb-9">
-                      <span
-                        class="text-xl font-medium lg:text-3xl dark:text-white"
-                        >Platform Engineering</span
-                      >
-                      <p
-                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
-                      >
-                        Build an Internal Developer Platform that teams actually
-                        want to use — golden paths, self-service, and guardrails.
-                      </p>
-                    </div>
-                    <a href="/solutions/platform-engineering/">
-                      <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-yellow dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
-                      >
-                        <div
-                          class="font-medium text-center flex items-center text-xl gap-4"
-                        >
-                          <svg
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
-                          >
-                            <rect
-                              width="32"
-                              height="32"
-                              rx="16"
-                              fill="currentColor"
-                            ></rect>
-                            <path
-                              d="m12.5 9 8 7.5-8 7.5"
-                              stroke="#fff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="dark:stroke-black"
-                            ></path></svg
-                          >Learn more
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="relative">
-                <div
-                  class="absolute top-3 left-3 right-[-12px] bottom-[-12px] z-0"
-                >
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-pink-hover dark:border-b-fika-soft-pink-shadow"
-                  ></div>
-                  <div
-                    class="h-full bg-fika-soft-pink-hover dark:bg-fika-soft-pink-shadow"
-                  ></div>
-                </div>
-                <div class="h-full relative z-10">
-                  <div
-                    class="h-3 lg:h-[14px] w-full border-b-[12px] border-r-[12px] lg:border-b-[14px] lg:border-r-[14px] border-r-transparent border-b-fika-soft-pink dark:border-b-fika-soft-pink-dark"
-                  ></div>
-                  <div
-                    class="px-5 pt-5 lg:px-8 lg:pt-6 pb-6 lg:pb-8 h-full flex flex-col justify-between bg-fika-soft-pink dark:bg-fika-soft-pink-dark"
-                  >
-                    <div class="my-6 lg:mt-8 lg:mb-9">
-                      <span
-                        class="text-xl font-medium lg:text-3xl dark:text-white"
-                        >AI-Powered Operations</span
-                      >
-                      <p
-                        class="mt-2 text-base font-light text-gray-800 dark:text-gray-200 lg:mt-4 lg:text-lg"
-                      >
-                        Govern, build, and scale AI across your organisation —
-                        from governance frameworks to production agents.
-                      </p>
-                    </div>
-                    <a href="/solutions/ai-powered-operations/">
-                      <div
-                        class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-text-pink dark:hover:text-gray-300 active:text-fika-purple rounded-[40px] transition-colors duration-200"
-                      >
-                        <div
-                          class="font-medium text-center flex items-center text-xl gap-4"
-                        >
-                          <svg
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
-                          >
-                            <rect
-                              width="32"
-                              height="32"
-                              rx="16"
-                              fill="currentColor"
-                            ></rect>
-                            <path
-                              d="m12.5 9 8 7.5-8 7.5"
-                              stroke="#fff"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="dark:stroke-black"
-                            ></path></svg
-                          >Learn more
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
-    >
-      <div class="col-span-full lg:col-start-2 lg:col-end-10 lg:-mt-2 mt-0">
-        <a
-          href="/solutions"
-          class="group font-medium hover:text-fika-purple dark:hover:text-gray-300 text-fika-purple dark:text-gray-300 cursor-pointer underline underline-offset-8 text-lg transition-colors duration-200"
-          ><span>See all solutions</span></a
-        >
-      </div>
-    </div>
-  </div>
-  <div
-    class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 relative my-16 bg-white dark:bg-gray-900 dark:text-white lg:my-28"
-  >
-    <div class="z-10 col-span-full pt-10 lg:col-span-5 lg:col-start-2 lg:pt-20">
-      <div class="text-4xl font-medium lg:text-5xl">Built on collaboration</div>
-      <div class="mt-8">
-        <div class="text-lg font-light leading-8 lg:text-3xl lg:leading-[48px]">
-          <p class="pb-5 font-light lg:pb-6">
-            As a cooperative, we're rooted in open source principles—transparency, shared knowledge, and community contribution.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="absolute right-0 top-0 z-0 h-full max-h-[90%] min-h-[420px] w-3/4 bg-fika-offWhite dark:bg-fika-dark-surface"
-    ></div>
-    <div
-      class="z-10 col-span-full -mt-2 flex flex-col gap-8 lg:col-span-5 lg:col-start-7 lg:mt-0 lg:pt-20"
-    >
-      <div>
-        <div
-          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
-        >
-          <div class="mb-1 lg:mb-2">
-            <span class="text-2xl font-medium lg:text-3xl"
-              >Open source contributions</span
-            >
-            <div
-              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
-            >
-              <p class="pb-5 font-light lg:pb-6">
-                We build on open source technologies and actively contribute back to the community.
-              </p>
-            </div>
-          </div>
-          <a href="https://github.com/FikaWorks">
-            <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
-            >
-              <div
-                class="font-medium text-center flex items-center text-xl gap-4"
-              >
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
-                >
-                  <rect
-                    width="32"
-                    height="32"
-                    rx="16"
-                    fill="currentColor"
-                  ></rect>
-                  <path
-                    d="m12.5 9 8 7.5-8 7.5"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="stroke-white dark:stroke-black"
-                  ></path></svg
-                >View our projects on GitHub
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div>
-        <div
-          class="w-full bg-fika-dust dark:bg-fika-dark-elevated dark:border dark:border-white/5 p-8"
-        >
-          <div class="mb-1 lg:mb-2">
-            <span class="text-2xl font-medium lg:text-3xl"
-              >Community engagement</span
-            >
-            <div
-              class="pt-4 text-lg font-light text-gray-800 dark:text-gray-200"
-            >
-              <p class="pb-5 font-light lg:pb-6">
-                Meet our members at conferences, meetups, and community events worldwide.
-              </p>
-            </div>
-          </div>
-          <a href="/community">
-            <div
-              class="group inline-block lg:w-max w-full cursor-pointer text-black dark:text-white hover:text-fika-hover-purple active:text-fika-purple rounded-[40px] transition-colors duration-200"
-            >
-              <div
-                class="font-medium text-center flex items-center text-xl gap-4"
-              >
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 lg:w-8 lg:h-8 flex-shrink-0 flex-grow-0"
-                >
-                  <rect
-                    width="32"
-                    height="32"
-                    rx="16"
-                    fill="currentColor"
-                  ></rect>
-                  <path
-                    d="m12.5 9 8 7.5-8 7.5"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="stroke-white dark:stroke-black"
-                  ></path></svg
-                >Explore our community
-              </div>
-            </div>
-          </a>
+      <div class="mt-9 lg:mt-12">
+        <div class="cta-toggle">
+          <a href="/services/">See how we work{{ $arrowIcon | safeHTML }}</a>
+          <a href="/contact/"><span class="cta-toggle-dot" aria-hidden="true"></span>Talk to us</a>
         </div>
       </div>
     </div>
   </div>
-{{ end }}
+
+  {{- partial "client-logos.html" (dict "title" "Trusted by" "compact" true) }}
+
+  <!-- What we do: the journey -->
+  <section class="section-pad bg-page dark:text-white">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <h2 class="text-3xl font-medium lg:text-heading title-rule">Start where you are</h2>
+        <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">
+          From a first assessment to a platform in production, and a senior expert who stays close.
+        </p>
+        <ol class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {{- range (slice
+            (dict "name" "Assess" "icon" "zoom-check" "color" "blue" "text" "Know where you stand: a Discovery Workshop or a Readiness Review." "url" "/services/#assess")
+            (dict "name" "Build" "icon" "stack-2" "color" "yellow" "text" "Platforms, sovereign migrations, delivery and AI & Agents in production." "url" "/services/#build")
+            (dict "name" "Run" "icon" "activity-heartbeat" "color" "green" "text" "Managed Platform Care, so someone owns the platform after the project." "url" "/services/#run")
+            (dict "name" "Lead" "icon" "route" "color" "purple" "text" "A fractional SRE, Architect or Delivery Lead. Full time when you need it." "url" "/services/#lead")
+          ) }}
+            <li>
+              <a href="{{ .url }}" class="card group h-full tone-{{ .color }}">
+                <span class="card-badge" aria-hidden="true">{{ partial "icon.html" (dict "name" .icon "class" "h-7 w-7") }}</span>
+                <span class="mt-4 block text-2xl font-medium lg:text-3xl">{{ .name }}</span>
+                <span class="mt-2 block text-base font-normal lg:text-lg text-gray-700 dark:text-gray-300">{{ .text }}</span>
+              </a>
+            </li>
+          {{- end }}
+        </ol>
+        <p class="mt-8 text-lg font-normal text-gray-700 dark:text-gray-300">
+          Prefer to start from the problem? <a href="/solutions/" class="font-medium text-black dark:text-white underline underline-offset-8 hover:text-fika-purple">Browse our solutions</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a cooperative, for buyers -->
+  <section class="section-pad bg-page dark:text-white">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300">Why a cooperative</p>
+        <h2 class="mt-4 max-w-4xl text-3xl font-medium lg:text-heading text-balance">Your budget goes to the professionals doing the work.</h2>
+        <p class="mt-4 max-w-3xl text-lg font-normal lg:text-xl text-gray-700 dark:text-gray-300">The person who scopes your work delivers it, with a community of 150+ senior professionals behind them.</p>
+        <div class="mt-8 lg:mt-10">
+          {{ partial "pyramid-money.html" . }}
+        </div>
+        <a href="/cooperative/" class="mt-8 inline-block text-lg font-medium underline underline-offset-8 hover:text-fika-purple">Why a cooperative works for you</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section-pad bg-page">
+    <div class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6">
+      <div class="col-span-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between rounded-[1.25rem] bg-black dark:bg-fika-dark-elevated text-white p-6 lg:p-10">
+        <div>
+          <p class="text-sm font-medium uppercase tracking-[0.2em] text-gray-300">Products · Early access</p>
+          <p class="mt-3 text-2xl font-medium lg:text-4xl">What we are building next</p>
+          <p class="mt-3 max-w-2xl text-base font-normal lg:text-lg text-gray-200">AI agents that work alongside our experts, a sovereign migration assessment and a security platform, all running in your own infrastructure.</p>
+        </div>
+        <a href="/products/" class="shrink-0 inline-flex items-center justify-center rounded-[40px] bg-white px-8 py-4 text-base font-medium text-black hover:bg-fika-light-purple transition-colors duration-200 lg:text-lg">See our products</a>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "cta.html" . }}
+{{- end }}

@@ -1,25 +1,8 @@
 {{ define "main" }}
-  <div
-    class="pt-28 lg:pt-36 pb-7 lg:pb-24 bg-fika-light-purple dark:bg-gray-900 dark:text-white"
-  >
+  {{ partial "page-hero.html" (dict "page" . "eyebrow" "Events & Insights · Events" "subtitle" .Params.heading) }}
+  <div class="bg-page dark:text-white section-pad">
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
-    >
-      <div class="col-span-full lg:col-start-2 lg:col-end-8">
-        <h1 class="text-3xl font-medium lg:text-7xl">{{ .Title }}</h1>
-      </div>
-      <div class="col-span-full lg:col-start-8 lg:col-end-13">
-        <div class="text-lg font-light lg:text-2xl">
-          <p class="pb-5 font-light lg:pb-6">
-            {{ .Params.heading }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="bg-white dark:bg-gray-900 dark:text-white py-6 lg:py-14">
-    <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6"
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6"
     >
       <div class="col-span-full">
         <div class="flex flex-wrap items-center gap-6 lg:flex-nowrap">
@@ -63,7 +46,7 @@
           <div class="z-30 w-full md:w-[236px]">
             <div class="relative mt-1">
               <button
-                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-white dark:bg-gray-800 border-gray-800 dark:border-gray-600 text-black dark:text-white"
+                class="relative w-full cursor-default rounded-lg py-4 px-6 text-left border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-fika-purple bg-surface border-gray-800 dark:border-gray-600 text-black dark:text-white"
                 id="filter-btn"
                 type="button"
               >
@@ -213,7 +196,7 @@
         >
           <div class="relative h-full">
             <div
-              class="relative h-full w-full bg-fika-dust dark:bg-gray-800 dark:border dark:border-white/5 dark:text-white p-8 grid"
+              class="relative h-full w-full rounded-[1.25rem] bg-fika-dust dark:bg-gray-800 dark:text-white p-8 grid"
             >
               <div class="flex items-center gap-2 self-start">
                 <svg
@@ -250,7 +233,7 @@
                   >{{ .Params.event_location }}</span
                 >
               </div>
-              <span class="block text-3xl font-medium lg:text-5xl"
+              <span class="block text-3xl font-medium lg:text-heading"
                 >{{ .Title }}</span
               >
               <a

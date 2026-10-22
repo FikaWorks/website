@@ -1,0 +1,17 @@
+{{- /*
+  How we're different: a dark feature band with the dark background image.
+  @context page
+*/}}
+{{- with .Params.differentiator }}
+  <section class="relative overflow-hidden bg-gray-950 py-20 lg:py-28 text-white">
+    {{ partial "bg-image.html" (dict "lazy" true "only" "dark") }}
+    <div class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container gap-6 lg:gap-10">
+      <div class="col-span-full lg:col-start-1 lg:col-end-11">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-fika-light-purple">How we’re different</p>
+        <p class="mt-6 text-2xl lg:text-4xl font-normal leading-snug text-pretty">
+          {{ .text | markdownify }}
+        </p>
+      </div>
+    </div>
+  </section>
+{{- end }}

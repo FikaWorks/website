@@ -15,7 +15,7 @@ sure to read the documentation before starting development.
 ## Getting started
 
 ```bash
-# install dev dependencies (tailwind, postcss, etc.)
+# install dev dependencies (tailwind, etc.)
 $ npm install
 
 # run hugo

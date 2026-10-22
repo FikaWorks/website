@@ -1,56 +1,55 @@
 +++
 date = '2026-03-25T00:00:00+00:00'
 draft = false
+group = 'Solutions · Platforms & delivery'
 title = 'CI/CD & Delivery Acceleration'
 hero_title = 'CI/CD & Delivery Acceleration'
-hero_subtitle = 'Ship Faster with Pipelines That Actually Work'
-weight = 4
-cta_text = 'Get a CI/CD Pipeline Assessment'
-cta_url = '/contact'
+hero_subtitle = 'Ship faster with pipelines that actually work.'
+weight = 5
+cta_text = 'Get a pipeline assessment'
+cta_url = '/contact/?topic=build'
 
 [problem]
-text = "Deployments take hours. You deploy once a month and it is terrifying. Your pipelines are flaky and nobody dares touch them. Every failed build costs developer time and confidence. Every slow release cycle is a feature your competitors shipped first."
+text = "Deployments take hours, pipelines are flaky and nobody dares touch them. Every slow release is a feature a competitor shipped first."
 
 [[delivers]]
-text = 'Pipeline audit and assessment — architecture review, bottleneck identification, and maturity scoring'
+text = "A pipeline audit with bottlenecks and maturity score"
 [[delivers]]
-text = 'Build optimisation — parallelisation, caching strategies, and dependency management'
+text = "Faster builds and tests, and an end to flaky tests"
 [[delivers]]
-text = 'Test strategy redesign — eliminating flaky tests, optimising test suites, and implementing test impact analysis'
+text = "GitOps with Argo CD, Flux or similar"
 [[delivers]]
-text = 'GitOps implementation with Argo CD, Flux, or equivalent tooling'
+text = "Canary and blue-green releases, and feature flags"
 [[delivers]]
-text = 'Progressive delivery — canary releases, blue-green deployments, and feature flags'
+text = "Shared golden pipelines with security scanning built in"
 [[delivers]]
-text = 'Pipeline standardisation — shared libraries, templates, and golden pipeline patterns'
-[[delivers]]
-text = 'Security scanning integrated into the pipeline, not bolted on after'
-[[delivers]]
-text = 'DORA metrics dashboards — deployment frequency, lead time, change failure rate, and time to restore'
+text = "DORA metrics dashboards"
 
 [differentiator]
-text = "CI/CD work is often treated as a plumbing job. We treat it as a developer productivity multiplier. Faster, safer deployments change how teams work — smaller batches, faster feedback, fewer rollbacks. Our engineers have shipped CI/CD transformations across enterprises and startups, and every engagement is tailored to your specific toolchain and team structure."
+text = "We treat CI/CD as a productivity multiplier, not plumbing. Smaller batches, faster feedback and fewer rollbacks change how teams work."
 
 [[outcomes]]
-text = 'Deployment frequency measured in hours, not weeks'
+text = "Deploys measured in hours, not weeks"
 [[outcomes]]
-text = 'Lead time from commit to production cut dramatically'
+text = "Much shorter lead time from commit to production"
 [[outcomes]]
-text = 'Teams that deploy with confidence instead of anxiety'
+text = "Teams that release with confidence"
 [[outcomes]]
-text = 'Measurable improvement in all four DORA metrics'
+text = "Better scores on all four DORA metrics"
+
 
 [[related_services]]
 name = 'Discovery Workshop'
-url = '/how-we-deliver/discovery-workshop/'
-description = 'Audit your current CI/CD landscape and define an optimisation roadmap.'
+url = '/services/discovery-workshop/'
+description = 'Audit your CI/CD landscape and agree an improvement roadmap.'
 
 [[related_services]]
-name = 'Go-Live Enablement'
-url = '/how-we-deliver/go-live-enablement/'
-description = 'Validate your new pipeline architecture before rolling it out to all teams.'
+name = 'Platform Build & Go-Live'
+url = '/services/platform-build-go-live/'
+description = 'Roll out the new pipelines as part of a platform build or go-live.'
+
+[[related_services]]
+name = 'Enablement & Training'
+url = '/services/enablement-training/'
+description = 'Hands-on GitOps and CI/CD training for your teams.'
 +++
-
-CI/CD is the engine of modern software delivery. When pipelines are fast, reliable, and well-instrumented, teams ship with confidence. When they are slow, flaky, or opaque, every release becomes a source of friction and risk.
-
-FikaWorks brings deep expertise in CI/CD architecture across GitHub Actions, GitLab CI, Jenkins, Argo CD, Flux, Tekton, and more. We do not just tune configuration files — we redesign pipeline architecture from first principles, optimise build and test strategies, and implement progressive delivery patterns that let you release safely at any pace.

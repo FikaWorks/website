@@ -1,0 +1,34 @@
+{{- /*
+  Background image for dark feature bands (only "dark" is in use: page headers
+  use decor-circles.html and the closing call to action is cta-panel.html).
+  Covers the nearest positioned parent.
+
+  @context dict:
+    lazy   true to lazy-load (blocks below the fold)
+    alt    alt text (default: empty, decorative)
+    only   "dark" to always show the dark image (for dark bands)
+
+  @example {{ partial "bg-image.html" (dict "lazy" true) }}
+*/}}
+{{- $loading := cond (.lazy | default false) "lazy" "eager" }}
+{{- $alt := .alt | default "" }}
+{{- $modes := slice "light" "dark" }}
+{{- if eq .only "dark" }}{{ $modes = slice "dark" }}{{ end }}
+{{- $single := eq (len $modes) 1 }}
+{{- range $mode := $modes }}
+  {{- $img := resources.Get (printf "/images/backgrounds/bg-%s.jpg" $mode) }}
+  {{- $s := $img.Resize "800x webp q80" }}
+  {{- $m := $img.Resize "1400x webp q80" }}
+  {{- $l := $img.Resize "2000x webp q80" }}
+  {{- $xl := $img.Resize "2576x webp q82" }}
+  <img
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover {{ if not $single }}{{ if eq $mode "light" }}dark:hidden{{ else }}hidden dark:block{{ end }}{{ end }}"
+    alt="{{ $alt }}"
+    {{ if eq $alt "" }}aria-hidden="true"{{ end }}
+    loading="{{ $loading }}"
+    decoding="async"
+    src="{{ $m.RelPermalink }}"
+    srcset="{{ $s.RelPermalink }} 800w, {{ $m.RelPermalink }} 1400w, {{ $l.RelPermalink }} 2000w, {{ $xl.RelPermalink }} 2576w"
+    sizes="100vw"
+  />
+{{- end }}

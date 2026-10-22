@@ -1,54 +1,56 @@
 +++
 date = '2026-03-25T00:00:00+00:00'
 draft = false
+group = 'Solutions · Platforms & delivery'
 title = 'Cloud Cost Optimisation'
 hero_title = 'Cloud Cost Optimisation'
-hero_subtitle = 'Cut Cloud Spend Without Cutting Corners'
-weight = 5
-cta_text = 'Get Your Cost Assessment'
-cta_url = '/contact'
+hero_subtitle = 'Cut cloud spend without cutting corners.'
+weight = 7
+aliases = ['/solutions/cloud-cost-assessment/']
+cta_text = 'Get a cost assessment'
+cta_url = '/contact/?topic=assess'
 
 [problem]
-text = "Your cloud bill doubled and nobody can explain why. Finance is asking you to cut 30%. You are overprovisioned everywhere but afraid that right-sizing will break something. The longer you wait, the more waste compounds — and the harder the conversation with leadership gets."
+text = "Your cloud bill keeps growing and nobody can explain why. You are overprovisioned, but afraid that right-sizing will break something."
 
 [[delivers]]
-text = 'Cloud spend visibility — unified cost dashboards across accounts, services, and teams'
+text = "Cost dashboards across accounts, services and teams"
 [[delivers]]
-text = 'Waste identification — orphaned resources, oversized instances, idle capacity, and untagged spend'
+text = "Waste found: idle, oversized, orphaned and untagged"
 [[delivers]]
-text = 'Right-sizing recommendations with performance impact analysis — we do not cut blindly'
+text = "Right-sizing with performance impact checked first"
 [[delivers]]
-text = 'Reserved capacity and savings plan optimisation across AWS, Azure, and GCP'
+text = "Reserved capacity and savings plans across clouds"
 [[delivers]]
-text = 'Tagging governance — consistent cost allocation so every dollar has an owner'
+text = "Tagging, budgets and anomaly alerts"
 [[delivers]]
-text = 'Automated cost policies — budget alerts, anomaly detection, and enforcement guardrails'
-[[delivers]]
-text = 'FinOps operating model — so the savings stick after we leave'
+text = "A FinOps model so savings stick"
 
 [differentiator]
-text = "We are engineers, not analysts. We do not hand you a spreadsheet of recommendations — we implement the changes, codify the policies in Infrastructure as Code, and set up the dashboards so your team maintains cost discipline after we leave. Typically, 20-40% of cloud waste is low-hanging fruit we can address in the first two weeks."
+text = "We are engineers, not analysts. We implement the fixes, codify the policies and leave dashboards your team keeps using. It starts with a cost-focused Readiness Review."
 
 [[outcomes]]
-text = 'Measurable cloud spend reduction — typically 20-40% in the first engagement'
+text = "Lower cloud spend, without hurting performance"
 [[outcomes]]
-text = 'Cost governance in place to prevent drift and waste recurrence'
+text = "Governance that prevents waste from returning"
 [[outcomes]]
-text = 'Finance gets predictability; engineering keeps performance'
+text = "Predictable costs for finance"
 [[outcomes]]
-text = 'Every cloud resource tagged, tracked, and owned'
+text = "Every resource tagged and owned"
 
-[[related_services]]
-name = 'Discovery Workshop'
-url = '/how-we-deliver/discovery-workshop/'
-description = 'Assess your cloud spend landscape and prioritise optimisation opportunities.'
 
 [[related_services]]
-name = 'Platform Readiness Assessment'
-url = '/how-we-deliver/platform-readiness-assessment/'
-description = 'Validate that cost optimisations do not compromise platform reliability.'
+name = 'Readiness Review'
+url = '/services/readiness-review/'
+description = 'A cost-focused review: where the spend goes and what to fix first.'
+
+[[related_services]]
+name = 'Managed Platform Care'
+url = '/services/managed-platform-care/'
+description = 'Keep the savings with ongoing care and cost governance.'
+
+[[related_services]]
+name = 'Fractional Architect'
+url = '/services/fractional/'
+description = 'A senior architect to own cloud and vendor choices.'
 +++
-
-Cloud cost optimisation is not about spending less — it is about spending wisely. Most organisations have 20-40% of cloud waste hiding in plain sight: orphaned resources, oversized instances, unused reserved capacity, and untagged spend that nobody owns.
-
-FikaWorks combines deep cloud architecture expertise with FinOps discipline to find the waste, implement the fixes, and build the governance that makes savings permanent. We work across AWS, Azure, and GCP, and every recommendation comes with performance impact analysis — because cutting costs at the expense of reliability is not optimisation, it is risk.

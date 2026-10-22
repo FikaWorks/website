@@ -1,7 +1,8 @@
 +++
 date = '2025-03-18T08:00:00+02:00'
 draft = false
-title = 'Community'
+title = 'Community & giving back'
+hero_subtitle = 'We put part of every fee back into the cloud-native community: expertise, time and money for the conferences and meetups where people learn from each other.'
 hero_image = 'fikaworks_day_2025_1.jpg'
 image_2 = 'fikaworks_day_2025_2.jpg'
 image_3 = 'fikaworks_day_2025_3.jpg'
@@ -38,3 +39,7 @@ Each year, we host **FikaWorks Day**—our own community event that brings toget
 ## Explore Our Community Activities
 
 Visit our [Events page](/events) to see upcoming conferences, meetups, and community activities we're involved in.
+
+## Join the FikaWorks community
+
+Everyone who becomes a member starts in our community. It is free: meet us on Slack and at events, work with us on a project, and after 6 to 12 months the members can vote you in. [See how to join](/cooperative/join/).

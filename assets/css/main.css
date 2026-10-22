@@ -11,13 +11,6 @@
 
 @font-face {
   font-family: 'Patron';
-  font-weight: 300;
-  font-style: normal;
-  src: url('{{ .FontLightURL }}') format('opentype');
-}
-
-@font-face {
-  font-family: 'Patron';
   font-weight: 500;
   font-style: normal;
   src: url('{{ .FontMediumURL }}') format('opentype');
@@ -26,16 +19,22 @@
 @theme {
   --color-fika-ash: #d1c6b3;
   --color-fika-dust: #efeae1;
-  --color-fika-offWhite: #fbf8f3;
-  --color-fika-light-purple: #d0cbf2;
-  --color-fika-purple: #8c7de5;
-  --color-fika-hover-purple: #a397ea;
+  --color-fika-offWhite: #fdfaf6; /* leaflet paper */
+  /* Roles: the page, and surfaces that sit on it (header, menus, logo box,
+     diagrams, previews). Both flip in dark mode, see .dark below. */
+  --color-page: #fdfaf6;
+  --color-surface: #ffffff;
+  --color-fika-light-purple: #d4d1de; /* leaflet lavender */
+  --color-fika-purple: #6f84b5; /* leaflet periwinkle, darkened for text contrast */
+  --color-fika-hover-purple: #7d93bf;
   --color-fika-orange: #e67a2e;
   --color-fika-soft-pink: #ec96b5;
-  --color-fika-soft-blue: #9aafe3;
+  --color-fika-soft-blue: #aab5d0; /* leaflet periwinkle */
   --color-fika-sky-blue: #97ced6;
-  --color-fika-soft-green: #93d7a6;
-  --color-fika-soft-yellow: #efe585;
+  --color-fika-soft-green: #99c69d; /* leaflet sage */
+  --color-fika-soft-yellow: #eee79f; /* leaflet butter */
+  --color-fika-butter-light: #fefad8; /* leaflet card yellow */
+  --color-fika-sage-light: #b6ceb6; /* leaflet card green */
   --color-fika-soft-blue-hover: #f0f3fb;
   --color-fika-soft-green-hover: #eff9f2;
   --color-fika-soft-yellow-hover: #fdfbed;
@@ -59,10 +58,22 @@
   --color-fika-dark-surface: #161825;
   --color-fika-dark-elevated: #1e2130;
 
-  --breakpoint-3xl: 2000px;
-  --breakpoint-4xl: 3000px;
+  /* Section headings (h2). Page titles use text-6xl, the home title text-7xl. */
+  --text-heading: 2.75rem;
+  --text-heading--line-height: 1.12;
 
   --default-font-family: 'Patron', var(--font-sans);
+}
+
+/* Page content sits in one centred 1280px column on every page, aligned with
+   the header and footer; section backgrounds still run edge to edge.
+   Use on the inner wrapper of each section, e.g.
+   <section class="bg-..."><div class="page-container grid ...">…</div></section> */
+@utility page-container {
+  margin-inline: 0.75rem;
+  @media (width >= 48rem) {
+    margin-inline: max(2.5rem, calc((100% - 80rem) / 2));
+  }
 }
 
 * {
@@ -159,310 +170,6 @@ table tr td {
   box-shadow: 0 0 0 3px white;
 }
 
-.dark .dark-hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      circle at 15% 25%,
-      rgba(140, 125, 229, 0.2) 1.5px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 85% 15%,
-      rgba(140, 125, 229, 0.15) 1.5px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 25% 75%,
-      rgba(140, 125, 229, 0.18) 1.5px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 75% 85%,
-      rgba(140, 125, 229, 0.2) 1.5px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 5% 50%,
-      rgba(140, 125, 229, 0.15) 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle at 95% 60%,
-      rgba(140, 125, 229, 0.15) 1px,
-      transparent 1.5px
-    ),
-    linear-gradient(rgba(140, 125, 229, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(140, 125, 229, 0.03) 1px, transparent 1px),
-    linear-gradient(
-      45deg,
-      rgba(140, 125, 229, 0.02) 0%,
-      transparent 40%,
-      transparent 60%,
-      rgba(34, 211, 238, 0.02) 100%
-    ),
-    radial-gradient(
-      ellipse at 80% 90%,
-      rgba(140, 125, 229, 0.07) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 20% 10%,
-      rgba(34, 211, 238, 0.035) 0%,
-      transparent 50%
-    );
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    60px 60px,
-    60px 60px,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
-.dark .dark-services-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      circle 2px at 15% 25%,
-      rgba(167, 128, 255, 0.42) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 2px at 85% 15%,
-      rgba(96, 165, 250, 0.26) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 2px at 45% 45%,
-      rgba(167, 128, 255, 0.34) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 2px at 75% 65%,
-      rgba(96, 165, 250, 0.24) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 2px at 25% 80%,
-      rgba(167, 128, 255, 0.32) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 1.5px at 60% 10%,
-      rgba(244, 114, 182, 0.16) 0%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle 1.5px at 5% 55%,
-      rgba(167, 128, 255, 0.26) 0%,
-      transparent 100%
-    ),
-    linear-gradient(rgba(167, 128, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167, 128, 255, 0.06) 1px, transparent 1px),
-    radial-gradient(
-      circle 900px at 12% 18%,
-      rgba(108, 20, 238, 0.34) 0%,
-      transparent 58%
-    ),
-    radial-gradient(
-      circle 720px at 85% 20%,
-      rgba(79, 70, 229, 0.24) 0%,
-      transparent 48%
-    ),
-    radial-gradient(
-      circle 680px at 80% 100%,
-      rgba(96, 165, 250, 0.18) 0%,
-      transparent 58%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(24, 19, 56, 0.96) 0%,
-      rgba(31, 21, 79, 0.94) 42%,
-      rgba(11, 15, 25, 0.98) 100%
-    );
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    60px 60px,
-    60px 60px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
-.dark .dark-services-bg-blue::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle 2px at 15% 25%, rgba(125, 211, 252, 0.34) 0%, transparent 100%),
-    radial-gradient(circle 2px at 85% 15%, rgba(96, 165, 250, 0.28) 0%, transparent 100%),
-    radial-gradient(circle 2px at 45% 45%, rgba(59, 130, 246, 0.32) 0%, transparent 100%),
-    radial-gradient(circle 2px at 75% 65%, rgba(129, 140, 248, 0.24) 0%, transparent 100%),
-    radial-gradient(circle 2px at 25% 80%, rgba(125, 211, 252, 0.26) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 139, 250, 0.14) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 5% 55%, rgba(96, 165, 250, 0.24) 0%, transparent 100%),
-    linear-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px),
-    radial-gradient(circle 900px at 12% 18%, rgba(22, 101, 216, 0.32) 0%, transparent 58%),
-    radial-gradient(circle 720px at 85% 20%, rgba(79, 70, 229, 0.18) 0%, transparent 48%),
-    radial-gradient(circle 680px at 80% 100%, rgba(56, 189, 248, 0.16) 0%, transparent 58%),
-    linear-gradient(135deg, rgba(9, 23, 52, 0.96) 0%, rgba(15, 39, 88, 0.94) 42%, rgba(11, 15, 25, 0.98) 100%);
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    60px 60px,
-    60px 60px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
-.dark .dark-services-bg-teal::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle 2px at 15% 25%, rgba(94, 234, 212, 0.34) 0%, transparent 100%),
-    radial-gradient(circle 2px at 85% 15%, rgba(45, 212, 191, 0.28) 0%, transparent 100%),
-    radial-gradient(circle 2px at 45% 45%, rgba(20, 184, 166, 0.3) 0%, transparent 100%),
-    radial-gradient(circle 2px at 75% 65%, rgba(56, 189, 248, 0.18) 0%, transparent 100%),
-    radial-gradient(circle 2px at 25% 80%, rgba(94, 234, 212, 0.24) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 128, 255, 0.12) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 5% 55%, rgba(45, 212, 191, 0.22) 0%, transparent 100%),
-    linear-gradient(rgba(94, 234, 212, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
-    radial-gradient(circle 900px at 12% 18%, rgba(13, 148, 136, 0.3) 0%, transparent 58%),
-    radial-gradient(circle 720px at 85% 20%, rgba(8, 145, 178, 0.18) 0%, transparent 48%),
-    radial-gradient(circle 680px at 80% 100%, rgba(45, 212, 191, 0.16) 0%, transparent 58%),
-    linear-gradient(135deg, rgba(8, 31, 41, 0.96) 0%, rgba(10, 54, 63, 0.94) 42%, rgba(11, 15, 25, 0.98) 100%);
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    60px 60px,
-    60px 60px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
-.dark .dark-services-bg-amber::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle 2px at 15% 25%, rgba(253, 224, 71, 0.3) 0%, transparent 100%),
-    radial-gradient(circle 2px at 85% 15%, rgba(251, 191, 36, 0.24) 0%, transparent 100%),
-    radial-gradient(circle 2px at 45% 45%, rgba(245, 158, 11, 0.26) 0%, transparent 100%),
-    radial-gradient(circle 2px at 75% 65%, rgba(251, 146, 60, 0.18) 0%, transparent 100%),
-    radial-gradient(circle 2px at 25% 80%, rgba(253, 224, 71, 0.2) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 60% 10%, rgba(167, 128, 255, 0.1) 0%, transparent 100%),
-    radial-gradient(circle 1.5px at 5% 55%, rgba(251, 191, 36, 0.2) 0%, transparent 100%),
-    linear-gradient(rgba(251, 191, 36, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 158, 11, 0.045) 1px, transparent 1px),
-    radial-gradient(circle 900px at 12% 18%, rgba(180, 83, 9, 0.26) 0%, transparent 58%),
-    radial-gradient(circle 720px at 85% 20%, rgba(217, 119, 6, 0.18) 0%, transparent 48%),
-    radial-gradient(circle 680px at 80% 100%, rgba(251, 191, 36, 0.12) 0%, transparent 58%),
-    linear-gradient(135deg, rgba(44, 24, 9, 0.96) 0%, rgba(76, 43, 10, 0.92) 42%, rgba(11, 15, 25, 0.98) 100%);
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    60px 60px,
-    60px 60px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
-.dark .dark-cta-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
-    repeating-radial-gradient(
-      ellipse at 50% 150%,
-      rgba(34, 211, 238, 0.02) 0%,
-      transparent 5%,
-      transparent 10%,
-      rgba(140, 125, 229, 0.02) 15%,
-      transparent 20%
-    ),
-    radial-gradient(
-      ellipse at 0% 0%,
-      rgba(140, 125, 229, 0.07) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 100% 0%,
-      rgba(34, 211, 238, 0.04) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 0% 100%,
-      rgba(244, 114, 182, 0.025) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 100% 100%,
-      rgba(140, 125, 229, 0.06) 0%,
-      transparent 50%
-    );
-  background-size:
-    100px 100px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-}
-
 .dark .list-background li {
   background-color: var(--color-gray-800);
   box-shadow: -1.25rem 0 var(--color-gray-800);
@@ -552,9 +259,10 @@ nav .dark\:bg-gray-950 {
   --color-fika-dark-bg: #0b0f19;
   --color-fika-dark-surface: #10172a;
   --color-fika-dark-elevated: #17213a;
-  --color-fika-purple: #8f63f7;
-  --color-fika-hover-purple: #a07af9;
-  --color-fika-light-purple: #56419a;
+  --color-page: #0e121c;
+  --color-surface: #19202e;
+  --color-fika-purple: #a3b3d8; /* periwinkle on dark */
+  --color-fika-hover-purple: #bcc7e3;
   --color-fika-soft-green-shadow: #12352d;
   --color-fika-soft-yellow-shadow: #3f2f0f;
   --color-fika-soft-blue-shadow: #173055;
@@ -563,4 +271,339 @@ nav .dark\:bg-gray-950 {
   --color-fika-soft-yellow-dark: #755116;
   --color-fika-soft-blue-dark: #2f5f9e;
   --color-fika-soft-pink-dark: #a13a73;
+}
+
+/* ---------------------------------------------------------------------------
+   Design language (see DESIGN.md). Taken from the FikaWorks print leaflets:
+   warm paper, soft stage colours, rounded colour cards and ruled headings.
+   --------------------------------------------------------------------------- */
+@layer components {
+  /* Stage tones. A tone sets the card fill and the badge colour. */
+  .tone-blue {
+    --tone-hue: #aab5d0;
+    --tone: var(--color-fika-soft-blue);
+    --tone-badge: var(--color-fika-light-purple);
+  }
+  .tone-yellow {
+    --tone-hue: #eee79f;
+    --tone: var(--color-fika-butter-light);
+    --tone-badge: var(--color-fika-soft-yellow);
+  }
+  .tone-green {
+    --tone-hue: #99c69d;
+    --tone: var(--color-fika-sage-light);
+    --tone-badge: var(--color-fika-soft-green);
+  }
+  .tone-purple {
+    --tone-hue: #d4d1de;
+    --tone: var(--color-fika-light-purple);
+    --tone-badge: var(--color-fika-soft-blue);
+  }
+  .tone-neutral {
+    --tone-hue: #d1c6b3;
+    --tone: var(--color-fika-dust);
+    --tone-badge: var(--color-fika-ash);
+  }
+
+  /* The one card: rounded, filled with its tone, no border. */
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    background: var(--tone, var(--color-fika-dust));
+    color: var(--color-gray-900);
+    transition: filter 0.2s;
+    @media (width >= 64rem) {
+      padding: 2rem;
+    }
+  }
+  a.card:hover {
+    filter: brightness(0.96);
+  }
+  .card-badge {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--tone-badge);
+  }
+  /* Dark mode keeps the stage colour as a tint of the page; untoned cards
+     sit on the surface colour, like white cards in light mode. */
+  .dark .card {
+    background: color-mix(
+      in srgb,
+      var(--tone-hue, var(--color-surface)) 15%,
+      var(--color-page)
+    );
+    color: #fff;
+  }
+  .card-dot {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: none;
+    border-radius: 9999px;
+    background: var(--tone-badge);
+  }
+  .dark .card-dot {
+    background: var(--tone-hue);
+  }
+  .dark .card-badge {
+    background: var(--tone-hue);
+    color: var(--color-page);
+  }
+
+  /* Section heading with the leaflet rule: "Our services ————". */
+  .title-rule {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .title-rule::after {
+    content: '';
+    flex: 1 0 3rem;
+    height: 1px;
+    background: currentColor;
+    @media (width < 48rem) {
+      display: none;
+    }
+  }
+  .dark .title-rule::after {
+    opacity: 0.35;
+  }
+
+  /* Numbered steps joined by a line (leaflet "How to join"). */
+  .steps {
+    display: grid;
+    gap: 2rem;
+  }
+  .steps > li {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+  }
+  .steps > li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 1.75rem;
+    top: 3.5rem;
+    bottom: -2rem;
+    width: 1px;
+    background: currentColor;
+  }
+  .step-num {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: none;
+    border-radius: 9999px;
+    border: 1px solid currentColor;
+    background: var(--tone-badge);
+    color: var(--color-gray-900);
+    font-size: 1.375rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 0 4px var(--color-page);
+  }
+  .dark .step-num {
+    background: var(--tone-hue);
+  }
+
+  /* One vertical rhythm for content sections; heroes and dark bands keep their own. */
+  .section-pad {
+    padding-block: 2.5rem;
+    @media (width >= 64rem) {
+      padding-block: 3.5rem;
+    }
+  }
+
+  /* Two-part call to action (home hero): one outlined pill holding two links.
+     A filled highlight sits on the first and slides to whichever link is
+     hovered or focused. Stacks vertically on phones. */
+  .cta-toggle {
+    --cta-line: var(--color-gray-900);
+    --cta-fill: var(--color-gray-900);
+    --cta-on: #fff;
+    --cta-off: var(--color-gray-900);
+    --cta-slide: translateY(100%);
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    padding: 0.375rem;
+    border: 1.5px solid var(--cta-line);
+    border-radius: 2.25rem;
+    isolation: isolate;
+    @media (width >= 40rem) {
+      --cta-slide: translateX(100%);
+      grid-template-columns: 1fr 1fr;
+      border-radius: 9999px;
+    }
+  }
+  .dark .cta-toggle {
+    --cta-line: rgb(255 255 255 / 0.6);
+    --cta-fill: #fff;
+    --cta-on: var(--color-gray-900);
+    --cta-off: #fff;
+  }
+  .cta-toggle::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0.375rem;
+    left: 0.375rem;
+    right: 0.375rem;
+    height: calc(50% - 0.375rem);
+    border-radius: 9999px;
+    background: var(--cta-fill);
+    transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.2, 1);
+    @media (width >= 40rem) {
+      right: auto;
+      bottom: 0.375rem;
+      width: calc(50% - 0.375rem);
+      height: auto;
+    }
+  }
+  .cta-toggle > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    height: 3.5rem;
+    padding-inline: 1.75rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--cta-off);
+    transition: color 0.35s;
+    @media (width >= 64rem) {
+      height: 3.75rem;
+      padding-inline: 2rem;
+      font-size: 1.25rem;
+    }
+  }
+  .cta-toggle > a:first-child {
+    color: var(--cta-on);
+  }
+  .cta-toggle > a:focus-visible {
+    outline: 2px solid var(--color-fika-purple);
+    outline-offset: 3px;
+  }
+  .cta-toggle:has(> a:last-child:is(:hover, :focus-visible))::before {
+    transform: var(--cta-slide);
+  }
+  .cta-toggle:has(> a:last-child:is(:hover, :focus-visible)) > a:first-child {
+    color: var(--cta-off);
+  }
+  .cta-toggle:has(> a:last-child:is(:hover, :focus-visible)) > a:last-child {
+    color: var(--cta-on);
+  }
+  /* "Talk to us" carries a small live dot, as if someone is around. */
+  .cta-toggle-dot {
+    position: relative;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: var(--color-fika-soft-green);
+  }
+  .cta-toggle-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: cta-pulse 2.4s ease-out infinite;
+  }
+  @keyframes cta-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    70%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cta-toggle::before,
+    .cta-toggle > a {
+      transition: none;
+    }
+    .cta-toggle-dot::after {
+      animation: none;
+    }
+  }
+
+  /* Page-header decoration: flat colour circles and thin outline circles, as
+     on the leaflets. Like the leaflets bleeding off the paper edge, they are
+     only ever cut by a real edge: the header bar (top right) or the side of
+     the screen (left). Rendered by _partials/decor-circles.html. */
+  .decor-circles span {
+    position: absolute;
+    border-radius: 9999px;
+  }
+  .decor-circles .c-green {
+    width: clamp(9rem, 22vw, 22rem);
+    aspect-ratio: 1;
+    right: clamp(-5rem, -4vw, -2rem);
+    top: clamp(-9rem, -9vw, -4rem);
+    background: var(--color-fika-soft-green);
+  }
+  .decor-circles .c-yellow {
+    width: clamp(8rem, 19vw, 19rem);
+    aspect-ratio: 1;
+    right: clamp(-9rem, -8vw, -4rem);
+    top: clamp(-3rem, -2vw, -1rem);
+    background: var(--color-fika-soft-yellow);
+  }
+  .decor-circles .c-ring-top {
+    width: clamp(9rem, 21vw, 21rem);
+    aspect-ratio: 1;
+    right: clamp(-3rem, -2vw, -1rem);
+    top: clamp(-11rem, -11vw, -5rem);
+    border: 1.5px solid currentColor;
+  }
+  .decor-circles .c-dot-blue {
+    width: clamp(1.75rem, 3.5vw, 3.5rem);
+    aspect-ratio: 1;
+    right: clamp(9rem, 26vw, 26rem);
+    top: clamp(5rem, 9vw, 8rem);
+    background: var(--color-fika-soft-blue);
+  }
+  .decor-circles .c-lavender {
+    width: clamp(8rem, 16vw, 20rem);
+    aspect-ratio: 1;
+    left: 0;
+    top: 60%;
+    transform: translate(-68%, -50%);
+    background: var(--color-fika-light-purple);
+  }
+  .decor-circles .c-ring-bottom {
+    width: clamp(7rem, 13vw, 16rem);
+    aspect-ratio: 1;
+    left: 0;
+    top: 68%;
+    transform: translate(-62%, -50%);
+    border: 1.5px solid currentColor;
+  }
+  .decor-circles .c-dot-yellow {
+    width: clamp(1.5rem, 2.6vw, 2.6rem);
+    aspect-ratio: 1;
+    left: clamp(0.75rem, 2vw, 3rem);
+    top: 24%;
+    background: var(--color-fika-soft-yellow);
+  }
+  .decor-circles .c-dot-green {
+    width: clamp(1rem, 1.6vw, 1.6rem);
+    aspect-ratio: 1;
+    right: clamp(4rem, 12vw, 12rem);
+    bottom: clamp(2rem, 4vw, 4rem);
+    background: var(--color-fika-soft-green);
+  }
+  .dark .decor-circles {
+    opacity: 0.85;
+  }
 }

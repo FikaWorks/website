@@ -1,7 +1,7 @@
 {{- $input := . | lower }}
 {{- $filtered := slice }}
-{{- $about := site.GetPage "section" "about" }}
-{{- range $about.Pages }}
+{{- $about := site.GetPage "section" "cooperative" }}
+{{- range where $about.Pages "Params.role" "!=" nil }}
   {{- $expertises := .Params.expertises }}
   {{- if $expertises }}
     {{- $normalized := apply $expertises "lower" "." }}
@@ -47,7 +47,7 @@
       </div>
       <div class="mt-6">
         <span class="text-2xl font-medium dark:text-white">{{ .Title }}</span>
-        <p class="mt-1 text-sm font-light dark:text-gray-200">
+        <p class="mt-1 text-sm font-normal dark:text-gray-200">
           {{ .Params.role }}
         </p>
         <div class="mt-4 flex gap-3 w-full flex-wrap">

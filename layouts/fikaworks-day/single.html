@@ -27,15 +27,15 @@
       </div>
     </div>
   {{- end }}
-  <div class="bg-white dark:bg-gray-900 py-6 lg:py-14">
+  <div class="bg-page section-pad">
     <div id="" class="invisible relative -top-20 block"></div>
     <div
-      class="grid grid-cols-6 md:grid-cols-12 mx-3 md:mx-10 relative lg:gap-10 gap-6 "
+      class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
-      <div class="col-span-full lg:col-start-2 lg:col-end-10">
-        <div class="text-3xl font-medium lg:text-5xl dark:text-white">{{ .Title }}</div>
+      <div class="col-span-full lg:col-start-1 lg:col-end-10">
+        <div class="text-3xl font-medium lg:text-heading dark:text-white">{{ .Title }}</div>
         <div class="mt-6 lg:mt-8">
-            <div class="font-light text-lg lg:text-2xl dark:text-gray-200">
+            <div class="font-normal text-lg lg:text-xl dark:text-gray-200">
             {{- partial "helpers/enhanced-content-page.html" .Content }}
           </div>
         </div>

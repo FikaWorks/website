@@ -1,0 +1,20 @@
+{{- /* One service card in a stage. @context dict: service, stage, bg, arrow */}}
+{{- $v := .service }}
+<a
+  href="{{ $v.url }}"
+  class="card group h-full justify-between tone-{{ .stage.color }}"
+>
+  <div>
+    <h3 class="text-xl font-medium lg:text-2xl">
+      {{ $v.title }}
+      {{- if $v.highlight }}
+        <span class="ml-2 align-middle rounded-full bg-black px-2.5 py-0.5 text-xs font-medium text-white">Highlighted</span>
+      {{- end }}
+    </h3>
+    <p class="mt-3 text-base lg:text-lg font-normal text-gray-800 dark:text-gray-300">“{{ $v.problem }}”</p>
+  </div>
+  <div class="mt-6">
+    <p class="text-sm font-medium text-gray-600 dark:text-gray-300">{{ $v.shape }}</p>
+    <div class="mt-4 flex items-center gap-3 text-lg font-medium group-hover:text-fika-purple dark:group-hover:text-gray-300">{{ .arrow | safeHTML }}Learn more</div>
+  </div>
+</a>

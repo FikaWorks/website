@@ -1,0 +1,90 @@
+{{- /*
+  Shared page header for every section page.
+
+  @context dict:
+    page       the page (required)
+    eyebrow    small label above the title (default: page eyebrow, stage or group)
+    title      main heading (default: hero_title, then Title)
+    subtitle   line under the title (default: hero_subtitle)
+    body       extra HTML under the subtitle (optional)
+    cta_text   primary button text (default: page cta_text; no button when empty)
+    cta_url    primary button link (default: page cta_url, then /contact/)
+    cta2_text  secondary link text (optional)
+    cta2_url   secondary link (optional)
+
+  @example {{ partial "page-hero.html" (dict "page" .) }}
+*/}}
+{{- $p := .page }}
+{{- $eyebrow := .eyebrow | default ($p.Params.eyebrow | default ($p.Params.stage | default $p.Params.group)) }}
+{{- $title := .title | default ($p.Params.hero_title | default $p.Title) }}
+{{- $subtitle := .subtitle | default $p.Params.hero_subtitle }}
+{{- $ctaText := .cta_text | default $p.Params.cta_text }}
+{{- $ctaURL := .cta_url | default ($p.Params.cta_url | default "/contact/") }}
+{{- $cta2Text := .cta2_text | default $p.Params.cta2_text }}
+{{- $cta2URL := .cta2_url | default $p.Params.cta2_url }}
+<section
+  class="relative pt-36 pb-14 lg:pt-48 lg:pb-20 bg-page overflow-hidden"
+>
+  {{ partial "decor-circles.html" . }}
+  <div
+    class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container lg:gap-10 gap-6"
+  >
+    <div class="col-span-full lg:col-start-1 lg:col-end-11">
+      {{- with $eyebrow }}
+        <p
+          class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300"
+        >
+          {{ . }}
+        </p>
+      {{- end }}
+      <h1
+        class="mt-4 text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white text-balance"
+      >
+        {{ $title }}
+      </h1>
+      {{- with $subtitle }}
+        <p
+          class="mt-6 max-w-3xl text-xl lg:text-xl font-normal text-gray-700 dark:text-gray-300 text-pretty"
+        >
+          {{ . }}
+        </p>
+      {{- end }}
+      {{- with .body }}
+        <div
+          class="mt-6 max-w-3xl text-base lg:text-lg font-normal text-gray-700 dark:text-gray-300"
+        >
+          {{ . }}
+        </div>
+      {{- end }}
+      {{- if or $ctaText $cta2Text }}
+        <div class="mt-8 lg:mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+          {{- with $ctaText }}
+            <a
+              href="{{ $ctaURL }}"
+              class="inline-flex items-center justify-center gap-3 rounded-[40px] bg-black px-9 py-5 text-base font-medium text-white transition-colors duration-200 hover:bg-fika-hover-purple focus-visible:ring-2 focus-visible:ring-fika-purple focus-visible:ring-offset-2 lg:px-10 lg:py-6 lg:text-xl dark:border dark:border-white/20 dark:bg-transparent dark:hover:bg-white/5"
+              >{{ . }}<svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                class="w-4 h-4 lg:w-5 lg:h-5 flex-shrink-0"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"
+                  fill="currentColor"
+                ></path></svg
+            ></a>
+          {{- end }}
+          {{- with $cta2Text }}
+            <a
+              href="{{ $cta2URL }}"
+              class="text-lg font-medium underline underline-offset-8 text-black dark:text-white hover:text-fika-purple dark:hover:text-gray-300 transition-colors duration-200"
+              >{{ . }}</a
+            >
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
