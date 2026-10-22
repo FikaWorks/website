@@ -1,0 +1,29 @@
+{{- /*
+  Illustration for FikaWorks Argus on the Products page: baseline progress,
+  Scout's status and a plan card waiting for approval. Example data, not a
+  screenshot.
+  @context product map from content/products/_index.md (front matter "products")
+*/}}
+<figure class="border border-gray-200 dark:border-white/10 bg-white dark:bg-fika-dark-elevated p-5 lg:p-6" aria-label="Example: FikaWorks Argus baseline progress and a fix waiting for approval">
+  <figcaption class="flex items-center justify-between gap-4 text-xs font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">
+    <span>Example · prod-eu</span>
+    <span class="flex items-center gap-2 normal-case tracking-normal text-gray-700 dark:text-gray-200"><span class="h-2 w-2 rounded-full bg-fika-accent-green" aria-hidden="true"></span>Scout active</span>
+  </figcaption>
+  <div class="mt-4">
+    <div class="flex items-baseline justify-between gap-4 text-sm lg:text-base">
+      <span>CIS Kubernetes Benchmark</span>
+      <span class="text-gray-600 dark:text-gray-300">87%</span>
+    </div>
+    <div class="mt-2 h-2 bg-fika-dust dark:bg-white/10" aria-hidden="true">
+      <div class="h-full w-[87%] bg-fika-soft-green"></div>
+    </div>
+  </div>
+  <div class="mt-5 bg-fika-offWhite dark:bg-white/5 px-4 py-3 text-sm lg:text-base">
+    <span class="block text-xs font-medium text-gray-500 dark:text-gray-400">Plan · waiting for approval</span>
+    Upgrade <span class="font-mono text-[0.9em]">ingress-nginx</span> to close 2 issues in prod-eu, prod-us and staging.
+  </div>
+  <div class="mt-4 flex flex-wrap gap-2 text-sm">
+    <span class="rounded-full bg-black px-4 py-1.5 font-medium text-white dark:bg-white dark:text-black">Approve</span>
+    <span class="rounded-full border border-gray-300 dark:border-white/20 px-4 py-1.5">See diff</span>
+  </div>
+</figure>

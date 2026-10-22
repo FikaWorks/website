@@ -48,7 +48,7 @@ url = '/services/managed-platform-care/'
 description = 'Keep patches, policies and baselines current.'
 
 [[related_services]]
-name = 'FikaWorks Security Platform · early access'
-url = '/products/#fikaworks-security-platform'
+name = 'FikaWorks Argus · early access'
+url = '/products/#fikaworks-argus'
 description = 'Scans, baselines and attack-path simulation in one view.'
 +++

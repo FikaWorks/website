@@ -2,7 +2,7 @@
 date = '2026-10-19T00:00:00+02:00'
 draft = false
 title = 'Products'
-description = 'FikaWorks Agent, FikaWorks Migrate and the FikaWorks Security Platform: products that run in your own infrastructure, next to our senior professionals. Early access.'
+description = 'FikaWorks Agent, FikaWorks Migrate and FikaWorks Argus: products that run in your own infrastructure, next to our senior professionals. Early access.'
 eyebrow = 'Products · Early access'
 hero_title = 'Products that work alongside our people'
 hero_subtitle = 'Built by the senior professionals who deliver our services, and running in your own infrastructure. Your data stays where it is, and a person stays in charge.'
@@ -28,7 +28,8 @@ color = 'green'
 id = 'fikaworks-agent'
 name = 'FikaWorks Agent'
 color = 'purple'
-status = 'In development · early access'
+status = 'In development'
+short = 'An AI teammate for your Fractional SRE'
 tagline = 'An agent for each fractional role, starting with SRE.'
 text = 'A lightweight chat agent that runs in your infrastructure next to your senior expert. Senior professionals focus on decisions and improvements; the agent helps with continuous observation and repeatable tasks between their working days.'
 for = 'Teams working with a Fractional SRE or Managed Platform Care.'
@@ -45,7 +46,8 @@ linked_url = '/services/fractional/'
 id = 'fikaworks-migrate'
 name = 'FikaWorks Migrate'
 color = 'blue'
-status = 'In development · early access'
+status = 'In development'
+short = 'Know what a sovereign cloud move takes'
 tagline = 'Planning a sovereign cloud move? Know what it takes first.'
 text = 'A migration assessment that scans your current estate, scores how ready each part is to move and produces a migration plan. It is the starting point for moving to, or adding, a European cloud, and the plan feeds straight into a migration project.'
 for = 'Organisations that want to leave, or diversify away from, a hyperscaler.'
@@ -59,18 +61,19 @@ linked = 'Cloud & Sovereign Migration · Readiness Review'
 linked_url = '/solutions/cloud-migrations/'
 
 [[products]]
-id = 'fikaworks-security-platform'
-name = 'FikaWorks Security Platform'
+id = 'fikaworks-argus'
+name = 'FikaWorks Argus'
 color = 'green'
-status = 'Piloting with organisations · early access'
-tagline = 'Security spread across tools? See it in one view.'
-text = 'A security platform with its own interface, running on your own hardware or Kubernetes. It brings scans, baseline scoring and attack-path simulation together, and builds up knowledge of your architecture over time. We are running it with pilot organisations now.'
-for = 'Security and platform teams who need one view of their estate.'
+status = 'Piloting with organisations'
+short = 'Closes security gaps, with a person in charge'
+tagline = 'From finding security gaps to closing them.'
+text = 'An AI agent that keeps learning your infrastructure. It holds every environment at the security baseline you choose and closes the gaps, watches for attacks and contains them, and tests its own defences on purpose. A person approves every change.'
+for = 'Platform and security teams running Kubernetes with GitOps.'
 features = [
-  'Vulnerability scans, credential audits and penetration tests as repeatable workflows',
-  'Scores your estate against baselines with Trivy, Kyverno and Falco',
-  'Simulates attack paths in a sandbox and writes the matching detection rules',
-  'Can fix low-risk, high-confidence findings automatically, when you allow it',
+  'Fixes gaps at the source, once for every environment',
+  'Watches runtime and audit signals, and contains attacks within your limits',
+  'Tests your defences with engagements you authorize',
+  'Works towards CIS, SOC 2, ISO 27001, NIS2 and more',
 ]
 linked = 'Security & Compliance · Readiness Review'
 linked_url = '/solutions/security-compliance/'
