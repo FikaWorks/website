@@ -79,6 +79,8 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
   surfaces (logo box, diagrams, previews, menu dropdowns).
 - **Buttons.** Primary: black pill (`rounded-[40px] bg-black text-white`).
   Secondary: underlined text link.
+- **Two-part call to action.** `cta-toggle` (home hero): one outlined pill
+  holding two links; a filled highlight slides to the hovered one.
 
 ## Icons
 

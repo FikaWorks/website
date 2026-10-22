@@ -6,7 +6,6 @@
 # prefix:    text shown before the logo
 - name: Shell
   logo: shell.svg
-  mono: true
   show_name: true
   work: E-charging infrastructure on AWS
 - name: Rabobank

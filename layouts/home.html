@@ -15,9 +15,11 @@
       >
         Cloud native. Agent ready.
       </h1>
-      <div class="mt-9 lg:mt-12 flex flex-col items-center gap-5 md:flex-row md:gap-8">
-        <a href="/services/" class="inline-flex items-center gap-3 rounded-[40px] bg-black px-9 py-5 text-base font-medium text-white transition-colors duration-200 hover:bg-fika-hover-purple lg:px-10 lg:py-6 lg:text-xl dark:border dark:border-white/20 dark:bg-transparent dark:hover:bg-white/5">See how we work{{ $arrowIcon | safeHTML }}</a>
-        <a href="/contact/" class="text-lg font-medium underline underline-offset-8 text-black dark:text-white hover:text-fika-purple">Talk to us</a>
+      <div class="mt-9 lg:mt-12">
+        <div class="cta-toggle">
+          <a href="/services/">See how we work{{ $arrowIcon | safeHTML }}</a>
+          <a href="/contact/"><span class="cta-toggle-dot" aria-hidden="true"></span>Talk to us</a>
+        </div>
       </div>
     </div>
   </div>

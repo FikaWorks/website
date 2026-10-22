@@ -9,7 +9,8 @@ Sources (official marks, as published on Wikimedia Commons or Simple Icons):
 - `schlumberger.svg`: Schlumberger wordmark, Wikimedia Commons "Schlumberger.svg"
 - `veeam.svg`: Veeam 2022 logo, Wikimedia Commons "Veeam 2022 logo.svg"
   (Kasten is now part of Veeam; kasten.io redirects to veeam.com)
-- `shell.svg`: Shell pecten, Simple Icons (simpleicons.org)
+- `shell.svg`: Shell pecten, Simple Icons (simpleicons.org), drawn in Shell
+  red (#DD1D21) over its own outline filled in Shell yellow (#FBCE07)
 
 Logos are shown in grey and turn to their own colours on hover. Brand use
 normally needs each company's approval; check before going live.
