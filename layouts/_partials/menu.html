@@ -78,17 +78,6 @@
                 <span class="text-xl min-[1145px]:text-sm font-medium"
                   >{{ .Name }}</span
                 >
-                {{- if eq $level 0 }}
-                  <div
-                    class="{{ if and (not $isActive) (not $isAncestor) }}
-                      min-[1145px]:hidden
-                    {{ end }} group-hover:flex min-[1145px]:flex w-full justify-center min-[1145px]:mt-2"
-                  >
-                    <div
-                      class="h-[1px] w-3 bg-fika-light-purple max-[1145px]:hidden"
-                    ></div>
-                  </div>
-                {{- end }}
               </div>
               <div>
                 <svg
@@ -96,7 +85,8 @@
                   height="16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 flex-shrink-0 flex-grow-0 max-[1145px]:hidden group-hover:min-[1145px]:rotate-180 transition-transform duration-200"
+                  aria-hidden="true"
+                  class="menu-chevron w-4 h-4 flex-shrink-0 flex-grow-0 max-[1145px]:hidden"
                 >
                   <path
                     fill-rule="evenodd"
@@ -146,17 +136,6 @@
               </div>
             </div>
           </a>
-          {{- if eq $level 0 }}
-            <div
-              class="{{ if not $isActive }}
-                min-[1145px]:hidden
-              {{ end }} group-hover:flex min-[1145px]:flex w-full justify-center min-[1145px]:mt-2"
-            >
-              <div
-                class="h-[1px] w-3 bg-fika-light-purple max-[1145px]:hidden"
-              ></div>
-            </div>
-          {{- end }}
         </div>
       {{- end }}
     </div>

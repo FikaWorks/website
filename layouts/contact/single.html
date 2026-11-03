@@ -1,9 +1,10 @@
 {{ define "main" }}
-  <div class="pt-36 pb-16 lg:pb-24">
+  <div class="pt-24 lg:pt-32 pb-16 lg:pb-24">
     <div
       class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 "
     >
       <div class="col-span-full lg:col-span-6 lg:col-start-1">
+        <div class="mb-8 lg:mb-10">{{ partial "breadcrumbs.html" . }}</div>
         <h1 class="text-3xl font-medium lg:text-6xl dark:text-white">
           {{ .Title }}
         </h1>

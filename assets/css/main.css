@@ -122,8 +122,22 @@ body {
   scroll-behavior: smooth !important;
 }
 
-.children-menu:hover .popover-panel {
+.children-menu:hover .popover-panel,
+.children-menu:focus-within .popover-panel {
   display: block;
+}
+
+/* Dropdown arrow turns as its panel opens. Needs !important and the extra
+   class to beat the `nav svg { transition: none }` rule below. */
+nav svg.menu-chevron {
+  transition: transform 200ms ease !important;
+}
+
+@media (min-width: 1145px) {
+  .children-menu:hover .menu-chevron,
+  .children-menu:focus-within .menu-chevron {
+    transform: rotate(180deg);
+  }
 }
 
 .highlight pre {
@@ -602,6 +616,24 @@ nav .dark\:bg-gray-950 {
     right: clamp(4rem, 12vw, 12rem);
     bottom: clamp(2rem, 4vw, 4rem);
     background: var(--color-fika-soft-green);
+  }
+  /* Headers with a breadcrumb: keep the two small dots off the trail by
+     moving them into the empty bottom padding. */
+  .has-crumbs .decor-circles .c-dot-yellow {
+    top: auto;
+    bottom: clamp(1rem, 1.8vw, 1.75rem);
+    left: max(1.25rem, calc(38vw - 6rem));
+  }
+  @media (width < 40rem) {
+    /* Staggered heights so the three dots don't read as a row. */
+    .has-crumbs .decor-circles .c-dot-yellow {
+      bottom: 1.75rem;
+    }
+    .has-crumbs .decor-circles .c-dot-blue {
+      top: auto;
+      bottom: 0.5rem;
+      right: 42%;
+    }
   }
   .dark .decor-circles {
     opacity: 0.85;

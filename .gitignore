@@ -3,3 +3,5 @@ resources/
 themes/
 node_modules/
 .DS_Store
+
+.claude/

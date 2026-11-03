@@ -17,19 +17,29 @@
 {{- $p := .page }}
 {{- $eyebrow := .eyebrow | default ($p.Params.eyebrow | default ($p.Params.stage | default $p.Params.group)) }}
 {{- $title := .title | default ($p.Params.hero_title | default $p.Title) }}
+{{- /* The breadcrumb already says where you are, so drop any part of the
+  eyebrow ("Services · Assess") that repeats a breadcrumb label or the title. */}}
+{{- $skip := slice (lower $p.LinkTitle) (lower $title) }}
+{{- range $p.Ancestors }}{{ $skip = $skip | append (lower .LinkTitle) }}{{ end }}
+{{- $parts := slice }}
+{{- range split $eyebrow " · " }}
+  {{- if not (in $skip (lower (trim . " "))) }}{{ $parts = $parts | append . }}{{ end }}
+{{- end }}
+{{- $eyebrow = delimit $parts " · " }}
 {{- $subtitle := .subtitle | default $p.Params.hero_subtitle }}
 {{- $ctaText := .cta_text | default $p.Params.cta_text }}
 {{- $ctaURL := .cta_url | default ($p.Params.cta_url | default "/contact/") }}
 {{- $cta2Text := .cta2_text | default $p.Params.cta2_text }}
 {{- $cta2URL := .cta2_url | default $p.Params.cta2_url }}
 <section
-  class="relative pt-36 pb-14 lg:pt-48 lg:pb-20 bg-page overflow-hidden"
+  class="has-crumbs relative pt-24 pb-14 lg:pt-32 lg:pb-20 bg-page overflow-hidden"
 >
   {{ partial "decor-circles.html" . }}
   <div
     class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container lg:gap-10 gap-6"
   >
     <div class="col-span-full lg:col-start-1 lg:col-end-11">
+      <div class="mb-8 lg:mb-10">{{ partial "breadcrumbs.html" $p }}</div>
       {{- with $eyebrow }}
         <p
           class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300"

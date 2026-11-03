@@ -16,18 +16,14 @@
 
   <!-- Hero -->
   <section
-    class="relative pt-36 pb-14 lg:pt-48 lg:pb-20 bg-page overflow-hidden"
+    class="has-crumbs relative pt-24 pb-14 lg:pt-32 lg:pb-20 bg-page overflow-hidden"
   >
     {{ partial "decor-circles.html" . }}
     <div
       class="relative z-10 grid grid-cols-6 md:grid-cols-12 page-container lg:gap-10 gap-6"
     >
       <div class="col-span-full lg:col-start-1 lg:col-end-11">
-        <p
-          class="text-sm font-medium uppercase tracking-[0.2em] text-gray-600 dark:text-gray-300"
-        >
-          Services
-        </p>
+        <div class="mb-8 lg:mb-10">{{ partial "breadcrumbs.html" . }}</div>
         <h1
           class="mt-4 text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white"
         >
