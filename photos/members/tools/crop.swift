@@ -1,9 +1,11 @@
 // Re-crops a cut-out portrait so the face has a set size and position.
-// usage: crop <in> <out.png> faceX faceY faceW faceH headTop [target] [margin] [dx] [dy]
+// usage: crop <in> <out.png> faceX faceY faceW faceH headTop [target] [margin] [dx] [dy] [size] [gray]
 //   target  face height as a share of the output (default 0.55)
 //   headTop first row of hair above the face (source pixels)
 //   margin  space above the head as a share of the output (default 0.06)
 //   dx, dy  manual nudge of the face centre in source pixels (default 0)
+//   size    output width and height in pixels (default 800)
+//   gray    1 for black and white (default 0)
 // Only zooms in. The crop never runs past the bottom or sides of the photo
 // (the cut-out body would end in a hard edge); it may run past the top,
 // which is transparent.
@@ -22,6 +24,8 @@ let target = a.count > 8 ? Double(a[8])! : 0.55
 let margin = a.count > 9 ? Double(a[9])! : 0.06
 let dx = a.count > 10 ? Double(a[10])! : 0
 let dy = a.count > 11 ? Double(a[11])! : 0
+let out = a.count > 12 ? Int(a[12])! : 800
+let gray = a.count > 13 && a[13] == "1"
 
 var c = min(fh / target, W, H)                 // crop side; never zoom out
 let cx = fx + fw / 2 + dx
@@ -30,9 +34,8 @@ var y = headTop - margin * c + dy
 x = max(0, min(x, W - c))                      // no gaps at the sides
 y = min(y, H - c)                              // no gap at the bottom
 
-let out = 800
 let ctx = CGContext(data: nil, width: out, height: out, bitsPerComponent: 8, bytesPerRow: 0,
-                    space: CGColorSpaceCreateDeviceRGB(),
+                    space: gray ? CGColorSpaceCreateDeviceGray() : CGColorSpaceCreateDeviceRGB(),
                     bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
 ctx.interpolationQuality = .high
 let s = Double(out) / c

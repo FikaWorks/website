@@ -1,7 +1,6 @@
 ---
 title: 'Catalin Jora'
 role: 'Board Member and Senior Engineer'
-image: 'catalin-jora.webp'
-# TODO: replace the placeholder with the real profile
-linkedin: '#'
+board: true
+linkedin: 'https://www.linkedin.com/in/jocatalin/'
 ---

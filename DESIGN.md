@@ -71,8 +71,14 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
   tone (in both themes), then name,
   role and round link buttons (`member-link`) for the links set in the
   member's front matter (`linkedin`, `github`, `website`). Five columns on
-  desktop, two below. Photos are re-cropped to matching head sizes with
-  `photos/members/make.py` (originals in `photos/members/originals`).
+  desktop, two below. Board members (`board: true`) come first, then
+  everyone else, each A to Z.
+- **Member photos.** Put the original (any background, jpg/png/webp) in
+  `photos/members/originals/<slug>.<ext>` and run
+  `python3 photos/members/make.py <slug>`. It cuts out the person, matches
+  the head size to the others and writes the only two files the site serves:
+  `content/cooperative/<slug>/<slug>-320.webp` and `-640.webp`, black and
+  white with a transparent background.
 - **Numbered steps.** `ol.steps` with `li.tone-*` and a `span.step-num`: circles
   with the number, joined by a vertical line.
 - **Colour dots.** Stage markers are filled dots

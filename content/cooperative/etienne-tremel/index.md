@@ -1,7 +1,6 @@
 ---
 title: 'Etienne Tremel'
 role: 'Board Member and Senior Engineer'
-image: 'etienne-tremel.webp'
-# TODO: replace the placeholder with the real profile
-linkedin: '#'
+board: true
+linkedin: 'https://www.linkedin.com/in/etiennetremel/'
 ---

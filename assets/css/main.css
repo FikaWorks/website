@@ -386,6 +386,14 @@ nav .dark\:bg-gray-950 {
     object-fit: cover;
     object-position: bottom;
   }
+  .member-initials {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 500;
+    color: var(--color-gray-900);
+  }
   /* Round link buttons under a member (LinkedIn, GitHub, website). */
   .member-link {
     display: grid;

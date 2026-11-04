@@ -145,15 +145,20 @@
       }}
       {{- $tones := slice "blue" "yellow" "green" "purple" }}
       <ul role="list" class="col-span-full grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-5">
-        {{- range $i, $m := where .Pages "Params.role" "!=" nil }}
+        {{- /* Board members first, then everyone else, each A to Z. */}}
+        {{- $all := where .Pages "Params.role" "!=" nil }}
+        {{- $board := sort (where $all "Params.board" true) "Title" }}
+        {{- $rest := sort (where $all "Params.board" "!=" true) "Title" }}
+        {{- range $i, $m := $board | append $rest }}
           <li class="member-card card tone-{{ index $tones (mod $i 4) }}">
             <div class="member-photo">
-              {{- with .Resources.Get .Params.image }}
-                {{- /* Black and white in both themes; the card colour shows
-                  through the transparent background. */}}
-                {{- $bw := . | images.Filter images.Grayscale }}
-                {{- $small := $bw.Resize "320x webp" }}
-                {{- $large := $bw.Resize "640x webp" }}
+              {{- /* Photos come ready-made from photos/members/make.py:
+                <slug>-320.webp and <slug>-640.webp, black and white with a
+                transparent background. No photo yet: initials. */}}
+              {{- $slug := .File.ContentBaseName }}
+              {{- with .Resources.Get (printf "%s-640.webp" $slug) }}
+                {{- $large := . }}
+                {{- $small := $m.Resources.Get (printf "%s-320.webp" $slug) | default $large }}
                 <img
                   alt="{{ $m.Title }}"
                   src="{{ $large.RelPermalink }}"
@@ -163,6 +168,10 @@
                   height="640"
                   loading="lazy"
                 />
+              {{- else }}
+                <span class="member-initials" aria-hidden="true">
+                  {{- range first 2 (split $m.Title " ") }}{{ substr . 0 1 }}{{ end -}}
+                </span>
               {{- end }}
             </div>
             <div class="flex flex-1 flex-col px-4 pt-4 pb-4 lg:px-5 lg:pb-5">
