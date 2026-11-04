@@ -1,6 +1,7 @@
 ---
 title: 'Valentin Stoican'
-role: 'Cloud Engineer'
+role: 'Senior Engineer'
 image: 'valentin-stoican.webp'
-expertises: ['Kubernetes', 'IaC', 'AWS']
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

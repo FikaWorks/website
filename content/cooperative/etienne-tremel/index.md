@@ -1,6 +1,7 @@
 ---
 title: 'Etienne Tremel'
-role: 'Cloud Engineer'
+role: 'Board Member and Senior Engineer'
 image: 'etienne-tremel.webp'
-expertises: ['Azure', 'Kubernetes', 'CI/CD']
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

@@ -1,6 +1,7 @@
 ---
 title: 'Sudesh Jethoe'
-role: 'Cloud Native Consultant'
+role: 'Board Member and Senior Engineer'
 image: 'sudesh-jethoe.webp'
-expertises: ['Architecture', 'Kubernetes']
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

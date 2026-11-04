@@ -1,6 +1,7 @@
 ---
 title: 'Alex Giurgiu'
-role: 'Cloud Engineer'
+role: 'Senior Engineer'
 image: 'alex-giurgiu.webp'
-expertises: ['Kubernetes', 'IaC', 'Golang']
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

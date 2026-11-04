@@ -1,6 +1,7 @@
 ---
 title: 'Catalin Jora'
-role: 'Cloud Native Consultant'
+role: 'Board Member and Senior Engineer'
 image: 'catalin-jora.webp'
-expertises: ['IaC', 'Kubernetes', 'Docker']
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

@@ -66,6 +66,13 @@ lives in `assets/css/main.css` (tokens in `@theme`, components in
     (`partial "icon.html" (dict "name" "stack-2" "class" "h-7 w-7")`).
   - `card-dot`: a smaller colour dot when there is no icon.
   - Size grids to their cards: 2 or 4 cards → two columns, 3 or 6 → three.
+- **Member card.** `card member-card tone-*` (tones rotate per card): the
+  black-and-white cut-out photo fills the top on the stronger shade of the
+  tone (in both themes), then name,
+  role and round link buttons (`member-link`) for the links set in the
+  member's front matter (`linkedin`, `github`, `website`). Five columns on
+  desktop, two below. Photos are re-cropped to matching head sizes with
+  `photos/members/make.py` (originals in `photos/members/originals`).
 - **Numbered steps.** `ol.steps` with `li.tone-*` and a `span.step-num`: circles
   with the number, joined by a vertical line.
 - **Colour dots.** Stage markers are filled dots

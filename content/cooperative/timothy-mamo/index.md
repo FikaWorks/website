@@ -1,6 +1,7 @@
 ---
 title: 'Timothy Mamo'
-role: 'Cloud Native Consultant'
-image: 'timothy-mamo.png'
-expertises: ['Kubernetes', 'DevOps', 'Architecture']
+role: 'Senior Engineer'
+image: 'timothy-mamo.webp'
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---

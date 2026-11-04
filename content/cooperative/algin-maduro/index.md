@@ -1,6 +1,7 @@
 ---
 title: 'Algin Maduro'
-role: 'Cloud Native Consultant'
-image: 'algin-maduro.png'
-expertises: [' Azure', 'Kubernetes', 'AWS']
+role: 'Senior Engineer'
+image: 'algin-maduro.webp'
+# TODO: replace the placeholder with the real profile
+linkedin: '#'
 ---
