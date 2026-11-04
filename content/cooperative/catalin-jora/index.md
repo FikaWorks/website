@@ -1,6 +1,6 @@
 ---
 title: 'Catalin Jora'
-role: 'Cloud Native Consultant'
-image: 'catalin-jora.webp'
-expertises: ['IaC', 'Kubernetes', 'Docker']
+role: 'Board Member and Senior Engineer'
+board: true
+linkedin: 'https://www.linkedin.com/in/jocatalin/'
 ---

@@ -1,6 +1,5 @@
 ---
 title: 'Valentin Stoican'
-role: 'Cloud Engineer'
-image: 'valentin-stoican.webp'
-expertises: ['Kubernetes', 'IaC', 'AWS']
+role: 'Senior Engineer'
+linkedin: 'https://www.linkedin.com/in/valentinstoican/'
 ---

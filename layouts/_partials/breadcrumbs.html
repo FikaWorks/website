@@ -1,0 +1,45 @@
+{{- /*
+  Breadcrumb trail: Home > Section > Current page. Follows the URL tree, so
+  the parents are the section pages above this one. Labels use linkTitle
+  (falls back to title). Renders nothing on the home page.
+
+  @context {page} The current page.
+
+  @example {{ partial "breadcrumbs.html" . }}
+*/}}
+{{- if not .IsHome }}
+  <nav aria-label="Breadcrumb">
+    <ol
+      class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400"
+    >
+      {{- range .Ancestors.Reverse }}
+        <li class="flex items-center gap-2">
+          <a
+            href="{{ .RelPermalink }}"
+            class="hover:text-black dark:hover:text-white transition-colors duration-200"
+            >{{ if .IsHome }}Home{{ else }}{{ .LinkTitle }}{{ end }}</a
+          >
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            class="w-3.5 h-3.5 flex-shrink-0"
+          >
+            <path
+              d="m6 3.5 4.5 4.5L6 12.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+            ></path>
+          </svg>
+        </li>
+      {{- end }}
+      <li class="min-w-0">
+        <span
+          aria-current="page"
+          class="block truncate max-w-[16rem] sm:max-w-md lg:max-w-xl text-black dark:text-white"
+          >{{ .LinkTitle }}</span
+        >
+      </li>
+    </ol>
+  </nav>
+{{- end }}

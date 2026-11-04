@@ -1,6 +1,6 @@
 ---
 title: 'Etienne Tremel'
-role: 'Cloud Engineer'
-image: 'etienne-tremel.webp'
-expertises: ['Azure', 'Kubernetes', 'CI/CD']
+role: 'Board Member and Senior Engineer'
+board: true
+linkedin: 'https://www.linkedin.com/in/etiennetremel/'
 ---

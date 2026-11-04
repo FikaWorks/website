@@ -122,8 +122,22 @@ body {
   scroll-behavior: smooth !important;
 }
 
-.children-menu:hover .popover-panel {
+.children-menu:hover .popover-panel,
+.children-menu:focus-within .popover-panel {
   display: block;
+}
+
+/* Dropdown arrow turns as its panel opens. Needs !important and the extra
+   class to beat the `nav svg { transition: none }` rule below. */
+nav svg.menu-chevron {
+  transition: transform 200ms ease !important;
+}
+
+@media (min-width: 1145px) {
+  .children-menu:hover .menu-chevron,
+  .children-menu:focus-within .menu-chevron {
+    transform: rotate(180deg);
+  }
 }
 
 .highlight pre {
@@ -353,6 +367,59 @@ nav .dark\:bg-gray-950 {
   .dark .card-badge {
     background: var(--tone-hue);
     color: var(--color-page);
+  }
+
+  /* Member card: a toned card with the cut-out photo filling the top. */
+  .member-card {
+    padding: 0;
+    overflow: hidden;
+  }
+  /* Full pastel tone in both themes: the black and white photos read better
+     on it than on the dark-mode tint. */
+  .member-photo {
+    aspect-ratio: 1;
+    background: var(--tone-hue);
+  }
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  .member-initials {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 500;
+    color: var(--color-gray-900);
+  }
+  /* Round link buttons under a member (LinkedIn, GitHub, website). */
+  .member-link {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.7);
+    color: var(--color-gray-900);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+  .member-link:hover,
+  .member-link:focus-visible {
+    background: #000;
+    color: #fff;
+  }
+  .dark .member-link {
+    background: rgb(255 255 255 / 0.1);
+    color: #fff;
+  }
+  .dark .member-link:hover,
+  .dark .member-link:focus-visible {
+    background: #fff;
+    color: #000;
   }
 
   /* Section heading with the leaflet rule: "Our services ————". */
@@ -602,6 +669,24 @@ nav .dark\:bg-gray-950 {
     right: clamp(4rem, 12vw, 12rem);
     bottom: clamp(2rem, 4vw, 4rem);
     background: var(--color-fika-soft-green);
+  }
+  /* Headers with a breadcrumb: keep the two small dots off the trail by
+     moving them into the empty bottom padding. */
+  .has-crumbs .decor-circles .c-dot-yellow {
+    top: auto;
+    bottom: clamp(1rem, 1.8vw, 1.75rem);
+    left: max(1.25rem, calc(38vw - 6rem));
+  }
+  @media (width < 40rem) {
+    /* Staggered heights so the three dots don't read as a row. */
+    .has-crumbs .decor-circles .c-dot-yellow {
+      bottom: 1.75rem;
+    }
+    .has-crumbs .decor-circles .c-dot-blue {
+      top: auto;
+      bottom: 0.5rem;
+      right: 42%;
+    }
   }
   .dark .decor-circles {
     opacity: 0.85;

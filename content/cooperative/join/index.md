@@ -6,7 +6,6 @@ layout = 'join'
 description = 'Stay independent and stop working alone. Start in the FikaWorks community and become a co-owner of the cooperative.'
 aliases = ['/community/join/']
 
-eyebrow = 'Join us'
 hero_title = 'Stay independent. Stop working alone.'
 hero_subtitle = 'Keep your own company and co-own ours.'
 intro = 'FikaWorks is a cooperative of senior architects, engineers, delivery leads, developers and DevRel people. Everyone starts in our community; admitted members become co-owners with an equal voice.'

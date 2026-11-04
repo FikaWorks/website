@@ -1,6 +1,6 @@
 ---
 title: 'Sudesh Jethoe'
-role: 'Cloud Native Consultant'
-image: 'sudesh-jethoe.webp'
-expertises: ['Architecture', 'Kubernetes']
+role: 'Board Member and Senior Engineer'
+board: true
+linkedin: 'https://www.linkedin.com/in/sudeshjethoe/'
 ---

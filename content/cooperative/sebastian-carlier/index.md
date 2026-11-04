@@ -1,6 +1,5 @@
 ---
 title: 'Sebastian Carlier'
-role: 'Cloud Engineer'
-image: 'sebastian-carlier.png'
-expertises: ['AWS', 'Kubernetes', 'Terraform']
+role: 'Senior Engineer'
+linkedin: 'https://www.linkedin.com/in/sebastiancarlier/'
 ---

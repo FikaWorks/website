@@ -30,10 +30,13 @@
       </div>
     {{- end }}
   </div>
+  <div class="page-container pt-8 lg:pt-10 {{ if not $img }}mt-16 min-[1145px]:mt-[76px]{{ end }}">
+    {{ partial "breadcrumbs.html" . }}
+  </div>
   <div
     class="grid grid-cols-6 md:grid-cols-12 page-container relative lg:gap-10 gap-6 pb-16 lg:pb-24"
   >
-    <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-1 lg:pt-[120px]">
+    <div class="col-span-5 pt-7 lg:col-span-3 lg:col-start-1 lg:pt-[88px]">
       <div class="top-10 flex flex-row gap-5 lg:sticky lg:flex-col lg:gap-0">
         <div class="flex items-center gap-2 lg:mb-5">
           <svg
@@ -83,7 +86,7 @@
       </div>
     </div>
     <div
-      class="col-span-full lg:col-start-5 lg:col-end-12 lg:pt-16"
+      class="col-span-full lg:col-start-5 lg:col-end-12 lg:pt-8"
     >
       <div class="flex flex-wrap gap-3">
         {{- range .Params.event_types }}
